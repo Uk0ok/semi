@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipetory_semi</title>
+    <!-- <link rel="stylesheet" href="./home2.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style>
+        #h_head {
+            padding-top: 20px;
+            padding-left: 100px;
+        }
+
+        #h_title {
+            width: 250px;
+        }
+
+        section {
+            width: 1000px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="h_head" class="container-fluid" style="margin-bottom:0">
+                <img id="h_title" src="./images/logo.png">
+               
+                <div id="h_login">
+                    <form id="login_form">
+                        <div id="login_input">
+                            <input type="text" placeholder="username">
+                            <input type="password" placeholder="pwd">
+                        </div>
+                        <div id="login_submit">
+                            <input type="submit" value="로그인">
+                        </div>
+                    </form>
+                    <div id="login_search">
+                        <a href="#">아이디</a>
+                        <a href="#">비밀번호찾기</a>
+                        <a href="#">회원가입</a>
+                    </div>
+                </div>
+                <div id="h_search">
+                    <form id="search_form">
+                        <input type="search" name="search" placeholder="레시피찾기">
+                        <button type="submit"><img src="./images/search.png" width="10px"></button>
+                    </form>
+                </div>
+            </div>
+            <ul class="nav nav-tabs nav-justified">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">레시피</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">챌린지</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">식단코칭</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">매거진</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">마이페이지</a>
+                  </li>
+              </ul>
+        </header>
+
+        <section>
+            <div class="container" style="margin-top:30px">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h2>About Me</h2>
+                        <h5>Photo of me:</h5>
+                        <div class="fakeimg">Fake Image</div>
+                        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+                        <h3>Some Links</h3>
+                        <p>Lorem ipsum dolor sit ame.</p>
+                        <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                        </ul>
+                        <hr class="d-sm-none">
+                    </div>
+                    <div class="col-sm-8">
+                        <h2>TITLE HEADING</h2>
+                        <h5>Title description, Dec 7, 2017</h5>
+                        <div class="fakeimg">Fake Image</div>
+                        <p>Some text..</p>
+                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                        <br>
+                        <h2>TITLE HEADING</h2>
+                        <h5>Title description, Sep 2, 2017</h5>
+                        <div class="fakeimg">Fake Image</div>
+                        <p>Some text..</p>
+                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="jumbotron text-center bg-light" style="padding: 1rem 1rem" >
+            <div id="f_1">
+                <a href="">회사소개</a> | 
+                <a href="">광고문의</a> | 
+                <a href="">개인정보처리방침</a> | 
+                <a href="">이용약관</a>  |
+                <a href="">고객센터</a>
+            </div>
+            <br>
+            <div id="f_2">Copyright © 2021 밥조Inc.All Right Reserved</div>
+        </footer>
+    </div>
+</body>
+</html>
