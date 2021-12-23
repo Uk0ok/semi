@@ -50,9 +50,9 @@
 
 	 <header>
             <div id="h_head" class="row">
-                <div id="h_title" class="col-sm-8">
+                <a href="home" id="h_title" class="col-sm-8">
                     <img src="./img/recipeBoard/logo.png" width="250px">
-                </div>
+                </a>
                 <div id="h_content" class="col-sm-4">
                     <div id="h_join">
                         <a href="#">로그인</a>
