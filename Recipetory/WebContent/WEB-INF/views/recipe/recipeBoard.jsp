@@ -19,6 +19,7 @@
     
 </style>
 <body>
+	<form action="login" method="post"></form>
     <div class="jumbotron text-center" style="margin-bottom:0">
         <h1>Recipetory</h1>
         <p>나만의 건강 레시피</p> 
