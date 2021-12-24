@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>마이페이지</title>
 </head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./mypage.css">
 
 <style>
     #h_head {
@@ -66,6 +67,44 @@
               </ul>
         </header>
 
+    <div id="wrap_m">
+        <section id="section_m">
+            <div id="category_m">
+                <br><a href="./mypage_1.jsp">프로필</a><br><br>
+                <a href="./mypage_2.jsp">나중에 먹을 것</a><br><br>
+                <a href="./mypage_3.jsp">작성한 글 / 댓글 관리</a><br><br>
+                <a href="./mypage_4.jsp">회원 정보 수정</a><br><br>
+            </div>
+            <div id="content_userInfo_m">
+                <br><br><br><br><br><br>
+                <table id="tb_userInfo">
+                    <tr>
+                        <td>아이디</td>
+                        <td>abcd123</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><button>변경</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>이메일</td>
+                        <td>abcd123@korea.com</td>
+                        <td><button>변경</button></td>
+                    </tr>
+                    <tr>
+                        <td>휴대전화</td>
+                        <td>010 - 0000 - 0000</td>
+                        <td><button>변경</button></td>
+                    </tr>
+                </table>
+                <br><br><br><br><br>
+                <div id="d_m"><a href="">회원 탈퇴</a></div>
+            </div>
+        </section>
+    </div>
+    
         <section>
             <div class="container" style="margin-top:30px">
                 <div class="row">
