@@ -28,15 +28,24 @@
 
 	<%@ include file="common/header.jsp"%>
 	
-    <section>
-        <div class="container"> TOP10
-        </div>
-        <div class="container"> 새로운레시피
-        </div>
-        <div class="container"> 오늘의 쉐프
-        </div>
-
-    </section>
+    <div class="container">
+        <dl> 
+        	<dt>
+        		<h1>TOP10</h1>
+       		</dt>
+       		<dd>으아아아아아!!!!!!!!!</dd>
+        </dl>
+        <dl> 
+        	<dt>
+        		<h1>새로운레시피</h1>
+       		</dt>
+        </dl>
+        <dl> 
+        	<dt>
+        		<h1>오늘의쉐프</h1>
+        	</dt>
+        </dl>
+    </div>
 
 	<%@ include file="common/footer.jsp"%>
 </body>
