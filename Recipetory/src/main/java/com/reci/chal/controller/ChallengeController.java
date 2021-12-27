@@ -1,4 +1,4 @@
-package com.reci.sup.controller;
+package com.reci.chal.controller;
 
 import java.io.IOException;
 
@@ -8,13 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/support")
-public class SupportController extends HttpServlet{
+@WebServlet("/challenge")
+public class ChallengeController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		req.getRequestDispatcher("/WEB-INF/views/support/support.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/challenge/challenge.jsp").forward(req, resp);
 	}
-	
 }

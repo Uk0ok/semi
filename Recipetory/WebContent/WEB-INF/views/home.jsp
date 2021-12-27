@@ -14,20 +14,14 @@
 <style>
     body {
         box-sizing: border-box;
+        min-width: 1240px;
         margin: auto;
         background-color: cornsilk;
     }
     
-    .container {
-    	min-width: 1000px;
-    	margin: 1rem auto;
+    section {
+    	height: 1400px;
     }
-    
-   	dl {
-    	height: 400px;
-    	background-color: white;
-    }
-    
 </style>
 </head>
 <body>
