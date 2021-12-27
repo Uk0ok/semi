@@ -14,6 +14,7 @@
 <style>
     body {
         box-sizing: border-box;
+        min-width: 1240px;
         margin: auto;
         background-color: cornsilk;
     }
@@ -84,9 +85,6 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="mypage">마이페이지</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="support">고객센터</a>
                       </li>
                   </ul>
             </div>
