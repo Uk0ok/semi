@@ -14,29 +14,44 @@
 <style>
     body {
         box-sizing: border-box;
-        min-width: 1240px;
         margin: auto;
         background-color: cornsilk;
     }
     
-    section {
-    	height: 1400px;
+    .container {
+    	min-width: 1000px;
+    	margin: 1rem auto;
     }
+    
+   	dl {
+    	height: 400px;
+    	background-color: white;
+    }
+    
 </style>
 </head>
 <body>
 
 	<%@ include file="common/header.jsp"%>
 	
-    <section>
-        <div class="container"> TOP10
-        </div>
-        <div class="container"> 새로운레시피
-        </div>
-        <div class="container"> 오늘의 쉐프
-        </div>
-
-    </section>
+    <div class="container">
+        <dl> 
+        	<dt>
+        		<h1>TOP10</h1>
+       		</dt>
+        </dl>
+        <dl> 
+        	<dt>
+        		<h1>새로운레시피</h1>
+       		</dt>
+        </dl>
+        <dl> 
+        	<dt>
+        		<h1>오늘의쉐프</h1>
+        	</dt>
+        	
+        </dl>
+    </div>
 
 	<%@ include file="common/footer.jsp"%>
 </body>
