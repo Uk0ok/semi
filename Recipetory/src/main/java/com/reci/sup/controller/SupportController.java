@@ -14,7 +14,7 @@ public class SupportController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("support servlet called...");
-		req.getRequestDispatcher("/WEB-INF/views/support/notice.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/support/support.jsp").forward(req, resp);
 
 	}
 }
