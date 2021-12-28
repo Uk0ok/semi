@@ -18,6 +18,8 @@
 	
 	.board_list_wrap {
 	    padding: 50px;
+		margin-left: 18%;
+		margin-right: 18%;
 	}
 	
 	.board_list_head,
@@ -74,7 +76,6 @@
 	    width: 10%;
 	}
 	
-	/* paging */
 	.paging {
 	    margin-top: 30px;
 	    text-align: center;
@@ -196,38 +197,38 @@
                     <div class="board_list_body">
                         <div class="item">
                             <div class="num">1</div>
-                            <div class="tit"> <img src="../../../img/challengeBoard/jipbab.jpg" width="200" height="150"> <a href="challenge_view.jsp">일주일 집밥 챌린지</a></div>
+                            <div class="tit"> <img src="./img/challengeBoard/jipbab.jpg" width="200" height="150"> <a href="challengeview">일주일 집밥 챌린지</a></div>
                             <div class="parti">nn 명 참여중</div>
                             <div class="star">☆☆☆☆☆</div>
-                            <div class="review"><a href="#">리뷰수</a></div>
+                            <div class="review"><a class="review-link" href="challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">2</div>
-                            <div class="tit"> <img src="../../../img/challengeBoard/flour.jpg" width="200" height="150"> <a href="challenge_view.jsp">한달 밀가루 끊기 챌린지</a></div>
+                            <div class="tit"> <img src="./img/challengeBoard/flour.jpg" width="200" height="150"> <a href="challengeview">한달 밀가루 끊기 챌린지</a></div>
                             <div class="parti">nn 명 참여중</div>
                             <div class="star">☆☆☆☆☆</div>
-                            <div class="review"><a href="#">리뷰수</a></div>
+                            <div class="review"><a href="challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">3</div>
-                            <div class="tit"> <img src="../../../img/challengeBoard/water.jpg" width="200" height="150"> <a href="challenge_view.jsp">하루 2L 물 마시기</a></div>
+                            <div class="tit"> <img src="./img/challengeBoard/water.jpg" width="200" height="150"> <a href="challengeview">하루 2L 물 마시기</a></div>
                             <div class="parti">nn 명 참여중</div>
                             <div class="star">☆☆☆☆☆</div>
-                            <div class="review"><a href="#">리뷰수</a></div>
+                            <div class="review"><a href="challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">4</div>
-                            <div class="tit"> <img src="../../../img/challengeBoard/breakfast.jpg" width="200" height="150"> <a href="challenge_view.jsp">아침 먹기 챌린지</a></div>
+                            <div class="tit"> <img src="./img/challengeBoard/breakfast.jpg" width="200" height="150"> <a href="challengeview">아침 먹기 챌린지</a></div>
                             <div class="parti">nn 명 참여중</div>
                             <<div class="star">☆☆☆☆☆</div>
-                            <div class="review"><a href="#">리뷰수</a></div>
+                            <div class="review"><a href="challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">5</div>
-                            <div class="tit"> <img src="../../../img/challengeBoard/chickenbreast.jpg" width="200" height="150"> <a href="challenge_view.jsp">닭가슴살 챌린지</a></div>
+                            <div class="tit"> <img src="./img/challengeBoard/chickenbreast.jpg" width="200" height="150"> <a href="challengeview">닭가슴살 챌린지</a></div>
                             <div class="parti">nn 명 참여중</div>
                             <div class="star">☆☆☆☆☆</div>
-                            <div class="review"><a href="#">리뷰수</a></div>
+                            <div class="review"><a href="challengereview">리뷰</a></div>
                         </div>
                     </div>
                 </div>
