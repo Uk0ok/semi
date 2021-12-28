@@ -43,6 +43,14 @@
     box-sizing:border-box;    
     border:3px solid gray; 
 }
+#m_title_1{
+	height: 85%;
+}
+#m_title_2{
+	height: 15%;
+	background-color: gray;
+	
+}
 </style>
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
