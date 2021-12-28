@@ -13,13 +13,36 @@
 <link rel="stylesheet" href="./mypage.css">
 
 <style>
+    body {
+        box-sizing: border-box;
+        min-width: 1240px;
+        margin: auto;
+        background-color: cornsilk;
+    }
+
+    header{
+        background-color: rgb(175, 187, 175);
+    }
+
     #h_head {
-        padding-top: 20px;
-        padding-left: 100px;
+        padding-top: 30px;
+        height: 130px;
+        width: 1200px;
+        margin: 0 auto;
     }
 
     #h_title {
-        width: 250px;
+        float: left;
+        padding-left: 100px;
+    }
+
+   #h_content {
+       padding-left: 50px;
+   }
+
+    #nav {
+        width: 1200px;
+        margin: auto;
     }
 
     section {
@@ -28,52 +51,175 @@
         margin-left: auto;
     }
     
+    #wrap_m * {
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#wrap_m {
+    width: 1200px;
+    height: 600px;
+    margin: auto;
+}
+
+#section_m {
+    height: 100%;
+}
+
+#section_m>div {
+    float: left;
+}
+
+#category_m {
+    width: 19%;
+    height: 40%;
+    margin: 10px;
+    border: 2px solid gray;
+}
+
+#content_profile_m {
+    width: 29%;
+    height: 70%;
+    margin: 10px;
+    margin-right: 0%;
+    margin-left: 0%;
+    border: 2px solid gray;
+    border-right: none;
+}
+
+#content_challenge_m {
+    width: 49%;
+    height: 70%;
+    margin: 10px;
+    margin-right: 0%;
+    margin-left: 0%;
+    border: 2px solid gray;
+    border-left: none;
+}
+
+#profile_m {
+    width: 200px;
+    height: 200px;
+}
+
+#nickname_m {
+    font-size: 1.5em;
+}
+
+#challenge_m {
+    font-size: 1.3em;
+}
+
+#challenge_table_m {
+    width: 370px;
+    margin: auto;
+}
+
+#content_scrap_m {
+    width:78%;
+    height: 100%;
+    margin: 10px;
+    margin-right: 0%;
+    margin-left: 0%;
+    border: 2px solid gray;
+    text-align: right;
+}
+
+#content_mb_m {
+    width:78%;
+    height: 100%;
+    margin: 10px;
+    margin-right: 0%;
+    margin-left: 0%;
+    border: 2px solid gray;
+    text-align: center;
+}
+
+#content_userInfo_m {
+    width:78%;
+    height: 70%;
+    margin: 10px;
+    margin-right: 0%;
+    margin-left: 0%;
+    border: 2px solid gray;
+    text-align: center;
+}
+
+#content_2_scrap_1 {
+    text-align: center;
+}
+
+#img_scrap {
+    width: 100px;
+    height: 100px;
+}
+
+#tb_mb {
+    width: 700px;
+    margin: auto;
+}
+
+#tb_userInfo {
+    width: 400px;
+    margin: auto;
+}
+
+#d_m {
+	text-align: right;
+}
 </style>
 <body>
     <div id="wrap">
         <header>
-            <div id="h_head" class="container-fluid login01" style="margin-bottom:0">
-                <img id="h_title" src="../img/recipeBoard/logo.png">
-                
-                    <div id="login_search">
-                    
+            <div id="h_head" class="row">
+                <a href="home" id="h_title" class="col-sm-8">
+                    <img src="./img/recipeBoard/logo.png" width="250px">
+                </a>
+                <div id="h_content" class="col-sm-4">
+                    <div id="h_join">
                         <a href="#">로그인</a>
                         <a href="#">회원가입</a>
                     </div>
-
-                <div id="h_search">
-                    <form id="search_form">
-                        <input type="search" name="search" placeholder="레시피찾기">
-                        <button type="submit"><img src="../img/recipeBoard/img.jpg" width="10px"></button>
-                    </form>
+    
+                    <div id="h_search">
+                        <form id="search_form">
+                            <input type="search" name="search" placeholder="레시피찾기">
+                            <button type="submit"><img src="./img/recipeBoard/search.png" width="10px"></button>
+                        </form>
+                    </div>
                 </div>
+                
             </div>
-            <ul class="nav nav-tabs nav-justified">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">레시피</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">챌린지</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">식단코칭</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">매거진</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">마이페이지</a>
-                  </li>
-              </ul>
+
+            <div id="h_menu" class="container-fluid">  
+                <ul id="nav" class="nav nav-tabs nav-justified">
+                    <li class="nav-item">
+                      <a class="nav-link" href="recipe">레시피</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="challenge">챌린지</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">식단코칭</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="magazine">매거진</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="mypage">마이페이지</a>
+                      </li>
+                  </ul>
+            </div>
         </header>
 
     <div id="wrap_m">
         <section id="section_m">
             <div id="category_m">
-                <br><a href="./mypage_1.jsp">프로필</a><br><br>
-                <a href="./mypage_2.jsp">나중에 먹을 것</a><br><br>
-                <a href="./mypage_3.jsp">작성한 글 / 댓글 관리</a><br><br>
-                <a href="./mypage_4.jsp">회원 정보 수정</a><br><br>
+                <br><a href="./mypage">프로필</a><br><br>
+                <a href="./mypage2">나중에 먹을 것</a><br><br>
+                <a href="./mypage3">작성한 글 / 댓글 관리</a><br><br>
+                <a href="./mypage4">회원 정보 수정</a><br><br>
             </div>
             <div id="content_userInfo_m">
                 <br><br><br><br><br><br>
