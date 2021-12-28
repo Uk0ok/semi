@@ -152,3 +152,4 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,eclipse,java
 Recipetory/.classpath
 Recipetory/.project
+Recipetory/src/main/webapp/META-INF/MANIFEST.MF
