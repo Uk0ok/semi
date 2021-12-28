@@ -11,10 +11,6 @@
     padding: 0;
     }
 
-    html {
-    font-size: 10px;
-    }
-
     ul, li {
     list-style: none;
     }
@@ -35,7 +31,7 @@
     }
 
     .board_title strong {
-    font-size: 3rem;
+    font-size: 2rem;
     }
 
     .board_title p {
@@ -59,11 +55,7 @@
     font-size: 1.4rem;
     }
 
-    .bt_wrap a:first-child {
-    margin-left: 0;
-    }
-
-    .bt_wrap a.on {
+    .bt_wrap a.upload {
     background: rgb(175, 187, 175);
     color: black;
     }
@@ -189,7 +181,6 @@
                 <div class="info">
                     <dl>
                         <dt>카테고리</dt>
-                        <dd><input type="challenge" placeholder="챌린지 입력"></dd>
                         <dd><select name="chal_category">
                             <option value="etc" label="챌린지 카테고리" selected></option>
                             <option value="jipbab" label="일주일 집밥 챌린지"></option>
@@ -213,8 +204,8 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="view.html" class="on">등록</a>
-                <a href="list.html">취소</a>
+                <a href="./challengereview" class="upload">등록</a>
+                <a href="./challengereview">취소</a>
             </div>
         </div>
     </div>

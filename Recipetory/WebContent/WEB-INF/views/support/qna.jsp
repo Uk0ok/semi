@@ -15,10 +15,15 @@
     
     #wrap {
     	width: 1200px;
-    	margin: 1rem auto;
+    	margin: 2rem auto;
     	background-color: white;
     	text-align: center;
     	padding: 1rem;
+    }
+    
+    #search_write {
+    	padding: 1rem 2rem 2rem 1rem;
+    	text-align:left;
     }
     
 </style>
@@ -94,9 +99,8 @@
 	               	</tbody>
                 </table>
           
-                
-                <div class="row">
-                	<form class="col-sm-10" action="search" method="get">
+                 <div id="search_write" class="row">
+                	<form class="col-11" action="search" method="get">
 				        <select name="searchType">
 				            <option value="date">제목</option>
 				            <option value="Name">작성자</option>
@@ -107,11 +111,9 @@
 				        	<i class="fas fa-search"></i>
 			        	</button>
 				    </form>
-				   	<button id="writeBtn" class="col-sm-1"><a href="write">글쓰기</a></button>
-                	
+				   	<button id="writeBtn" class="col-1"><a href="write">글쓰기</a></button>
                 </div>
-                 
-                <br>
+                
                 <ul class="pagination justify-content-center">
 					  <li class="page-item"><a class="page-link" href="#"><</a></li>
 					  <li class="page-item"><a class="page-link" href="#">1</a></li>

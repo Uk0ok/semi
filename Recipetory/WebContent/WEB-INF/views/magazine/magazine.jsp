@@ -36,7 +36,7 @@
 .title > div { 
     float:left;
     color:black;
-    width:49.5%; 
+    width:49.5%;
     height:100%;
     padding: 10px;
     text-align: center;
@@ -48,7 +48,7 @@
 }
 .m_title2{
 	margin-left : 1%;
-	overflow: auto;
+	overflow: hidden;
 }
 #m_title_1{
 	height: 90%;
@@ -60,12 +60,11 @@
 }
 
 .content_wrap{
-	
 	width: 1200px;
 	margin:0px auto;
 	padding:0px; 
     overflow:hidden;
-    text-align: center;
+    text-align: left;
 }
 .content_wrap > div {
 	height: 300px;
@@ -74,18 +73,17 @@
 	vertical-align: bottom;
 }
 .col>div{
-	height: 70%;
+	height: 80%;
 	padding: 15px auto;
-	background-color: gray;
 }
 #col_1{
-	height: 15%;
+	height: 20%;
 	padding: 15px auto;
-	background-color: white;
+	overflow: hidden;
 }
 #col_2{
-	height: 15%;
-	background-color: green;
+	font-size: 0.7em;
+	overflow: hidden;
 }
 
 </style>
@@ -99,28 +97,28 @@
     <div class="title_wrap">
 		<div class="title">
 			<div class="m_title1">
-				<div id="m_title_1">뉴스 링크의 사진</div>
-				<div id="m_title_2">그 링크의 제목</div>
+				<div id="m_title_1"><a href="mag_content1"><img src="./img/magBoard/magazine_milk.jpg" style="width: 100%; height: 100%;"></a></div>
+				<div id="m_title_2">우유자조금관리위원회, 연말 홈파티용 우유활용 레시피 추천</div>
 			</div>
 			<div class="m_title2">
 				<table class="table table-hover">
-					<thead>
+					<thead style="background-color: rgb(175, 187, 175);">
 						<tr>
-							<th>주요 메거진 뉴스</th>
+							<th><strong style="color: white;">주요 메거진 뉴스</strong></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>기사 제목 링크</td>
+							<td><a href="mag_content2" style="text-decoration: none; color: black; ">더 나은 행복을 위한 3가지 레시피</a></td>
 						</tr>
 						<tr>
-							<td>기사 제목 링크</td>
+							<td><a href="mag_content2" style="text-decoration: none; color: black; ">더 나은 행복을 위한 3가지 레시피</a></td>
 						</tr>
 						<tr>
-							<td>기사 제목 링크</td>
+							<td><a href="mag_content2" style="text-decoration: none; color: black; ">더 나은 행복을 위한 3가지 레시피</a></td>
 						</tr>
 						<tr>
-							<td>기사 제목 링크</td>
+							<td><a href="mag_content2" style="text-decoration: none; color: black; ">더 나은 행복을 위한 3가지 레시피</a></td>
 						</tr>
 						<tr>
 							<td>기사 제목 링크</td>
@@ -141,58 +139,48 @@
 		<div class="content_wrap">
 			<div class="row">
 				<div class="col">
-					<div>사진</div>
-					<div id="col_1">기사 제목</div>
-					<div id="col_2">기사 내용들</div>
+					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
+					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
 				<div class="col">
-					<div>사진</div>
-					<div id="col_1">기사 제목</div>
-					<div id="col_2">기사 내용들</div>
+					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
+					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
 				<div class="col">
-					<div>사진</div>
-					<div id="col_1">기사 제목</div>
-					<div id="col_2">기사 내용들</div>
+					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
+					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<div>사진</div>
-					<div id="col_1">기사 제목</div>
-					<div id="col_2">기사 내용들</div>
+					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
+					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
 				<div class="col">
-					<div>사진</div>
-					<div id="col_1">기사 제목</div>
-					<div id="col_2">기사 내용들</div>
+					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
+					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
 				<div class="col">
-					<div>사진</div>
-					<div id="col_1">기사 제목</div>
-					<div id="col_2">기사 내용들</div>
+					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
+					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<div>사진</div>
-					<div id="col_1">기사 제목</div>
-					<div id="col_2">기사 내용들</div>
+					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
+					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
 				<div class="col">
-					<div>사진</div>
-					<div id="col_1">기사 제목</div>
-					<div id="col_2">기사 내용들</div>
+					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
+					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
 				<div class="col">
-					<div>사진</div>
-					<div id="col_1">기사 제목</div>
-					<div id="col_2">기사 내용들</div>
+					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
+					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
 			</div>
 		</div>
     </div>
-    <a href="mag_content">게시글</a>
     <%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>
 </html>
