@@ -1,69 +1,101 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>레시피 게시판</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> -->
+<title>Document</title>
 </head>
 <style>
-    .jaeuk1{-ms-flex:0 0 15%;flex:0 0 15%;max-width:15%;position:relative;width:100%;padding-right:15px;padding-left:15px}
-    .updown{border: 1px solid black; width: 0.1px; height: 100%;}
+.div_wrap {
+	width: 85%;
+	height: 1000px;
+	text-align: center;
+}
 
-    
+section {
+	width: 85%;
+	height: 1000px;
+	float: left;
+}
+
+aside {
+	width: 10%;
+	height: 1000px;
+	background-color: darkkhaki;
+	text-align: center;
+	float: right;
+}
+
+.list_cap {
+    margin: auto;
+}
+
+.card {
+    position:relative;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    min-width:0;
+    word-wrap:break-word;
+    background-color:#fff;
+    background-clip:border-box;
+    border:1px solid rgba(0,0,0,.125);
+    border-radius:.25rem}
 </style>
 <body>
-	<form action="login" method="post"></form>
-    <div class="jumbotron text-center" style="margin-bottom:0">
-        <h1>Recipetory</h1>
-        <p>나만의 건강 레시피</p> 
-      </div>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <!-- Brand/logo -->
-        <a class="navbar-brand" href="#">
-          <img src="../img/recipeBoard/img.jpg" alt="logo" style="width:40px;">
-        </a>
-        
-        <!-- Links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">레시피 게시판</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">메거진 게시판</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">챌린지 게시판</a>
-            </li>
-        </ul>
-        </nav>
-        <div class="board" style="margin-top:30px">
-            <div class="jaeuk1">
-                <h4>최근 본 레시피</h4>
-                <p>Some text..</p>
-                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    
+	<%@ include file="/WEB-INF/views/common/header.jsp"%>
+
+	<div class="div_wrap">
+		<section>
+			<div class="list_cap">
+				<div class="card" style="width: 200px">
+					<img class="card-img-top" src="../../../img/recipeBoard/chickchest.jpg" alt="Card image" style="width: 100%">
+					<div class="card-body">
+						<h4 class="card-title">닭가슴살</h4>
+						<p class="card-text"></p>
+						<a href="#" class="btn btn-primary">See Profile</a>
+					</div>
+				</div>
             </div>
-            <div class="updown"></div>
-            <div class="col-sm-8">
-                <h2>TITLE HEADING</h2>
-                <h5>Title description, Dec 7, 2017</h5>
-                <div class="fakeimg">Fake Image</div>
-                <p>Some text..</p>
-                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                <br>
-                <h2>TITLE HEADING</h2>
-                <h5>Title description, Sep 2, 2017</h5>
-                <div class="fakeimg">Fake Image</div>
-                <p>Some text..</p>
-                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-              </div>
-        </div>
+
+            <div class="list_cap">
+				<div class="card" style="width: 200px">
+					<img class="card-img-top" src="../../../img/recipeBoard/sweetpotato.jpg" alt="Card image" style="width: 100%">
+					<div class="card-body">
+						<h4 class="card-title">고구마 샐러드</h4>
+						<p class="card-text"></p>
+						<a href="#" class="btn btn-primary">See Profile</a>
+					</div>
+				</div>
+            </div>
+            <br>
+		</section>
+		<aside>
+
+        </aside>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>
 </html>
