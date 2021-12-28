@@ -4,7 +4,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Insert title here</title>
+        <title>레시피 게시판</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -18,6 +18,8 @@
 
             .board_list_wrap {
                 padding: 50px;
+                margin-left: 18%;
+		        margin-right: 18%;
             }
 
             .board_list_head,
@@ -62,9 +64,6 @@
                 text-decoration: underline;
             }
 
-            .board_list .writer {
-            }
-
             .board_list .date {
                 width: 15%;
             }
@@ -76,7 +75,7 @@
             .writing {
                 position: relative;
                 top: -130px;
-                left: 1780px;
+                left: 1450px;
             }
 
             /* paging */
@@ -205,7 +204,7 @@
                                     <div class="item">
                                         <div class="num">1</div>
                                         <div class="tit"> 
-                                            <a href="#">
+                                            <a href="chickchest">
                                             <img
                                                 src="${pageContext.request.contextPath}/img/recipeBoard/chickchest.jpg" width="200" height="150">
                                             닭가슴살 레시피
@@ -218,7 +217,7 @@
                                     <div class="item">
                                         <div class="num">2</div>
                                         <div class="tit"> 
-                                            <a href="#">
+                                            <a href="sweetpotato">
                                             <img
                                                 src="${pageContext.request.contextPath}/img/recipeBoard/sweetpotato.jpg" width="200" height="150">
                                             고구마 샐러드 레시피
@@ -231,7 +230,7 @@
                                     <div class="item">
                                         <div class="num">3</div>
                                         <div class="tit"> 
-                                            <a href="#">
+                                            <a href="gochujang">
                                             <img
                                                 src="${pageContext.request.contextPath}/img/recipeBoard/고추장찌개.jpg" width="200" height="150">
                                             고추장찌개 레시피
@@ -244,7 +243,7 @@
                                     <div class="item">
                                         <div class="num">4</div>
                                         <div class="tit"> 
-                                            <a href="#">
+                                            <a href="stirpork">
                                             <img
                                                 src="${pageContext.request.contextPath}/img/recipeBoard/제육볶음.jpg" width="200" height="150">
                                             제육볶음 레시피
@@ -257,7 +256,7 @@
                                 <div class="item">
                                     <div class="num">5</div>
                                     <div class="tit"> 
-                                            <a href="#">
+                                            <a href="boiledpork">
                                             <img
                                                 src="${pageContext.request.contextPath}/img/recipeBoard/수육.jpg" width="200" height="150">
                                             수육 레시피
@@ -281,13 +280,12 @@
                     <a href="#" class="bt next">></a>
                     <a href="#" class="bt last">>></a>
                 </div>
-                <input type="button" class="writing btn btn-success" value="글쓰기">
+                ><a href="writing" class="writing">글쓰기</a>
                 </div>
                 </div>
 
                 <%@ include file="/WEB-INF/views/common/footer.jsp" %>
             </body>
-
 
     </body>
 

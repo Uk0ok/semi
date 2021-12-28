@@ -12,12 +12,16 @@
     
     #wrap {
     	width: 1200px;
-    	margin: 1rem auto;
+    	margin: 2rem auto;
     	background-color: white;
     	text-align: center;
     	padding: 1rem;
     }
     
+    #search_write {
+    	padding: 1rem 2rem 2rem 1rem;
+    	text-align:left;
+    }
     
 </style>
 </head>
@@ -28,13 +32,13 @@
 
     <div id=wrap class="row">
             
-            <div class="col-lg-2 container list-group">
+            <div class="col-2 container list-group">
 			  <a href="support" class="list-group-item active list-group-item-action">공지사항</a>
 			  <a href="qna" class="list-group-item list-group-item-action">고객문의</a>
 			  <a href="report" class="list-group-item list-group-item-action">신고</a>
 			</div>
     
-            <div class="col-lg-10">
+            <div class="col-10">
                 <table class="table">
 	                <thead>
 	                    <tr>
@@ -48,7 +52,7 @@
 	                <tbody>
 	                	 <tr>
 	                        <td>05</td>
-	                        <td><a href="#">12/22 서비스 점검 안내</a></td>
+	                        <td><a href="detail">12/22 서비스 점검 안내</a></td>
 	                        <td>admin1</td>
 	                        <td>2021.12.22</td>
 	                        <td>10</td>
@@ -83,7 +87,22 @@
 	                    </tr>
 	               	</tbody>
                 </table>
-                <br>
+                
+                 <div id="search_write" class="row">
+                	<form class="col-11" action="search" method="get">
+				        <select name="searchType">
+				            <option value="date">제목</option>
+				            <option value="Name">작성자</option>
+				            <option value="ID">아이디</option>
+				        </select>
+				        <input type="text" name="searchValue">
+				        <button type="submit">
+				        	<i class="fas fa-search"></i>
+			        	</button>
+				    </form>
+				    <button id="writeBtn" class="col-1"><a href="support/write">글쓰기</a></button>
+                </div>
+                
                 <ul class="pagination justify-content-center">
 					  <li class="page-item"><a class="page-link" href="#"><</a></li>
 					  <li class="page-item"><a class="page-link" href="#">1</a></li>

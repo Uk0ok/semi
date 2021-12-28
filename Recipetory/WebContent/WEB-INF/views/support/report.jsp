@@ -13,10 +13,15 @@
     
     #wrap {
     	width: 1200px;
-    	margin: 1rem auto;
+    	margin: 2rem auto;
     	background-color: white;
     	text-align: center;
     	padding: 1rem;
+    }
+    
+    #search_write {
+    	padding: 1rem 2rem 2rem 1rem;
+    	text-align:left;
     }
     
 </style>
@@ -27,13 +32,13 @@
 	
 
     <div id=wrap class="row">
-            <div class="col-lg-2 container list-group">
+            <div class="col-2 container list-group">
 			  <a href="support" class="list-group-item list-group-item-action">공지사항</a>
 			  <a href="qna" class="list-group-item list-group-item-action">고객문의</a>
 			  <a href="report" class="list-group-item active list-group-item-action">신고</a>
 			</div>
     
-            <div class="col-lg-10">
+            <div class="col-10">
                 <table class="table">
 	                <thead>
 	                    <tr>
@@ -92,8 +97,8 @@
 	               	</tbody>
                 </table>
                 
-                <div class="row">
-                	<form class="col-sm-10" action="search" method="get">
+                <div id="search_write" class="row">
+                	<form class="col-11" action="search" method="get">
 				        <select name="searchType">
 				            <option value="date">제목</option>
 				            <option value="Name">작성자</option>
@@ -104,10 +109,11 @@
 				        	<i class="fas fa-search"></i>
 			        	</button>
 				    </form>
-				   	<button id="writeBtn" class="col-sm-1"><a href="write">글쓰기</a></button>
-                	
+				   	<button id="writeBtn" class="col-1"><a href="write">글쓰기</a></button>
                 </div>
-                <br>
+                
+                
+                
                 <ul class="pagination justify-content-center">
 					  <li class="page-item"><a class="page-link" href="#"><</a></li>
 					  <li class="page-item"><a class="page-link" href="#">1</a></li>
