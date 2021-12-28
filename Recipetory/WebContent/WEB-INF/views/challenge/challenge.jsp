@@ -129,6 +129,51 @@
 	.paging a.num:hover {
 	    text-decoration: underline;
 	}
+
+	.board_page {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+}
+
+.board_page a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    border-left: 0;
+    line-height: 100%;
+}
+
+.board_page a.bt {
+    padding-top: 10px;
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+}
+
+/* 페이지 */
+
+.board_page{
+	padding-bottom:20px;
+}
+
+.board_page a.num {
+    padding-top:4px;
+    font-size: 1.4rem;
+}
+
+.board_page a.num.on {
+    border-color: rgb(175, 187, 175);
+    background: rgb(175, 187, 175);
+    color: #black;
+}
+
+.board_page a:first-child {
+    border-left: 1px solid #ddd;
+}
+
 </style>
 </head>
 <body>       
@@ -151,41 +196,53 @@
                     <div class="board_list_body">
                         <div class="item">
                             <div class="num">1</div>
-                            <div class="tit"> <img src="../WebContent/img/challengeBoard/jipbab.jpg" width="200" height="150"> <a href="#">일주일 집밥 챌린지</a></div>
+                            <div class="tit"> <img src="../../../img/challengeBoard/jipbab.jpg" width="200" height="150"> <a href="challenge_view.jsp">일주일 집밥 챌린지</a></div>
                             <div class="parti">nn 명 참여중</div>
-                            <div class="star"> <a href="#">☆☆☆☆☆</a></div>
+                            <div class="star">☆☆☆☆☆</div>
                             <div class="review"><a href="#">리뷰수</a></div>
                         </div>
                         <div class="item">
                             <div class="num">2</div>
-                            <div class="tit"> <img src="../WebContent/img/challengeBoard/flour.jpg" width="200" height="150"> <a href="#">한달 밀가루 끊기 챌린지</a></div>
+                            <div class="tit"> <img src="../../../img/challengeBoard/flour.jpg" width="200" height="150"> <a href="challenge_view.jsp">한달 밀가루 끊기 챌린지</a></div>
                             <div class="parti">nn 명 참여중</div>
-                            <div class="star"> <a href="#">☆☆☆☆☆</a></div>
+                            <div class="star">☆☆☆☆☆</div>
                             <div class="review"><a href="#">리뷰수</a></div>
                         </div>
                         <div class="item">
                             <div class="num">3</div>
-                            <div class="tit"> <img src="../WebContent/img/challengeBoard/water.jpg" width="200" height="150"> <a href="#">하루 2L 물 마시기</a></div>
+                            <div class="tit"> <img src="../../../img/challengeBoard/water.jpg" width="200" height="150"> <a href="challenge_view.jsp">하루 2L 물 마시기</a></div>
                             <div class="parti">nn 명 참여중</div>
-                            <div class="star"> <a href="#">☆☆☆☆☆</a></div>
+                            <div class="star">☆☆☆☆☆</div>
                             <div class="review"><a href="#">리뷰수</a></div>
                         </div>
                         <div class="item">
                             <div class="num">4</div>
-                            <div class="tit"> <img src="../WebContent/img/challengeBoard/breakfast.jpg" width="200" height="150"> <a href="#">아침 먹기 챌린지</a></div>
+                            <div class="tit"> <img src="../../../img/challengeBoard/breakfast.jpg" width="200" height="150"> <a href="challenge_view.jsp">아침 먹기 챌린지</a></div>
                             <div class="parti">nn 명 참여중</div>
-                            <div class="star"> <a href="#">☆☆☆☆☆</a></div>
+                            <<div class="star">☆☆☆☆☆</div>
                             <div class="review"><a href="#">리뷰수</a></div>
                         </div>
                         <div class="item">
                             <div class="num">5</div>
-                            <div class="tit"> <img src="../WebContent/img/" width="200" height="150"> <a href="#">챌린지명</a></div>
+                            <div class="tit"> <img src="../../../img/challengeBoard/chickenbreast.jpg" width="200" height="150"> <a href="challenge_view.jsp">닭가슴살 챌린지</a></div>
                             <div class="parti">nn 명 참여중</div>
-                            <div class="star"> <a href="#">☆☆☆☆☆</a></div>
+                            <div class="star">☆☆☆☆☆</div>
                             <div class="review"><a href="#">리뷰수</a></div>
                         </div>
                     </div>
                 </div>
+			</div>
+            <div class="board_page">
+                <a href="#" class="bt first"><<</a>
+                <a href="#" class="bt prev"><</a>
+                <a href="#" class="num on">1</a>
+                <a href="#" class="num">2</a>
+                <a href="#" class="num">3</a>
+                <a href="#" class="num">4</a>
+                <a href="#" class="num">5</a>
+                <a href="#" class="bt next">></a>
+                <a href="#" class="bt last">>></a>
+            </div>
             </div>
         </div>
     
