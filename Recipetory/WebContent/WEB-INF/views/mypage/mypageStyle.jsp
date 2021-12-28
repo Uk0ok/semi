@@ -1,6 +1,13 @@
-@charset "UTF-8";
-
-#wrap_m * {
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>mypageStyle</title>
+<style>
+    
+    #wrap_m * {
     /* border: 1px solid black; */
     box-sizing: border-box;
     text-align: center;
@@ -117,3 +124,9 @@
 #d_m {
 	text-align: right;
 }
+</style>
+</head>
+<body>
+
+</body>
+</html>
