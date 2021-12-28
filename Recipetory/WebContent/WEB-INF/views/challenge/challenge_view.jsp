@@ -63,8 +63,8 @@ a {
 }
 
 .bt_wrap a.on {
-    background: #000;
-    color: #fff;
+    background: rgb(175, 187, 175);
+    color: black;
 }
 
 .board_list {
@@ -161,7 +161,7 @@ a {
 
 .board_view {
     width: 100%;
-    border-top: 2px solid #000;
+    border-top: 2px solid green;
 }
 
 .board_view .title {
@@ -379,7 +379,7 @@ a {
 <%@ include file= "/WEB-INF/views/common/header.jsp" %>
     <div class="board_wrap">
         <div class="board_title">
-            <strong>챌린지 리뷰</strong>
+            <strong>챌린지 소개 게시물</strong>
         </div>
         <div class="board_view_wrap">
             <div class="board_view">
@@ -389,7 +389,7 @@ a {
                 <div class="info">
                     <dl>
                         <dt>번호</dt>
-                        <dd>n</dd>
+                        <dd>1</dd>
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
@@ -416,8 +416,8 @@ a {
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="list.html" class="on">목록</a>
-                <a href="edit.html">수정</a>
+                <a href="list.html" class="on">참여하기</a>
+                <a href="edit.html">리뷰쓰기</a>
             </div>
         </div>
     </div>

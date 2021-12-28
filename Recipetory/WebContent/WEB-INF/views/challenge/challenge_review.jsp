@@ -63,8 +63,8 @@ a {
 }
 
 .bt_wrap a.on {
-    background: #000;
-    color: #fff;
+    background: rgb(175, 187, 175);
+    color: black;
 }
 
 .board_list {
@@ -161,7 +161,7 @@ a {
 
 .board_view {
     width: 100%;
-    border-top: 2px solid #000;
+    border-top: 2px solid green;
 }
 
 .board_view .title {
@@ -379,41 +379,45 @@ a {
 <%@ include file= "/WEB-INF/views/common/header.jsp" %>
     <div class="board_wrap">
         <div class="board_title">
-            <strong>챌린지 리뷰 수정</strong>
+            <strong>챌린지 리뷰</strong>
         </div>
-        <div class="board_write_wrap">
-            <div class="board_write">
+        <div class="board_view_wrap">
+            <div class="board_view">
                 <div class="title">
-                    <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" placeholder="제목 입력" value="글 제목"></dd>
-                    </dl>
+                    글 제목
                 </div>
                 <div class="info">
                     <dl>
-                        <dt>글쓴이</dt>
-                        <dd><input type="text" placeholder="글쓴이 입력" value="작성자 닉네임"></dd>
+                        <dt>번호</dt>
+                        <dd>1</dd>
                     </dl>
                     <dl>
-                        <dt>비밀번호</dt>
-                        <dd><input type="password" placeholder="비밀번호 입력" value="1234"></dd>
+                        <dt>글쓴이</dt>
+                        <dd>작성자 닉네임</dd>
+                    </dl>
+                    <dl>
+                        <dt>작성일</dt>
+                        <dd>YYYY.MM.DD</dd>
+                    </dl>
+                    <dl>
+                        <dt>조회</dt>
+                        <dd>nn</dd>
                     </dl>
                 </div>
                 <div class="cont">
-                    <textarea placeholder="내용 입력">
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.</textarea>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다<br>
+                    글 내용이 들어갑니다
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="view.html" class="on">수정</a>
-                <a href="view.html">취소</a>
+                <a href="list.html" class="on">수정</a>
+                <a href="edit.html">목록으로</a>
             </div>
         </div>
     </div>

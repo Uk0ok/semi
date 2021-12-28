@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/challenge")
-public class ChallengeController extends HttpServlet{
-	
+@WebServlet("/challengeview")
+public class ChalViewController extends HttpServlet{
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/challenge/challenge.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/challenge/challenge_view.jsp").forward(req, resp);
 	}
 }
