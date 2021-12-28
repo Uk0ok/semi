@@ -9,132 +9,128 @@
         * {
     margin: 0;
     padding: 0;
-}
-
-html {
-    font-size: 10px;
-}
-
-ul, li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.board_wrap {
-    padding: 50px;
-	margin-left: 18%;
-	margin-right: 18%;
-}
-
-.board_title {
-    margin-bottom: 30px;
-}
-
-.board_title strong {
-    font-size: 3rem;
-}
-
-.board_title p {
-    margin-top: 5px;
-    font-size: 1.4rem;
-}
-
-.bt_wrap {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 0;
-}
-
-.bt_wrap a {
-    display: inline-block;
-    min-width: 80px;
-    margin-left: 10px;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 2px;
-    font-size: 1.4rem;
-}
-
-.bt_wrap a:first-child {
-    margin-left: 0;
-}
-
-.bt_wrap a.on {
-    background: rgb(175, 187, 175);
-    color: black;
-}
-
-.board_write {
-    border-top: 2px solid green;
-}
-
-.board_write .title,
-.board_write .info {
-    padding: 15px;
-}
-
-.board_write .info {
-    border-top: 1px dashed #ddd;
-    border-bottom: 1px solid #000;
-    font-size: 0;
-}
-
-.board_write .title dl {
-    font-size: 0;
-}
-
-.board_write .info dl {
-    display: inline-block;
-    width: 50%;
-    vertical-align: middle;
-}
-
-.board_write .title dt,
-.board_write .title dd,
-.board_write .info dt,
-.board_write .info dd {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 1.4rem;
-}
-
-.board_write .title dt,
-.board_write .info dt {
-    width: 100px;
-}
-
-.board_write .title dd {
-    width: calc(100% - 100px);
-}
-
-.board_write .title input[type="text"],
-.board_write .info input[type="text"],
-.board_write .info input[type="password"] {
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.board_write .title input[type="text"] {
-    width: 80%;
-}
-
-.board_write .cont {
-    border-bottom: 1px solid #000;
-}
-
-.board_write .cont textarea {
-    display: block;
-    width: 100%;
-    height: 300px;
-    padding: 15px;
-    box-sizing: border-box;
-    border: 0;
-    resize: vertical;
-}
+	}
+	
+	ul, li {
+	    list-style: none;
+	}
+	
+	a {
+	    text-decoration: none;
+	    color: inherit;
+	}
+	
+	.board_wrap {
+	    padding: 50px;
+		margin-left: 18%;
+		margin-right: 18%;
+	}
+	
+	.board_title {
+	    margin-bottom: 30px;
+	}
+	
+	.board_title strong {
+	    font-size: 2rem;
+	}
+	
+	.board_title p {
+	    margin-top: 5px;
+	    font-size: 1.4rem;
+	}
+	
+	.bt_wrap {
+	    margin-top: 30px;
+	    text-align: center;
+	    font-size: 0;
+	}
+	
+	.bt_wrap a {
+	    display: inline-block;
+	    min-width: 80px;
+	    margin-left: 10px;
+	    padding: 10px;
+	    border: 1px solid #000;
+	    border-radius: 2px;
+	    font-size: 1.4rem;
+	}
+	
+	.bt_wrap a:first-child {
+	    margin-left: 0;
+	}
+	
+	.bt_wrap a.on {
+	    background: rgb(175, 187, 175);
+	    color: black;
+	}
+	
+	.board_write {
+	    border-top: 2px solid green;
+	}
+	
+	.board_write .title,
+	.board_write .info {
+	    padding: 15px;
+	}
+	
+	.board_write .info {
+	    border-top: 1px dashed #ddd;
+	    border-bottom: 1px solid #000;
+	    font-size: 0;
+	}
+	
+	.board_write .title dl {
+	    font-size: 0;
+	}
+	
+	.board_write .info dl {
+	    display: inline-block;
+	    width: 50%;
+	    vertical-align: middle;
+	}
+	
+	.board_write .title dt,
+	.board_write .title dd,
+	.board_write .info dt,
+	.board_write .info dd {
+	    display: inline-block;
+	    vertical-align: middle;
+	    font-size: 1.4rem;
+	}
+	
+	.board_write .title dt,
+	.board_write .info dt {
+	    width: 100px;
+	}
+	
+	.board_write .title dd {
+	    width: calc(100% - 100px);
+	}
+	
+	.board_write .title input[type="text"],
+	.board_write .info input[type="text"],
+	.board_write .info input[type="password"] {
+	    padding: 10px;
+	    box-sizing: border-box;
+	}
+	
+	.board_write .title input[type="text"] {
+	    width: 80%;
+	}
+	
+	.board_write .cont {
+	    border-bottom: 1px solid #000;
+	}
+	
+	.board_write .cont textarea {
+	    display: block;
+	    width: 100%;
+	    height: 300px;
+	    padding: 15px;
+	    box-sizing: border-box;
+	    border: 0;
+	    resize: vertical;
+	}
 
 /* css media */
 @media (max-width: 1000px) {
@@ -187,7 +183,6 @@ a {
                 <div class="info">
                     <dl>
                         <dt>카테고리</dt>
-                        <dd><input type="challenge" placeholder="챌린지 입력"></dd>
                         <dd><select name="chal_category">
                             <option value="etc" label="챌린지 카테고리" selected></option>
                             <option value="jipbab" label="일주일 집밥 챌린지"></option>
@@ -219,8 +214,8 @@ a {
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="view.html" class="on">수정</a>
-                <a href="view.html">취소</a>
+                <a href="./challengereview" class="on">수정</a>
+                <a href="./challengereview">취소</a>
             </div>
         </div>
     </div>

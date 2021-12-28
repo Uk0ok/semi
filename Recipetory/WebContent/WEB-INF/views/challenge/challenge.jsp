@@ -41,11 +41,12 @@
 	.board_list_body .item > div {
 	    display: inline-block;
 	    text-align: center;
-	    font-size: 14px;
+	    font-size: 16px;
 	}
 	
 	.board_list_head > div {
 	    font-weight: 600;
+        margin-bottom: 10px;
 	}
 	
 	.board_list .num {
@@ -68,67 +69,12 @@
 	    width: 10%;
 	}
 	
-	.board_list .star {
+	.board_list .bt_parti {
 	    width: 15%;
 	}
 	
 	.board_list .review {
 	    width: 10%;
-	}
-	
-	.paging {
-	    margin-top: 30px;
-	    text-align: center;
-	}
-	
-	.paging a {
-	    display: inline-block;
-	    vertical-align: middle;
-	}
-	
-	.paging a.bt {
-	    width: 30px;
-	    height: 30px;
-	    background-color: #ccc;
-	    background-image: url(../img/page_bt.png);
-	    background-repeat: no-repeat;
-	    border-radius: 100px;
-	    text-indent: -1000px;
-	    overflow: hidden;
-	}
-	
-	.paging a.bt:hover {
-	    background-color: #999;
-	}
-	
-	.paging a.first {
-	    background-position: 10px -40px;
-	}
-	
-	.paging a.prev {
-	    margin-right: 5px;
-	    background-position: 10px 10px;
-	}
-	
-	.paging a.next {
-	    margin-left: 5px;
-	    background-position: -40px 10px;
-	}
-	
-	.paging a.last {
-	    background-position: -40px -40px;
-	}
-	
-	.paging a.num {
-	    margin: 0 5px;
-	}
-	
-	.paging a.num.on {
-	    color: green;
-	}
-	
-	.paging a.num:hover {
-	    text-decoration: underline;
 	}
 
 	.board_page {
@@ -137,45 +83,70 @@
     font-size: 0;
 }
 
-.board_page a {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    box-sizing: border-box;
-    vertical-align: middle;
-    border: 1px solid #ddd;
-    border-left: 0;
-    line-height: 100%;
-}
-
-.board_page a.bt {
-    padding-top: 10px;
-    font-size: 1.2rem;
-    letter-spacing: -1px;
-}
-
-/* 페이지 */
-
-.board_page{
-	padding-bottom:20px;
-}
-
-.board_page a.num {
-    padding-top:4px;
-    font-size: 1.4rem;
-}
-
-.board_page a.num.on {
-    border-color: rgb(175, 187, 175);
-    background: rgb(175, 187, 175);
-    color: #black;
-}
-
-.board_page a:first-child {
-    border-left: 1px solid #ddd;
-}
-
-</style>
+	.board_page a {
+	    display: inline-block;
+	    width: 32px;
+	    height: 32px;
+	    box-sizing: border-box;
+	    vertical-align: middle;
+	    border: 1px solid #ddd;
+	    border-left: 0;
+	    line-height: 100%;
+	}
+	
+	.board_page a.bt {
+	    padding-top: 10px;
+	    font-size: 1.2rem;
+	    letter-spacing: -1px;
+	}
+	
+	/* 페이지 */
+	
+	.board_page{
+		padding-bottom:30px;
+	}
+	
+	.board_page a.num {
+	    padding-top:4px;
+	    font-size: 1.4rem;
+	}
+	
+	.board_page a.num.on {
+	    border-color: rgb(175, 187, 175);
+	    background: rgb(175, 187, 175);
+	    color: #black;
+	}
+	
+	.board_page a:first-child {
+	    border-left: 1px solid #ddd;
+	}
+	
+	/*참여 버튼*/
+	.bt_parti {
+	    margin-top: 30px;
+	    text-align: center;
+	    font-size: 0;
+	}
+	
+	.bt_parti a {
+	    display: inline-block;
+	    min-width: 50px;
+	    margin-left: 8px;
+	    padding: 10px;
+	    border: 1px solid #000;
+	    border-radius: 2px;
+	    font-size: 1.0rem;
+	}
+	
+	.bt_parti a:first-child {
+	    margin-left: 0;
+	}
+	
+	.bt_parti a.on {
+	    background: #c5d081;
+	    color: black;
+	}
+	</style>
 </head>
 <body>       
 <%@ include file= "/WEB-INF/views/common/header.jsp" %>
@@ -191,44 +162,44 @@
                         <div class="num">번호</div>
                         <div class="tit">챌린지명</div>
                         <div class="parti">참여자수</div>
-                        <div class="star">별점</div>
+                        <div class="bt_parti">참여</div>
                         <div class="review">리뷰수</div>
                     </div>
                     <div class="board_list_body">
                         <div class="item">
                             <div class="num">1</div>
-                            <div class="tit"> <img src="./img/challengeBoard/jipbab.jpg" width="200" height="150"> <a href="challengeview">일주일 집밥 챌린지</a></div>
-                            <div class="parti">nn 명 참여중</div>
-                            <div class="star">☆☆☆☆☆</div>
-                            <div class="review"><a class="review-link" href="challengereview">리뷰</a></div>
+                            <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/jipbab.jpg" width="200" height="150"></a> <a href="./challengeview">일주일 집밥 챌린지</a></div>
+                            <div class="parti">명 참여중</div>
+                            <div class="bt_parti"><a href="#" class="on">참여하기</a></div>
+                            <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">2</div>
-                            <div class="tit"> <img src="./img/challengeBoard/flour.jpg" width="200" height="150"> <a href="challengeview">한달 밀가루 끊기 챌린지</a></div>
-                            <div class="parti">nn 명 참여중</div>
-                            <div class="star">☆☆☆☆☆</div>
-                            <div class="review"><a href="challengereview">리뷰</a></div>
+                            <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/flour.jpg" width="200" height="150"></a> <a href="./challengeview">한달 밀가루 끊기 챌린지</a></div>
+                            <div class="parti">명 참여중</div>
+                            <div class="bt_parti"><a href="#" class="on">참여하기</a></div>
+                            <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">3</div>
-                            <div class="tit"> <img src="./img/challengeBoard/water.jpg" width="200" height="150"> <a href="challengeview">하루 2L 물 마시기</a></div>
-                            <div class="parti">nn 명 참여중</div>
-                            <div class="star">☆☆☆☆☆</div>
-                            <div class="review"><a href="challengereview">리뷰</a></div>
+                            <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/water.jpg" width="200" height="150"></a> <a href="./challengeview">하루 2L 물 마시기</a></div>
+                            <div class="parti">명 참여중</div>
+                            <div class="bt_parti"><a href="#" class="on">참여하기</a></div>
+                            <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">4</div>
-                            <div class="tit"> <img src="./img/challengeBoard/breakfast.jpg" width="200" height="150"> <a href="challengeview">아침 먹기 챌린지</a></div>
-                            <div class="parti">nn 명 참여중</div>
-                            <<div class="star">☆☆☆☆☆</div>
-                            <div class="review"><a href="challengereview">리뷰</a></div>
+                            <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/breakfast.jpg" width="200" height="150"></a> <a href="./challengeview">아침 먹기 챌린지</a></div>
+                            <div class="parti">명 참여중</div>
+                            <div class="bt_parti"><a href="#" class="on">참여하기</a></div>
+                            <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">5</div>
-                            <div class="tit"> <img src="./img/challengeBoard/chickenbreast.jpg" width="200" height="150"> <a href="challengeview">닭가슴살 챌린지</a></div>
-                            <div class="parti">nn 명 참여중</div>
-                            <div class="star">☆☆☆☆☆</div>
-                            <div class="review"><a href="challengereview">리뷰</a></div>
+                            <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/chickenbreast.jpg" width="200" height="150"></a> <a href="./challengeview">닭가슴살 챌린지</a></div>
+                            <div class="parti">명 참여중</div>
+                            <div class="bt_parti"><a href="#" class="on">참여하기</a></div>
+                            <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
                     </div>
                 </div>
