@@ -19,7 +19,7 @@
     }
     
      .container {
-       min-width: 1000px;
+       min-width: 1200px;
        margin: 1rem auto;
     }
     
@@ -39,7 +39,7 @@
         	<dt>
         		<h1>TOP10</h1>
        		</dt>
-       		<dd>으아아아아아!!!!!!!!!</dd>
+       		<dd></dd>
         </dl>
         <dl> 
         	<dt>
