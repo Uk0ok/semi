@@ -55,13 +55,13 @@
         font-size: 1.4rem;
     }
 
-    .bt_wrap a.bt_parti {
-        background: #c5d081;
+	.bt_wrap a.bt_review {
+        background: #d2c897;
         color: black;
     }
     
-    .bt_wrap a.bt_review {
-        background: #d2c897;
+    .bt_wrap a.bt_parti {
+        background: #c5d081;
         color: black;
     }
     
@@ -70,6 +70,11 @@
         color: black;
     }
 
+	.bt_wrap a.bt_edit {
+        background: #c5d081;
+        color: black;
+    }
+    
     .board_view {
         width: 100%;
         border-top: 2px solid green;
@@ -210,6 +215,7 @@
             </div>
         </div>
     </div>
+   
     <%@ include file= "/WEB-INF/views/common/footer.jsp" %>
 </body>
 </html>

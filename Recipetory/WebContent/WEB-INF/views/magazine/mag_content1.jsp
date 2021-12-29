@@ -1,5 +1,16 @@
+<%@page import="java.util.List"%>
+<%@page import="com.reci.mag.controller.MagVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%--
+	List<MagVo> mag_List = (List<MagVo>)request.getAttribute("mag_search"); //magVo 를 import해주고. 꺼내온 데이터를 캐스팅해줘야한다. 강제형변환
+													//제한걸고 list로 다시 캐스팅. 타입도 리스트로 변경.
+	for(MagVo mag : mag_List){ //향상된 for문 사용하여 출력하기.
+		System.out.println(mag);
+	}
+	
+--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +36,6 @@
     text-align:center;
 }
 
-.title:after {content:""; clear:both; display:block;}
 
 .m_content_1 { 
     float:left;
@@ -147,11 +157,20 @@ TIP. 우유 거품은 수동 또는 진동 우유거품기를 활용하면 만�
 		<button>추천</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<button>스크랩</button>
     </div>
+    
+    <%--
+    List<MagVo> mag_List = (List<MagVo>)request.getAttribute("mag_search");
+    
+    for(MagVo mag : mag_List){
+    	String no = mag.getPOST_NO();
+     //리스트에 있는 녀석들 뽑아사용. 밑에 =로 출력.
+    --%>
+    
 	<div class="content_wrap_2">
 	<div class="content3">
 		<div class="comment">Comment</div>
 		<div class="comments">
-		<div class="commentss">댓글</div>
+		<div class="commentss">댓글<%-- no --%></div>
 		<div class="commentss">댓글</div>
 		<div class="commentss">댓글</div>
 		<div class="commentss">댓글</div>
@@ -163,11 +182,23 @@ TIP. 우유 거품은 수동 또는 진동 우유거품기를 활용하면 만�
 			<input class="comment_input" type="text" placeholder="댓글을 등록해주세요.">&nbsp;&nbsp;&nbsp;<button type="submit">등록</button>
 	</form>
 	</div>
+	<%--
+    }   //괄호를 밑에서 닫기.
+	--%>
 
-	<script>
-		document.getElementById('currentDatetime').value= new Date().toISOString().slice(0, 16);
-	</script>
+	<!--
+	<c:forEach items="${mag_search}" var="mag">
+		<div class="commentss">${mag.POST_NO}</div>
+		<div class="commentss">${mag.POST_NAME}</div>
+		<div class="commentss">${mag.POST_NO}</div>
+		<div class="commentss">${mag.POST_NO}</div>
+	</c:forEach>
+		 JSTL, EL을 사용해서 더 간편하게 만들수 있다. 
+		JSTL 라이브러리에 넣어 세팅하고, 
+	-->
 	<br>
+	
+	
     <%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>
 </html>
