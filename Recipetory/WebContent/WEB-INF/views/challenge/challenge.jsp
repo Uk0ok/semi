@@ -46,7 +46,6 @@
 	
 	.board_list_head > div {
 	    font-weight: 600;
-        margin-bottom: 10px;
 	}
 	
 	.board_list .num {
@@ -69,7 +68,7 @@
 	    width: 10%;
 	}
 	
-	.board_list .bt_parti {
+	.board_list .period {
 	    width: 15%;
 	}
 	
@@ -162,43 +161,43 @@
                         <div class="num">번호</div>
                         <div class="tit">챌린지명</div>
                         <div class="parti">참여자수</div>
-                        <div class="bt_parti">참여</div>
-                        <div class="review">리뷰수</div>
+                        <div class="period">기간</div>
+                        <div class="review">리뷰</div>
                     </div>
                     <div class="board_list_body">
                         <div class="item">
                             <div class="num">1</div>
                             <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/jipbab.jpg" width="200" height="150"></a> <a href="./challengeview">일주일 집밥 챌린지</a></div>
                             <div class="parti">명 참여중</div>
-                            <div class="bt_parti"><a href="#" class="on">참여하기</a></div>
+                            <div class="period">~2022.02.10</div>
                             <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">2</div>
                             <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/flour.jpg" width="200" height="150"></a> <a href="./challengeview">한달 밀가루 끊기 챌린지</a></div>
                             <div class="parti">명 참여중</div>
-                            <div class="bt_parti"><a href="#" class="on">참여하기</a></div>
+                            <div class="period">~2022.02.11</div>
                             <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">3</div>
                             <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/water.jpg" width="200" height="150"></a> <a href="./challengeview">하루 2L 물 마시기</a></div>
                             <div class="parti">명 참여중</div>
-                            <div class="bt_parti"><a href="#" class="on">참여하기</a></div>
+                            <div class="period">~2022.02.12</div>
                             <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">4</div>
                             <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/breakfast.jpg" width="200" height="150"></a> <a href="./challengeview">아침 먹기 챌린지</a></div>
                             <div class="parti">명 참여중</div>
-                            <div class="bt_parti"><a href="#" class="on">참여하기</a></div>
+                            <div class="period">~2022.02.13</div>
                             <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
                         <div class="item">
                             <div class="num">5</div>
                             <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/chickenbreast.jpg" width="200" height="150"></a> <a href="./challengeview">닭가슴살 챌린지</a></div>
                             <div class="parti">명 참여중</div>
-                            <div class="bt_parti"><a href="#" class="on">참여하기</a></div>
+                            <div class="period">~2022.02.14</div>
                             <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
                     </div>
