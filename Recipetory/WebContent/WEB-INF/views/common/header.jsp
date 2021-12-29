@@ -25,7 +25,7 @@
     }
 
     #h_head {
-        padding-top: 30px;
+        padding-top: 40px;
         height: 130px;
         width: 1200px;
         margin: 0 auto;
@@ -33,16 +33,16 @@
 
     #h_title {
         float: left;
-        padding-left: 100px;
+        padding-left: 50px;
     }
-
-   #h_content {
-       padding-left: 50px;
-   }
 
     #nav {
         width: 1200px;
         margin: auto;
+    }
+    
+    div > a, .nav-link{
+    	color: #000;
     }
 
 </style>
@@ -51,13 +51,13 @@
 
 	 <header>
             <div id="h_head" class="row">
-                <a href="home" id="h_title" class="col-8">
-                    <img src="./img/recipeBoard/logo.png" width="250px">
+                <a href="home" id="h_title" class="col-9">
+                    <img src="./img/home/logo1.png" width="350px">
                 </a>
-                <div id="h_content" class="col-4">
+                <div id="h_content" class="col-3">
                     <div id="h_join">
-                        <a href="#">로그인</a>
-                        <a href="#">회원가입</a>
+                        <a href="login">로그인</a>
+                        <a href="join">회원가입</a>
                     </div>
     
                     <div id="h_search">
@@ -80,9 +80,9 @@
                     <li class="nav-item">
                       <a class="nav-link" href="challenge">챌린지</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a class="nav-link" href="#">식단코칭</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="magazine">매거진</a>
                       </li>
