@@ -18,9 +18,17 @@
     	padding: 1rem;
     }
     
-    #search_write {
+    #content2 {
     	padding: 1rem 2rem 2rem 1rem;
     	text-align:left;
+    }
+    
+    a {
+    	color: #000;
+    }
+    
+    .list-group-item active {
+    	background-color: rgb(175, 187, 175);
     }
     
 </style>
@@ -38,7 +46,7 @@
 			  <a href="report" class="list-group-item list-group-item-action">신고</a>
 			</div>
     
-            <div class="col-10">
+            <div id="content1" class="col-10">
                 <table class="table">
 	                <thead>
 	                    <tr>
@@ -88,7 +96,7 @@
 	               	</tbody>
                 </table>
                 
-                 <div id="search_write" class="row">
+                 <div id="content2" class="row">
                 	<form class="col-11" action="search" method="get">
 				        <select name="searchType">
 				            <option value="date">제목</option>
