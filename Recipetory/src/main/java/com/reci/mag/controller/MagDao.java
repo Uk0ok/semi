@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.reci.common.JDBCTemplate;
+
 public class MagDao {
 
 	public List<MagVo> selectMagList(Connection conn) {
