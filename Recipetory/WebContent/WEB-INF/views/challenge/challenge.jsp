@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@page import="com.reci.chal.controller.CboardVo"%>   
+<%
+CboardVo data = (CboardVo)request.getAttribute("data");
+System.out.println(data);
+ %>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,31 +127,21 @@
 	    border-left: 1px solid #ddd;
 	}
 	
-	/*참여 버튼*/
-	.bt_parti {
-	    margin-top: 30px;
-	    text-align: center;
-	    font-size: 0;
-	}
-	
-	.bt_parti a {
-	    display: inline-block;
-	    min-width: 50px;
-	    margin-left: 8px;
-	    padding: 10px;
-	    border: 1px solid #000;
-	    border-radius: 2px;
-	    font-size: 1.0rem;
-	}
-	
-	.bt_parti a:first-child {
-	    margin-left: 0;
-	}
-	
-	.bt_parti a.on {
-	    background: #c5d081;
-	    color: black;
-	}
+	/*글쓰기 버튼*/
+	.bt_wrap a {
+        display: inline-block;
+        min-width: 80px;
+        margin-left: 90%;
+        padding: 10px;
+        border: 1px solid #000;
+        border-radius: 2px;
+        font-size: 1.4rem;
+    }
+
+	.bt_wrap a.bt_write {
+        background: #d2c897;
+        color: black;
+    }
 	</style>
 </head>
 <body>       
@@ -165,7 +162,7 @@
                         <div class="review">리뷰</div>
                     </div>
                     <div class="board_list_body">
-                        <div class="item">
+						<div class="item">
                             <div class="num">1</div>
                             <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/jipbab.jpg" width="200" height="150"></a> <a href="./challengeview">일주일 집밥 챌린지</a></div>
                             <div class="parti">명 참여중</div>
@@ -200,7 +197,12 @@
                             <div class="period">~2022.02.14</div>
                             <div class="review"><a href="./challengereview">리뷰</a></div>
                         </div>
-                    </div>
+                   </div>
+                   </div>
+                    <br>
+                    <div class="bt_wrap">
+		            	<a href="./challengewrite" class="bt_write">글쓰기</a>	
+            		</div>
                 </div>
 			</div>
             <div class="board_page">

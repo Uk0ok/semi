@@ -46,13 +46,14 @@ div {
 }
 
     </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
 	<h1>레시피토리 회원가입</h1>
     <br><br>
 
-    <form>
+    <form action="join" method="post" enctype="multipart/form-data">
     <table id="join_tb">
         <tr>
             <td>아이디</td>
@@ -75,17 +76,17 @@ div {
         </tr>
         <tr>
             <td>이메일</td>
-            <td><input type="email" name="email" id="email" size="30" maxlength="50" required></td>
+            <td><input type="email" name="userEmail" id="userEmail" size="30" maxlength="50" required></td>
         </tr>
         <tr>
             <td>휴대전화</td>
-            <td><input type="tel" name="phone" id="phone" size="14" maxlength="11" required>
-            <button id="p_a">인증번호 전송</button></td>
+            <td><input type="tel" name="userPhone" id="userPhone" size="30" maxlength="11" required>
+            <!-- <button id="p_a">인증번호 전송</button></td> -->
         </tr>
-        <tr>
+        <!-- <tr>
             <td>인증번호</td>
             <td><input type="text" name="" id="" size="30" maxlength="6" required></td>
-        </tr>
+        </tr> -->
     </table>
         <br><br>
 
@@ -105,12 +106,12 @@ div {
             let userNickname = document.getElementById('userNickname').value;
             let userPwd1 = document.getElementById('userPwd1').value;
             let userPwd2 = document.getElementById('userPwd2').value;
-            let email = document.getElementById('email').value;
-            let phone = document.getElementById('phone').value;
+            let email = document.getElementById('userEmail').value;
+            let phone = document.getElementById('userPhone').value;
 
             // 영문 소문자, 숫자 5 ~ 10자
-            if(!(/^[a-z0-9]{4,9}$/.test(userId))) {
-                alert('유효한 아이디를 입력하세요.');
+            if(!(/^[a-z0-9]{5,10}$/.test(userId))) {
+                alert('아이디를 다시 입력해 주세요.');
                 
                 return false;
             }
@@ -118,21 +119,21 @@ div {
             // 닉네임 검사
             // 영어, 한글, 숫자 2 ~ 10자
             if(!(/^[a-zA-Z0-9가-힣]{2,10}$/.test(userNickname))) {
-                alert('유효한 닉네임을 입력하세요.');
+                alert('닉네임을 다시 입력해 주세요.');
                 
                 return false;
             }
             
             // 영문, 숫자, 특수문자 포함하여 8자 이상
             if(!(/^([0-9].*[!,@,#,^,&,*,(,)])|([!,@,#,^,&,*,(,)].*[0-9])|([A-Za-z]){8,}$/.test(userPwd1))) {
-                alert('유효한 비밀번호를 입력하세요.');
+                alert('비밀번호를 다시 입력해 주세요.');
                 
                 return false;
             }
 
             // 비밀번호 확인 검사
             if(userPwd1 !== userPwd2) {
-                alert("동일한 비밀번호 값을 입력하세요.")
+                alert("동일한 비밀번호 값을 입력해 주세요.")
                 document.getElementById('userPwd2').value = '';
                 document.getElementById('userPwd2').focus();
 
@@ -141,13 +142,13 @@ div {
 
             // 이메일
             if(!(/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/.test(email))) {
-                alert('유효한 이메일을 입력하세요.');
+                alert('이메일을 다시 입력해 주세요.');
                 
                 return false;
             }
 
-            if(!(/^[0-9]{2,10}$/.test(phone))) {
-                alert('유효한 전화번호를 입력하세요.');
+            if(!(/^[0-9]{2,11}$/.test(phone))) {
+                alert('전화번호를 다시 입력해 주세요.');
                 
                 return false;
             }
