@@ -1,16 +1,16 @@
+<%@page import="com.reci.mag.Vo.MagC_Vo"%>
 <%@page import="java.util.List"%>
-<%@page import="com.reci.mag.controller.MagVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
-<%--
-	List<MagVo> mag_List = (List<MagVo>)request.getAttribute("mag_search"); //magVo 를 import해주고. 꺼내온 데이터를 캐스팅해줘야한다. 강제형변환
+<%
+	List<MagC_Vo> magC_List = (List<MagC_Vo>)request.getAttribute("magC_search"); //magVo 를 import해주고. 꺼내온 데이터를 캐스팅해줘야한다. 강제형변환
 													//제한걸고 list로 다시 캐스팅. 타입도 리스트로 변경.
-	for(MagVo mag : mag_List){ //향상된 for문 사용하여 출력하기.
-		System.out.println(mag);
+	for(MagC_Vo magC : magC_List){ //향상된 for문 사용하여 출력하기.
+		System.out.println(magC);
 	}
 	
---%>
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -170,8 +170,8 @@ TIP. 우유 거품은 수동 또는 진동 우유거품기를 활용하면 만�
 	<div class="content3">
 		<div class="comment">Comment</div>
 		<div class="comments">
-		<div class="commentss">댓글<%-- no --%></div>
 		<div class="commentss">댓글</div>
+		<div class="commentss">댓글<!--${magC.COMM_}--></div>
 		<div class="commentss">댓글</div>
 		<div class="commentss">댓글</div>
 		<div class="commentss">댓글</div>
@@ -186,16 +186,16 @@ TIP. 우유 거품은 수동 또는 진동 우유거품기를 활용하면 만�
     }   //괄호를 밑에서 닫기.
 	--%>
 
-	<!--
-	<c:forEach items="${mag_search}" var="mag">
-		<div class="commentss">${mag.POST_NO}</div>
-		<div class="commentss">${mag.POST_NAME}</div>
-		<div class="commentss">${mag.POST_NO}</div>
-		<div class="commentss">${mag.POST_NO}</div>
+	
+	<c:forEach items="${magC_search}" var="magC">
+		<div class="commentss">${magC.COMM_CONTENT}</div>
+		<div class="commentss">Z</div>
+		<div class="commentss">Z</div>
+		<div class="commentss">Z</div>
 	</c:forEach>
-		 JSTL, EL을 사용해서 더 간편하게 만들수 있다. 
-		JSTL 라이브러리에 넣어 세팅하고, 
-	-->
+		 <!--JSTL, EL을 사용해서 더 간편하게 만들수 있다. 
+			JSTL 라이브러리에 넣어 세팅하고, 
+		 -->
 	<br>
 	
 	

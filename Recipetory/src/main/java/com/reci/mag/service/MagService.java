@@ -1,4 +1,4 @@
-package com.reci.mag.controller;
+package com.reci.mag.service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.reci.common.JDBCTemplate;
+import com.reci.mag.Vo.MagVo;
+import com.reci.mag.dao.MagDao;
 
 public class MagService {
 	
