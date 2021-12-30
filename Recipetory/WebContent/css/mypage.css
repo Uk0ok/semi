@@ -1,13 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>mypageStyle</title>
-<style>
-    
-    #wrap_m * {
+@charset "UTF-8";
+
+#wrap_m * {
     /* border: 1px solid black; */
     box-sizing: border-box;
     text-align: center;
@@ -31,7 +24,8 @@
     width: 19%;
     height: 40%;
     margin: 10px;
-    border: 2px solid gray;
+    margin-top: 50px;
+    border: 2px solid green;
 }
 
 #content_profile_m {
@@ -40,7 +34,8 @@
     margin: 10px;
     margin-right: 0%;
     margin-left: 0%;
-    border: 2px solid gray;
+    margin-top: 50px;
+    border: 2px solid green;
     border-right: none;
 }
 
@@ -50,13 +45,48 @@
     margin: 10px;
     margin-right: 0%;
     margin-left: 0%;
-    border: 2px solid gray;
+    margin-top: 50px;
+    border: 2px solid green;
     border-left: none;
+}
+
+#content_scrap_m {
+    width:78%;
+    height: 100%;
+    margin: 10px;
+    margin-right: 0%;
+    margin-left: 0%;
+    margin-top: 50px;
+    border: 2px solid green;
+    text-align: right;
+}
+
+#content_mb_m {
+    width:78%;
+    height: 100%;
+    margin: 10px;
+    margin-right: 0%;
+    margin-left: 0%;
+    margin-top: 50px;
+    border: 2px solid green;
+    text-align: center;
+}
+
+#content_userInfo_m {
+    width:78%;
+    height: 70%;
+    margin: 10px;
+    margin-right: 0%;
+    margin-left: 0%;
+    margin-top: 50px;
+    border: 2px solid green;
+    text-align: center;
 }
 
 #profile_m {
     width: 200px;
     height: 200px;
+    border-radius: 100px;
 }
 
 #nickname_m {
@@ -72,35 +102,6 @@
     margin: auto;
 }
 
-#content_scrap_m {
-    width:78%;
-    height: 100%;
-    margin: 10px;
-    margin-right: 0%;
-    margin-left: 0%;
-    border: 2px solid gray;
-    text-align: right;
-}
-
-#content_mb_m {
-    width:78%;
-    height: 100%;
-    margin: 10px;
-    margin-right: 0%;
-    margin-left: 0%;
-    border: 2px solid gray;
-    text-align: center;
-}
-
-#content_userInfo_m {
-    width:78%;
-    height: 70%;
-    margin: 10px;
-    margin-right: 0%;
-    margin-left: 0%;
-    border: 2px solid gray;
-    text-align: center;
-}
 
 #content_2_scrap_1 {
     text-align: center;
@@ -109,6 +110,7 @@
 #img_scrap {
     width: 100px;
     height: 100px;
+    border-radius: 50px;
 }
 
 #tb_mb {
@@ -124,9 +126,3 @@
 #d_m {
 	text-align: right;
 }
-</style>
-</head>
-<body>
-
-</body>
-</html>
