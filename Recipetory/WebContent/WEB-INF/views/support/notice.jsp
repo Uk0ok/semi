@@ -1,5 +1,13 @@
+<%@page import="java.util.List"%>
+<%@page import="com.reci.sup.vo.NotiVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+	<%
+	List<NotiVo> dataList = (List<NotiVo>)request.getAttribute("data"); 
+	//attribute는 오브젝트인데, 현재 타입이 NotiVo이기 때문에 (NotiVo)로 캐스팅
+	%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,14 +31,11 @@
     	text-align:left;
     }
     
-    a {
-    	color: #000;
+    #writeBtn {
+    	padding : 0;
     }
     
-    .list-group-item active {
-    	background-color: rgb(175, 187, 175);
-    }
-    
+   
 </style>
 </head>
 <body>
@@ -48,52 +53,33 @@
     
             <div id="content1" class="col-10">
                 <table class="table">
-	                <thead>
-	                    <tr>
-		                    <th>번호</th>
-		                    <th>제목</th>
-		                    <th>작성자</th>
-		                    <th>등록일</th>
-		                    <th>조회수</th>
+                    <tr>
+	                    <td>번호</td>
+	                    <td>제목</td>
+	                    <td>작성자</td>
+	                    <td>등록일</td>
+	                    <td>조회수</td>
+                    </tr>
+	             	
+	             	<%
+	             	for(NotiVo n : dataList){
+	             		String noticeNo = n.getNoticeNo();
+	             		String title = n.getNoticeTitle();
+	             	 	String adminNo = n.getAdminNo();
+	             		String createDate = n.getCreateDate();
+	             		String hits = n.getHits();
+	             	%>	
+	             		<tr>
+		                    <td><%=noticeNo%></td>
+		                    <td><%=title%></td>
+		                    <td><%=adminNo%></td>
+		                    <td><%=createDate%></td>
+		                    <td><%=hits%></td>
 	                    </tr>
-	                </thead>
-	                <tbody>
-	                	 <tr>
-	                        <td>05</td>
-	                        <td><a href="detail">12/22 서비스 점검 안내</a></td>
-	                        <td>admin1</td>
-	                        <td>2021.12.22</td>
-	                        <td>10</td>
-	                    </tr>
-	                    <tr>
-	                        <td>04</td>
-	                        <td><a href="#">업그레이드 안내 공지</a></td>
-	                        <td>admin1</td>
-	                        <td>2021.12.11</td>
-	                        <td>10</td>
-	                    </tr>
-	                    <tr>
-	                         <td>03</td>
-	                         <td><a href="#">서비스 개편 및 이용안내</a></td>
-	                         <td>admin2</td>
-	                         <td>2021.12.10</td>
-	                         <td>20</td>
-	                    </tr>
-	                    <tr>
-	                        <td>02</td>
-	                        <td><a href="#">서비스 이용약관 개정 안내</a></td>
-	                        <td>admin1</td>
-	                        <td>2021.12.04</td>
-	                        <td>30</td>
-	                    </tr>
-	                	 <tr>
-	                        <td>01</td>
-	                        <td><a href="#">레시피토리 오픈 안내</a></td>
-	                        <td>admin1</td>
-	                        <td>2021.12.01</td>
-	                        <td>10</td>
-	                    </tr>
-	               	</tbody>
+					<%
+					}
+	             	%>
+	             	
                 </table>
                 
                  <div id="content2" class="row">
