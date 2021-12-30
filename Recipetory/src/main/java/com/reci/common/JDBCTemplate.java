@@ -11,8 +11,8 @@ public class JDBCTemplate {
 	//커넥션 가져오기
 	public static Connection getConnection() {
 		String url ="jdbc:oracle:thin:@127.0.0.1:1521/xe";
-		String id = "KH";
-		String pwd = "KH";
+		String id = "WEB";
+		String pwd = "WEB";
 		
 		Connection conn = null;
 		
