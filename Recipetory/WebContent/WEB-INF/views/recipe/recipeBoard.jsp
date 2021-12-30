@@ -1,4 +1,10 @@
+<%@page import="com.reci.recipe.controller.RBoardVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<% 
+	RBoardVo datalist = (RBoardVo)request.getAttribute("data");
+	System.out.println(datalist);
+%>
     <!DOCTYPE html>
     <html>
 
@@ -201,7 +207,7 @@
                                     <div class="review">리뷰수</div>
                                 </div>
                                 <div class="board_list_body">
-                                    <div class="item">
+                                <div class="item">
                                         <div class="num">1</div>
                                         <div class="tit"> 
                                             <a href="chickchest">
@@ -265,7 +271,9 @@
                                         <div class="writer">관리자</div>
                                         <div class="date">2021-12-28</div>
                                     <div class="review"><a href="#">리뷰수</a></div>
-                                </div>
+                                </div>                                
+                                	
+                                    
                             </div>
                         </div>
                 </div>
