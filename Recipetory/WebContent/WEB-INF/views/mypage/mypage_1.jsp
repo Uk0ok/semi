@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>마이페이지</title>
+    <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/mypage.css">
 </head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -12,7 +13,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <body>
-<%@ include file="/WEB-INF/views/mypage/mypageStyle.jsp"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 
     <div id="wrap_m">
@@ -26,6 +26,7 @@
             <div id="content_profile_m">
                 <br><img id="profile_m" src="./img/mypageBoard/cat.jpg" alt="">
                 <br><br><button>사진 수정</button>
+                
                 <br><br><p id="nickname_m">닉네임</p>
                 <button>닉네임 수정</button>
             </div>
@@ -92,7 +93,7 @@
             </div>
         </section>
     </div>
-<div style="margin-top:30px"></div>
+<div style="margin-top:100px"></div>
 <%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>
 </html>
