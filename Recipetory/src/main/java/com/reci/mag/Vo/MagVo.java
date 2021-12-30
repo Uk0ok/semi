@@ -1,4 +1,4 @@
-package com.reci.mag.controller;
+package com.reci.mag.Vo;
 
 public class MagVo {
 
