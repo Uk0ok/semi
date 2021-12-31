@@ -106,6 +106,7 @@ public class JoinController extends HttpServlet {
 		
 		// swy start
 		/*
+		 * 
 		 * // 회원 정보를 DB에 insert // DB 연결 connection // sql // stmt || pstmt // int
 		 * result(추가) || ResultSet rs(조회)
 		 * 
