@@ -188,6 +188,8 @@
             .board_page a:first-child {
                 border-left: 1px solid #ddd;
             }
+
+
         </style>
     </head>
 
@@ -244,7 +246,7 @@
                     <a href="#" class="bt next">></a>
                     <a href="#" class="bt last">>></a>
                 </div>
-                ><a href="writing" class="writing">글쓰기</a>
+                ><a  type="button" href="writing" class="btn-primary btn writing" style="background-color: darkolivegreen; border-color: darkolivegreen;">글쓰기</a>
                 </div>
                 </div>
 
