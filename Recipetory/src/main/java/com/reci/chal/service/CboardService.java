@@ -1,4 +1,4 @@
-package com.reci.chal.controller;
+package com.reci.chal.service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,19 +8,22 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.reci.chal.dao.CboardDao;
+import com.reci.chal.vo.CboardVo;
 import com.reci.common.JDBCTemplate;
 
 public class CboardService {
 
-	public List<CboardVo> selectchList(){
+	public List<CboardVo> selectCboardList(){
 		//1.DB가서 데이터 조회
 		//DB랑 연결 - 템플릿 생성.
 		Connection conn = JDBCTemplate.getConnection();
 		
-		List<CboardVo> chList = new CboardDao().selectchList(conn);
-		
+		List<CboardVo> CboardList = new CboardDao().selectCboardList(conn);
+
 		JDBCTemplate.close(conn);
 		
-		return chList;
+		return CboardList;
+		
 	}
 }
