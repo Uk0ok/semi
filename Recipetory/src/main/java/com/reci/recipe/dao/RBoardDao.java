@@ -31,7 +31,6 @@ public class RBoardDao {
 				String rpostName = rs.getString("POST_NAME");
 				String rpostContent = rs.getString("POST_CONTENT");
 				Timestamp rbegDate = rs.getTimestamp("BEG_DATE");
-				System.out.println("test :::" + rbegDate);//swy
 				int rhits = rs.getInt("HITS");
 				int rrcomNum = rs.getInt("RECOM_NUM");
 				int rscrapNum = rs.getInt("SCRAP_NUM");
@@ -68,7 +67,6 @@ public class RBoardDao {
 				rb.setRmodDate(rmodDate);
 
 				RboardList.add(rb);
-				System.out.println( "add 한 객체 ~~~ ::: " + (rb.getRbegDate()));//swy
 
 			}
 		} catch (SQLException e) {

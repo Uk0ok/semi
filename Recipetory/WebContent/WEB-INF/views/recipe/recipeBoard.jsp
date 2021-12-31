@@ -3,9 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <% 
-	List<RBoardVo> rdatalist = (List<RBoardVo>)request.getAttribute("data");
-	for(RBoardVo rb : rdatalist) {
-		
+	List<RBoardVo> rdatalist = (List<RBoardVo>)request.getAttribute("data"); // attribute는 object라서 ArrayList로 형변환
+	for(RBoardVo rb : rdatalist) { 
 		System.out.println(rb);
 		System.out.println("zzzzz : " + rb.getRbegDate());//swy
 	}
@@ -214,7 +213,7 @@
                                     <div class="review">리뷰수</div>
                                 </div>
                                 <div class="board_list_body">
-                                	                                
+                                
                                 <c:forEach items="${data}" var="rb">
                                 	<div class="item">
                                         <div class="num">${rb.rpostNo}</div>

@@ -28,7 +28,6 @@ public class RecipeController extends HttpServlet {
 		List<RBoardVo> RboardList = new RBoardService().selectRBoardList();
 		
 		req.setAttribute("data", RboardList);
-		System.out.println( "컨트롤러 ~~~ ::: " + ((RBoardVo)RboardList.get(0)).getRbegDate());
 		req.getRequestDispatcher("/WEB-INF/views/recipe/recipeBoard.jsp").forward(req, resp);
 	}
 	

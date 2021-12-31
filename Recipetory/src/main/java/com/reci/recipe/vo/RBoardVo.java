@@ -22,6 +22,7 @@ public class RBoardVo {
 	private String rmodYn;
 	private String rdelYn;
 	private Timestamp rmodDate;
+	
 	public int getRpostNo() {
 		return rpostNo;
 	}
