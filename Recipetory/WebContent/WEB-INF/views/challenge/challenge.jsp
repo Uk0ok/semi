@@ -1,5 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="com.reci.chal.vo.CboardVo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
+
+
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -155,41 +163,16 @@
                         <div class="review">리뷰</div>
                     </div>
                     <div class="board_list_body">
-						<div class="item">
-                            <div class="num">1</div>
-                            <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/jipbab.jpg" width="200" height="150"></a> <a href="./challengeview">일주일 집밥 챌린지</a></div>
-                            <div class="parti">명 참여중</div>
-                            <div class="period">~2022.02.10</div>
-                            <div class="review"><a href="./challengereview">리뷰</a></div>
-                        </div>
-                        <div class="item">
-                            <div class="num">2</div>
-                            <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/flour.jpg" width="200" height="150"></a> <a href="./challengeview">한달 밀가루 끊기 챌린지</a></div>
-                            <div class="parti">명 참여중</div>
-                            <div class="period">~2022.02.11</div>
-                            <div class="review"><a href="./challengereview">리뷰</a></div>
-                        </div>
-                        <div class="item">
-                            <div class="num">3</div>
-                            <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/water.jpg" width="200" height="150"></a> <a href="./challengeview">하루 2L 물 마시기</a></div>
-                            <div class="parti">명 참여중</div>
-                            <div class="period">~2022.02.12</div>
-                            <div class="review"><a href="./challengereview">리뷰</a></div>
-                        </div>
-                        <div class="item">
-                            <div class="num">4</div>
-                            <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/breakfast.jpg" width="200" height="150"></a> <a href="./challengeview">아침 먹기 챌린지</a></div>
-                            <div class="parti">명 참여중</div>
-                            <div class="period">~2022.02.13</div>
-                            <div class="review"><a href="./challengereview">리뷰</a></div>
-                        </div>
-                        <div class="item">
-                            <div class="num">5</div>
-                            <div class="tit"> <a href="./challengeview"><img src="./img/challengeBoard/chickenbreast.jpg" width="200" height="150"></a> <a href="./challengeview">닭가슴살 챌린지</a></div>
-                            <div class="parti">명 참여중</div>
-                            <div class="period">~2022.02.14</div>
-                            <div class="review"><a href="./challengereview">리뷰</a></div>
-                        </div>
+                                <c:forEach items="${data}" var="ch">
+                                	<div class="item">
+                                        <div class="num">${ch.cpostNo}</div>
+                                        <div class="tit"><a href="./challengeview">
+                                            <img src="${pageContext.request.contextPath}${ch.cthumbnail}" width="200" height="150">${ch.cpostName}</a></div>
+                                        <div class="parti">${ch.partiNo}명 참여중</div>
+                                        <div class="period">${ch.challengePeriod}</div>
+                                        <div class="review"><a href="./challengereview">${ch.creviewNum}</a></div>
+                                    </div>
+                     			</c:forEach>
                    </div>
                    </div>
                     <br>
