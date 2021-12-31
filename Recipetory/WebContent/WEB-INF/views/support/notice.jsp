@@ -70,7 +70,7 @@
 		             	<c:forEach items="${data}" var="n">
 		             		<tr>
 			                    <td>${n.noticeNo}</td>
-			                    <td><a href="#">${n.noticeTitle}</a><td>
+			                    <td><a href="detail">${n.noticeTitle}</a><td>
 			                    <td>${n.adminNo}</td>
 			                    <td>${n.createDate}</td>
 			                    <td>${n.hits}</td>

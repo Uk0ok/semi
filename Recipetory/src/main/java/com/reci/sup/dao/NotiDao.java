@@ -92,14 +92,5 @@ public class NotiDao {
 		
 	}
 	
-	/*
-	 * public List<NotiVo> selectNotiAll(Connection conn, int starNo, int endNo) {
-	 * 
-	 * String sql = ""
-	 * 
-	 * return null;
-	 * 
-	 * }
-	 */
 	
 }
