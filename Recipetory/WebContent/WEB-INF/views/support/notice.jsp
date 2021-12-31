@@ -2,7 +2,10 @@
 <%@page import="com.reci.sup.vo.NotiVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+	
 	<%
 	List<NotiVo> dataList = (List<NotiVo>)request.getAttribute("data"); 
 	//attribute는 오브젝트인데, 현재 타입이 NotiVo이기 때문에 (NotiVo)로 캐스팅
@@ -53,32 +56,27 @@
     
             <div id="content1" class="col-10">
                 <table class="table">
-                    <tr>
-	                    <td>번호</td>
-	                    <td>제목</td>
-	                    <td>작성자</td>
-	                    <td>등록일</td>
-	                    <td>조회수</td>
-                    </tr>
-	             	
-	             	<%
-	             	for(NotiVo n : dataList){
-	             		String noticeNo = n.getNoticeNo();
-	             		String title = n.getNoticeTitle();
-	             	 	String adminNo = n.getAdminNo();
-	             		String createDate = n.getCreateDate();
-	             		String hits = n.getHits();
-	             	%>	
-	             		<tr>
-		                    <td><%=noticeNo%></td>
-		                    <td><%=title%></td>
-		                    <td><%=adminNo%></td>
-		                    <td><%=createDate%></td>
-		                    <td><%=hits%></td>
+                    <thead>
+	                    <tr>
+		                    <th>번호</th>
+		                    <th>제목</th>
+		                    <th>작성자</th>
+		                    <th>등록일</th>
+		                    <th>조회수</th>
 	                    </tr>
-					<%
-					}
-	             	%>
+                    </thead>
+	             	
+	             	<tbody>
+		             	<c:forEach items="${data}" var="n">
+		             		<tr>
+			                    <td>${n.noticeNo}</td>
+			                    <td><a href="#">${n.noticeTitle}</a><td>
+			                    <td>${n.adminNo}</td>
+			                    <td>${n.createDate}</td>
+			                    <td>${n.hits}</td>
+		                    </tr>
+		             	</c:forEach>
+	             	</tbody>
 	             	
                 </table>
                 
