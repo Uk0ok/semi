@@ -19,10 +19,15 @@
     	padding: 1rem;
     }
     
-    #search_write {
+    #content2 {
     	padding: 1rem 2rem 2rem 1rem;
     	text-align:left;
     }
+    
+     #writeBtn {
+    	padding : 0;
+    }
+    
     
 </style>
 </head>
@@ -97,7 +102,7 @@
 	               	</tbody>
                 </table>
                 
-                <div id="search_write" class="row">
+                <div id="content2" class="row">
                 	<form class="col-11" action="search" method="get">
 				        <select name="searchType">
 				            <option value="date">제목</option>
