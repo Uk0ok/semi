@@ -5,26 +5,31 @@ import java.sql.Timestamp;
 public class CboardVo {
 	
 	private int cpostNo;
+	private int userNo;
 	private String cpostName;
 	private String cpostContent;
 	private Timestamp cbegDate;
 	private Timestamp challengePeriod;
 	private int partiNum;
-	private int chits;
 	private int cscrapNum;
+	private int chits;
 	private int ccommNum;
 	private int creviewNum;
-	private int creportNum;
 	private String cthumbnail;
 	private String cmodYn;
 	private Timestamp cfmodDate;
 	private String cdelYn;
-	private int userNo;
 	public int getCpostNo() {
 		return cpostNo;
 	}
 	public void setCpostNo(int cpostNo) {
 		this.cpostNo = cpostNo;
+	}
+	public int getUserNo() {
+		return userNo;
+	}
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
 	}
 	public String getCpostName() {
 		return cpostName;
@@ -56,17 +61,17 @@ public class CboardVo {
 	public void setPartiNum(int partiNum) {
 		this.partiNum = partiNum;
 	}
-	public int getChits() {
-		return chits;
-	}
-	public void setChits(int chits) {
-		this.chits = chits;
-	}
 	public int getCscrapNum() {
 		return cscrapNum;
 	}
 	public void setCscrapNum(int cscrapNum) {
 		this.cscrapNum = cscrapNum;
+	}
+	public int getChits() {
+		return chits;
+	}
+	public void setChits(int chits) {
+		this.chits = chits;
 	}
 	public int getCcommNum() {
 		return ccommNum;
@@ -79,12 +84,6 @@ public class CboardVo {
 	}
 	public void setCreviewNum(int creviewNum) {
 		this.creviewNum = creviewNum;
-	}
-	public int getCreportNum() {
-		return creportNum;
-	}
-	public void setCreportNum(int creportNum) {
-		this.creportNum = creportNum;
 	}
 	public String getCthumbnail() {
 		return cthumbnail;
@@ -110,27 +109,16 @@ public class CboardVo {
 	public void setCdelYn(String cdelYn) {
 		this.cdelYn = cdelYn;
 	}
-	public int getUserNo() {
-		return userNo;
-	}
-	public void setUserNo(int userNo) {
-		this.userNo = userNo;
-	}
 	@Override
 	public String toString() {
-		return "CboardVo [cpostNo=" + cpostNo + ", cpostName=" + cpostName + ", cpostContent=" + cpostContent
-				+ ", cbegDate=" + cbegDate + ", challengePeriod=" + challengePeriod + ", partiNum=" + partiNum
-				+ ", chits=" + chits + ", cscrapNum=" + cscrapNum + ", ccommNum=" + ccommNum + ", creviewNum="
-				+ creviewNum + ", creportNum=" + creportNum + ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn
-				+ ", cfmodDate=" + cfmodDate + ", cdelYn=" + cdelYn + ", userNo=" + userNo + ", getCpostNo()="
-				+ getCpostNo() + ", getCpostName()=" + getCpostName() + ", getCpostContent()=" + getCpostContent()
-				+ ", getCbegDate()=" + getCbegDate() + ", getChallengePeriod()=" + getChallengePeriod()
-				+ ", getPartiNum()=" + getPartiNum() + ", getChits()=" + getChits() + ", getCscrapNum()="
-				+ getCscrapNum() + ", getCcommNum()=" + getCcommNum() + ", getCreviewNum()=" + getCreviewNum()
-				+ ", getCreportNum()=" + getCreportNum() + ", getCthumbnail()=" + getCthumbnail() + ", getCmodYn()="
-				+ getCmodYn() + ", getCfmodDate()=" + getCfmodDate() + ", getCdelYn()=" + getCdelYn() + ", getUserNo()="
-				+ getUserNo() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
+		return "CboardVo [cpostNo=" + cpostNo + ", userNo=" + userNo + ", cpostName=" + cpostName + ", cpostContent="
+				+ cpostContent + ", cbegDate=" + cbegDate + ", challengePeriod=" + challengePeriod + ", partiNum="
+				+ partiNum + ", cscrapNum=" + cscrapNum + ", chits=" + chits + ", ccommNum=" + ccommNum
+				+ ", creviewNum=" + creviewNum + ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn + ", cfmodDate="
+				+ cfmodDate + ", cdelYn=" + cdelYn + "]";
 	}
+
+	
+	
 	
 }

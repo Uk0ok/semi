@@ -4,9 +4,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
+	for(CboardVo ch : cdatalist) {
+	
+	}
+ %>
 
-
-%>
 
 <!DOCTYPE html>
 <html>
@@ -166,11 +168,10 @@ List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
                                 <c:forEach items="${data}" var="ch">
                                 	<div class="item">
                                         <div class="num">${ch.cpostNo}</div>
-                                        <div class="tit"><a href="./challengeview">
-                                            <img src="${pageContext.request.contextPath}${ch.cthumbnail}" width="200" height="150">${ch.cpostName}</a></div>
+                                        <div class="tit"><a href="./challengeview"><img src="./img/challengeBoard/jipbab.jpg" width="200" height="150">${ch.cpostName}</a></div>
                                         <div class="parti">${ch.partiNo}명 참여중</div>
                                         <div class="period">${ch.challengePeriod}</div>
-                                        <div class="review"><a href="./challengereview">${ch.creviewNum}</a></div>
+                                        <%-- <div class="review"><a href="./challengereview">${ch.creviewNum}</a></div> swy --%>
                                     </div>
                      			</c:forEach>
                    </div>

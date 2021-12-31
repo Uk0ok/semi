@@ -12,16 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 import com.reci.chal.service.CboardService;
 import com.reci.chal.vo.CboardVo;
 
-@WebServlet("/challenge")
+@WebServlet("/challenge2")
 public class ChalController extends HttpServlet{
 	
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
+		System.out.println("컨트롤러 호출됨...");//swy
+		
 		List<CboardVo> CboardList = new CboardService().selectCboardList();
-		System.out.println(cpostNo);
+		
+		
+
 		req.setAttribute("data", CboardList);
+		for(CboardVo x : CboardList) {
+			System.out.println("==================");
+			System.out.println("test ::: " + x);
+		}
 		req.getRequestDispatcher("/WEB-INF/views/challenge/challenge.jsp").forward(req, resp);
 	}
 }

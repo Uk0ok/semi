@@ -15,6 +15,7 @@ import com.reci.common.JDBCTemplate;
 public class CboardService {
 
 	public List<CboardVo> selectCboardList(){
+		System.out.println("SEVICE 호출됨...");//swy
 		//1.DB가서 데이터 조회
 		//DB랑 연결 - 템플릿 생성.
 		Connection conn = JDBCTemplate.getConnection();
