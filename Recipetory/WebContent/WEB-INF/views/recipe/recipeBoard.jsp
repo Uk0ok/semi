@@ -1,9 +1,14 @@
-<%@page import="com.reci.recipe.controller.RBoardVo"%>
+<%@page import="java.util.List"%>
+<%@page import="com.reci.recipe.vo.RBoardVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <% 
-	RBoardVo datalist = (RBoardVo)request.getAttribute("data");
-	System.out.println(datalist);
+	List<RBoardVo> rdatalist = (List<RBoardVo>)request.getAttribute("data");
+	for(RBoardVo rb : rdatalist) {
+		
+		System.out.println(rb);
+		System.out.println("zzzzz : " + rb.getRbegDate());//swy
+	}
 %>
     <!DOCTYPE html>
     <html>
@@ -207,76 +212,27 @@
                                     <div class="review">리뷰수</div>
                                 </div>
                                 <div class="board_list_body">
-                                <div class="item">
-                                        <div class="num">1</div>
+                                	                                
+                                <c:forEach items="${data}" var="rb">
+                                	<div class="item">
+                                        <div class="num">${rb.rpostNo}</div>
                                         <div class="tit"> 
                                             <a href="chickchest">
                                             <img
-                                                src="${pageContext.request.contextPath}/img/recipeBoard/chickchest.jpg" width="200" height="150">
-                                            닭가슴살 레시피
+                                                src="${pageContext.request.contextPath}${rb.rthumbnail}" width="200" height="150">
+                                            ${rb.rpostName}
                                             </a>
                                         </div>
-                                        <div class="writer">관리자</div>
-                                        <div class="date">2021-12-28</div>
-                                        <div class="review"><a href="#">리뷰수</a></div>
+                                        <div class="writer">${rb.userNo}</div>
+                                        <div class="date">${rb.rbegDate}</div>
+                                        <div class="review"><a href="#">${rb.rreviewNum}</a></div>
                                     </div>
-                                    <div class="item">
-                                        <div class="num">2</div>
-                                        <div class="tit"> 
-                                            <a href="sweetpotato">
-                                            <img
-                                                src="${pageContext.request.contextPath}/img/recipeBoard/sweetpotato.jpg" width="200" height="150">
-                                            고구마 샐러드 레시피
-                                            </a>
-                                        </div>
-                                        <div class="writer">관리자</div>
-                                        <div class="date">2021-12-28</div>
-                                        <div class="review"><a href="#">리뷰수</a></div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="num">3</div>
-                                        <div class="tit"> 
-                                            <a href="gochujang">
-                                            <img
-                                                src="${pageContext.request.contextPath}/img/recipeBoard/고추장찌개.jpg" width="200" height="150">
-                                            고추장찌개 레시피
-                                            </a>
-                                        </div>
-                                        <div class="writer">관리자</div>
-                                        <div class="date">2021-12-28</div>
-                                        <div class="review"><a href="#">리뷰수</a></div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="num">4</div>
-                                        <div class="tit"> 
-                                            <a href="stirpork">
-                                            <img
-                                                src="${pageContext.request.contextPath}/img/recipeBoard/제육볶음.jpg" width="200" height="150">
-                                            제육볶음 레시피
-                                            </a>
-                                        </div>
-                                        <div class="writer">관리자</div>
-                                        <div class="date">2021-12-28</div>
-                                    <div class="review"><a href="#">리뷰수</a></div>
-                                </div>
-                                <div class="item">
-                                    <div class="num">5</div>
-                                    <div class="tit"> 
-                                            <a href="boiledpork">
-                                            <img
-                                                src="${pageContext.request.contextPath}/img/recipeBoard/수육.jpg" width="200" height="150">
-                                            수육 레시피
-                                            </a>
-                                        </div>
-                                        <div class="writer">관리자</div>
-                                        <div class="date">2021-12-28</div>
-                                    <div class="review"><a href="#">리뷰수</a></div>
-                                </div>                                
-                                	
-                                    
-                            </div>
-                        </div>
-                </div>
+                                </c:forEach>
+                                
+                                
+                            	</div>
+                        	</div>
+                		</div>
                 <div class="board_page">
                     <a href="#" class="bt first"><<</a>
                     <a href="#" class="bt prev"><</a>
