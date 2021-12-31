@@ -16,7 +16,7 @@ public class ChalController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		List<CboardVo> chalList = new CboardService().selectchalList();
+		List<CboardVo> chalList = new CboardService().selectchList();
 		
 		
 		req.setAttribute("data", chalList);
