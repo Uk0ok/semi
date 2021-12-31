@@ -20,7 +20,6 @@ public class RBoardService {
 		Connection conn = JDBCTemplate.getConnection();
 		
 		List<RBoardVo> RboardList = new RBoardDao().selectRBoardList(conn);
-		System.out.println( "서비스 ~~~ ::: " + ((RBoardVo)RboardList.get(0)).getRbegDate());
 
 		JDBCTemplate.close(conn);
 		
