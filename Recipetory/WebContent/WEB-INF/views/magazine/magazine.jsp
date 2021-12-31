@@ -180,8 +180,12 @@
 				</div>
 			</div>
 		</div>
+		<br> <br>
+		<button>게시글 작성</button>
     </div>
-    <br><br>
+    <br>
+    
+    
     
     <%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>
