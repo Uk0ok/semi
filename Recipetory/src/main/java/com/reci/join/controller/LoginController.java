@@ -23,7 +23,7 @@ public class LoginController extends HttpServlet{
 				System.out.println("ID : " + userId + "\nPASSWORD : " + userPwd);
 
 //				Member loginMember = service.login(userId, userPwd);
-
+				
 //				System.out.println(loginMember);
 
 	}
