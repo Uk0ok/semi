@@ -173,30 +173,31 @@
         </div>
         <div class="board_write_wrap">
             <div class="board_write">
+           
                 <div class="title">
                     <dl>
                         <dt>제목</dt>
-                        <dd><input type="text" placeholder="제목 입력"></dd>
+                        <dd><input type="text" placeholder="제목 입력" name="POST_NAME"></dd>
                     </dl>
                 </div>
                 <div class="info">
                     
                     <dl>
                         <dt>종료 날짜</dt>
-                        <dd><input type="text" placeholder="YYYYMMDD 형식 입력"></dd>
+                        <dd><input type="date" placeholder="YYYYMMDD 형식 입력" name="CHALLENGE_PERIOD"></dd>
                     </dl>
                     <dl>
                         <dd><input type="file" name="reviewfile" id="reviewfile"></dd>
                     </dl>
                 </div>
                 <div class="cont">
-                    <textarea placeholder="내용 입력"></textarea>
+                    <textarea placeholder="내용 입력" name="POST_CONTENT"></textarea>
                 </div>
-    
+    		
             </div>
             <div class="bt_wrap">
                 <a href="./challengeview" class="upload">등록</a>
-                <a href="./challengeview">취소</a>
+                <a href="./challenge">취소</a>
             </div>
         </div>
     </div>

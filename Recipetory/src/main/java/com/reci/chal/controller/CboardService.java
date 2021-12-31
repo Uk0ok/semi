@@ -12,15 +12,15 @@ import com.reci.common.JDBCTemplate;
 
 public class CboardService {
 
-	public List<CboardVo> selectchalList(){
+	public List<CboardVo> selectchList(){
 		//1.DB가서 데이터 조회
 		//DB랑 연결 - 템플릿 생성.
 		Connection conn = JDBCTemplate.getConnection();
 		
-		List<CboardVo> chalList = new CboardDao().selectchalList(conn);
+		List<CboardVo> chList = new CboardDao().selectchList(conn);
 		
 		JDBCTemplate.close(conn);
 		
-		return chalList;
+		return chList;
 	}
 }

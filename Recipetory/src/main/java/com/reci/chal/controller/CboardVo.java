@@ -4,125 +4,125 @@ import java.sql.Timestamp;
 
 public class CboardVo {
 	
-	private int POST_NO;
-	private String POST_NAME;
-	private String POST_CONTENT;
-	private Timestamp BEG_DATE;
-	private Timestamp CHALLENGE_PERIOD;
-	private int PARTI_NUM;
-	private int HITS;
-	private int SCRAP_NUM;
-	private int COMM_NUM;
-	private int REVIEW_NUM;
-	private int REPORT_NUM;
-	private String THUMBNAIL;
-	private String MOD_YN;
-	private Timestamp FMOD_DATE;
-	private String DEL_YN;
-	private int USER_NO;
-	public int getPOST_NO() {
-		return POST_NO;
+	private int postNo;
+	private String postName;
+	private String postContent;
+	private Timestamp begDate;
+	private Timestamp challengePeriod;
+	private int partiNum;
+	private int hits;
+	private int scrapNum;
+	private int commNum;
+	private int reviewNum;
+	private int reportNum;
+	private String thumbnail;
+	private String modYn;
+	private Timestamp fmodDate;
+	private String delYn;
+	private int userNo;
+	public int getPostNo() {
+		return postNo;
 	}
-	public void setPOST_NO(int pOST_NO) {
-		POST_NO = pOST_NO;
+	public void setPostNo(int postNo) {
+		this.postNo = postNo;
 	}
-	public String getPOST_NAME() {
-		return POST_NAME;
+	public String getPostName() {
+		return postName;
 	}
-	public void setPOST_NAME(String pOST_NAME) {
-		POST_NAME = pOST_NAME;
+	public void setPostName(String postName) {
+		this.postName = postName;
 	}
-	public String getPOST_CONTENT() {
-		return POST_CONTENT;
+	public String getPostContent() {
+		return postContent;
 	}
-	public void setPOST_CONTENT(String pOST_CONTENT) {
-		POST_CONTENT = pOST_CONTENT;
+	public void setPostContent(String postContent) {
+		this.postContent = postContent;
 	}
-	public Timestamp getBEG_DATE() {
-		return BEG_DATE;
+	public Timestamp getBegDate() {
+		return begDate;
 	}
-	public void setBEG_DATE(Timestamp bEG_DATE) {
-		BEG_DATE = bEG_DATE;
+	public void setBegDate(Timestamp begDate) {
+		this.begDate = begDate;
 	}
-	public Timestamp getCHALLENGE_PERIOD() {
-		return CHALLENGE_PERIOD;
+	public Timestamp getChallengePeriod() {
+		return challengePeriod;
 	}
-	public void setCHALLENGE_PERIOD(Timestamp cHALLENGE_PERIOD) {
-		CHALLENGE_PERIOD = cHALLENGE_PERIOD;
+	public void setChallengePeriod(Timestamp challengePeriod) {
+		this.challengePeriod = challengePeriod;
 	}
-	public int getPARTI_NUM() {
-		return PARTI_NUM;
+	public int getPartiNum() {
+		return partiNum;
 	}
-	public void setPARTI_NUM(int pARTI_NUM) {
-		PARTI_NUM = pARTI_NUM;
+	public void setPartiNum(int partiNum) {
+		this.partiNum = partiNum;
 	}
-	public int getHITS() {
-		return HITS;
+	public int getHits() {
+		return hits;
 	}
-	public void setHITS(int hITS) {
-		HITS = hITS;
+	public void setHits(int hits) {
+		this.hits = hits;
 	}
-	public int getSCRAP_NUM() {
-		return SCRAP_NUM;
+	public int getScrapNum() {
+		return scrapNum;
 	}
-	public void setSCRAP_NUM(int sCRAP_NUM) {
-		SCRAP_NUM = sCRAP_NUM;
+	public void setScrapNum(int scrapNum) {
+		this.scrapNum = scrapNum;
 	}
-	public int getCOMM_NUM() {
-		return COMM_NUM;
+	public int getCommNum() {
+		return commNum;
 	}
-	public void setCOMM_NUM(int cOMM_NUM) {
-		COMM_NUM = cOMM_NUM;
+	public void setCommNum(int commNum) {
+		this.commNum = commNum;
 	}
-	public int getREVIEW_NUM() {
-		return REVIEW_NUM;
+	public int getReviewNum() {
+		return reviewNum;
 	}
-	public void setREVIEW_NUM(int rEVIEW_NUM) {
-		REVIEW_NUM = rEVIEW_NUM;
+	public void setReviewNum(int reviewNum) {
+		this.reviewNum = reviewNum;
 	}
-	public int getREPORT_NUM() {
-		return REPORT_NUM;
+	public int getReportNum() {
+		return reportNum;
 	}
-	public void setREPORT_NUM(int rEPORT_NUM) {
-		REPORT_NUM = rEPORT_NUM;
+	public void setReportNum(int reportNum) {
+		this.reportNum = reportNum;
 	}
-	public String getTHUMBNAIL() {
-		return THUMBNAIL;
+	public String getThumbnail() {
+		return thumbnail;
 	}
-	public void setTHUMBNAIL(String tHUMBNAIL) {
-		THUMBNAIL = tHUMBNAIL;
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
 	}
-	public String getMOD_YN() {
-		return MOD_YN;
+	public String getModYn() {
+		return modYn;
 	}
-	public void setMOD_YN(String mOD_YN) {
-		MOD_YN = mOD_YN;
+	public void setModYn(String modYn) {
+		this.modYn = modYn;
 	}
-	public Timestamp getFMOD_DATE() {
-		return FMOD_DATE;
+	public Timestamp getFmodDate() {
+		return fmodDate;
 	}
-	public void setFMOD_DATE(Timestamp fMOD_DATE) {
-		FMOD_DATE = fMOD_DATE;
+	public void setFmodDate(Timestamp fmodDate) {
+		this.fmodDate = fmodDate;
 	}
-	public String getDEL_YN() {
-		return DEL_YN;
+	public String getDelYn() {
+		return delYn;
 	}
-	public void setDEL_YN(String dEL_YN) {
-		DEL_YN = dEL_YN;
+	public void setDelYn(String delYn) {
+		this.delYn = delYn;
 	}
-	public int getUSER_NO() {
-		return USER_NO;
+	public int getUserNo() {
+		return userNo;
 	}
-	public void setUSER_NO(int uSER_NO) {
-		USER_NO = uSER_NO;
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
 	}
 	@Override
 	public String toString() {
-		return "CboardVo [POST_NO=" + POST_NO + ", POST_NAME=" + POST_NAME + ", POST_CONTENT=" + POST_CONTENT
-				+ ", BEG_DATE=" + BEG_DATE + ", CHALLENGE_PERIOD=" + CHALLENGE_PERIOD + ", PARTI_NUM=" + PARTI_NUM
-				+ ", HITS=" + HITS + ", SCRAP_NUM=" + SCRAP_NUM + ", COMM_NUM=" + COMM_NUM + ", REVIEW_NUM="
-				+ REVIEW_NUM + ", REPORT_NUM=" + REPORT_NUM + ", THUMBNAIL=" + THUMBNAIL + ", MOD_YN=" + MOD_YN
-				+ ", FMOD_DATE=" + FMOD_DATE + ", DEL_YN=" + DEL_YN + ", USER_NO=" + USER_NO + "]";
+		return "CboardVo [postNo=" + postNo + ", postName=" + postName + ", postContent=" + postContent + ", begDate="
+				+ begDate + ", challengePeriod=" + challengePeriod + ", partiNum=" + partiNum + ", hits=" + hits
+				+ ", scrapNum=" + scrapNum + ", commNum=" + commNum + ", reviewNum=" + reviewNum + ", reportNum="
+				+ reportNum + ", thumbnail=" + thumbnail + ", modYn=" + modYn + ", fmodDate=" + fmodDate + ", delYn="
+				+ delYn + ", userNo=" + userNo + "]";
 	}
 	
-}	
+}
