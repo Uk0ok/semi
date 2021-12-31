@@ -3,14 +3,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
-<%
+<%--
 	List<MagC_Vo> magC_List = (List<MagC_Vo>)request.getAttribute("magC_search"); //magVo 를 import해주고. 꺼내온 데이터를 캐스팅해줘야한다. 강제형변환
 													//제한걸고 list로 다시 캐스팅. 타입도 리스트로 변경.
 	for(MagC_Vo magC : magC_List){ //향상된 for문 사용하여 출력하기.
 		System.out.println(magC);
 	}
 	
-%>
+--%>
 <!DOCTYPE html>
 <html>
 <head>
