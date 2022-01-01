@@ -16,15 +16,27 @@ public class LoginController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("WEB-INF/views/join/login.jsp").forward(req, resp);
-
-				String userId = req.getParameter("userId");
-				String userPwd = req.getParameter("userPwd");
-
-				System.out.println("ID : " + userId + "\nPASSWORD : " + userPwd);
-
-//				Member loginMember = service.login(userId, userPwd);
-				
-//				System.out.println(loginMember);
-
+	}
+	
+	//로그인 진행
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String userId = req.getParameter("userId");
+		String userPwd = req.getParameter("userPwd");
+		
+		MemberVo m = new MemberVo();
+		m.setUserId(userId);
+		m.setUserPwd(userPwd);
+		
+		boolean result = new MemberService().login(m);
+		
+		if(result) {
+			//success
+			req.getRequestDispatcher("./home").forward(req, resp);
+		}else {
+			//error
+			req.getRequestDispatcher("./login").forward(req, resp);
+		}
+		
 	}
 }

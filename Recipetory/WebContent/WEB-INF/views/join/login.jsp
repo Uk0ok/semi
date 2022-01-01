@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.reci.join.controller.userDao" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,21 +74,33 @@ body {
 <body>
 
 
-<div id="login_wrap">
-        <form id="login_form">
+<!-- <div id="login_wrap">
+        <form action="login" id="login_form">
             <div id="login_form_input">
-                <input type="text" name="userId" placeholder="아이디" required>
-                <input type="password" name="userPwd" placeholder="비밀번호" required>
+                <input type="text" name="id" placeholder="아이디" required>
+                <input type="password" name="pwd" placeholder="비밀번호" required>
             </div>
             <div id="login_form_submit">
                 <input id="btn" type="submit" value="로그인">
             </div>
         </form>
-        <!-- <div id="login_link">
-            <a href="#">회원가입</a>
-            <a href="#">아이디 찾기</a>
-            <a href="#">비밀번호 찾기</a>
-        </div> -->
+        <div id="login_link">
+            <a href="join">회원가입</a>
+            <!-- <a href="#">아이디 찾기</a>
+            <a href="#">비밀번호 찾기</a> -->
+        </div>
+    </div> -->
+
+    
+    <div id="div-main">
+        <form action="login" method="post">
+            <label>아이디   : </label> <input type="text" name="userId">
+            <br>
+            <label>비밀번호 : </label> <input type="text" name="userPwd">
+            <br>
+            <input type="submit" value="로그인">
+            <a href="join">회원가입</a>
+        </form>
     </div>
     
     
