@@ -7,13 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <style>
-
 body{
     background-color: cornsilk;
 }
@@ -24,12 +18,11 @@ body{
     margin-top: 50px 0px;
     padding: 50px
 }
-
-
 </style>
 </head>
 <body>
 
+	<%@include file %>
 	<div id="wrap">
 		<header>
 			<h1>관리자 페이지</h1>
@@ -74,7 +67,7 @@ body{
                 </table>
                 
                  <div id="content2" class="row">
-                	<form class="col-11" action="search" method="get">
+                	<form class="col-10" action="search" method="get">
 				        <select name="searchType">
 				            <option value="date">제목</option>
 				            <option value="Name">작성자</option>
@@ -85,7 +78,7 @@ body{
 				        	<i class="fas fa-search"></i>
 			        	</button>
 				    </form>
-				    <button id="writeBtn" class="col-1"><a href="support/write">글쓰기</a></button>
+				    <button id="writeBtn" class="col-2"><a href="support/write">관리자생성</a></button>
                 </div>
                 
                 <ul class="pagination justify-content-center">

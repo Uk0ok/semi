@@ -8,11 +8,6 @@
 
 <style>
 
-body{
-    background-color: cornsilk;
-    
-}
-
 #login_form {
     width: 300px;
     height: 120px;
