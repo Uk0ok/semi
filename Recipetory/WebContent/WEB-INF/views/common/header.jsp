@@ -36,8 +36,7 @@
     }
     
     div > a, .nav-link{
-    	color: rgb(48, 71, 0);
-    	font-weight: bold;
+    	color: #000;
     }
 
 </style>
