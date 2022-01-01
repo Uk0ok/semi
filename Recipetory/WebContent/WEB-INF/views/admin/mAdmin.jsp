@@ -1,44 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+    
 <%-- <%
-	List<MemberVo> dataList = (List<MemberVo>)request.getAttribute("data"); 
+	List<AdminVo> dataList = (List<AdminVo>)request.getAttribute("data"); 
 %> --%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>admin_home</title>
-<style>
-
-    #wrap {
-    	width: 1200px;
-    	margin: 2rem auto;
-    	background-color: white;
-    	text-align: center;
-    	padding: 1rem;
-    }
-    
-    #content1 {
-    	width: 1000px;
-    }
-    
-    table {
-    	height: 300px;
-    }
-   /*  #content2 {
-    	padding: 1rem 2rem 2rem 1rem;
-    	text-align:left;
-    } */
-
-</style>
+<title>Insert title here</title>
 </head>
 <body>
-
+	
 	<%@ include file="/WEB-INF/views/common/admin_header.jsp"%>
-    
-    <div id="wrap">
+	
+	<div id="wrap">
     	<div id="content1">
 	   		<table class="table table-hover table-sm">
 	           	<thead>
@@ -54,19 +31,16 @@
 					</tr>
 				</thead>
 	           	<tbody>
-	              		<c:forEach items="${data}" var="m">
+	              		<c:forEach items="${data}" var="ad">
 	             		<tr>
 	             			<th><input type="checkbox"></th>
-		                    <td>${m.userNo}</td>
-		                    <td><a href="#">${m.userId}</a><td>
-		                    <td>${m.userPwd}</td>
-		                    <td>${m.userNickname}</td>
-		                    <td>${m.userEmail}</td>
-		                    <td>${m.userPhone}</td>
-		                    <td>${m.userJoinDate}</td>
-		                    <td>${m.userType}</td>
-		                    <td>${m.userDeleteYn}</td>
-		                    <td>${m.lastloginDate}</td>
+		                    <td>${ad.adminNo}</td>
+		                    <td><a href="#">${ad.adminId}</a><td>
+		                    <td>${ad.adminPwd}</td>
+		                    <td>${ad.adminName}</td>
+		                    <td>${ad.adminLv}</td>
+		                    <td>${ad.joinDate}</td>
+		                    <td>${ad.deleteDate}</td>
 	                    </tr>
 	            		</c:forEach> 
 	           	</tbody>
@@ -81,12 +55,6 @@
 			</ul>
 		</div>
    	</div>
-    
-
-	
-	
-	
-	
-		
+   	
 </body>
 </html>

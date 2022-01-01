@@ -25,7 +25,6 @@ input {
 }
 
 .btn {
-    color: #fff;
     background-color: rgb(175, 187, 175); 
     width: 30%;
     height: 60%;

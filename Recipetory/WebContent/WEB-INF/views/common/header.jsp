@@ -11,7 +11,6 @@
         box-sizing: border-box;
         min-width: 1240px;
         margin: auto;
-        background-color: cornsilk;
     }
 
     header{
