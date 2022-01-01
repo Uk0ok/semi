@@ -20,7 +20,7 @@ import javax.servlet.http.Part;
 
 import com.reci.join.controller.MemberService;
 import com.reci.common.JDBCTemplate;
-import com.reci.join.controller.Member;
+import com.reci.join.controller.MemberVo;
 
 @MultipartConfig(maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 @WebServlet("/join")
@@ -34,6 +34,7 @@ public class JoinController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
+		
 		String userId = req.getParameter("userId");
 		String userPwd1 = req.getParameter("userPwd1");
 		String userNickname = req.getParameter("userNickname");
@@ -64,11 +65,17 @@ public class JoinController extends HttpServlet {
 			result = pstmt.executeUpdate();
 
 			JDBCTemplate.commit(conn);
+			
 		} catch (SQLException e) {
+			
 			e.printStackTrace();
+		
 			JDBCTemplate.rollback(conn);
+			
 		} finally {
+			
 			JDBCTemplate.close(conn);
+			
 		}
 
 		if (result > 0) {
