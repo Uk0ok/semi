@@ -11,7 +11,6 @@ public class CboardVo {
 	private Timestamp cbegDate;
 	private Timestamp challengePeriod;
 	private int partiNum;
-	private int cscrapNum;
 	private int chits;
 	private int ccommNum;
 	private int creviewNum;
@@ -61,12 +60,6 @@ public class CboardVo {
 	public void setPartiNum(int partiNum) {
 		this.partiNum = partiNum;
 	}
-	public int getCscrapNum() {
-		return cscrapNum;
-	}
-	public void setCscrapNum(int cscrapNum) {
-		this.cscrapNum = cscrapNum;
-	}
 	public int getChits() {
 		return chits;
 	}
@@ -113,7 +106,7 @@ public class CboardVo {
 	public String toString() {
 		return "CboardVo [cpostNo=" + cpostNo + ", userNo=" + userNo + ", cpostName=" + cpostName + ", cpostContent="
 				+ cpostContent + ", cbegDate=" + cbegDate + ", challengePeriod=" + challengePeriod + ", partiNum="
-				+ partiNum + ", cscrapNum=" + cscrapNum + ", chits=" + chits + ", ccommNum=" + ccommNum
+				+ partiNum + ", chits=" + chits + ", ccommNum=" + ccommNum
 				+ ", creviewNum=" + creviewNum + ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn + ", cfmodDate="
 				+ cfmodDate + ", cdelYn=" + cdelYn + "]";
 	}

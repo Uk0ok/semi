@@ -78,7 +78,7 @@
                       <a class="nav-link" href="recipe">레시피</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="challenge2">챌린지</a>
+                      <a class="nav-link" href="challenge">챌린지</a>
                     </li>
                     <!-- <li class="nav-item">
                       <a class="nav-link" href="#">식단코칭</a>
