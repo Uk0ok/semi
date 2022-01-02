@@ -3,8 +3,6 @@ package com.reci.join.controller;
 import java.sql.Timestamp;
 import java.util.Date;
 
-import oracle.sql.TIMESTAMP;
-
 public class MemberVo {
 
 	private int userNo;
@@ -34,7 +32,6 @@ public class MemberVo {
 	}
 
 	public MemberVo() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getUserNo() {
