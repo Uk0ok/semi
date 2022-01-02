@@ -6,10 +6,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 	
-	<%
+<%
 	List<NotiVo> dataList = (List<NotiVo>)request.getAttribute("data"); 
 	//attribute는 오브젝트인데, 현재 타입이 NotiVo이기 때문에 (NotiVo)로 캐스팅
-	%>
+%>
 	
 <!DOCTYPE html>
 <html>

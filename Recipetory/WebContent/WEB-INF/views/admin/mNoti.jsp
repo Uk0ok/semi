@@ -24,8 +24,8 @@
     
     <div id="content_wrap">
     	<div id="content1">
-	   		<table class="table table-hover table-sm">
-	           	<thead>
+	   		<table class="table table-sm table-hover">
+	           	<thead class="thead-light">
 					<tr>
 						<th><input type="checkbox"></th>
 						<th>번호</th>
@@ -40,7 +40,7 @@
 					</tr>
 				</thead>
 	           	<tbody>
-	              		<c:forEach items="${notiList}" var="n">
+	              		<c:forEach items="${notiListAll}" var="n">
 	             		<tr>
 	             			<th><input type="checkbox"></th>
 		                    <td>${n.noticeNo}</td>

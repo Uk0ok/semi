@@ -40,17 +40,10 @@
     }
     
     #content1 {
-    	width: 1000px;
+    	width: 1200px;
+    	height: 600px;
     }
     
-    .table {
-    	height: 250px;
-    }
-   /*  #content2 {
-    	padding: 1rem 2rem 2rem 1rem;
-    	text-align:left;
-    } */
-
 </style>
 	
 </head>
@@ -77,6 +70,7 @@
 					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">게시글관리</a>
 					<div  class="dropdown-menu">
 						<a class="dropdown-item" href="./mNoti">공지사항</a>
+						<a class="dropdown-item" href="./mQna">고객문의</a>
 						<a class="dropdown-item" href="./mMag">매거진</a>
 					</div>
 				</li>

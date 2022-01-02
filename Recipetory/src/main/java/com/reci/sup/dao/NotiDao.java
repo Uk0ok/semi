@@ -17,7 +17,7 @@ public class NotiDao {
 		//쿼리 날릴 준비
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT * FROM TB_NOTICE WHERE DELETE_DATE IS NULL";
+		String sql = "SELECT * FROM TB_NOTICE WHERE DELETE_YN = 'N' ";
 		List<NotiVo> notiList = new ArrayList<NotiVo>(); //리스트안에 제네릭이용해서 notivo만 들어오게
 		
 		//쿼리 날리기

@@ -20,7 +20,7 @@ public class MNotiController extends HttpServlet{
 		
 		List<NotiVo> notiListAll = new NotiService().notiListAll();
 	
-		req.setAttribute("data", notiListAll);
+		req.setAttribute("notiListAll", notiListAll);
 		req.getRequestDispatcher("/WEB-INF/views/admin/mNoti.jsp").forward(req, resp);
 		
 	}

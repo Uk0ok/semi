@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,53 +59,17 @@
 	                    </tr>
 	                </thead>
 	                <tbody>
-	                	 <tr>
-	                        <td>05</td>
-	                        <td><a href="#">동영상 첨부 어떻게 하나요?</a></td>
-	                       	<td>도날드덕</td>
-	                        <td>2021.12.19</td>
-	                        <td>1</td>
-	                    </tr>
-	                	 <tr>
-	                        <td>04</td>
-	                        <td><a href="#">레시피 수정할래요!</a></td>
-	                       	<td>울버린</td>
-	                        <td>2021.12.15</td>
-	                        <td>1</td>
-	                    </tr>
-	                    <tr>
-	                        <td>03</td>
-	                        <td>
-	                        	<a href="#">비밀번호 바꾸고 싶어요</a>
-	                        	<span class="badge badge-primary">답변완료</span>
-	                        </td>
-	                       	<td>식빵맨</td>
-	                        <td>2021.12.11</td>
-	                        <td>3</td>
-	                    </tr>
-	                    <tr>
-	                         <td>02</td>
-	                         <td>
-	                         	<a href="#">레시피 어떻게 올리나요?</a>
-	                         	<span class="badge badge-primary">답변완료</span>
-	                         </td>
-                         	 <td>호빵맨</td>
-	                         <td>2021.12.10</td>
-	                         <td>4</td>
-	                    </tr>
-	                    <tr>
-	                        <td>01</td>
-	                        <td>
-	                        	<a href="#">회원가입 문의</a>
-	                        	<span class="badge badge-primary">답변완료</span>
-	                        </td>
-	                       	<td>카레빵맨</td>
-	                        <td>2021.12.01</td>
-	                        <td>5</td>
-	                    </tr>
-	               	</tbody>
-                </table>
-          
+		             	<c:forEach items="${qnaList}" var="q">
+		             		<tr>
+			                    <td>${q.qnaNo}</td>
+			                    <td><a href="view">${q.qnaTitle}</a></td>
+			                    <td>${q.createDate}</td>
+			                    <td>${q.hits}</td>
+		                    </tr>
+		             	</c:forEach>
+	             	</tbody>
+                 </table>
+	         
                  <div id="content2" class="row">
                 	<form class="col-11" action="search" method="get">
 				        <select name="searchType">
