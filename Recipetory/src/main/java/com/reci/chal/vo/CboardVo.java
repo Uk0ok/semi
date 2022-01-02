@@ -18,6 +18,30 @@ public class CboardVo {
 	private String cmodYn;
 	private Timestamp cfmodDate;
 	private String cdelYn;
+	
+//	public CboardVo() {}
+	
+	
+//	public CboardVo(int cpostNo, int userNo, String cpostName, String cpostContent, Timestamp cbegDate,
+//			Timestamp challengePeriod, int partiNum, int chits, int ccommNum, int creviewNum, String cthumbnail,
+//			String cmodYn, Timestamp cfmodDate, String cdelYn) {
+//		super();
+//		this.cpostNo = cpostNo;
+//		this.userNo = userNo;
+//		this.cpostName = cpostName;
+//		this.cpostContent = cpostContent;
+//		this.cbegDate = cbegDate;
+//		this.challengePeriod = challengePeriod;
+//		this.partiNum = partiNum;
+//		this.chits = chits;
+//		this.ccommNum = ccommNum;
+//		this.creviewNum = creviewNum;
+//		this.cthumbnail = cthumbnail;
+//		this.cmodYn = cmodYn;
+//		this.cfmodDate = cfmodDate;
+//		this.cdelYn = cdelYn;
+//	}
+	
 	public int getCpostNo() {
 		return cpostNo;
 	}
