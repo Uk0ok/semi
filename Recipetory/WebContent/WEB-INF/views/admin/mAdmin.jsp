@@ -15,7 +15,7 @@
 	
 	<%@ include file="/WEB-INF/views/common/admin_header.jsp"%>
 	
-	<div id="wrap">
+	<div id="content_wrap">
     	<div id="content1">
 	   		<table class="table table-hover table-sm">
 	           	<thead>

@@ -44,6 +44,7 @@ public class AdminService {
 	}
 
 	public AdminVo login(AdminVo ad) {
+		
 		//커넥션 가져오기
 		Connection conn = getConnection();
 		
