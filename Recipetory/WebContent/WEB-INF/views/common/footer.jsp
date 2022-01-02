@@ -6,11 +6,6 @@
 <meta charset="UTF-8">
 <title>Footer</title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <style>
     body {
         box-sizing: border-box;
@@ -35,19 +30,21 @@
 </head>
 <body>
 
-	      <footer>
-            <div id="f_content">
-                <div id="f_1">
-                    <a href="">회사소개</a> | 
-                    <a href="">광고문의</a> | 
-                    <a href="">개인정보처리방침</a> | 
-                    <a href="">이용약관</a>  |
-                    <a href="">고객센터</a>
-                </div>
-                <br>
-                <div id="f_2">Copyright © 2021 밥조Inc.All Right Reserved</div>
-            </div>
-        </footer>
-        
+	<%@ include file="/WEB-INF/views/common/w3s.jsp"%>
+	
+    <footer>
+          <div id="f_content">
+              <div id="f_1">
+                  <a href="">회사소개</a> | 
+                  <a href="">광고문의</a> | 
+                  <a href="">개인정보처리방침</a> | 
+                  <a href="">이용약관</a>  |
+                  <a href="">고객센터</a>
+              </div>
+              <br>
+              <div id="f_2">Copyright © 2021 밥조Inc.All Right Reserved</div>
+         </div>
+     </footer>
+      
 </body>
 </html>

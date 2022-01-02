@@ -1,6 +1,7 @@
 package com.reci.admin;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,14 +24,17 @@ public class LoginController extends HttpServlet {
 	
 		String adminId = req.getParameter("adminId");
 		String adminPwd = req.getParameter("adminPwd");
+		String adminLv = req.getParameter("adminLv");
+		
 		
 		AdminVo ad = new AdminVo();
 		ad.setAdminId(adminId);
 		ad.setAdminPwd(adminPwd);
+		ad.setAdminLv(adminLv);
 		
 		AdminVo loginUser = new AdminService().login(ad);
 		
-		System.out.println(loginUser);
+		//System.out.println(loginUser);
 		
 		if(loginUser != null) {
 			//success
@@ -38,7 +42,15 @@ public class LoginController extends HttpServlet {
 			req.getRequestDispatcher("/WEB-INF/views/admin/home.jsp").forward(req, resp);
 		}else {
 			//error
-			req.getRequestDispatcher("/WEB-INF/views/admin/login.jsp").forward(req, resp);
+			resp.setContentType("text/html; charset=UTF-8"); 
+			PrintWriter writer = resp.getWriter();
+			writer.println
+					(
+					"<script>alert('※아이디, 비밀번호를 확인해주세요.');"
+					+ "location.href='./admin';</script>"
+					); 
+			writer.close();
+		
 		}
 	}
 }
