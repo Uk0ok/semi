@@ -63,6 +63,7 @@
 		             		<tr>
 			                    <td>${q.qnaNo}</td>
 			                    <td><a href="view">${q.qnaTitle}</a></td>
+			                    <td>${q.adminNo}</td>
 			                    <td>${q.createDate}</td>
 			                    <td>${q.hits}</td>
 		                    </tr>

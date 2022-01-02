@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,57 +51,22 @@
 	                    <tr>
 		                    <th>번호</th>
 		                    <th>제목</th>
-		                    <th>작성자</th>
+		                    <th>처리현황</th>
 		                    <th>등록일</th>
 		                    <th>조회수</th>
 	                    </tr>
 	                </thead>
-	                <tbody>
-	                	 <tr>
-	                        <td>05</td>
-	                        <td><a href="#">적절하지 못한 게시글</a></td>
-	                       	<td>도날드덕</td>
-	                        <td>2021.12.19</td>
-	                        <td>1</td>
-	                    </tr>
-	                	 <tr>
-	                        <td>04</td>
-	                        <td><a href="#">댓글 신고</a></td>
-	                       	<td>울버린</td>
-	                        <td>2021.12.15</td>
-	                        <td>1</td>
-	                    </tr>
-	                    <tr>
-	                        <td>03</td>
-	                        <td>
-	                        	<a href="#">댓글 비속어</a>
-	                        	<span class="badge badge-primary">답변완료</span>
-	                        </td>
-	                       	<td>식빵맨</td>
-	                        <td>2021.12.11</td>
-	                        <td>3</td>
-	                    </tr>
-	                    <tr>
-	                         <td>02</td>
-	                         <td>
-	                         	<a href="#">회원 신고</a>
-	                         	<span class="badge badge-primary">답변완료</span>
-	                         </td>
-                         	 <td>호빵맨</td>
-	                         <td>2021.12.10</td>
-	                         <td>4</td>
-	                    </tr>
-	                    <tr>
-	                        <td>01</td>
-	                        <td>
-	                        	<a href="#">게시글 신고</a>
-	                        	<span class="badge badge-primary">답변완료</span>
-	                        </td>
-	                       	<td>카레빵맨</td>
-	                        <td>2021.12.01</td>
-	                        <td>5</td>
-	                    </tr>
-	               	</tbody>
+	               <tbody>
+		             	<c:forEach items="${repoList}" var="r">
+		             		<tr>
+			                    <td>${r.reportNo}</td>
+			                    <td><a href="view">${r.reportTitle}</a></td>
+			                    <td>${r.statusYn}</td>
+			                    <td>${r.createDate}</td>
+			                    <td>${r.hits}</td>
+		                    </tr>
+		             	</c:forEach>
+	             	</tbody>
                 </table>
                 
                 <div id="content2" class="row">

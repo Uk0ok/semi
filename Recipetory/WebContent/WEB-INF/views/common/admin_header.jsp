@@ -44,6 +44,10 @@
     	height: 600px;
     }
     
+    .table {
+    	margin-bottom: 3rem;
+    }
+    
 </style>
 	
 </head>
