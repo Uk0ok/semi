@@ -60,7 +60,6 @@
 	                    <tr>
 		                    <th>번호</th>
 		                    <th>제목</th>
-		                    <th>작성자</th>
 		                    <th>등록일</th>
 		                    <th>조회수</th>
 	                    </tr>
@@ -70,8 +69,7 @@
 		             	<c:forEach items="${data}" var="n">
 		             		<tr>
 			                    <td>${n.noticeNo}</td>
-			                    <td><a href="detail">${n.noticeTitle}</a><td>
-			                    <td>${n.adminNo}</td>
+			                    <td><a href="view">${n.noticeTitle}</a></td>
 			                    <td>${n.createDate}</td>
 			                    <td>${n.hits}</td>
 		                    </tr>

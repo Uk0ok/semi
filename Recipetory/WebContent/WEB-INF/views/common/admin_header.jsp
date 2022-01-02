@@ -16,10 +16,6 @@
         margin: auto;
     }
   
-	#header {
-    	padding: 1rem 2rem;
-    }
-    
 	.navbar {
 		padding: 0 30px;
 		background-color: rgb(175, 187, 175); 
@@ -47,8 +43,8 @@
     	width: 1000px;
     }
     
-    table {
-    	height: 300px;
+    .table {
+    	height: 250px;
     }
    /*  #content2 {
     	padding: 1rem 2rem 2rem 1rem;
@@ -60,11 +56,6 @@
 </head>
 <body>
 
-	
-	<div id="header">
-		<h3> 관리자 페이지</h3>
-	</div>
-	
 	<div id="nav_wrap">
 		<nav class="navbar navbar-expand-sm navbar-light">
 	       	<span class="navbar-text">

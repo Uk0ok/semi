@@ -4,9 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>mMag</title>
+
+<style>
+	#header {
+    	padding: 1rem 2rem;
+    }
+</style>
+
 </head>
 <body>
+
+	<div id="header">
+		<h3>매거진 관리</h3>
+	</div>
 	
 	<%@ include file="/WEB-INF/views/common/admin_header.jsp"%>
 

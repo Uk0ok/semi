@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
+<%-- <%
+	List<MemberVo> dataList = (List<MemberVo>)request.getAttribute("data"); 
+%> --%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>mAdmin</title>
+<title>mUser</title>
 
 <style>
 	#header {
@@ -17,14 +21,14 @@
 <body>
 
 	<div id="header">
-		<h3>관리자 관리</h3>
+		<h3>회원 관리</h3>
 	</div>
-	
+
 	<%@ include file="/WEB-INF/views/common/admin_header.jsp"%>
-	
-	<div id="content_wrap">
+    
+    <div id="content_wrap">
     	<div id="content1">
-	   		<table class="table table-hover">
+	   		<table class="table table-hover table-sm">
 	           	<thead>
 					<tr>
 						<th><input type="checkbox"></th>
@@ -38,16 +42,19 @@
 					</tr>
 				</thead>
 	           	<tbody>
-	              		<c:forEach items="${adminList}" var="ad">
+	              		<c:forEach items="${data}" var="m">
 	             		<tr>
 	             			<th><input type="checkbox"></th>
-		                    <td>${ad.adminNo}</td>
-		                    <td>${ad.adminId}</td>
-		                    <td>${ad.adminPwd}</td>
-		                    <td>${ad.adminName}</td>
-		                    <td>${ad.adminLv}</td>
-		                    <td>${ad.joinDate}</td>
-		                    <td>${ad.deleteDate}</td>
+		                    <td>${m.userNo}</td>
+		                    <td>${m.userId}<td>
+		                    <td>${m.userPwd}</td>
+		                    <td>${m.userNickname}</td>
+		                    <td>${m.userEmail}</td>
+		                    <td>${m.userPhone}</td>
+		                    <td>${m.userJoinDate}</td>
+		                    <td>${m.userType}</td>
+		                    <td>${m.userDeleteYn}</td>
+		                    <td>${m.lastloginDate}</td>
 	                    </tr>
 	            		</c:forEach> 
 	           	</tbody>
@@ -62,6 +69,7 @@
 			</ul>
 		</div>
    	</div>
-   	
+    
+
 </body>
 </html>

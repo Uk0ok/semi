@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.reci.common.JDBCTemplate.*;
 
@@ -75,6 +77,48 @@ public class AdminDao {
 		}
 		
 		return selectedAdmin;
+	}
+
+	public List<AdminVo> selectAdminAll(Connection conn) {
+		
+		String sql = "SELECT * FROM TB_ADMIN";
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<AdminVo> list = new ArrayList<AdminVo>();
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			AdminVo selectedAdmin = null;
+			
+			while(rs.next()) {
+				int adminNo = rs.getInt("ADMIN_NO");
+				String adminId = rs.getString("ADMIN_ID");
+				String adminPwd = rs.getString("ADMIN_PWD");
+				String adminName = rs.getString("ADMIN_NAME");
+				String adminLv = rs.getString("ADMIN_LV");
+				Timestamp joinDate = rs.getTimestamp("JOIN_DATE");
+				Timestamp deleteDate = rs.getTimestamp("DELETE_DATE");
+				
+				selectedAdmin = new AdminVo();
+				selectedAdmin.setAdminNo(adminNo);
+				selectedAdmin.setAdminId(adminId);
+				selectedAdmin.setAdminPwd(adminPwd);
+				selectedAdmin.setAdminName(adminName);
+				selectedAdmin.setAdminLv(adminLv);
+				selectedAdmin.setJoinDate(joinDate);
+				selectedAdmin.setDeleteDate(deleteDate);
+				
+				list.add(selectedAdmin);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return list;
 	}
 	
 }

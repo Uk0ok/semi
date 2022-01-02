@@ -14,16 +14,26 @@ import com.reci.sup.vo.NotiVo;
 
 public class NotiService {
 	
+	//유저페이지에서 공지 보이기
 	public List<NotiVo> selectNotiList() {
 		//디비에서 데이터조회
 		
-				//커넥션 가져옴 -> 가져온 쪽에서 클로즈 해야함
-				Connection conn = getConnection();
-				
-				List<NotiVo> notiList = new NotiDao().selectNotiList(conn);
-				
-				close(conn); 
-				
-				return notiList;
+		//커넥션 가져옴 -> 가져온 쪽에서 클로즈 해야함
+		Connection conn = getConnection();
+		List<NotiVo> notiList = new NotiDao().selectNotiList(conn);
+		close(conn); 
+		
+		return notiList;
 	}
+
+	//관리자페이지에서 공지 보이기
+	public List<NotiVo> notiListAll() {
+		Connection conn = getConnection();
+		List<NotiVo> notiListAll = new NotiDao().notiListAll(conn);
+		close(conn); 
+		
+		return notiListAll;
+	}
+	
+	
 }
