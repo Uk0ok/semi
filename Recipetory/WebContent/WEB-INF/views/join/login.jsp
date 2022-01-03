@@ -91,10 +91,10 @@ body {
     </div> -->
 
     
-    <form id="login_form" action="./login" method="post">
+    <form id="login_form" action="<%=request.getContextPath()%>/login2" method="post">
 	     <input type="text" name="userId" id="userId" class="userId" placeholder="아이디" required>
 	     <input type="password" name="userPwd" id="userPwd" class="userPwd" placeholder="비밀번호" required>
-	     <button id=btn type="submit">로그인</button>
+	     <input id="btn" type="submit" value="로그인">
      </form>
     
     

@@ -77,8 +77,6 @@ public class MemberDao {
 //				selectedMember.setUserType(userType);
 //				selectedMember.setUserDeleteYn(userDeleteYn);
 //				selectedMember.setLastLoginDate(LastLoginDate);
-				
-
 
 			}
 		} catch (SQLException e) {
@@ -89,6 +87,22 @@ public class MemberDao {
 		}
 		
 		return selectedMember;
+	}
+	
+	public int memberDelete(Connection conn, MemberVo m) {
+		int value = 0;
+		PreparedStatement pstmt = null;
+		String sql = "UPDATE TB_USER SET USER_DELETE_YN = 'Y' WHERE USER_PWD = ?;";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, m.getUserPwd());
+			value = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return value;
 	}
 	
 }
