@@ -11,8 +11,6 @@ public class CboardVo {
 	private Timestamp cbegDate;
 	private Timestamp challengePeriod;
 	private int partiNum;
-	private int chits;
-	private int ccommNum;
 	private int creviewNum;
 	private String cthumbnail;
 	private String cmodYn;
@@ -84,18 +82,6 @@ public class CboardVo {
 	public void setPartiNum(int partiNum) {
 		this.partiNum = partiNum;
 	}
-	public int getChits() {
-		return chits;
-	}
-	public void setChits(int chits) {
-		this.chits = chits;
-	}
-	public int getCcommNum() {
-		return ccommNum;
-	}
-	public void setCcommNum(int ccommNum) {
-		this.ccommNum = ccommNum;
-	}
 	public int getCreviewNum() {
 		return creviewNum;
 	}
@@ -130,10 +116,10 @@ public class CboardVo {
 	public String toString() {
 		return "CboardVo [cpostNo=" + cpostNo + ", userNo=" + userNo + ", cpostName=" + cpostName + ", cpostContent="
 				+ cpostContent + ", cbegDate=" + cbegDate + ", challengePeriod=" + challengePeriod + ", partiNum="
-				+ partiNum + ", chits=" + chits + ", ccommNum=" + ccommNum
-				+ ", creviewNum=" + creviewNum + ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn + ", cfmodDate="
-				+ cfmodDate + ", cdelYn=" + cdelYn + "]";
+				+ partiNum + ", creviewNum=" + creviewNum + ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn
+				+ ", cfmodDate=" + cfmodDate + ", cdelYn=" + cdelYn + "]";
 	}
+	
 
 	
 	

@@ -34,8 +34,6 @@ public class CboardDao {
 						Timestamp cbegDate = rs.getTimestamp("BEG_DATE");
 						Timestamp challengePeriod = rs.getTimestamp("CHALLENGE_PERIOD");
 						int partiNum = rs.getInt("PARTI_NUM");
-						int chits = rs.getInt("HITS");
-						int ccommNum = rs.getInt("COMM_NUM");
 						int creviewNum = rs.getInt("REVIEW_NUM");
 //						int creviewNum = 923;//swy
 						String cthumbnail = rs.getString("THUMBNAIL");
@@ -53,8 +51,6 @@ public class CboardDao {
 						ch.setCbegDate(cbegDate);
 						ch.setChallengePeriod(challengePeriod);
 						ch.setPartiNum(partiNum);
-						ch.setChits(chits);
-						ch.setCcommNum(ccommNum);
 						ch.setCreviewNum(creviewNum);
 						ch.setCthumbnail(cthumbnail);
 						ch.setCmodYn(cmodYn);
