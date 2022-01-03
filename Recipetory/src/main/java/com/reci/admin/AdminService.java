@@ -2,6 +2,7 @@ package com.reci.admin;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import static com.reci.common.JDBCTemplate.*; //static 으로 바꿔서 클래스명 생략해서 쓸 수 있게
 
@@ -44,6 +45,7 @@ public class AdminService {
 	}
 
 	public AdminVo login(AdminVo ad) {
+		
 		//커넥션 가져오기
 		Connection conn = getConnection();
 		
@@ -65,5 +67,18 @@ public class AdminService {
 
 	public AdminVo selectAdmin(Connection conn, AdminVo ad) {
 		return new AdminDao().selectAdmin(conn, ad);
+	}
+
+
+	public List<AdminVo> search() {
+		Connection conn = getConnection();
+		List<AdminVo> adminList = selectAdminAll(conn);
+		close(conn);
+		
+		return adminList;
+	}
+
+	public List<AdminVo> selectAdminAll(Connection conn) {
+		return new AdminDao().selectAdminAll(conn);
 	}
 }

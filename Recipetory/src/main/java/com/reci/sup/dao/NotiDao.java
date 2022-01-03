@@ -17,7 +17,7 @@ public class NotiDao {
 		//쿼리 날릴 준비
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT * FROM TB_NOTICE";
+		String sql = "SELECT * FROM TB_NOTICE WHERE DELETE_YN = 'N' ";
 		List<NotiVo> notiList = new ArrayList<NotiVo>(); //리스트안에 제네릭이용해서 notivo만 들어오게
 		
 		//쿼리 날리기
@@ -90,6 +90,56 @@ public class NotiDao {
 		
 		return result;
 		
+	}
+
+
+	public List<NotiVo> notiListAll(Connection conn) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM TB_NOTICE";
+		List<NotiVo> notiListAll = new ArrayList<NotiVo>();
+		
+		//쿼리 날리기
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery(); //실행결과가 resultset에 나오기 때문에
+			
+			//모든게시글 가져오기위해, 다음줄마다 모두 실행되려면 while
+			while(rs.next()) {
+				//rs에서 현재 커서가 가리키는 행의 데이터를 가져오기
+				String noticeNo = rs.getString("NOTICE_NO");
+				String adminNo = rs.getString("ADMIN_NO");
+				String noticeTitle = rs.getString("NOTICE_TITLE");
+				String noticeContent = rs.getString("NOTICE_CONTENT");
+				String createDate = rs.getString("CREATE_DATE");
+				String hits = rs.getString("HITS");
+				String modYn = rs.getString("MOD_YN");
+				String modDate = rs.getString("MOD_DATE");
+				String deleteYn = rs.getString("DELETE_YN");
+				
+				//여러 변수에 흩어져있는 데이터를 하나로 뭉침
+				NotiVo n = new NotiVo(noticeNo, adminNo, noticeContent, noticeTitle, createDate, hits, modYn, modDate, deleteYn);
+				n.setNoticeNo(noticeNo);
+				n.setAdminNo(adminNo);
+				n.setNoticeTitle(noticeTitle);
+				n.setNoticeContent(noticeContent);
+				n.setCreateDate(createDate);;
+				n.setHits(hits);
+				n.setModYn(modYn);
+				n.setModDate(modDate);
+				n.setDeleteYn(deleteYn);
+				
+				notiListAll.add(n);
+				
+			}
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return notiListAll;
 	}
 	
 	

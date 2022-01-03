@@ -44,7 +44,7 @@
 
 	<%@ include file="/WEB-INF/views/common/w3s.jsp"%>
 	
-	<footer>
+	<header>
 		<div id="h_head" class="row">
 			<a href="home" id="h_title" class="col-9">
 				<img src="./img/home/logo1.png" width="350px">
@@ -84,7 +84,7 @@
 				</li>
 			</ul>
 		</div>
-	</footer>
+	</header>
 	
 </body>
 </html>

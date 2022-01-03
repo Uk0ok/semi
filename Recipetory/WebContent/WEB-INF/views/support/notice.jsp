@@ -6,10 +6,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 	
-	<%
+<%
 	List<NotiVo> dataList = (List<NotiVo>)request.getAttribute("data"); 
 	//attribute는 오브젝트인데, 현재 타입이 NotiVo이기 때문에 (NotiVo)로 캐스팅
-	%>
+%>
 	
 <!DOCTYPE html>
 <html>
@@ -60,7 +60,6 @@
 	                    <tr>
 		                    <th>번호</th>
 		                    <th>제목</th>
-		                    <th>작성자</th>
 		                    <th>등록일</th>
 		                    <th>조회수</th>
 	                    </tr>
@@ -70,8 +69,7 @@
 		             	<c:forEach items="${data}" var="n">
 		             		<tr>
 			                    <td>${n.noticeNo}</td>
-			                    <td><a href="detail">${n.noticeTitle}</a><td>
-			                    <td>${n.adminNo}</td>
+			                    <td><a href="view">${n.noticeTitle}</a></td>
 			                    <td>${n.createDate}</td>
 			                    <td>${n.hits}</td>
 		                    </tr>

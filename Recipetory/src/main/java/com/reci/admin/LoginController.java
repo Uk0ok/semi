@@ -24,13 +24,10 @@ public class LoginController extends HttpServlet {
 	
 		String adminId = req.getParameter("adminId");
 		String adminPwd = req.getParameter("adminPwd");
-		String adminLv = req.getParameter("adminLv");
-		
 		
 		AdminVo ad = new AdminVo();
 		ad.setAdminId(adminId);
 		ad.setAdminPwd(adminPwd);
-		ad.setAdminLv(adminLv);
 		
 		AdminVo loginUser = new AdminService().login(ad);
 		
@@ -50,7 +47,6 @@ public class LoginController extends HttpServlet {
 					+ "location.href='./admin';</script>"
 					); 
 			writer.close();
-		
 		}
 	}
 }

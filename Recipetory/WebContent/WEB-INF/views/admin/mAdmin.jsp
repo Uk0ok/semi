@@ -1,24 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%-- <%
-	List<AdminVo> dataList = (List<AdminVo>)request.getAttribute("data"); 
-%> --%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>mAdmin</title>
+
+<style>
+	#header {
+    	padding: 1rem 2rem;
+    }
+</style>
+
 </head>
 <body>
+
+	<div id="header">
+		<h3>관리자 관리</h3>
+	</div>
 	
 	<%@ include file="/WEB-INF/views/common/admin_header.jsp"%>
 	
-	<div id="wrap">
+	<div id="content_wrap">
     	<div id="content1">
-	   		<table class="table table-hover table-sm">
-	           	<thead>
+	   		<table class="table table-sm table-hover">
+	           	<thead class="thead-light">
 					<tr>
 						<th><input type="checkbox"></th>
 						<th>번호</th>
@@ -31,11 +38,11 @@
 					</tr>
 				</thead>
 	           	<tbody>
-	              		<c:forEach items="${data}" var="ad">
+	              		<c:forEach items="${adminList}" var="ad">
 	             		<tr>
 	             			<th><input type="checkbox"></th>
 		                    <td>${ad.adminNo}</td>
-		                    <td><a href="#">${ad.adminId}</a><td>
+		                    <td>${ad.adminId}</td>
 		                    <td>${ad.adminPwd}</td>
 		                    <td>${ad.adminName}</td>
 		                    <td>${ad.adminLv}</td>
