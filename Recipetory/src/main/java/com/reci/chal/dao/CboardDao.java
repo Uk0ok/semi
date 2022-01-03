@@ -14,7 +14,7 @@ import com.reci.common.JDBCTemplate;
 public class CboardDao {
 
 	public List<CboardVo> selectCboardList(Connection conn){
-		
+
 			System.out.println("DAO 호출됨...");//swy
 		
 				PreparedStatement pstmt = null;
@@ -76,6 +76,4 @@ public class CboardDao {
 				
 				return CboardList;
 			}
-
-	}
-
+}
