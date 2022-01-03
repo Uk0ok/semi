@@ -57,7 +57,7 @@
 		<nav class="navbar navbar-expand-sm navbar-light">
 	       	<span class="navbar-text">
 	           	${loginUser.adminId}   
-	           	<a class="navbar-brand" href="logout">로그아웃</a>
+	           	<a href="logout">로그아웃</a>
 			</span>
 		
 			<ul class="navbar-nav">
