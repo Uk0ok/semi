@@ -8,19 +8,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.reci.sup.dao.NotiDao;
+import com.reci.sup.service.NotiService;
 import com.reci.sup.vo.NotiVo;
 
-@WebServlet("/nView")
+@WebServlet("/support/nView")
 public class NViewController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String num = req.getParameter("noticeNo");
+		int noticeNo = Integer.parseInt(num);
+		System.out.println("notiNo : " + noticeNo);
 		
-		int noticeNo = Integer.parseInt(req.getParameter("noticeNo"));
-		int pageNo = Integer.parseInt(req.getParameter("pageNo"));
+		String currentPage = req.getParameter("currentPage");
 		
-		NotiVo notiView = NotiDao.notiView(noticeNo);
+		NotiVo notiView = NotiService.notiView(noticeNo);
+		System.out.println("notiView : " + notiView);
+		req.setAttribute("notiview", notiView);
 		
 		req.getRequestDispatcher("/WEB-INF/views/support/nView.jsp").forward(req, resp);
 	}
