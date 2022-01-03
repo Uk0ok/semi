@@ -41,6 +41,45 @@
      .board_write {
     border-top: 2px solid green;
     }
+    
+    body {
+    background-color: cornsilk;
+    text-align: center;
+	}
+	
+	input {
+	    height: 25px;
+	}
+	
+	div {
+	    margin: auto;
+	}
+	
+	#join_tb{
+	    width: 450px;
+	    height: 450px;
+	    margin: auto;
+	}
+	
+	#p_a {
+	    height: 30px;
+	    background-color: rgb(175, 187, 175);
+	}
+	
+	#submit {
+	    width: 300px;
+	    height: 50px;
+	    font-size: 1.5em;
+	    color: white;
+	    background-color: rgb(175, 187, 175);
+	}
+	
+	#check {
+	    width: 600px;
+	    height: 200px;
+	    overflow-y: scroll;
+	    background-color: lightgray;
+	}
 </style>
 </head>
 <%@ include file= "/WEB-INF/views/common/header.jsp" %>
@@ -52,16 +91,40 @@
     <br>
     <div class="board_write">
     <br>
-	<form action="/challengeview" method="post">
-	    <div>제목 <input type="text" name="cpostName" placeholder="제목"></div> <br>
-	    <div>종료 날짜 <input type="date" name="challengePeriod" placeholder="제목"></div> <br>
-	    <div>첨부파일 <input type="file" name="cthumbnail"></div> <br>
-	    <div>내용<textarea name="cont" id="cpostContent" cols="30" rows="10"></textarea></div>
-	    <div>
-	        <input type="submit" value="등록">
-	        <input type="reset" value="취소">
-	    </div>
-	</form>
+   
+	<form action="./challengeview" method="post">
+    <table id="chalw_tb" style= text-align:center; border: 1px solid black>
+        <tr>
+            <td>제목</td>
+            <td><input type="text" name="cpostName" id="cpostName" size="30"maxlength="50" placeholder="제목을 입력하세요" maxlength="50" style= "width:800px;"></td>
+        </tr>
+        <tr>
+            <td>종료 날짜</td>
+            <td><input type="date" name="challengePeriod" id="challengePeriod"></td>
+        </tr>
+        <tr>
+            <td>첨부파일</td>
+            <td><input type="file" name="cthumbnail" id="cthumbnail" size="30"></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td><textarea class="write_challenge" placeholder="내용을 작성하세요" name="cpostContent" maxlength="2048" style="height:350px; width: 800px;"></textarea></td>
+        </tr>
+        
+        <c:forEach items="${data}" var="ch">
+			<tr>
+				<td>${ch.cpostName}</td>
+				<td>${ch.challengePeriod}</td>
+				<td>${ch.cthumbnail}</td>
+				<td>${ch.cpostContent}</td>
+			</tr>
+		</c:forEach>
+		
+    </table>
+            <input type="submit" class="btn_write" value="등록">
+        </form>
+
+	
 	</div>
 </div>
 </body>

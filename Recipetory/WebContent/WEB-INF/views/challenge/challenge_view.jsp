@@ -1,5 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="com.reci.chal.vo.CboardVo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
+ %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +30,10 @@
 	margin-left: 18%;
 	margin-right: 18%;
     }
+    
+    .board_list_body .item {
+	    border-bottom: 1px solid #ccc;
+	}
 
     .board_title {
         margin-bottom: 30px;
@@ -80,7 +89,7 @@
         border-top: 2px solid green;
     }
 
-    .board_view .title {
+/*    .board_view .title {
         padding: 20px 15px;
         border-bottom: 1px dashed #ddd;
         font-size: 1.7rem;
@@ -138,7 +147,7 @@
         line-height: 160%;
         font-size: 1.4rem;
     }
-
+*/
 /* css media */
 @media (max-width: 1000px) {
     .board_wrap {
@@ -148,7 +157,7 @@
         box-sizing: border-box;
     }
 
-    .board_view .info dl {
+/*    .board_view .info dl {
         width: 50%;
         padding: 0;
     }
@@ -165,6 +174,7 @@
     .board_view .info dl dd {
         font-size: 1.1rem;
     }
+*/
 }
     </style>
 </head>
@@ -175,39 +185,18 @@
             <strong>챌린지 소개 게시물</strong>
         </div>
         <div class="board_view_wrap">
-            <div class="board_view">
-                <div class="title">
-                    글 제목
-                </div>
-                <div class="info">
-                    <dl>
-                        <dt>번호</dt>
-                        <dd>n</dd>
-                    </dl>
-                    <dl>
-                        <dt>글쓴이</dt>
-                        <dd>작성자 닉네임</dd>
-                    </dl>
-                    <dl>
-                        <dt>작성일</dt>
-                        <dd>YYYY.MM.DD</dd>
-                    </dl>
-                    <dl>
-                        <dt>참여자 수</dt>
-                        <dd>nn</dd>
-                    </dl>
-                </div>
-                <div class="cont">
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다
-                </div>
-            </div>
+            <div class="board_view">            
+            <div class="board_list_body">
+                           <c:forEach items="${data}" var="ch">
+                               <div class="item">
+                                    <div class="tit">제목 : ${ch.cpostName}</div>
+                                    <div class="info">챌린지 기간 : ${ch.challengePeriod}</div>
+                                    <div class="photo"><img src="${pageContext.request.contextPath}${ch.cthumbnail}" width="400" height="300"></div>
+                                    <div class="content">${ch.cpostContent}</div>
+                               </div>
+                     		</c:forEach>
+                   </div>
+                       
             <div class="bt_wrap">
             	<a href="./challengereview" class="bt_review">리뷰보기</a>
             	<a href="#" class="bt_parti">참여하기</a>
