@@ -15,12 +15,12 @@ import com.reci.sup.vo.NotiVo;
 public class NotiService {
 	
 	//유저페이지에서 공지 보이기
-	public List<NotiVo> selectNotiList() {
+	public List<NotiVo> selectNotiList(String currentPage) {
 		//디비에서 데이터조회
 		
 		//커넥션 가져옴 -> 가져온 쪽에서 클로즈 해야함
 		Connection conn = getConnection();
-		List<NotiVo> notiList = new NotiDao().selectNotiList(conn);
+		List<NotiVo> notiList = new NotiDao().selectNotiList(conn, currentPage);
 		close(conn); 
 		
 		return notiList;
@@ -35,5 +35,7 @@ public class NotiService {
 		return notiListAll;
 	}
 	
-	
+	public NotiVo notiView(Connection conn, NotiVo n) {
+		return new NotiDao().notiView(n, conn);
+	}
 }

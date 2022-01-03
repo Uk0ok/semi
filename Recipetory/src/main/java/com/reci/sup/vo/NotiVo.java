@@ -1,18 +1,20 @@
 package com.reci.sup.vo;
 
+import java.sql.Timestamp;
+
 public class NotiVo {
-	private String noticeNo;
-	private String adminNo;
+	private int noticeNo;
+	private int adminNo;
 	private String noticeContent;
 	private String noticeTitle;
-	private String createDate;
-	private String hits;
+	private Timestamp createDate;
+	private int hits;
 	private String modYn;
-	private String modDate;
+	private Timestamp modDate;
 	private String deleteYn;
 	
-	public NotiVo(String noticeNo, String adminNo, String noticeContent, String noticeTitle, String createDate,
-			String hits, String modYn, String modDate, String deleteYn) {
+	public NotiVo(int noticeNo, int adminNo, String noticeContent, String noticeTitle, Timestamp createDate, int hits,
+			String modYn, Timestamp modDate, String deleteYn) {
 		super();
 		this.noticeNo = noticeNo;
 		this.adminNo = adminNo;
@@ -25,19 +27,22 @@ public class NotiVo {
 		this.deleteYn = deleteYn;
 	}
 
-	public String getNoticeNo() {
+	public NotiVo() {
+	}
+
+	public int getNoticeNo() {
 		return noticeNo;
 	}
 
-	public void setNoticeNo(String noticeNo) {
+	public void setNoticeNo(int noticeNo) {
 		this.noticeNo = noticeNo;
 	}
 
-	public String getAdminNo() {
+	public int getAdminNo() {
 		return adminNo;
 	}
 
-	public void setAdminNo(String adminNo) {
+	public void setAdminNo(int adminNo) {
 		this.adminNo = adminNo;
 	}
 
@@ -57,19 +62,19 @@ public class NotiVo {
 		this.noticeTitle = noticeTitle;
 	}
 
-	public String getCreateDate() {
+	public Timestamp getCreateDate() {
 		return createDate;
 	}
 
-	public void setCreateDate(String createDate) {
+	public void setCreateDate(Timestamp createDate) {
 		this.createDate = createDate;
 	}
 
-	public String getHits() {
+	public int getHits() {
 		return hits;
 	}
 
-	public void setHits(String hits) {
+	public void setHits(int hits) {
 		this.hits = hits;
 	}
 
@@ -81,11 +86,11 @@ public class NotiVo {
 		this.modYn = modYn;
 	}
 
-	public String getModDate() {
+	public Timestamp getModDate() {
 		return modDate;
 	}
 
-	public void setModDate(String modDate) {
+	public void setModDate(Timestamp modDate) {
 		this.modDate = modDate;
 	}
 
@@ -103,6 +108,8 @@ public class NotiVo {
 				+ ", noticeTitle=" + noticeTitle + ", createDate=" + createDate + ", hits=" + hits + ", modYn=" + modYn
 				+ ", modDate=" + modDate + ", deleteYn=" + deleteYn + "]";
 	}
+	
+	
 	
 	
 	
