@@ -73,4 +73,22 @@ public class MemberService {
 	public MemberVo selectMember(Connection conn, MemberVo m) {
 		return new MemberDao().selectMember(conn, m);
 	}
+	
+	public MemberVo deleteMember(MemberVo m) {
+		//커넥션 가져오기
+		Connection conn = getConnection();
+	
+		MemberVo selectedMember = selectMember(conn, m);
+		
+		close(conn);
+		
+		//가져온 pwd랑 사용자의 pwd랑 같은지 비교
+		//true면 return/false면 rollback이니까 바로 (결과)리턴값에 넣어주기
+		//로그인 성공하면 그 정보를 기억하기위해 selectedAdmin에 기록
+		if(selectedMember.getUserPwd().equals(m.getUserPwd())) {
+			return selectedMember;
+		}else {
+			return null;
+		}
+	}
 }

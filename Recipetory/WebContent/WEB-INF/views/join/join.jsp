@@ -91,10 +91,10 @@ div {
         <br><br>
 
             <div id="check"></div>
-            <label><input type="checkbox">개인정보 수집 및 이용 동의 (필수)</label>
+            <label><input type="checkbox" required>개인정보 수집 및 이용 동의 (필수)</label>
             <br><br><br>
             <div id="check"></div>
-            <label><input type="checkbox">레시피토리 이용약관 동의 (필수)</label>
+            <label><input type="checkbox" required>레시피토리 이용약관 동의 (필수)</label>
             <br><br><br><br><br><br>
             <button id="submit" type="submit" onclick="return validate();">회원가입</button>
             <br><br><br><br><br><br>

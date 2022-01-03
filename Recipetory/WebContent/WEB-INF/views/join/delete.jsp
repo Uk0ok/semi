@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>마이페이지</title>
+    <title>회원 탈퇴</title>
     <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/mypage.css">
 </head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -25,30 +25,24 @@
             </div>
             <div id="content_userInfo_m">
                 <br><br><br><br><br><br>
+
+				<form action="delete" method="post">
                 <table id="tb_userInfo">
                     <tr>
-                        <td>아이디</td>
-                        <td>abcd123</td>
-                        <td></td>
+                        <td>탈퇴하려면 비밀번호를 입력해 주세요.</td>
                     </tr>
                     <tr>
-                        <td>비밀번호</td>
-                        <td><button>변경</button></td>
-                        <td></td>
+                        <td><input type="password" name="userPwd"></td>
                     </tr>
                     <tr>
-                        <td>이메일</td>
-                        <td>abcd123@korea.com</td>
-                        <td><button>변경</button></td>
+                        <td><button type="submit">확인</button></td>
                     </tr>
-                    <tr>
-                        <td>휴대전화</td>
-                        <td>010 - 0000 - 0000</td>
-                        <td><button>변경</button></td>
-                    </tr>
-                </table>
+                    
+                    </table>
+				</form>
+
                 <br><br><br><br><br>
-                <div id="d_m" style="margin-right:10px"><a href="./delete">회원 탈퇴</a></div>
+
             </div>
         </section>
     </div>
