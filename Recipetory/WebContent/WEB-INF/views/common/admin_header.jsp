@@ -25,6 +25,15 @@
 		font-size:small;
 	}
 	
+	.navbar-light .navbar-nav .nav-link {
+    	color: #000;
+	}
+	
+	.navbar-light .navbar-text {
+    	color: #000;
+    	padding: 0.5rem 1rem;
+	}
+	
 	#nav_wrap {
     	padding: 0;
     	background-color: rgb(175, 187, 175);
@@ -57,8 +66,8 @@
 		<nav class="navbar navbar-expand-sm navbar-light">
 	       	<span class="navbar-text">
 	           	${loginUser.adminId}   
-	           	<a class="navbar-brand" href="logout">로그아웃</a>
 			</span>
+           	<a class="navbar-brand btn btn-light" href="logout" role="button">로그아웃</a>
 		
 			<ul class="navbar-nav">
 				<li class="nav-item">
