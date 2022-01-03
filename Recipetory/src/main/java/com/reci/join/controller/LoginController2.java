@@ -32,10 +32,10 @@ public class LoginController2 extends HttpServlet {
 		if (loginUser != null) {
 			// success
 			req.getSession().setAttribute("loginUser", loginUser);
-			req.getRequestDispatcher("./home").forward(req, resp);
+			req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
 		} else {
 			// error
-			req.getRequestDispatcher("./login").forward(req, resp);
+			req.getRequestDispatcher("/WEB-INF/views/reci/login.jsp").forward(req, resp);
 		}
 	}
 }
