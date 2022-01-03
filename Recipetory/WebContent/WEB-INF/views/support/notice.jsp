@@ -65,7 +65,7 @@
 		         	</tr>
         		</thead>
 	           	<tbody>
-	            	<c:forEach items="${data}" var="n">
+	            	<c:forEach items="${notiView}" var="n">
 	            		<tr>
 	                    <td>${n.noticeNo}</td>
 	                    <td>

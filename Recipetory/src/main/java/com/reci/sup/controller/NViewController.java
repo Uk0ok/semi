@@ -17,15 +17,17 @@ public class NViewController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String num = req.getParameter("noticeNo");
-		int noticeNo = Integer.parseInt(num);
+		String no = req.getParameter("no");
+		int noticeNo = Integer.parseInt(no);
 		System.out.println("notiNo : " + noticeNo);
+		req.setAttribute("no", no);
 		
-		String currentPage = req.getParameter("currentPage");
+		String pageNo = req.getParameter("pageNo");
+		req.setAttribute("pageNo", pageNo);
 		
 		NotiVo notiView = NotiService.notiView(noticeNo);
 		System.out.println("notiView : " + notiView);
-		req.setAttribute("notiview", notiView);
+		req.setAttribute("notiView", notiView);
 		
 		req.getRequestDispatcher("/WEB-INF/views/support/nView.jsp").forward(req, resp);
 	}
