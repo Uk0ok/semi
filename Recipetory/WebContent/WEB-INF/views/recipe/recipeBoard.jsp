@@ -1,12 +1,11 @@
 <%@page import="java.util.List"%>
-<%@page import="com.reci.recipe.vo.RBoardVo"%>
+<%@page import="com.reci.recipe.vo.registerRecipeVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <% 
-	List<RBoardVo> rdatalist = (List<RBoardVo>)request.getAttribute("data"); // attribute는 object라서 ArrayList로 형변환
-	for(RBoardVo rb : rdatalist) { 
-		System.out.println(rb);
-		System.out.println("zzzzz : " + rb.getRbegDate());//swy
+	List<registerRecipeVo> rdatalist = (List<registerRecipeVo>)request.getAttribute("data"); // attribute는 object라서 ArrayList로 형변환
+	for(registerRecipeVo rrv : rdatalist) { 
+		System.out.println(rrv);
 	}
 %>
     <!DOCTYPE html>
@@ -214,19 +213,18 @@
                                 </div>
                                 <div class="board_list_body">
                                 
-                                <c:forEach items="${data}" var="rb">
+                                <c:forEach items="${data}" var="rrv">
                                 	<div class="item">
-                                        <div class="num">${rb.rpostNo}</div>
+                                        <div class="num">${rrv.rpostNo}</div>
                                         <div class="tit"> 
                                             <a href="chickchest">
                                             <img
-                                                src="${pageContext.request.contextPath}${rb.rthumbnail}" width="200" height="150">
-                                            ${rb.rpostName}
+                                                src="${pageContext.request.contextPath}/img/recipeBoard/${rrv.rthumbnail}" width="200" height="150">
+                                            ${rrv.rpostName}
                                             </a>
                                         </div>
-                                        <div class="writer">${rb.userNo}</div>
-                                        <div class="date">${rb.rbegDate}</div>
-                                        <div class="review"><a href="#">${rb.rreviewNum}</a></div>
+                                        <div class="writer">${rrv.userNo}</div>
+                                        <div class="date">${rrv.rbegDate}</div>
                                     </div>
                                 </c:forEach>
                                 

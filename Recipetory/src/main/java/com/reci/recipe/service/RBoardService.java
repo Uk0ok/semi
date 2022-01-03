@@ -5,16 +5,16 @@ import java.util.List;
 
 import com.reci.common.JDBCTemplate;
 import com.reci.recipe.dao.RBoardDao;
-import com.reci.recipe.vo.RBoardVo;
+import com.reci.recipe.vo.registerRecipeVo;
 
 public class RBoardService {
 
-	public List<RBoardVo> selectRBoardList() {
+	public List<registerRecipeVo> selectRBoardList() {
 		
 		// 쿼리 날릴 준비
 		Connection conn = JDBCTemplate.getConnection();
 		
-		List<RBoardVo> RboardList = new RBoardDao().selectRBoardList(conn);
+		List<registerRecipeVo> RboardList = new RBoardDao().selectRBoardList(conn);
 
 		JDBCTemplate.close(conn);
 		
