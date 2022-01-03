@@ -26,4 +26,17 @@ public class MagService {
 				return magList;
 	}
 	
+	//어드민 메거진 관리 페이지
+	public List<MagVo> MagListAll() {
+		Connection conn = JDBCTemplate.getConnection();
+		List<MagVo> MagListAll = new MagDao().MagListAll(conn);
+		JDBCTemplate.close(conn);
+		return MagListAll;
+		
+	}
+
+	private Connection getconnection() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
