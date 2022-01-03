@@ -16,8 +16,8 @@ public class AdminDao {
 	public int insertAdmin(Connection conn, AdminVo ad) throws SQLException {
 		//쿼리 날리기
 		
-		String sql="INSERT INTO TB_ADMIN ( ADMIN_NO, ADMIN_ID,  ADMIN_PWD, ADMIN_NAME, ADMIN_LV, JOIN_DATE, DELETE_DATE) "
-				+ "VALUES ( SEQ_ADMIN.NEXTVAL, ?, ?, ?, ?, SYSDATE, ? )";
+		String sql="INSERT INTO TB_ADMIN ( ADMIN_NO, ADMIN_ID,  ADMIN_PWD, ADMIN_NAME, ADMIN_LV, JOIN_DATE) "
+				+ "VALUES ( SEQ_ADMIN.NEXTVAL, ?, ?, ?, ?, SYSDATE)";
 		
 		PreparedStatement pstmt = null;
 		int result = 0;
@@ -28,7 +28,6 @@ public class AdminDao {
 			pstmt.setString(2, ad.getAdminPwd());
 			pstmt.setString(3, ad.getAdminName());
 			pstmt.setString(4, ad.getAdminLv());
-			pstmt.setTimestamp(5, ad.getDeleteDate());
 			
 			result = pstmt.executeUpdate();
 		} finally {
