@@ -41,20 +41,20 @@
 					</tr>
 				</thead>
 	           	<tbody>
-	            <%--   		<c:forEach items="${notiList}" var="n">
+	               		<c:forEach items="${MagListAll}" var="mm">
 	             		<tr>
 	             			<th><input type="checkbox"></th>
-		                    <td>${n.noticeNo}</td>
-		                    <td><a href="#">${n.noticeTitle}</a></td>
-		                    <td>${n.noticeContent}</td>
-		                    <td>${n.adminNo}</td>
-		                    <td>${n.createDate}</td>
-		                    <td>${n.hits}</td>
-		                    <td>${n.modYn}</td>
-		                    <td>${n.modDate}</td>
-		                    <td>${n.deleteYn}</td>
+		                    <td>${mm.POST_NO}</td>
+		                    <td><a href="#">${mm.POST_NAME}</a></td>
+		                    <td>${mm.POST_CONTENT}</td>
+		                    <td>${mm.BEG_DATE}</td>
+		                    <td>${mm.HITS}</td>
+		                    <td>${mm.RECOM_NUM}</td>
+		                    <td>${mm.SCRAP_NUM}</td>
+		                    <td>${mm.COMM_NUM}</td>
+		                    <td>${mm.MOD_YN}</td>
 	                    </tr>
-	            		</c:forEach>  --%>
+	            		</c:forEach>  
 	           	</tbody>
 			</table>
 			

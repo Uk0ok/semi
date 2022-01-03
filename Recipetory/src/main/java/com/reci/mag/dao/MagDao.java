@@ -35,7 +35,6 @@ public class MagDao {
 				String RECOM_NUM = rs.getString("RECOM_NUM");
 				String SCRAP_NUM = rs.getString("SCRAP_NUM");
 				String COMM_NUM = rs.getString("COMM_NUM");
-				String REPORT_NUM = rs.getString("REPORT_NUM");
 				String MOD_YN = rs.getString("MOD_YN");
 				String FMOD_DATE = rs.getString("FMOD_DATE");
 				String DEL_YN = rs.getString("DEL_YN");
@@ -51,7 +50,6 @@ public class MagDao {
 				mag.setRECOM_NUM(RECOM_NUM);
 				mag.setSCRAP_NUM(SCRAP_NUM);
 				mag.setCOMM_NUM(COMM_NUM);
-				mag.setREPORT_NUM(REPORT_NUM);
 				mag.setMOD_YN(MOD_YN);
 				mag.setFMOD_DATE(FMOD_DATE);
 				mag.setDEL_YN(DEL_YN);
@@ -69,5 +67,55 @@ public class MagDao {
 		}
 		
 		return magList;
+	}
+	
+	public List<MagVo> MagListAll(Connection conn) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM TB_BOARD_MAGAZINE";
+		List<MagVo> MagListAll = new ArrayList<MagVo>();
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String POST_NO = rs.getString("POST_NO"); //문자로 가져오기
+				String POST_NAME = rs.getString("POST_NAME");
+				String POST_CONTENT = rs.getString("POST_CONTENT");
+				String BEG_DATE = rs.getString("BEG_DATE");
+				String HITS = rs.getString("HITS");
+				String RECOM_NUM = rs.getString("RECOM_NUM");
+				String SCRAP_NUM = rs.getString("SCRAP_NUM");
+				String COMM_NUM = rs.getString("COMM_NUM");
+				String MOD_YN = rs.getString("MOD_YN");
+				String FMOD_DATE = rs.getString("FMOD_DATE");
+				String DEL_YN = rs.getString("DEL_YN");
+				String USER_NO = rs.getString("USER_NO");
+				
+				MagVo mag = new MagVo();
+				mag.setPOST_NO(POST_NO);
+				mag.setPOST_NAME(POST_NAME);
+				mag.setPOST_CONTENT(POST_CONTENT);
+				mag.setBEG_DATE(BEG_DATE);
+				mag.setHITS(HITS);
+				mag.setRECOM_NUM(RECOM_NUM);
+				mag.setSCRAP_NUM(SCRAP_NUM);
+				mag.setCOMM_NUM(COMM_NUM);
+				mag.setMOD_YN(MOD_YN);
+				mag.setFMOD_DATE(FMOD_DATE);
+				mag.setDEL_YN(DEL_YN);
+				mag.setUSER_NO(USER_NO);
+				
+				MagListAll.add(mag);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(pstmt);
+			JDBCTemplate.close(rs);
+		}
+		return MagListAll;
+		
 	}
 }

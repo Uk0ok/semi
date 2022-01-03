@@ -10,7 +10,6 @@ public class MagVo {
 	private String RECOM_NUM;
 	private String SCRAP_NUM;
 	private String COMM_NUM;
-	private String REPORT_NUM;
 	private String MOD_YN;
 	private String FMOD_DATE;
 	private String DEL_YN;
@@ -65,12 +64,6 @@ public class MagVo {
 	public void setCOMM_NUM(String cOMM_NUM) {
 		COMM_NUM = cOMM_NUM;
 	}
-	public String getREPORT_NUM() {
-		return REPORT_NUM;
-	}
-	public void setREPORT_NUM(String rEPORT_NUM) {
-		REPORT_NUM = rEPORT_NUM;
-	}
 	public String getMOD_YN() {
 		return MOD_YN;
 	}
@@ -100,7 +93,7 @@ public class MagVo {
 	public String toString() {
 		return "MagVo [POST_NO=" + POST_NO + ", POST_NAME=" + POST_NAME + ", POST_CONTENT=" + POST_CONTENT
 				+ ", BEG_DATE=" + BEG_DATE + ", HITS=" + HITS + ", RECOM_NUM=" + RECOM_NUM + ", SCRAP_NUM=" + SCRAP_NUM
-				+ ", COMM_NUM=" + COMM_NUM + ", REPORT_NUM=" + REPORT_NUM + ", MOD_YN=" + MOD_YN + ", FMOD_DATE="
+				+ ", COMM_NUM=" + COMM_NUM + ", MOD_YN=" + MOD_YN + ", FMOD_DATE="
 				+ FMOD_DATE + ", DEL_YN=" + DEL_YN + ", USER_NO=" + USER_NO + "]";
 	}
 	
