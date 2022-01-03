@@ -190,7 +190,7 @@ List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
                            <c:forEach items="${data}" var="ch">
                                <div class="item">
                                     <div class="tit">제목 : ${ch.cpostName}</div>
-                                    <div class="info">챌린지 기간 : ${ch.challengePeriod}</div>
+                                    <div class="info">챌린지 종료일 : ${ch.challengePeriod}</div>
                                     <div class="photo"><img src="${pageContext.request.contextPath}${ch.cthumbnail}" width="400" height="300"></div>
                                     <div class="content">${ch.cpostContent}</div>
                                </div>
