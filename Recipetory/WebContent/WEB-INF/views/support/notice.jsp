@@ -68,7 +68,11 @@
 	            	<c:forEach items="${data}" var="n">
 	            		<tr>
 	                    <td>${n.noticeNo}</td>
-	                    <td><a href="nView.bo?num=${n.noticeNo}&pageNum=${spage}}">${n.noticeTitle}</a></td>
+	                    <td>
+	                    	<a href="${pageContext.request.contextPath}/support/nView?no=${n.noticeNo}&pageNum=${currentPage}">
+	                    		${n.noticeTitle}
+	                    	</a>
+                    	</td>
 	                    <td>${n.createDate}</td>
 	                    <td>${n.hits}</td>
 	                   </tr>
@@ -91,24 +95,22 @@
 			    <button id="writeBtn" class="col-1"><a href="support/write">글쓰기</a></button>
 			</div>
                 
-             <div id="pageForm">
-             	<c:if test="${startPage != 1}">
-             		<a href='nView.bo?page=${startPage-1}'><</a>
-             	</c:if>
-             	
+             <ul id="pageForm" class="pagination justify-content-center">
              	<c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
-             		<c:if test="pageNum == spage">
-             			${pageNum}&nbsp;
+	           		<c:if test="${currentPage != 1}">
+	           			<li class="page-item"><a class="page-link" href='support?page=${currnetPage-1}'><</a></li>
+	           		</c:if>
+             		<c:if test="${pageNum == currentPage}">
+             			<li class="page-item"><a class="page-link" href="support?page=${currentPage}">${pageNum}&nbsp;</a></li>
              		</c:if>
-             		<c:if test="pageNum != spage">
-             			<a href="nView.bo?page=${pageNum}">${pageNum}&nbsp;</a>
+             		<c:if test="${pageNum != currentPage}">
+             			<li class="page-item"><a class="page-link" href="support?page=${currentPage}">${pageNum}</a></li>
              		</c:if>
+	           		<c:if test="currentPage != maxPage">
+	           			<li class="page-item"><a class="page-link" href="support?page=${currnetPage+1}">></a></li>
+	           		</c:if>
              	</c:forEach>
-             		
-           		<c:if test="pageNum != maxPage">
-           			<a href="nView.bo?page=${endPage+1}">></a>
-           		</c:if>
-       		</div>    
+       		</ul>    
    		 </div>
 	 </div>
 

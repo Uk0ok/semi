@@ -14,9 +14,14 @@ import com.reci.sup.vo.NotiVo;
 
 public class NotiDao {
 	
-	public List<NotiVo> selectNotiList(Connection conn, String currentPage) {
+	public List<NotiVo> selectNotiList(Connection conn, int startNo, int endNo) {
 		//쿼리 날릴 준비
-		String sql = "SELECT * FROM TB_NOTICE WHERE DELETE_YN = 'N' ";
+		String sql = "SELECT * "
+				+ "FROM "
+				+ "("
+				+ "SELECT ROWNUM AS RNUM, m.* FROM TB_NOTICE m WHERE DELETE_YN = 'N'"
+				+ ")"
+				+ "WHERE ROWNUM BETWEEN ? AND ?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<NotiVo> notiList = new ArrayList<NotiVo>(); //리스트안에 제네릭이용해서 notivo만 들어오게
@@ -24,6 +29,8 @@ public class NotiDao {
 		//쿼리 날리기
 		try {
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startNo);
+			pstmt.setInt(2,endNo);
 			rs = pstmt.executeQuery(); //실행결과가 resultset에 나오기 때문에
 			
 			//모든게시글 가져오기위해, 다음줄마다 모두 실행되려면 while
@@ -144,22 +151,23 @@ public class NotiDao {
 	}
 	
 	//상세보기
-	public NotiVo notiView(NotiVo n, Connection conn) {
+	public NotiVo notiView(Connection conn, int noticeNo) {
 		
-		String sql = "SELECT * FROM TB_NOTICE WHERE NOTICE_NO = ?";
+		String sql = "SELECT * FROM TB_NOTICE WHERE NOTICE_NO = ? ";
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		NotiVo notiView = null;
 		
 		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, n.getNoticeNo());
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setInt(1, noticeNo);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
 				notiView= new NotiVo();
-				notiView.setNoticeNo(n.getNoticeNo());
+				notiView.setNoticeNo(noticeNo);
+				notiView.setNoticeNo(rs.getInt("NOTICE_NO"));
 				notiView.setAdminNo(rs.getInt("ADMIN_NO"));
 				notiView.setNoticeTitle(rs.getString("NOTICE_TITLE"));
 				notiView.setNoticeContent(rs.getString("NOTICE_CONTENT"));
@@ -168,19 +176,20 @@ public class NotiDao {
 				notiView.setModYn(rs.getString("MOD_YN"));
 				notiView.setModDate(rs.getTimestamp("MODE_DATE"));
 				notiView.setDeleteYn(rs.getString("DELETE_YN"));
-
 			}
 				
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			close(pstmt);
 			close(rs);
+			close(pstmt);
 		}
 		return notiView;
 	}
+
 	
 	//조회수 
-	public boolean notiHits (Connection conn) {
+	
+
 	
 }

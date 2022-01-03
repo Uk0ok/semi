@@ -26,9 +26,18 @@ public class NotiController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		String currentPage= req.getParameter("currentPage");
+		if(currentPage == null) currentPage = "1";
 		
-		System.out.println("currentPage : " + currentPage);
+		int maxPage = 5;
 		
+		int startPage = Integer.parseInt(currentPage) - 2 ;
+		if(startPage <= 0) startPage = 1;
+		int endPage = startPage + 2;
+		
+		req.setAttribute("maxPage", maxPage);
+		req.setAttribute("currentPage", currentPage);
+		req.setAttribute("startPage", startPage);
+		req.setAttribute("endPage", endPage);
 		
 		
 		List<NotiVo> notiList = new NotiService().selectNotiList(currentPage); 

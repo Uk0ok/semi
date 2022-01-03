@@ -9,6 +9,7 @@ import java.util.List;
 
 import static com.reci.common.JDBCTemplate.* ;
 
+import com.reci.join.controller.MemberDao;
 import com.reci.sup.dao.NotiDao;
 import com.reci.sup.vo.NotiVo;
 
@@ -16,14 +17,25 @@ public class NotiService {
 	
 	//유저페이지에서 공지 보이기
 	public List<NotiVo> selectNotiList(String currentPage) {
-		//디비에서 데이터조회
-		
-		//커넥션 가져옴 -> 가져온 쪽에서 클로즈 해야함
 		Connection conn = getConnection();
-		List<NotiVo> notiList = new NotiDao().selectNotiList(conn, currentPage);
+		int totalBoardCount = countNotiAll(conn); //총 게시글 수
+		int pageLimit = 3; 		 //페이징 목록 최대갯수
+		int boardLimit = 5; 	 //한 페이지당 게시글 수
+
+		int p = Integer.parseInt(currentPage);
+		int endNo = p * boardLimit;
+		int startNo = endNo - boardLimit + 1;
+		
+		//디비에서 데이터조회
+		//커넥션 가져옴 -> 가져온 쪽에서 클로즈 해야함
+		List<NotiVo> notiList = new NotiDao().selectNotiList(conn, startNo, endNo);
 		close(conn); 
 		
 		return notiList;
+	}
+
+	private int countNotiAll(Connection conn) {
+		return new MemberDao().countNotiAll(conn);
 	}
 
 	//관리자페이지에서 공지 보이기
@@ -35,7 +47,14 @@ public class NotiService {
 		return notiListAll;
 	}
 	
-	public NotiVo notiView(Connection conn, NotiVo n) {
-		return new NotiDao().notiView(n, conn);
+	public static NotiVo notiView(int noticeNo) { 
+		NotiVo notiView = null;
+		Connection conn = getConnection();
+		
+		notiView = new NotiDao().notiView(conn, noticeNo);
+		close(conn);
+				
+		return notiView; 
 	}
+	 
 }
