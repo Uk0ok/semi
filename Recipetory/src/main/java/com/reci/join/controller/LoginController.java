@@ -24,11 +24,11 @@ public class LoginController extends HttpServlet{
 			String userId = req.getParameter("userId");
 			String userPwd = req.getParameter("userPwd");
 			
-			MemberVo ad = new MemberVo();
-			ad.setUserId(userId);
-			ad.setUserPwd(userPwd);
+			MemberVo m = new MemberVo();
+			m.setUserId(userId);
+			m.setUserPwd(userPwd);
 			
-			MemberVo loginUser = new MemberService().login(ad);
+			MemberVo loginUser = new MemberService().login(m);
 			
 			System.out.println(loginUser);
 			

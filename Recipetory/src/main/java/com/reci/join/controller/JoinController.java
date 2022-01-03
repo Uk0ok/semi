@@ -52,8 +52,11 @@ public class JoinController extends HttpServlet {
 		int result = 0;
 		String sql = "INSERT INTO TB_USER"
 				+ "(USER_NO, USER_ID, USER_PWD, USER_NICKNAME, USER_EMAIL, USER_PHONE, USER_JOIN_DATE, USER_TYPE, USER_DELETE_YN)"
-				+ "VALUES " + "(SEQ_UNO.NEXTVAL, ?, ?, ?, ?, ?, SYSDATE, 'USER', 'N')";
+				+ "VALUES " + "(SEQ_UNO.NEXTVAL, ?, ?, ?, ?, ?, SYSDATE, DEFAULT, DEFAULT)";
 
+		
+		
+		
 		conn = JDBCTemplate.getConnection();
 		try {
 			pstmt = conn.prepareStatement(sql);
