@@ -93,28 +93,15 @@
     <br>
    
 	<form action="./challengewrite" method="post">
-    <table id="chalw_tb" style= text-align:center; border: 1px solid black>
-        <tr>
-            <td>제목</td>
-            <td><input type="text" name="cpostName" id="cpostName" size="30"maxlength="50" placeholder="제목을 입력하세요" maxlength="50" style= "width:800px;"></td>
-        </tr>
-        <tr>
-            <td>종료 날짜</td>
-            <td><input type="date" name="challengePeriod" id="challengePeriod"></td>
-        </tr>
-        <tr>
-            <td>첨부파일</td>
-            <td><input type="file" name="cthumbnail" id="cthumbnail" size="30"></td>
-        </tr>
-        <tr>
-            <td>내용</td>
-            <td><textarea class="write_challenge" placeholder="내용을 작성하세요" name="cpostContent" maxlength="2048" style="height:350px; width: 800px;"></textarea></td>
-        </tr>
-        
-		
-    </table>
-            <input type="submit" class="btn_write" value="등록">
-        </form>
+		<div>제목 <input type="text" name="cpostName" placeholder="제목을 입력하세요" maxlength="50" style= "width:800px;"></div>
+		<div>종료 날짜 <input type="date" name="challengePeriod"></div>
+		<div>첨부파일 <input type="file" name="cthumbnail" size="30"></div>
+		<div class="cont">내용</div>
+		<div><textarea name="cpostContent" placeholder="내용을 입력하세요" maxlength="2048" style="height:350px; width: 800px;"></textarea></div>
+		<div>
+			<input type="submit" value="등록">
+		</div>
+    </form>
 
 	
 	</div>
