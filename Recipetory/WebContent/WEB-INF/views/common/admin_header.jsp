@@ -42,15 +42,16 @@
 
     #content_wrap {
     	width: 1200px;
-    	margin: 2rem auto;
+    	margin: 1rem auto;
     	background-color: white;
     	text-align: center;
-    	padding: 1rem;
+    	padding: 0 1rem;
     }
     
     #content1 {
     	width: 1200px;
     	height: 600px;
+    	margin-top:1rem;
     }
     
     .table {

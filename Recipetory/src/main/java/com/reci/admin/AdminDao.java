@@ -120,4 +120,21 @@ public class AdminDao {
 		return list;
 	}
 	
+	public int delete(Connection conn, AdminVo ad) {
+		String sql = "UPDATE TB_ADMIN SET DELETE_DATE = SYSDATE WHERE ADMIN_NO = ?";
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ad.getAdminNo());
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return -1;
+	}
+	
 }

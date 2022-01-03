@@ -8,7 +8,7 @@ import static com.reci.common.JDBCTemplate.*; //static 으로 바꿔서 클래�
 
 public class AdminService {
 
-	public int join(AdminVo ad) {
+	public int insert(AdminVo ad) {
 
 		//DB Connection 가져오기
 		Connection conn = getConnection();
@@ -43,6 +43,30 @@ public class AdminService {
 		return new AdminDao().insertAdmin(conn, ad);
 		
 	}
+	public int delete(AdminVo ad) {
+
+		Connection conn = getConnection();
+		
+		int result = 0;
+		try {
+			result = deleteAdmin(conn, ad);
+			if(result > 0)
+				commit(conn);
+			else
+				rollback(conn);
+		} catch (SQLException e) {
+			rollback(conn);
+			e.printStackTrace();
+		} finally {
+			close(conn);
+		}
+		return result;
+	}
+	
+	public int deleteAdmin(Connection conn, AdminVo ad) throws SQLException {
+		return new AdminDao().delete(conn, ad);
+	}
+
 
 	public AdminVo login(AdminVo ad) {
 		
