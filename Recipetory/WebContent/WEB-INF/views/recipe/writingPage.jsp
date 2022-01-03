@@ -83,10 +83,10 @@
 
 						</div>
 						<br>
-						<form action="/registerRecipe" method="POST">
+						<form action="registerRecipe" method="POST">
 							<div class="writing-title">
 								<h5>제목</h5>
-								<input type="text" class="form-control" placeholder="제목을 입력해주세요.">
+								<input type="text" class="form-control" name="recipeName" placeholder="제목을 입력해주세요.">
 							</div>
 							<br>
 							<div class="add-ingredients">
@@ -115,7 +115,7 @@
 					<br>
 					<div class="writing-area1">
 						STEP1
-						<textarea id="textnum1" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
+						<textarea id="textnum1" name="recipeProcess1" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt1">(0 / 4000)</div>
 						IMG1 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
@@ -123,7 +123,7 @@
 					</div>
 					<div class="writing-area2">
 						STEP2
-						<textarea id="textnum2" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
+						<textarea id="textnum2" name="recipeProcess2" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt2">(0 / 4000)</div>
 						IMG2 > <input type="file" accept=".jpeg .jpg, .png" name="file class="recipeImg"><br>
@@ -131,7 +131,7 @@
 					</div>
 					<div class="writing-area3">
 						STEP3
-						<textarea id="textnum3" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
+						<textarea id="textnum3" name="recipeProcess3" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt3">(0 / 4000)</div>
 						IMG3 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
@@ -139,7 +139,7 @@
 					</div>
 					<div class="writing-area4">
 						STEP4
-						<textarea id="textnum4" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
+						<textarea id="textnum4" name="recipeProcess4" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt4">(0 / 4000)</div>
 						IMG4 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
@@ -147,15 +147,15 @@
 					</div>
 					<div class="writing-area5">
 						STEP5
-						<textarea id="textnum5" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
+						<textarea id="textnum5" name="recipeProcess5" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt5">(0 / 4000)</div>
 						IMG5 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
 						<br>
 					</div>
-
-
-
+					<div>
+						<input type="text" name="thumbnailName" placeholder="썸네일 파일명을 입력해주세요" style="width: 300px;">
+					</div>
 
 					<a type="button" href="javascript:history.back();" class="btn btn-primary write"
 						style="background-color: darkolivegreen; border-color: darkolivegreen;">뒤로가기</a>
