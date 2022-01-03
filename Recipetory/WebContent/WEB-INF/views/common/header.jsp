@@ -61,6 +61,7 @@
 				</c:if>
 				<c:if test="${!empty loginUser }">
 					${loginUser.userId}
+					<a href="userLogout">로그아웃</a>
 				</c:if>
 	            <form id="h_search">
 	                <input type="search" name="search" placeholder="레시피찾기">
