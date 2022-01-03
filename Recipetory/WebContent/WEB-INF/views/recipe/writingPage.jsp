@@ -1,129 +1,234 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="ko">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<!DOCTYPE html>
+	<html lang="ko">
 
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>레시피 게시물 작성 페이지</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<style>
-a {
-	text-decoration: none;
-	color: inherit;
-}
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>레시피 게시물 작성 페이지</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	</head>
+	<style>
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
 
-.board_list_wrap {
-	padding: 50px;
-	margin-left: 18%;
-	margin-right: 18%;
-}
+		.board_list_wrap {
+			padding: 50px;
+			margin-left: 18%;
+			margin-right: 18%;
+		}
 
-.board_list_head, .board_list_body .item {
-	padding: 10px 0;
-	font-size: 0;
-}
+		.board_list_head,
+		.board_list_body .item {
+			padding: 10px 0;
+			font-size: 0;
+		}
 
-.board_list_head {
-	border-top: 2px solid green;
-	border-bottom: 1px solid #ccc;
-}
+		.board_list_head {
+			border-top: 2px solid green;
+			border-bottom: 1px solid #ccc;
+		}
 
-.writing-title {
-	text-align: left;
-}
+		.writing-title {
+			text-align: left;
+		}
 
-.writing-area {
-	text-align: left;
-}
+		.writing-area1 {
+			text-align: left;
+		}
 
-.textarea_uk {
-	width: 60%;
-	resize: none;
-}
+		.writing-area2 {
+			text-align: left;
+		}
 
-.write {
-	position: relative;
-	left: 930px;
-}
-</style>
+		.writing-area3 {
+			text-align: left;
+		}
 
-<body>
-	<%@ include file="/WEB-INF/views/common/header.jsp"%>
+		.writing-area4 {
+			text-align: left;
+		}
 
-	<div class="wrap">
-		<div class="board_list_wrap">
-			<div class="board_list">
-				<div class="board_list_head">
-					<span>
-						<h4 style="text-align: center;">레시피 등록하기</h4>
-					</span>
+		.writing-area5 {
+			text-align: left;
+		}
 
-				</div>
-				<br>
-				<div class="writing-title">
-					제목<input type="text" class="form-control" placeholder="제목을 입력해주세요.">
-				</div>
-				<br>
-				<div class="writing-area">
-					STEP1
-					<textarea class="form-control textarea_uk"
-						placeholder="내용을 입력해주세요." rows="40" cols="10"
-						style="height: 100px;"></textarea>
-					IMG1 > <input type="file" accept=".jpeg .jpg, .png" name="file1"><br>
+		.textarea_uk {
+			width: 60%;
+			resize: none;
+		}
+
+		.write {
+			position: relative;
+			left: 930px;
+		}
+	</style>
+
+	<body>
+		<%@ include file="/WEB-INF/views/common/header.jsp" %>
+
+			<div class="wrap">
+				<div class="board_list_wrap">
+					<div class="board_list">
+						<div class="board_list_head">
+							<span>
+								<h4 style="text-align: center;">레시피 등록하기</h4>
+							</span>
+
+						</div>
+						<br>
+						<form action="/registerRecipe" method="POST">
+							<div class="writing-title">
+								<h5>제목</h5>
+								<input type="text" class="form-control" placeholder="제목을 입력해주세요.">
+							</div>
+							<br>
+							<div class="add-ingredients">
+								<h5>재료정보</h5>
+
+								<p style="color: gray;">재료정보를 넣어주세요</p>
+								<div>
+									<input placeholder="재료명 (예. 묵은김치)" type="text" name="ingredient1" />
+								</div>
+								<div>
+									<input placeholder="재료명 (예. 묵은김치)" type="text" name="ingredient2" />
+								</div>
+								<div>
+									<input placeholder="재료명 (예. 묵은김치)" type="text" name="ingredient3" />
+								</div>
+								<div>
+									<input placeholder="재료명 (예. 묵은김치)" type="text" name="ingredient4" />
+								</div>
+								<div>
+									<input placeholder="재료명 (예. 묵은김치)" type="text" name="ingredient5" />
+								</div>
+							</div>
+							</ul>
+							<div class="input-error"></div>
+					</div>
 					<br>
-				</div>
-				<div class="writing-area">
-					STEP2
-					<textarea class="form-control textarea_uk"
-						placeholder="내용을 입력해주세요." rows="40" cols="10"
-						style="height: 100px;"></textarea>
-					IMG2 > <input type="file" accept=".jpeg .jpg, .png" name="file2"><br>
-					<br>
-				</div>
-				<div class="writing-area">
-					STEP3
-					<textarea class="form-control textarea_uk"
-						placeholder="내용을 입력해주세요." rows="40" cols="10"
-						style="height: 100px;"></textarea>
-					IMG3 > <input type="file" accept=".jpeg .jpg, .png" name="file3"><br>
-					<br>
-				</div>
-				<div class="writing-area">
-					STEP4
-					<textarea class="form-control textarea_uk"
-						placeholder="내용을 입력해주세요." rows="40" cols="10"
-						style="height: 100px;"></textarea>
-					IMG4 > <input type="file" accept=".jpeg .jpg, .png" name="file4"><br>
-					<br>
-				</div>
-				<div class="writing-area">
-					STEP5
-					<textarea class="form-control textarea_uk"
-						placeholder="내용을 입력해주세요." rows="40" cols="10"
-						style="height: 100px;"></textarea>
-					IMG5 > <input type="file" accept=".jpeg .jpg, .png" name="file5"><br>
-					<br>
-				</div>
+					<div class="writing-area1">
+						STEP1
+						<textarea id="textnum1" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
+							cols="10" style="height: 100px;"></textarea>
+						<div id="test_cnt1">(0 / 4000)</div>
+						IMG1 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
+						<br>
+					</div>
+					<div class="writing-area2">
+						STEP2
+						<textarea id="textnum2" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
+							cols="10" style="height: 100px;"></textarea>
+						<div id="test_cnt2">(0 / 4000)</div>
+						IMG2 > <input type="file" accept=".jpeg .jpg, .png" name="file class="recipeImg"><br>
+						<br>
+					</div>
+					<div class="writing-area3">
+						STEP3
+						<textarea id="textnum3" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
+							cols="10" style="height: 100px;"></textarea>
+						<div id="test_cnt3">(0 / 4000)</div>
+						IMG3 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
+						<br>
+					</div>
+					<div class="writing-area4">
+						STEP4
+						<textarea id="textnum4" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
+							cols="10" style="height: 100px;"></textarea>
+						<div id="test_cnt4">(0 / 4000)</div>
+						IMG4 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
+						<br>
+					</div>
+					<div class="writing-area5">
+						STEP5
+						<textarea id="textnum5" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
+							cols="10" style="height: 100px;"></textarea>
+						<div id="test_cnt5">(0 / 4000)</div>
+						IMG5 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
+						<br>
+					</div>
 
-				<br> 
-                <a type="button" href="javascript:history.back();" class="btn btn-primary write" style="background-color: darkolivegreen; border-color: darkolivegreen;">뒤로가기</a> 
-                <input type="submit" class="btn btn-primary write" value="작성하기" style="background-color: darkolivegreen; border-color: darkolivegreen;"></input>
+
+
+
+					<a type="button" href="javascript:history.back();" class="btn btn-primary write"
+						style="background-color: darkolivegreen; border-color: darkolivegreen;">뒤로가기</a>
+					<input type="submit" class="btn btn-primary write" value="작성하기"
+						style="background-color: darkolivegreen; border-color: darkolivegreen;"></input>
+				</div>
+				</form>
 			</div>
-		</div>
-	</div>
+			</div>
+			<script>
+				$(function() {
+					$(document).ready(function () {
+					$('#textnum1').on('keyup', function () {
+						$('#test_cnt1').html("(" + $(this).val().length + " / 4000)");
 
-	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
-</body>
+						if ($(this).val().length > 4000) {
+							$(this).val($(this).val().substring(0, 4000));
+							$('#test_cnt1').html("(4000 / 4000)");
+						}
+					});
+				})
+				})
+				$(function() {
+					$(document).ready(function () {
+					$('#textnum2').on('keyup', function () {
+						$('#test_cnt2').html("(" + $(this).val().length + " / 4000)");
 
-</html>
+						if ($(this).val().length > 4000) {
+							$(this).val($(this).val().substring(0, 4000));
+							$('#test_cnt2').html("(4000 / 4000)");
+						}
+					});
+				})
+				})
+				$(function() {
+					$(document).ready(function () {
+					$('#textnum3').on('keyup', function () {
+						$('#test_cnt3').html("(" + $(this).val().length + " / 4000)");
+
+						if ($(this).val().length > 4000) {
+							$(this).val($(this).val().substring(0, 4000));
+							$('#test_cnt3').html("(4000 / 4000)");
+						}
+					});
+				})
+				})
+				$(function() {
+					$(document).ready(function () {
+					$('#textnum4').on('keyup', function () {
+						$('#test_cnt4').html("(" + $(this).val().length + " / 4000)");
+
+						if ($(this).val().length > 4000) {
+							$(this).val($(this).val().substring(0, 4000));
+							$('#test_cnt4').html("(4000 / 4000)");
+						}
+					});
+				})
+				})
+				$(function() {
+					$(document).ready(function () {
+					$('#textnum5').on('keyup', function () {
+						$('#test_cnt5').html("(" + $(this).val().length + " / 4000)");
+
+						if ($(this).val().length > 4000) {
+							$(this).val($(this).val().substring(0, 4000));
+							$('#test_cnt5').html("(4000 / 4000)");
+						}
+					});
+				})
+				})
+			</script>
+
+			<%@ include file="/WEB-INF/views/common/footer.jsp" %>
+	</body>
+
+	</html>
