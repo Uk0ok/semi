@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.reci.mag.Vo.MagC_Vo;
 import com.reci.mag.Vo.MagVo;
 import com.reci.mag.service.MagC_Service;
-import com.reci.mag.service.MagService;
 
 @WebServlet("/mag_content1")
 public class Mag_content1_Controller extends HttpServlet{
