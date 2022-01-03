@@ -64,7 +64,7 @@ public class MemberDao {
 				Timestamp userJoinDate = rs.getTimestamp("USER_JOIN_DATE");
 				String userType = rs.getString("USER_TYPE");
 				String userDeleteYn = rs.getString("USER_DELETE_YN");
-				Timestamp LastLoginDate = rs.getTimestamp("LAST_LOGIN_DATE");
+				Timestamp LastLoginDate = rs.getTimestamp("LASTLOGIN_DATE");
 
 				selectedMember = new MemberVo();
 				selectedMember.setUserNo(userNo);
