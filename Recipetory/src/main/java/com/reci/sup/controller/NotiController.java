@@ -25,14 +25,18 @@ public class NotiController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		List<NotiVo> notiList = new NotiService().selectNotiList(); 
+		String currentPage= req.getParameter("currentPage");
+		
+		System.out.println("currentPage : " + currentPage);
+		
+		
+		
+		List<NotiVo> notiList = new NotiService().selectNotiList(currentPage); 
 		//마이메소드에 리스트값 입력 (마지막순서)
 		//메소드는 service로 분리
 		//myMethod -> selectNotiList 이름변경
 		
-			
 		//조회한 데이터를 jsp에 넘겨줌
-			
 		req.setAttribute("data", notiList);
 		req.getRequestDispatcher("/WEB-INF/views/support/notice.jsp").forward(req, resp);
 

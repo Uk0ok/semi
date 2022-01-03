@@ -47,61 +47,70 @@
 	
 
     <div id=wrap class="row">
-            
-            <div class="col-2 container list-group">
-			  <a href="support" class="list-group-item active list-group-item-action">공지사항</a>
-			  <a href="qna" class="list-group-item list-group-item-action">고객문의</a>
-			  <a href="report" class="list-group-item list-group-item-action">신고</a>
-			</div>
+
+    	<div class="col-2 container list-group">
+			<a href="support" class="list-group-item active list-group-item-action">공지사항</a>
+			<a href="qna" class="list-group-item list-group-item-action">고객문의</a>
+			<a href="report" class="list-group-item list-group-item-action">신고</a>
+		</div>
     
-            <div id="content1" class="col-10">
-                <table class="table">
-                    <thead>
-	                    <tr>
-		                    <th>번호</th>
-		                    <th>제목</th>
-		                    <th>등록일</th>
-		                    <th>조회수</th>
-	                    </tr>
-                    </thead>
-	             	
-	             	<tbody>
-		             	<c:forEach items="${data}" var="n">
-		             		<tr>
-			                    <td>${n.noticeNo}</td>
-			                    <td><a href="view">${n.noticeTitle}</a></td>
-			                    <td>${n.createDate}</td>
-			                    <td>${n.hits}</td>
-		                    </tr>
-		             	</c:forEach>
-	             	</tbody>
-	             	
-                </table>
+        <div id="content1" class="col-10">
+        	<table class="table">
+		        <thead>
+		        	<tr>
+		        		<th>번호</th>
+		          		<th>제목</th>
+		          		<th>등록일</th>
+		          		<th>조회수</th>
+		         	</tr>
+        		</thead>
+	           	<tbody>
+	            	<c:forEach items="${data}" var="n">
+	            		<tr>
+	                    <td>${n.noticeNo}</td>
+	                    <td><a href="nView.bo?num=${n.noticeNo}&pageNum=${spage}}">${n.noticeTitle}</a></td>
+	                    <td>${n.createDate}</td>
+	                    <td>${n.hits}</td>
+	                   </tr>
+	            	</c:forEach>
+	           	</tbody>
+           	</table>
                 
-                 <div id="content2" class="row">
-                	<form class="col-11" action="search" method="get">
-				        <select name="searchType">
-				            <option value="date">제목</option>
-				            <option value="Name">작성자</option>
-				            <option value="ID">아이디</option>
-				        </select>
-				        <input type="text" name="searchValue">
-				        <button type="submit">
-				        	<i class="fas fa-search"></i>
-			        	</button>
-				    </form>
-				    <button id="writeBtn" class="col-1"><a href="support/write">글쓰기</a></button>
-                </div>
+            <div id="content2" class="row">
+               	<form class="col-11" action="search" method="get">
+			        <select name="searchType">
+			            <option value="date">제목</option>
+			            <option value="Name">작성자</option>
+			            <option value="ID">아이디</option>
+			        </select>
+			        <input type="text" name="searchValue">
+			        <button type="submit">
+			        	<i class="fas fa-search"></i>
+		        	</button>
+			    </form>
+			    <button id="writeBtn" class="col-1"><a href="support/write">글쓰기</a></button>
+			</div>
                 
-                <ul class="pagination justify-content-center">
-					  <li class="page-item"><a class="page-link" href="#"><</a></li>
-					  <li class="page-item"><a class="page-link" href="#">1</a></li>
-					  <li class="page-item"><a class="page-link" href="#">2</a></li>
-					  <li class="page-item"><a class="page-link" href="#">3</a></li>
-					  <li class="page-item"><a class="page-link" href="#">></a></li>
-				</ul>
-          	</div>    
-    </div>
+             <div id="pageForm">
+             	<c:if test="${startPage != 1}">
+             		<a href='nView.bo?page=${startPage-1}'><</a>
+             	</c:if>
+             	
+             	<c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
+             		<c:if test="pageNum == spage">
+             			${pageNum}&nbsp;
+             		</c:if>
+             		<c:if test="pageNum != spage">
+             			<a href="nView.bo?page=${pageNum}">${pageNum}&nbsp;</a>
+             		</c:if>
+             	</c:forEach>
+             		
+           		<c:if test="pageNum != maxPage">
+           			<a href="nView.bo?page=${endPage+1}">></a>
+           		</c:if>
+       		</div>    
+   		 </div>
+	 </div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>

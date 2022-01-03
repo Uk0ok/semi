@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +14,11 @@ import com.reci.sup.vo.NotiVo;
 
 public class NotiDao {
 	
-	public List<NotiVo> selectNotiList(Connection conn) {
+	public List<NotiVo> selectNotiList(Connection conn, String currentPage) {
 		//쿼리 날릴 준비
+		String sql = "SELECT * FROM TB_NOTICE WHERE DELETE_YN = 'N' ";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT * FROM TB_NOTICE WHERE DELETE_YN = 'N' ";
 		List<NotiVo> notiList = new ArrayList<NotiVo>(); //리스트안에 제네릭이용해서 notivo만 들어오게
 		
 		//쿼리 날리기
@@ -28,18 +29,18 @@ public class NotiDao {
 			//모든게시글 가져오기위해, 다음줄마다 모두 실행되려면 while
 			while(rs.next()) {
 				//rs에서 현재 커서가 가리키는 행의 데이터를 가져오기
-				String noticeNo = rs.getString("NOTICE_NO");
-				String adminNo = rs.getString("ADMIN_NO");
+				int noticeNo = rs.getInt("NOTICE_NO");
+				int adminNo = rs.getInt("ADMIN_NO");
 				String noticeTitle = rs.getString("NOTICE_TITLE");
 				String noticeContent = rs.getString("NOTICE_CONTENT");
-				String createDate = rs.getString("CREATE_DATE");
-				String hits = rs.getString("HITS");
+				Timestamp createDate = rs.getTimestamp("CREATE_DATE");
+				int hits = rs.getInt("HITS");
 				String modYn = rs.getString("MOD_YN");
-				String modDate = rs.getString("MOD_DATE");
+				Timestamp modDate = rs.getTimestamp("MOD_DATE");
 				String deleteYn = rs.getString("DELETE_YN");
 				
 				//여러 변수에 흩어져있는 데이터를 하나로 뭉침
-				NotiVo n = new NotiVo(noticeNo, adminNo, noticeContent, noticeTitle, createDate, hits, modYn, modDate, deleteYn);
+				NotiVo n = new NotiVo();
 				n.setNoticeNo(noticeNo);
 				n.setAdminNo(adminNo);
 				n.setNoticeTitle(noticeTitle);
@@ -73,12 +74,12 @@ public class NotiDao {
 		int result = 0;
 		
 		try {
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, n.getNoticeTitle());
 			pstmt.setString(2, n.getNoticeContent());
-			pstmt.setString(3, n.getHits());
+			pstmt.setInt(3, n.getHits());
 			pstmt.setString(4, n.getModYn());
-			pstmt.setString(5, n.getModDate());
+			pstmt.setTimestamp(5, n.getModDate());
 			pstmt.setString(6, n.getDeleteYn());
 			
 			result = pstmt.executeUpdate();
@@ -94,9 +95,9 @@ public class NotiDao {
 
 
 	public List<NotiVo> notiListAll(Connection conn) {
+		String sql = "SELECT * FROM TB_NOTICE";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT * FROM TB_NOTICE";
 		List<NotiVo> notiListAll = new ArrayList<NotiVo>();
 		
 		//쿼리 날리기
@@ -107,18 +108,18 @@ public class NotiDao {
 			//모든게시글 가져오기위해, 다음줄마다 모두 실행되려면 while
 			while(rs.next()) {
 				//rs에서 현재 커서가 가리키는 행의 데이터를 가져오기
-				String noticeNo = rs.getString("NOTICE_NO");
-				String adminNo = rs.getString("ADMIN_NO");
+				int noticeNo = rs.getInt("NOTICE_NO");
+				int adminNo = rs.getInt("ADMIN_NO");
 				String noticeTitle = rs.getString("NOTICE_TITLE");
 				String noticeContent = rs.getString("NOTICE_CONTENT");
-				String createDate = rs.getString("CREATE_DATE");
-				String hits = rs.getString("HITS");
+				Timestamp createDate = rs.getTimestamp("CREATE_DATE");
+				int hits = rs.getInt("HITS");
 				String modYn = rs.getString("MOD_YN");
-				String modDate = rs.getString("MOD_DATE");
+				Timestamp modDate = rs.getTimestamp("MOD_DATE");
 				String deleteYn = rs.getString("DELETE_YN");
 				
 				//여러 변수에 흩어져있는 데이터를 하나로 뭉침
-				NotiVo n = new NotiVo(noticeNo, adminNo, noticeContent, noticeTitle, createDate, hits, modYn, modDate, deleteYn);
+				NotiVo n = new NotiVo();
 				n.setNoticeNo(noticeNo);
 				n.setAdminNo(adminNo);
 				n.setNoticeTitle(noticeTitle);
@@ -142,5 +143,44 @@ public class NotiDao {
 		return notiListAll;
 	}
 	
+	//상세보기
+	public NotiVo notiView(NotiVo n, Connection conn) {
+		
+		String sql = "SELECT * FROM TB_NOTICE WHERE NOTICE_NO = ?";
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		NotiVo notiView = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, n.getNoticeNo());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				notiView= new NotiVo();
+				notiView.setNoticeNo(n.getNoticeNo());
+				notiView.setAdminNo(rs.getInt("ADMIN_NO"));
+				notiView.setNoticeTitle(rs.getString("NOTICE_TITLE"));
+				notiView.setNoticeContent(rs.getString("NOTICE_CONTENT"));
+				notiView.setCreateDate(rs.getTimestamp("CREATE_DATE"));;
+				notiView.setHits(rs.getInt("HITS"));
+				notiView.setModYn(rs.getString("MOD_YN"));
+				notiView.setModDate(rs.getTimestamp("MODE_DATE"));
+				notiView.setDeleteYn(rs.getString("DELETE_YN"));
+
+			}
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return notiView;
+	}
+	
+	//조회수 
+	public boolean notiHits (Connection conn) {
 	
 }

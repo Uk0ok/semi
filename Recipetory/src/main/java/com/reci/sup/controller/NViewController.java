@@ -8,12 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/detail")
-public class NotDetailController extends HttpServlet {
+import com.reci.sup.dao.NotiDao;
+import com.reci.sup.vo.NotiVo;
+
+@WebServlet("/nView")
+public class NViewController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/support/notice_detail.jsp").forward(req, resp);
+		
+		int noticeNo = Integer.parseInt(req.getParameter("noticeNo"));
+		int pageNo = Integer.parseInt(req.getParameter("pageNo"));
+		
+		NotiVo notiView = NotiDao.notiView(noticeNo);
+		
+		req.getRequestDispatcher("/WEB-INF/views/support/nView.jsp").forward(req, resp);
 	}
 
 }
