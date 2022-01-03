@@ -1,9 +1,14 @@
 package com.reci.chal.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -11,8 +16,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
+import com.reci.chal.service.CboardService;
 import com.reci.common.JDBCTemplate;
+import com.reci.chal.vo.CboardVo;
 
 @MultipartConfig(maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 @WebServlet("/challengewrite")
@@ -42,8 +50,8 @@ public class ChalWriteController extends HttpServlet{
 		PreparedStatement pstmt = null;
 		int result = 0;
 		String sql = "INSERT INTO TB_BOARD_CHALLENGE "
-				+ "(POST_NO, USER_NO, POST_NAME, POST_CONTENT, BEG_DATE, CHALLENGE_PERIOD, THUBNAIL, MOD_YN, FMOD_DATE, DEL_YN) "
-				+ "VALUES(SEQ_CHA_PNO.NEXTVAL,?,?,?,SYSDATE,?,?,'N',NULL,'N')";
+				+ "(POST_NO, USER_NO, POST_NAME, POST_CONTENT, BEG_DATE, CHALLENGE_PERIOD, PARTI_NUM, HITS, COMM_NUM, REVIEW_NUM, THUBNAIL, MOD_YN, FMOD_DATE, DEL_YN) "
+				+ "VALUES(SEQ_CHA_PNO.NEXTVAL,?,?,?,SYSDATE,?,DEFAULT,DEFAULT,DEFAULT,DEFAULT,?,'N',NULL,'N')";
 		
 		conn = JDBCTemplate.getConnection();
 		try {

@@ -92,7 +92,7 @@
     <div class="board_write">
     <br>
    
-	<form action="./challengeview" method="post">
+	<form action="./challengewrite" method="post">
     <table id="chalw_tb" style= text-align:center; border: 1px solid black>
         <tr>
             <td>제목</td>
@@ -111,14 +111,6 @@
             <td><textarea class="write_challenge" placeholder="내용을 작성하세요" name="cpostContent" maxlength="2048" style="height:350px; width: 800px;"></textarea></td>
         </tr>
         
-        <c:forEach items="${data}" var="ch">
-			<tr>
-				<td>${ch.cpostName}</td>
-				<td>${ch.challengePeriod}</td>
-				<td>${ch.cthumbnail}</td>
-				<td>${ch.cpostContent}</td>
-			</tr>
-		</c:forEach>
 		
     </table>
             <input type="submit" class="btn_write" value="등록">
