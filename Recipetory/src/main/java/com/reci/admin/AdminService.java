@@ -105,4 +105,5 @@ public class AdminService {
 	public List<AdminVo> selectAdminAll(Connection conn) {
 		return new AdminDao().selectAdminAll(conn);
 	}
+
 }

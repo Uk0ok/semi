@@ -55,6 +55,7 @@
 	   		<table class="table table-sm table-hover">
 	           	<thead class="thead-light">
 					<tr>
+						<th><button id="modBtn" class="btn btn-light" type="button">수정</button></th>
 						<th><button id="deleteBtn" class="btn btn-light" type="submit">삭제</button></th>
 						<th>번호</th>
 						<th>아이디</th>
@@ -68,7 +69,7 @@
 	           	<tbody>
              		<c:forEach items="${adminList}" var="ad">
 	            		<tr>
-	            			<th><input name="adminNo" value="${ad.adminNo}" type="checkbox"></th>
+	            			<th><input name="adminNo" value="${ad.adminNo}" type="checkbox" required></th>
 		                    <td>${ad.adminNo}</td>
 		                    <td>${ad.adminId}</td>
 		                    <td>${ad.adminPwd}</td>
@@ -91,8 +92,6 @@
 			</ul>
 		</div>
 	</div>
-   		
-
    	
 </body>
 </html>

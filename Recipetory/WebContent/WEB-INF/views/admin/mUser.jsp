@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%-- <%
-	List<MemberVo> dataList = (List<MemberVo>)request.getAttribute("data"); 
-%> --%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,25 +32,28 @@
 						<th>아이디</th>
 						<th>비밀번호</th>
 						<th>닉네임</th>
-						<th>등급</th>
+						<th>이메일</th>
+						<th>전화번호</th>
+						<th>구분</th>
 						<th>생성일자</th>
+						<th>삭제여부</th>
 						<th>삭제일자</th>
 					</tr>
 				</thead>
 	           	<tbody>
-	              		<c:forEach items="${data}" var="m">
+	              		<c:forEach items="${memberList}" var="m">
 	             		<tr>
-	             			<th><input type="checkbox"></th>
+	             			<td><input type="checkbox"></td>
 		                    <td>${m.userNo}</td>
-		                    <td>${m.userId}<td>
+		                    <td>${m.userId}</td>
 		                    <td>${m.userPwd}</td>
 		                    <td>${m.userNickname}</td>
 		                    <td>${m.userEmail}</td>
 		                    <td>${m.userPhone}</td>
-		                    <td>${m.userJoinDate}</td>
 		                    <td>${m.userType}</td>
+		                    <td>${m.userJoinDate}</td>
 		                    <td>${m.userDeleteYn}</td>
-		                    <td>${m.lastloginDate}</td>
+		                    <td>${m.lastLoginDate}</td>
 	                    </tr>
 	            		</c:forEach> 
 	           	</tbody>

@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/adDelete")
-public class AdminDeleteController extends HttpServlet {
-	
+@WebServlet ("/adMod")
+public class AdminModController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -20,7 +19,7 @@ public class AdminDeleteController extends HttpServlet {
 		AdminVo ad = new AdminVo();
 		ad.setAdminNo(adminNo);
 	
-		int result = new AdminService().delete(ad);
+		int result = new AdminService().mod(ad);
 		
 		System.out.println(adminNo);
 		System.out.println(result);
@@ -48,5 +47,4 @@ public class AdminDeleteController extends HttpServlet {
 			
 		}
 	}
-
 }
