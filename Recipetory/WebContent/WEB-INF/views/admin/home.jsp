@@ -61,7 +61,7 @@
 			<a href="mAdmin" class="btn  btn-light" role="button">관리자관리</a>
 			<a href="mNoti" class="btn  btn-light" role="button">공지관리</a>
 			<a href="mNoti" class="btn  btn-light" role="button">문의관리</a>
-			<a href="mMag.do" class="btn  btn-light" role="button">매거진관리</a>
+			<a href="mMag" class="btn  btn-light" role="button">매거진관리</a>
 			<a href="mReport" class="btn  btn-light" role="button">신고관리</a>
 		</div>
 	</div>

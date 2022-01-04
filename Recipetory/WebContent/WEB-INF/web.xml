@@ -17,12 +17,4 @@
 		<servlet-name>mwrite</servlet-name>
 		<url-pattern>/mwrite.do</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<servlet-name>mMag</servlet-name>
-		<servlet-class>com.reci.admin.MMagController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>mMag</servlet-name>
-		<url-pattern>/mMag.do</url-pattern>
-	</servlet-mapping>
 </web-app>

@@ -6,7 +6,32 @@ INSERT INTO TB_BOARD_MAGAZINE(
     SEQ_MAG_PNO.NEXTVAL,'1','맛있는 제목','맛있는 내용',default,default,default,default,
     default,default,default,default
     );
+    
+INSERT INTO TB_BOARD_MAGAZINE(
+    POST_NO,POST_NAME,POST_CONTENT,BEG_DATE,
+	HITS,RECOM_NUM,SCRAP_NUM,COMM_NUM,MOD_YN,FMOD_DATE,DEL_YN,ADMIN_NO
+)VALUES(
+    SEQ_MAG_PNO.NEXTVAL,'반갑네요','그러게요',default,default,default,default,
+    default,default,default,DEFAULT,'1'
+    );
+    
+    INSERT INTO TB_BOARD_MAGAZINE(
+    POST_NO,POST_NAME,POST_CONTENT,BEG_DATE,
+	HITS,RECOM_NUM,SCRAP_NUM,COMM_NUM,MOD_YN,FMOD_DATE,DEL_YN,ADMIN_NO
+)VALUES(
+    SEQ_MAG_PNO.NEXTVAL,'디비문제로','고생좀했네요 하',default,default,default,default,
+    default,default,default,DEFAULT,'1'
+    );
 
+INSERT INTO TB_BOARD_MAGAZINE(
+    POST_NO,POST_NAME,POST_CONTENT,BEG_DATE,
+	HITS,RECOM_NUM,SCRAP_NUM,COMM_NUM,MOD_YN,FMOD_DATE,DEL_YN,ADMIN_NO
+)VALUES(
+    SEQ_MAG_PNO.NEXTVAL,'우리 조금만 더 ','힘냅시다',default,default,default,default,
+    default,default,default,DEFAULT,'1'
+    );
+
+commit;
 
 --메거진 댓글 생성
 INSERT INTO TB_COMMENT_M(

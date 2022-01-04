@@ -180,8 +180,7 @@
 				</div>
 			</div>
 		</div>
-		<br> <br>
-		<button>게시글 작성</button>
+		<br>
     </div>
     <br>
     
