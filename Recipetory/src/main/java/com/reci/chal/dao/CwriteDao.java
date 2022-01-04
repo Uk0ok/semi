@@ -11,7 +11,10 @@ public class CwriteDao {
 	
 	public int insertChallenge(Connection conn, CwriteVo cwv) throws SQLException{
 		//쿼리 날리기
-		String sql = "INSERT INTO TB_POST_C VALUES(SEQ_CHA_PNO.NEXTVAL,'1',?,SYSDATE,?,?,?,'N', 'N', SYSDATE)";
+		String sql = "INSERT INTO TB_BOARD_CHALLENGE VALUES(SEQ_CHA_PNO.NEXTVAL,'1',?,?,SYSDATE,?,'0','0',?,'N', SYSDATE, 'N')";
+		
+		System.out.println("DAO 호출됨...");
+		
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
@@ -26,6 +29,8 @@ public class CwriteDao {
 		}finally {
 			close(pstmt);
 		}
+		
+		System.out.println("dao end......");
 		return result;
 	}
 }	

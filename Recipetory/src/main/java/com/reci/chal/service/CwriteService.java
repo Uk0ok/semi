@@ -13,6 +13,7 @@ public class CwriteService {
 	
 	public int write(CwriteVo cwv) {
 		
+		System.out.println("SEVICE 호출됨...");
 		//DB Connection 가져오기
 		Connection conn = getConnection();
 		

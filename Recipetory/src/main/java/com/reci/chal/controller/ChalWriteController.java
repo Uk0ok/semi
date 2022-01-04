@@ -26,12 +26,15 @@ public class ChalWriteController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		System.out.println("컨트롤러 호출됨...");
+		
 	  //챌린지 게시물 등록
 	  req.setCharacterEncoding("UTF-8");
 	  String cpostName = req.getParameter("postName");
 	  String challengePeriod = req.getParameter("challengePeriod");
 	  String cthumbnail = req.getParameter("thumbnail");
 	  String cpostContent = req.getParameter("postContent");
+	  
 	  
 	  CwriteVo cwv = new CwriteVo();
 	  cwv.setCpostName(cpostName);
