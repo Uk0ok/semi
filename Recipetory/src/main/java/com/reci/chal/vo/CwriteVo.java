@@ -2,15 +2,16 @@ package com.reci.chal.vo;
 
 import java.sql.Timestamp;
 
-public class CboardwVo {
-
+public class CwriteVo {
 	
 	private int cpostNo;
 	private int userNo;
 	private String cpostName;
 	private String cpostContent;
 	private Timestamp cbegDate;
-	private Timestamp challengePeriod;
+	private String challengePeriod;
+	private int partiNum;
+	private int creviewNum;
 	private String cthumbnail;
 	private String cmodYn;
 	private Timestamp cmodDate;
@@ -45,11 +46,23 @@ public class CboardwVo {
 	public void setCbegDate(Timestamp cbegDate) {
 		this.cbegDate = cbegDate;
 	}
-	public Timestamp getChallengePeriod() {
+	public String getChallengePeriod() {
 		return challengePeriod;
 	}
-	public void setChallengePeriod(Timestamp challengePeriod) {
+	public void setChallengePeriod(String challengePeriod) {
 		this.challengePeriod = challengePeriod;
+	}
+	public int getPartiNum() {
+		return partiNum;
+	}
+	public void setPartiNum(int partiNum) {
+		this.partiNum = partiNum;
+	}
+	public int getCreviewNum() {
+		return creviewNum;
+	}
+	public void setCreviewNum(int creviewNum) {
+		this.creviewNum = creviewNum;
 	}
 	public String getCthumbnail() {
 		return cthumbnail;
@@ -63,6 +76,12 @@ public class CboardwVo {
 	public void setCmodYn(String cmodYn) {
 		this.cmodYn = cmodYn;
 	}
+	public Timestamp getCmodDate() {
+		return cmodDate;
+	}
+	public void setCmodDate(Timestamp cmodDate) {
+		this.cmodDate = cmodDate;
+	}
 	public String getCdelYn() {
 		return cdelYn;
 	}
@@ -71,9 +90,10 @@ public class CboardwVo {
 	}
 	@Override
 	public String toString() {
-		return "CboardwVo [cpostNo=" + cpostNo + ", userNo=" + userNo + ", cpostName=" + cpostName + ", cpostContent="
-				+ cpostContent + ", cbegDate=" + cbegDate + ", challengePeriod=" + challengePeriod + ", cthumbnail="
-				+ cthumbnail + ", cmodYn=" + cmodYn + ", cdelYn=" + cdelYn + "]";
+		return "CwriteVo [cpostNo=" + cpostNo + ", userNo=" + userNo + ", cpostName=" + cpostName + ", cpostContent="
+				+ cpostContent + ", cbegDate=" + cbegDate + ", challengePeriod=" + challengePeriod + ", partiNum="
+				+ partiNum + ", creviewNum=" + creviewNum + ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn
+				+ ", cmodDate=" + cmodDate + ", cdelYn=" + cdelYn + "]";
 	}
 	
-}
+}	

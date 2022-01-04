@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,15 +48,21 @@
 	
 	<header>
 		<div id="h_head" class="row">
-			<a href="home" id="h_title" class="col-9">
-				<img src="./img/home/logo1.png" width="350px">
+			<a href="/reci/home" id="h_title" class="col-9">
+				<img src="${pageContext.request.contextPath}/img/home/logo1.png" width="350px">
 			</a>
 			
 			<div id="h_content" class="col-3">
-				<div id="h_join">
-					<a href="login">로그인</a>
-					<a href="join">회원가입</a>
-				</div>
+				<c:if test="${empty loginUser}">
+					<div id="h_join">
+						<a href="login">로그인</a>
+						<a href="join">회원가입</a>
+					</div>
+				</c:if>
+				<c:if test="${!empty loginUser }">
+					${loginUser.userId}
+					<a href="userLogout">로그아웃</a>
+				</c:if>
 	            <form id="h_search">
 	                <input type="search" name="search" placeholder="레시피찾기">
 	                <button type="submit"><i class="fas fa-search"></i></button>

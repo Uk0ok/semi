@@ -41,4 +41,10 @@ public class RwritingService {
 		return new RwritingDao().insertRecipe(conn, rrv);
 	}
 
+	public int registerRecipeImg() {
+		
+		
+		return 0;
+	}
+
 }

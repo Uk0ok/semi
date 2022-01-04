@@ -5,7 +5,7 @@
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-	
+
 <%
 	List<NotiVo> dataList = (List<NotiVo>)request.getAttribute("data"); 
 	//attribute는 오브젝트인데, 현재 타입이 NotiVo이기 때문에 (NotiVo)로 캐스팅
@@ -69,7 +69,7 @@
 	            		<tr>
 	                    <td>${n.noticeNo}</td>
 	                    <td>
-	                    	<a href="${pageContext.request.contextPath}/support/nView?no=${n.noticeNo}&pageNum=${currentPage}">
+	                    	<a href="${pageContext.request.contextPath}/support/nView?no=${n.noticeNo}&pageNo=${currentPage}">
 	                    		${n.noticeTitle}
 	                    	</a>
                     	</td>
@@ -96,20 +96,20 @@
 			</div>
                 
              <ul id="pageForm" class="pagination justify-content-center">
-             	<c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
-	           		<c:if test="${currentPage != 1}">
-	           			<li class="page-item"><a class="page-link" href='support?page=${currnetPage-1}'><</a></li>
-	           		</c:if>
-             		<c:if test="${pageNum == currentPage}">
-             			<li class="page-item"><a class="page-link" href="support?page=${currentPage}">${pageNum}&nbsp;</a></li>
+           		<c:if test="${currentPage != 1}">
+           			<li class="page-item"><a class="page-link" href='support?page=${currnetPage-1}'><</a></li>
+           		</c:if>
+             	<c:forEach var="pageNo" begin="${startPage}" end="${endPage}">
+             		<c:if test="${pageNo == currentPage}">
+             			<li class="page-item"><a class="page-link" href="support?pageNo=${currentPage}">${pageNo}&nbsp;</a></li>
              		</c:if>
-             		<c:if test="${pageNum != currentPage}">
-             			<li class="page-item"><a class="page-link" href="support?page=${currentPage}">${pageNum}</a></li>
+             		<c:if test="${pageNo != currentPage}">
+             			<li class="page-item"><a class="page-link" href="support?pageNo=${currentPage}">${pageNo}</a></li>
              		</c:if>
-	           		<c:if test="currentPage != maxPage">
-	           			<li class="page-item"><a class="page-link" href="support?page=${currnetPage+1}">></a></li>
-	           		</c:if>
              	</c:forEach>
+           		<c:if test="currentPage != maxPage">
+           			<li class="page-item"><a class="page-link" href="support?page=${currnetPage+1}">></a></li>
+           		</c:if>
        		</ul>    
    		 </div>
 	 </div>

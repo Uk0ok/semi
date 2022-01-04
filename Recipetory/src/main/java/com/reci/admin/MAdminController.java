@@ -1,6 +1,7 @@
 package com.reci.admin;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -21,7 +22,5 @@ public class MAdminController extends HttpServlet{
 		
 		req.getRequestDispatcher("/WEB-INF/views/admin/mAdmin.jsp").forward(req, resp);
 	}
-	
-	
-	
+
 }

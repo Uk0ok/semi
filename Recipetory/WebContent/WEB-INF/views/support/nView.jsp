@@ -13,7 +13,7 @@
 	
      <div class="board_wrap">
         <div class="board_title">
-            <h1>공지사항</h1>
+            <h3>[공지사항]</h3>
         </div>
         <div class="board_view_wrap">
             <div class="board_view">
@@ -48,7 +48,7 @@
           	</div>    
             
             <div class="bt_wrap">
-                <a href="support" class="on">목록</a>
+                <a href="../support?pageNo=${pageNo}" class="on">목록</a>
                 <a href="edit">수정</a>
             </div>
         </div>

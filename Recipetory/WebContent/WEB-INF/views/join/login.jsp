@@ -7,10 +7,6 @@
 <title>로그인</title>
 <style>
 
-body {
-    background-color: cornsilk;
-}
-
 	div, form, input {
     box-sizing: border-box;
 }
@@ -73,11 +69,11 @@ body {
 <body>
 
 
-<!-- <div id="login_wrap">
-        <form action="login" id="login_form">
+<div id="login_wrap">
+        <form id="login_form" action="<%=request.getContextPath()%>/login2" method="post">
             <div id="login_form_input">
-                <input type="text" name="id" placeholder="아이디" required>
-                <input type="password" name="pwd" placeholder="비밀번호" required>
+                <input type="text" name="userId" id="userId" class="userId" placeholder="아이디" required>
+                <input type="password" name="userPwd" id="userPwd" class="userPwd" placeholder="비밀번호" required>
             </div>
             <div id="login_form_submit">
                 <input id="btn" type="submit" value="로그인">
@@ -88,14 +84,14 @@ body {
             <!-- <a href="#">아이디 찾기</a>
             <a href="#">비밀번호 찾기</a> -->
         </div>
-    </div> -->
+    </div>
 
     
-    <form id="login_form" action="<%=request.getContextPath()%>/login2" method="post">
-	     <input type="text" name="userId" id="userId" class="userId" placeholder="아이디" required>
-	     <input type="password" name="userPwd" id="userPwd" class="userPwd" placeholder="비밀번호" required>
-	     <input id="btn" type="submit" value="로그인">
-     </form>
+    <!-- <form id="login_form" action="login2" method="post">
+	    <input type="text" name="userId" id="userId" class="userId" placeholder="아이디" required>
+	    <input type="password" name="userPwd" id="userPwd" class="userPwd" placeholder="비밀번호" required>
+	    <input id="btn" type="submit" value="로그인">
+    </form> -->
     
     
     
