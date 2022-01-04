@@ -7,7 +7,6 @@
 <title>회원가입</title>
 <style>
 body {
-    background-color: cornsilk;
     text-align: center;
 }
 

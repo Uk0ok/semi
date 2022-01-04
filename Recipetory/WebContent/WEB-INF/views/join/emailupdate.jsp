@@ -29,27 +29,18 @@
 				<form action="delete" method="post">
                 <table id="tb_userInfo">
                     <tr>
-                        <td>탈퇴하려면 비밀번호를 입력해 주세요.</td>
+                        <td>현재 이메일</td>
                     </tr>
                     <tr>
-                        <td><input type="password" name="userPwd" id="userPwd" class="userPwd"></td>
+                        <td><input style="width: 300px;" type="email" name="userEmail" id="userEmail" class="userEmail"placeholder="변경된 이메일을 입력해 주세요."></td>
                     </tr>
                     <tr>
-                        <td><input type="button" id="btnDelete" value="탈퇴"></td>
+                        <td><button type="submit">변경</button></td>
                     </tr>
                     
                     </table>
 				</form>
 				
-				<script>
-					$(document).ready(()=>{
-						$("#btnDelete").on("click", ()=>{
-							if(confirm("탈퇴하시겠습니까?")){
-								location.replace("${pageContext.request.contextPath }/delete")
-							}
-						});
-					});
-				</script>
 
                 <br><br><br><br><br>
 
