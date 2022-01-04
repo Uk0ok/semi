@@ -45,18 +45,17 @@
 						    <option value = "Lv2">Lv2</option>
 						    <option value = "Lv3" selected>Lv3</option>
 						</select>
-					<button type="submit" class="btn btn-light mb-2">생성</button>
+					<button type="submit" class="btn btn-light mb-2">submit</button>
 				</form>
 			</div>
 		</div>
    		
    		<div id="content1">
-   			<form action="adDelete" method = "post">
+   			<form name="adDelete" action="adDelete" method = "post">
 	   		<table class="table table-sm table-hover">
 	           	<thead class="thead-light">
 					<tr>
-						<th><button id="modBtn" class="btn btn-light" type="button">수정</button></th>
-						<th><button id="deleteBtn" class="btn btn-light" type="submit">삭제</button></th>
+						<th><button class="btn btn-light" type="button" onclick="removeCheck()">삭제</button></th>
 						<th>번호</th>
 						<th>아이디</th>
 						<th>비밀번호</th>
@@ -92,6 +91,17 @@
 			</ul>
 		</div>
 	</div>
+	
+	<script>
+		function removeCheck(){
+			if(confirm("선택한 관리자를 삭제하시겠습니까?") == true){
+				document.adDelete.submit();
+			}else {
+				return false;
+			}
+		}
+    </script>
+
    	
 </body>
 </html>
