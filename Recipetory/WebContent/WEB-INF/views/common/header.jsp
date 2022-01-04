@@ -48,7 +48,7 @@
 	
 	<header>
 		<div id="h_head" class="row">
-			<a href="/reci/home" id="h_title" class="col-9">
+			<a href="/Recipetory/home" id="h_title" class="col-9">
 				<img src="${pageContext.request.contextPath}/img/home/logo1.png" width="350px">
 			</a>
 			
