@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.reci.admin.AdminVo;
 import com.reci.sup.vo.NotiVo;
 
 public class NotiDao {
@@ -233,6 +234,33 @@ public class NotiDao {
 			close(pstmt);
 		}
 		return result;
+	}
+
+
+	public AdminVo getAdminNo(Connection conn, String adminId) {
+		String sql = "SELECT ADMIN_NO FROM TB_ADMIN WHERE USER_ID = ?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, adminId);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int noticeNo = rs.getInt("NOTICE_NO");
+				
+				AdminVo getAdminNo = new AdminVo();
+				getAdminNo.setAdminNo(noticeNo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return getAdminNo;
 	}
 
 }

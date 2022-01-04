@@ -9,6 +9,7 @@ import java.util.List;
 
 import static com.reci.common.JDBCTemplate.* ;
 
+import com.reci.admin.AdminVo;
 import com.reci.join.controller.MemberDao;
 import com.reci.sup.dao.NotiDao;
 import com.reci.sup.vo.NotiVo;
@@ -63,6 +64,13 @@ public class NotiService {
 		close(conn);
 		
 		return updateHits; 
+	}
+
+	public static AdminVo getAdminNo(String adminId) {
+		AdminVo getAdminNo = null;
+		Connection conn = getConnection();
+		close(conn);
+		return new NotiDao().getAdminNo(conn, adminId);
 	}
 
 }
