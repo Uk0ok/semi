@@ -92,80 +92,8 @@ public class MemberDao {
 		return selectedMember;
 	}
 
-	public int countNotiAll(Connection conn) {
+	public int memberDelete(Connection conn, MemberVo m) {
 
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-
-		String sql = "SELECT COUNT(NOTICE_NO) FROM TB_NOTICE WHERE DELETE_YN = 'N'";
-		int result = 0;
-
-		try {
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				result = rs.getInt(1);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-			close(rs);
-		}
-
-		return result;
-	}
-
-	public MemberVo updateMember(Connection conn, MemberVo m) {
-
-		String query = "UPDATE TB_USER SET USER_EMAIL = ? WHERE USER_ID = 현재로그인되어있는유저아이디";
-
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		MemberVo selectedMember = null;
-
-		try {
-			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1, m.getUserEmail());
-
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				int userNo = rs.getInt("USER_NO");
-				String userId = rs.getString("USER_ID");
-				String userPwd = rs.getString("USER_PWD");
-				String userNickname = rs.getString("USER_NICKNAME");
-				String userEmail = rs.getString("USER_EMAIL");
-				String userPhone = rs.getString("USER_PHONE");
-				Timestamp userJoinDate = rs.getTimestamp("USER_JOIN_DATE");
-				String userType = rs.getString("USER_TYPE");
-				String userDeleteYn = rs.getString("USER_DELETE_YN");
-				Timestamp LastLoginDate = rs.getTimestamp("LASTLOGIN_DATE");
-
-				selectedMember = new MemberVo();
-//				selectedMember.setUserNo(userNo);
-				selectedMember.setUserId(userId);
-//				selectedMember.setUserPwd(userPwd);
-//				selectedMember.setUserNickname(userNickname);
-				selectedMember.setUserEmail(userEmail);
-//				selectedMember.setUserPhone(userPhone);
-//				 selectedMember.setUserJoinDate(userJoinDate);
-//				 selectedMember.setUserType(userType);
-//				 selectedMember.setUserDeleteYn(userDeleteYn);
-//				 selectedMember.setLastLoginDate(LastLoginDate);
-
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-
-		return selectedMember;
-	}
-
-	public int deleteMember(Connection conn, MemberVo m) {
 		int value = 0;
 		PreparedStatement pstmt = null;
 		String sql = "UPDATE TB_USER SET USER_DELETE_YN = 'Y' WHERE USER_PWD = ?;";
@@ -181,51 +109,4 @@ public class MemberDao {
 		return value;
 	}
 
-	public List<MemberVo> selectMemberAll(Connection conn) {
-		String query = "SELECT * FROM TB_USER WHERE USER_DELETE_YN = 'N'";
-
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		List<MemberVo> memberList = new ArrayList<MemberVo>();
-
-		try {
-			pstmt = conn.prepareStatement(query);
-			rs = pstmt.executeQuery();
-			MemberVo selectedMember = null;
-
-			while (rs.next()) {
-				int userNo = rs.getInt("USER_NO");
-				String userId = rs.getString("USER_ID");
-				String userPwd = rs.getString("USER_PWD");
-				String userNickname = rs.getString("USER_NICKNAME");
-				String userEmail = rs.getString("USER_EMAIL");
-				String userPhone = rs.getString("USER_PHONE");
-				Timestamp userJoinDate = rs.getTimestamp("USER_JOIN_DATE");
-				String userType = rs.getString("USER_TYPE");
-				String userDeleteYn = rs.getString("USER_DELETE_YN");
-				Timestamp lastLoginDate = rs.getTimestamp("LASTLOGIN_DATE");
-
-				selectedMember = new MemberVo();
-				selectedMember.setUserNo(userNo);
-				selectedMember.setUserId(userId);
-				selectedMember.setUserPwd(userPwd);
-				selectedMember.setUserNickname(userNickname);
-				selectedMember.setUserEmail(userEmail);
-				selectedMember.setUserPhone(userPhone);
-				selectedMember.setUserJoinDate(userJoinDate);
-				selectedMember.setUserType(userType);
-				selectedMember.setUserDeleteYn(userDeleteYn);
-				selectedMember.setLastLoginDate(lastLoginDate);
-
-				memberList.add(selectedMember);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-
-		return memberList;
-	}
-}
+	

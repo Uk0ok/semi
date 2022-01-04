@@ -126,7 +126,7 @@
 						<textarea id="textnum2" name="recipeProcess2" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt2">(0 / 4000)</div>
-						IMG2 > <input type="file" accept=".jpeg .jpg, .png" name="file class="recipeImg"><br>
+						IMG2 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
 						<br>
 					</div>
 					<div class="writing-area3">

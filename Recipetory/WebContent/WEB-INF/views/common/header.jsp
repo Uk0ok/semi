@@ -48,7 +48,7 @@
 	
 	<header>
 		<div id="h_head" class="row">
-			<a href="/reci/home" id="h_title" class="col-9">
+			<a href="/Recipetory/home" id="h_title" class="col-9">
 				<img src="${pageContext.request.contextPath}/img/home/logo1.png" width="350px">
 			</a>
 			
@@ -70,25 +70,25 @@
 	        </div>
 		</div>
 	
-		<div id="h_menu" class="container-fluid">  
+		<div id="h_menu" class="container">  
 			<ul id="nav" class="nav nav-tabs nav-justified">
 				<li class="nav-item">
-					<a class="nav-link" href="/reci/recipe">레시피</a>
+					<a class="nav-link" href="/Recipetory/recipe">레시피</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/reci/challenge">챌린지</a>
+					<a class="nav-link" href="/Recipetory/challenge">챌린지</a>
 				</li>
 			<!--<li class="nav-item">
 	              <a class="nav-link" href="#">식단코칭</a>
 	            </li> -->
 	            <li class="nav-item">
-					<a class="nav-link" href="/reci/magazine">매거진</a>
+					<a class="nav-link" href="/Recipetory/magazine">매거진</a>
 				</li>
 				<li class="nav-item">
-	                <a class="nav-link" href="/reci/mypage">마이페이지</a>
+	                <a class="nav-link" href="/Recipetory/mypage">마이페이지</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/reci/support">고객센터</a>
+					<a class="nav-link" href="/Recipetory/support">고객센터</a>
 				</li>
 			</ul>
 		</div>

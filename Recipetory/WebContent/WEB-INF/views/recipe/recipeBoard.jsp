@@ -217,7 +217,7 @@
                                 	<div class="item">
                                         <div class="num">${rrv.rpostNo}</div>
                                         <div class="tit"> 
-                                            <a href="chickchest">
+                                            <a href="${pageContext.request.contextPath}/recipe/viewRecipe?no=${rrv.rpostNo}&pageNo=${currentPage}">
                                             <img
                                                 src="${pageContext.request.contextPath}/img/recipeBoard/${rrv.rthumbnail}" width="200" height="150">
                                             ${rrv.rpostName}

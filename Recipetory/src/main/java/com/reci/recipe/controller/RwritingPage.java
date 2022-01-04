@@ -120,7 +120,7 @@ public class RwritingPage extends HttpServlet {
 
 		}
 
-		int resultImg = new RwritingService().registerRecipeImg(rImg);
+		int resultImg = new RwritingService().registerRecipeImg(rImgList);
 
 		System.out.println("resultImg : " + resultImg);
 

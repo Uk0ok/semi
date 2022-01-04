@@ -3,6 +3,7 @@ package com.reci.recipe.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.reci.common.JDBCTemplate.*;
@@ -41,26 +42,31 @@ public class RwritingDao {
 		return result;
 	}
 
-	public int insertRecipeImg(Connection conn, recipeImgVo rImg) {
-		String sql = "INSERT INTO TB_ATTACHED_FILE_R VALUES(SEQ_REC_FNO.NEXTVAL, ?, ?, ?, ?)";
+	public int registerRecipeImg(Connection conn, List<recipeImgVo> rImgList) {
+		
+		
+		String sql = "INSERT INTO TB_ATTACHED_FILE_R VALUES(SEQ_REC_FNO.NEXTVAL, "
+				+ "(SELECT POST_NO FROM (SELECT ROWNUM AS RNUM, p.* FROM TB_BOARD_RECIPE2 p ORDER BY P.POST_NO DESC) "
+				+ "WHERE ROWNUM = 1), 2, ?)";
 		PreparedStatement pstmt = null;
 		int result = 0;
-		
-		try {
+		for(int i = 0; i < rImgList.size(); i++) {
+			try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, rImg.getPostNo());
-			pstmt.setInt(2, rImg.getUserNo());
-			pstmt.setString(3, rImg.getFileName());
-			pstmt.setString(4, rImg.getMfileName());
-			
+			pstmt.setString(1, rImgList.get(i).getMfileName());
 			result = pstmt.executeUpdate();
-		} catch (SQLException e) {
+			} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
+			} finally {
 			close(pstmt);
-		}
-
+			}
+			}
+		System.out.println("이미지이름 1: " + rImgList.get(0).getMfileName());
+		System.out.println("이미지이름 2: " + rImgList.get(1).getMfileName());
+		System.out.println("이미지이름 3: " + rImgList.get(2).getMfileName());
+		System.out.println("이미지이름 4: " + rImgList.get(3).getMfileName());
+		System.out.println("이미지이름 5: " + rImgList.get(4).getMfileName());
 		return result;
+		
 	}
-
 }

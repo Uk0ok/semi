@@ -14,8 +14,8 @@ public class CwriteVo {
 	private int creviewNum;
 	private String cthumbnail;
 	private String cmodYn;
-	private Timestamp cmodDate;
 	private String cdelYn;
+	private Timestamp cfmodDate;
 	public int getCpostNo() {
 		return cpostNo;
 	}
@@ -76,24 +76,24 @@ public class CwriteVo {
 	public void setCmodYn(String cmodYn) {
 		this.cmodYn = cmodYn;
 	}
-	public Timestamp getCmodDate() {
-		return cmodDate;
-	}
-	public void setCmodDate(Timestamp cmodDate) {
-		this.cmodDate = cmodDate;
-	}
 	public String getCdelYn() {
 		return cdelYn;
 	}
 	public void setCdelYn(String cdelYn) {
 		this.cdelYn = cdelYn;
 	}
+	public Timestamp getCfmodDate() {
+		return cfmodDate;
+	}
+	public void setCfmodDate(Timestamp cfmodDate) {
+		this.cfmodDate = cfmodDate;
+	}
 	@Override
 	public String toString() {
 		return "CwriteVo [cpostNo=" + cpostNo + ", userNo=" + userNo + ", cpostName=" + cpostName + ", cpostContent="
 				+ cpostContent + ", cbegDate=" + cbegDate + ", challengePeriod=" + challengePeriod + ", partiNum="
 				+ partiNum + ", creviewNum=" + creviewNum + ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn
-				+ ", cmodDate=" + cmodDate + ", cdelYn=" + cdelYn + "]";
+				+ ", cdelYn=" + cdelYn + ", cfmodDate=" + cfmodDate + "]";
 	}
 	
 }	

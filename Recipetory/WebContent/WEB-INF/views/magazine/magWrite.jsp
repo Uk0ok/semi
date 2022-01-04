@@ -70,16 +70,20 @@ textarea {
 	
 	<div class="controller">
 	<div id="wriTitle"><b>게시글 작성</b></div>
-		<form action="mwrite.do" method="post">
+		<form action="mwrite" method="post">
 			<table>
 				<tr>
-					<td>제목</td>
-					<td><input type="text" name="magTitle" required id="title" />
+					<td>제목 : </td>
+					<td><input type="text" id="postName" name="postName" required/>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2"><textarea rows="12" cols="50"
-							name="magContent" required></textarea></td>
+							name="postContent" id="postContent" required></textarea></td>
+				</tr>
+				<tr>
+				<td> 관리자번호 :  </td> 
+				<td> <input type="text" id="adminNo" name="adminNo" placeholder="관리자번호를 입력해주세요" required> </td>
 				</tr>
 				<tr>
 					<td align="center"><input type="submit" value="작성" class="button"></td>
@@ -88,12 +92,12 @@ textarea {
 			</table>
 		</form>
 		<div>
-			<a href="mMag.do">
+			<a href="mMag">
 				<button>메거진 게시판</button>
 			</a>
 		</div>
 		<div>
-			<a href="mHome.do">
+			<a href="admin">
 				<button>관리자 페이지</button>
 			</a>
 		</div>

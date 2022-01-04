@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.reci.chal.service.CboardService;
-import com.reci.chal.vo.CboardVo;
+import com.reci.chal.vo.CwriteVo;
 
 @WebServlet("/challengeview")
 public class ChalViewController extends HttpServlet{
@@ -20,13 +20,13 @@ public class ChalViewController extends HttpServlet{
 		
 		System.out.println("컨트롤러 호출됨...");//swy
 		
-		List<CboardVo> CboardList = new CboardService().selectCboardList();
+		List<CwriteVo> CboardList = new CboardService().selectCboardList();
 
 		req.setAttribute("data", CboardList);
-		for(CboardVo x : CboardList) {
-			System.out.println("==================");
-			System.out.println("test ::: " + x);
-		}
+//		for(CwriteVo x : CboardList) {
+//			System.out.println("==================");
+//			System.out.println("test ::: " + x);
+//		}
 		
 		req.getRequestDispatcher("/WEB-INF/views/challenge/challenge_view.jsp").forward(req, resp);
 	}

@@ -1,11 +1,11 @@
 <%@page import="java.util.List"%>
-<%@page import="com.reci.chal.vo.CboardVo"%>
+<%@page import="com.reci.chal.vo.CwriteVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
-List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
-	for(CboardVo ch : cdatalist) {
-	
+List<CwriteVo> cdatalist = (List<CwriteVo>)request.getAttribute("data");
+	for(CwriteVo cwv : cdatalist) {
+		System.out.println(cwv);
 	}
  %>
 <!DOCTYPE html>
@@ -165,11 +165,11 @@ List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
                     <div class="board_list_body">
                                 <c:forEach items="${data}" var="ch">
                                 	<div class="item">
-                                        <div class="num">${ch.cpostNo}</div>
-                                        <div class="tit"><a href="./challengeview"><img src="${pageContext.request.contextPath}${ch.cthumbnail}" width="200" height="150">${ch.cpostName}</a></div>
-                                        <div class="parti">${ch.partiNum}명 참여중</div>
-                                        <div class="period">${ch.challengePeriod}</div>
-                                        <div class="review"><a href="./challengereview">${ch.creviewNum}</a></div>
+                                        <div class="num">${cwv.cpostNo}</div>
+                                        <div class="tit"><a href="./challengeview"><img src="${pageContext.request.contextPath}${ch.cthumbnail}" width="200" height="150">${cwv.cpostName}</a></div>
+                                       <div class="parti">${cwv.partiNum}명 참여중</div> 
+                                        <div class="period">${cwv.challengePeriod}</div>
+                                        <div class="review"><a href="./challengereview">${cwv.creviewNum}</a></div>
                                     </div>
                      			</c:forEach>
                    </div>
