@@ -4,9 +4,11 @@ import static com.reci.common.JDBCTemplate.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import com.reci.common.JDBCTemplate;
 import com.reci.recipe.dao.RwritingDao;
+import com.reci.recipe.vo.recipeImgVo;
 import com.reci.recipe.vo.registerRecipeVo;
 
 public class RwritingService {
@@ -20,7 +22,7 @@ public class RwritingService {
 		int result = 0;
 		try {
 			result = insertRecipe(conn, rrv);
-			if(result > 0)
+			if (result > 0)
 				commit(conn);
 			else
 				rollback(conn);
@@ -41,10 +43,29 @@ public class RwritingService {
 		return new RwritingDao().insertRecipe(conn, rrv);
 	}
 
-	public int registerRecipeImg() {
-		
-		
-		return 0;
+	public int registerRecipeImg(recipeImgVo rImg) {
+
+		Connection conn = getConnection();
+
+		int Iresult = 0;
+
+		try {
+			Iresult = insertRecipeImg(conn, rImg);
+			if (Iresult > 0)
+				commit(conn);
+			else
+				rollback(conn);
+		} catch (Exception e) {
+			rollback(conn);
+			e.printStackTrace();
+		} finally {
+			close(conn);
+		}
+		return Iresult;
+	}
+
+	private int insertRecipeImg(Connection conn, recipeImgVo rImg) {
+		return new RwritingDao().insertRecipeImg(conn, rImg);
 	}
 
 }
