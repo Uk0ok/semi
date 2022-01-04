@@ -32,14 +32,25 @@
                         <td>탈퇴하려면 비밀번호를 입력해 주세요.</td>
                     </tr>
                     <tr>
-                        <td><input type="password" name="userPwd"></td>
+                        <td><input type="password" name="userPwd" id="userPwd" class="userPwd"></td>
                     </tr>
                     <tr>
-                        <td><button type="submit">확인</button></td>
+                        <td><button type="submit">탈퇴하기</button></td>
                     </tr>
                     
                     </table>
 				</form>
+				
+				<input type="button" id="btnDelete" value="탈퇴">
+				<script>
+					$(document).ready(()=>{
+						$("#btnDelete").on("click", ()=>{
+							if(confirm("탈퇴하시겠습니까?")){
+								location.replace("${pageContext.request.contextPath }/delete")
+							}
+						});
+					});
+				</script>
 
                 <br><br><br><br><br>
 
