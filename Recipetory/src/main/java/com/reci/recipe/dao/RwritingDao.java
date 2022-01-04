@@ -3,8 +3,11 @@ package com.reci.recipe.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 import static com.reci.common.JDBCTemplate.*;
+
+import com.reci.recipe.vo.recipeImgVo;
 import com.reci.recipe.vo.registerRecipeVo;
 
 public class RwritingDao {
@@ -31,6 +34,28 @@ public class RwritingDao {
 			pstmt.setString(12, rrv.getRthumbnail());
 
 			result = pstmt.executeUpdate();
+		} finally {
+			close(pstmt);
+		}
+
+		return result;
+	}
+
+	public int insertRecipeImg(Connection conn, recipeImgVo rImg) {
+		String sql = "INSERT INTO TB_ATTACHED_FILE_R VALUES(SEQ_REC_FNO.NEXTVAL, ?, ?, ?, ?)";
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, rImg.getPostNo());
+			pstmt.setInt(2, rImg.getUserNo());
+			pstmt.setString(3, rImg.getFileName());
+			pstmt.setString(4, rImg.getMfileName());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		} finally {
 			close(pstmt);
 		}

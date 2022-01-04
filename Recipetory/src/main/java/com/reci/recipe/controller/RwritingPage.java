@@ -45,7 +45,7 @@ public class RwritingPage extends HttpServlet {
 		String postContent4 = req.getParameter("recipeProcess4");
 		String postContent5 = req.getParameter("recipeProcess5");
 		String rthumbnail = req.getParameter("thumbnailName");
-		
+
 		registerRecipeVo rrv = new registerRecipeVo();
 		rrv.setRpostName(postName);
 		rrv.setIngredient1(ingredient1);
@@ -59,73 +59,73 @@ public class RwritingPage extends HttpServlet {
 		rrv.setRpostContent4(postContent4);
 		rrv.setRpostContent5(postContent5);
 		rrv.setRthumbnail(rthumbnail);
-		
+
 		int result = new RwritingService().regist(rrv);
-		
+
 		if (result > 0) {
-			//success
+			// success
 			req.setAttribute("msg", "글이 정상적으로 작성되었습니다.");
 			req.getRequestDispatcher("WEB-INF/views/recipe/successPage.jsp").forward(req, resp);
 		} else {
-			//error
+			// error
 			req.setAttribute("msg", "글 작성에 오류가 발생하였습니다.");
 			req.getRequestDispatcher("WEB-INF/views/recipe/errorPage.jsp").forward(req, resp);
 		}
-		
+
 		// 다중 파일 업로드
-		List<recipeImgVo> rImgList = new ArrayList<>();
-		
+		List<recipeImgVo> rImgList = new ArrayList<recipeImgVo>();
+
 		Collection<Part> parts = req.getParts(); // 모든 part들을 가져옴
 		recipeImgVo rImg = null;
-		
-		for(Part file : parts) {
-			if(!file.getName().equals("file"))continue; // name이 file인 경우에 실행
-			
+
+		for (Part file : parts) {
+			if (!file.getName().equals("file"))
+				continue; // name이 file인 경우에 실행
+
 			// 사용자가 업로드한 파일 이름 알아오기
 			String originName = file.getSubmittedFileName();
-			
+
 			// 사용자가 업로드한 파일에 inputStream 연결
 			InputStream fis = file.getInputStream();
-			
+
 			// 파일 이름 변경
 			String changeName = "Z" + UUID.randomUUID();
 			String ext = originName.substring(originName.lastIndexOf("."), originName.length());
-			
+
 			// 저장할 경로
 			String realPath = req.getServletContext().getRealPath("/img/recipeBoard");
-			
+
 			// 파일 경로
 			String filePath = realPath + File.separator + changeName + ext;
-			
+
 			// 파일 저장
 			FileOutputStream fos = new FileOutputStream(filePath);
-			
+
 			System.out.println("origin : " + originName);
 			System.out.println("change : " + changeName);
-			
+
 			// 파일 기록 업로드파일 read > write
 			byte[] buf = new byte[1024];
 			int size = 0;
-			while((size = fis.read(buf)) != -1) {
+			while ((size = fis.read(buf)) != -1) {
 				fos.write(buf, 0, size);
 			}
 			fis.close();
 			fos.close();
-			
-			/*
-			 * rImg = new recipeImgVo(); rImg.setRecipeImgName(changeName + ext);
-			 * 
-			 * rImgList.add(rImg);
-			 */
+
+			rImg = new recipeImgVo();
+			rImg.setMfileName(changeName + ext);
+
+			rImgList.add(rImg);
+
 		}
-		/*
-		 * int resultImg = new RwritingService().registerRecipeImg();
-		 * 
-		 * System.out.println("resultImg : " + resultImg);
-		 */
-			
+
+		int resultImg = new RwritingService().registerRecipeImg(rImg);
+
+		System.out.println("resultImg : " + resultImg);
+
 	}
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("/WEB-INF/views/recipe/writingPage.jsp").forward(req, resp);
