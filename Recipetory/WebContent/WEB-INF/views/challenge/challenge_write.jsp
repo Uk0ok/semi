@@ -19,15 +19,12 @@
     text-decoration: none;
     color: inherit;
     }
-
-    .board_wrap {
-    padding: 50px;
-	margin-left: 18%;
-	margin-right: 18%;
-    }
+	
 
      .board_title {
-    margin-bottom: 30px;
+
+    margin-left: 20%;
+    margin-top:20px;
     }
 
     .board_title strong {
@@ -42,43 +39,8 @@
     border-top: 2px solid green;
     }
     
-    body {
-    background-color: cornsilk;
-    text-align: center;
-	}
-	
-	input {
-	    height: 25px;
-	}
-	
-	div {
-	    margin: auto;
-	}
-	
-	#join_tb{
-	    width: 450px;
-	    height: 450px;
-	    margin: auto;
-	}
-	
-	#p_a {
-	    height: 30px;
-	    background-color: rgb(175, 187, 175);
-	}
-	
-	#submit {
-	    width: 300px;
-	    height: 50px;
-	    font-size: 1.5em;
-	    color: white;
-	    background-color: rgb(175, 187, 175);
-	}
-	
-	#check {
-	    width: 600px;
-	    height: 200px;
-	    overflow-y: scroll;
-	    background-color: lightgray;
+
+
 	}
 </style>
 </head>
@@ -92,20 +54,41 @@
     <div class="board_write">
     <br>
    
-	<form action="./challengewrite" method="post">
-		<div>제목 <input type="text" name="cpostName" placeholder="제목을 입력하세요" maxlength="50" style= "width:800px;"></div>
-		<div>종료 날짜 <input type="date" name="challengePeriod"></div>
-		<div>첨부파일 <input type="file" name="cthumbnail" size="30"></div>
-		<div class="cont">내용</div>
-		<div><textarea name="cpostContent" placeholder="내용을 입력하세요" maxlength="2048" style="height:350px; width: 800px;"></textarea></div>
-		<div>
-			<input type="submit" value="등록">
+	<div class="container">
+		<div class="row">
+			<form action="registerRecipe" method="POST">
+			<div class="challenge-title"><h5>제목</h5>
+				<input type="text" class="form-control" name="postName" placeholder="제목을 입력해주세요.">
+			</div>
+			
+			<br>
+			
+			<div class="end-date"><h5>종료 날짜</h5>
+			<input type="date" name="challengePeriod">
+			</div>
+			
+			<br>
+			
+			<div class="file"><h5>첨부 파일</h5>
+			<input type="file" accept==".jpeg .jpg, .png"  name="thumbNail" class="challengeImg" />
+			</div>
+			
+			<br>
+			
+			<div class="challenge-content"><h5>내용 입력</h5>
+			<textarea id="textnum1" name="recipeProcess1" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40" cols="10" style="height:100px;"></textarea>
+			</div>
+			
+			<br>
+			
+			<a type="button" href="javascript:history.back();" class="btn btn-primary write"
+			style="background-color: darkolivegreen; border-color:darkolivegreen;">뒤로가기</a>
+			<input type="submit" class="btn btn-primary write" value="작성하기" style="background-color: darkolivegreen; border-color: darkolivegreen;"></input>
 		</div>
-    </form>
-
-	
+		</form>
 	</div>
 </div>
+
 </body>
 <%@ include file= "/WEB-INF/views/common/footer.jsp" %>
 </html>
