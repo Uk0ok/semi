@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.reci.sup.service.NotiService;
 import com.reci.sup.vo.NotiVo;
 
-@WebServlet("/nView")
+@WebServlet("/nViejjw")
 public class NViewHitsController extends HttpServlet{
 	
 	@Override

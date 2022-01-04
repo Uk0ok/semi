@@ -57,9 +57,4 @@ public class NotiService {
 		return notiView; 
 	}
 
-	public static NotiVo updateHits(int noticeNo, boolean hasRead) {
-		Connection conn = getConnection();
-		return new NotiDao().updatetHits();
-	}
-
 }

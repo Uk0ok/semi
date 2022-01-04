@@ -49,7 +49,7 @@
             
             <div class="bt_wrap">
                 <a href="../support?pageNo=${pageNo}" class="on">목록</a>
-                <a href="edit">수정</a>
+               <!--  <a href="edit">수정</a> -->
             </div>
         </div>
     </div>

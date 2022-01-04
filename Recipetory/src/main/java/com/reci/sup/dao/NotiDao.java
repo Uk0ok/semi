@@ -167,7 +167,6 @@ public class NotiDao {
 			if(rs.next()) {
 				notiView= new NotiVo();
 				notiView.setNoticeNo(noticeNo);
-				notiView.setNoticeNo(rs.getInt("NOTICE_NO"));
 				notiView.setAdminNo(rs.getInt("ADMIN_NO"));
 				notiView.setNoticeTitle(rs.getString("NOTICE_TITLE"));
 				notiView.setNoticeContent(rs.getString("NOTICE_CONTENT"));
@@ -209,29 +208,6 @@ public int countNotiAll(Connection conn) {
 		}
 		
 		return result;
-	}
-	
-	//조회수 
-public int NotiVo updatetHits(Connection connm, NotiVo n, ) {
-	int result = 0;
-	PreparedStatement pstmt = null;
-	String sql = "UPDATE TB_NOTICE SET HITS = ? WHERE NOTICE_NO = ?";
-	
-	try {
-		pstmt = conn.prepareStatement(sql.toString());
-		
-		n.setHits(n.getHits() + 1);
-		
-		pstmt.setInt(1, n.getHits());
-		pstmt.setInt(2, noticeNo);
-		
-		result = pstmt.executeUpdate();
-	} catch (SQLException e) {
-		e.printStackTrace();
-	} finally {
-		close(pstmt);
-	}
-	return result;
 	}
 
 }

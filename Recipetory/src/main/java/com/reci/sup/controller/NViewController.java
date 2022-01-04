@@ -19,18 +19,18 @@ public class NViewController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		//글 상세보기
-		int noticeNo = Integer.parseInt(req.getParameter("noticeNo"));
+		String no = req.getParameter("no");
+		int noticeNo = Integer.parseInt(no);
 		req.setAttribute("noticeNo", noticeNo);
 		
-		String pageNo = req.getParameter("pageNo");
+		int pageNo = Integer.parseInt(req.getParameter("pageNo"));
 		req.setAttribute("pageNo", pageNo);
-		
-		System.out.println(noticeNo);
-		System.out.println(pageNo);
-		
+	
 		NotiVo notiView = NotiService.notiView(noticeNo);
 		System.out.println("notiView : " + notiView);
 		req.setAttribute("notiView", notiView);
+		
+		req.getRequestDispatcher("/WEB-INF/views/support/nView.jsp").forward(req, resp);
 
 	}
 }
