@@ -56,4 +56,8 @@ public class recipeImgVo {
 				+ super.toString() + "]";
 	}
 
+	public void setRecipeImgName(String string) {
+		
+	}
+
 }

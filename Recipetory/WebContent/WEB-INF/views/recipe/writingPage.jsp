@@ -83,7 +83,7 @@
 
 						</div>
 						<br>
-						<form action="registerRecipe" method="POST">
+						<form action="registerRecipe" method="POST" enctype="multipart/form-data">
 							<div class="writing-title">
 								<h5>제목</h5>
 								<input type="text" class="form-control" name="recipeName" placeholder="제목을 입력해주세요.">
