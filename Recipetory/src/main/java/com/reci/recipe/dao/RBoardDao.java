@@ -8,8 +8,11 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.reci.common.JDBCTemplate;
+import static com.reci.common.JDBCTemplate.*;
+
+import com.reci.recipe.vo.recipeImgVo;
 import com.reci.recipe.vo.registerRecipeVo;
+import com.reci.sup.vo.NotiVo;
 
 public class RBoardDao {
 
@@ -46,7 +49,6 @@ public class RBoardDao {
 				Timestamp rmodDate = rs.getTimestamp("FMOD_DATE");
 
 				registerRecipeVo rrv = new registerRecipeVo();
-				rrv = new registerRecipeVo();
 				rrv.setRpostNo(rpostNo);
 				rrv.setUserNo(userNo);
 				rrv.setRpostName(rpostName);
@@ -61,6 +63,7 @@ public class RBoardDao {
 				rrv.setRpostContent3(rpostContent3);
 				rrv.setRpostContent4(rpostContent4);
 				rrv.setRpostContent5(rpostContent5);
+				rrv.setRthumbnail(rthumbnail);
 				rrv.setRmodYn(rmodYn);
 				rrv.setRdelYn(rdelYn);
 				rrv.setRmodDate(rmodDate);
@@ -71,10 +74,90 @@ public class RBoardDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			JDBCTemplate.close(pstmt);
-			JDBCTemplate.close(rs);	
+			close(pstmt);
+			close(rs);
 		}
-		
+
 		return RboardList;
+	}
+
+	public registerRecipeVo viewRecipe(Connection conn, int rpostNo) {
+
+		String sql = "SELECT * FROM TB_BOARD_RECIPE2 WHERE POST_NO = ?";
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		registerRecipeVo viewReicpe = null;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, rpostNo);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				viewReicpe = new registerRecipeVo();
+				viewReicpe.setRpostNo(rpostNo);
+				viewReicpe.setUserNo(rs.getInt("USER_NO"));
+				viewReicpe.setRpostName(rs.getString("POST_NAME"));
+				viewReicpe.setRbegDate(rs.getTimestamp("BEG_DATE"));
+				viewReicpe.setIngredient1(rs.getString("INGREDIENT1"));
+				viewReicpe.setIngredient2(rs.getString("INGREDIENT2"));
+				viewReicpe.setIngredient3(rs.getString("INGREDIENT3"));
+				viewReicpe.setIngredient4(rs.getString("INGREDIENT4"));
+				viewReicpe.setIngredient5(rs.getString("INGREDIENT5"));
+				viewReicpe.setRpostContent1(rs.getString("POST_CONTENT1"));
+				viewReicpe.setRpostContent2(rs.getString("POST_CONTENT2"));
+				viewReicpe.setRpostContent3(rs.getString("POST_CONTENT3"));
+				viewReicpe.setRpostContent4(rs.getString("POST_CONTENT4"));
+				viewReicpe.setRpostContent5(rs.getString("POST_CONTENT5"));
+				viewReicpe.setRthumbnail(rs.getString("THUMBNAIL"));
+				viewReicpe.setRmodYn(rs.getString("MOD_YN"));
+				viewReicpe.setRdelYn(rs.getString("DEL_YN"));
+				viewReicpe.setRmodDate(rs.getTimestamp("FMOD_DATE"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return viewReicpe;
+	}
+
+	public List<recipeImgVo> viewImg(Connection conn, int postNo) {
+
+		String sql = "SELECT MFILE_NAME FROM TB_ATTACHED_FILE_R WHERE POST_NO = 36";
+
+		List<recipeImgVo> fnList = new ArrayList<recipeImgVo>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+//			pstmt.setInt(1, postNo);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				String fileName = rs.getString("MFILE_NAME");
+				
+				recipeImgVo vi = new recipeImgVo();
+				vi.setMfileName(fileName);
+
+				fnList.add(vi);
+			}
+			for(recipeImgVo x : fnList) {
+				System.out.println("==================");
+				System.out.println("test ::: " + x);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+
+		}
+	
+		return fnList;
 	}
 }

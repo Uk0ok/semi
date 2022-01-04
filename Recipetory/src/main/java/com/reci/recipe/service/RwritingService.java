@@ -43,15 +43,15 @@ public class RwritingService {
 		return new RwritingDao().insertRecipe(conn, rrv);
 	}
 
-	public int registerRecipeImg(recipeImgVo rImg) {
+	public int registerRecipeImg(List<recipeImgVo> rImgList) {
 
 		Connection conn = getConnection();
 
-		int Iresult = 0;
+		int result = 0;
 
 		try {
-			Iresult = insertRecipeImg(conn, rImg);
-			if (Iresult > 0)
+			result = insertRecipeImg(conn, rImgList);
+			if (result > 0)
 				commit(conn);
 			else
 				rollback(conn);
@@ -61,11 +61,11 @@ public class RwritingService {
 		} finally {
 			close(conn);
 		}
-		return Iresult;
+		return result;
 	}
 
-	private int insertRecipeImg(Connection conn, recipeImgVo rImg) {
-		return new RwritingDao().insertRecipeImg(conn, rImg);
+	private int insertRecipeImg(Connection conn, List<recipeImgVo> rImgList) {
+		return new RwritingDao().registerRecipeImg(conn, rImgList);
 	}
 
 }
