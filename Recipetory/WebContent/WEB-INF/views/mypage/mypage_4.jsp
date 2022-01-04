@@ -33,18 +33,18 @@
                     </tr>
                     <tr>
                         <td>비밀번호</td>
-                        <td><button>변경</button></td>
+                        <td><a href="./pwdUpdate">변경</a></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>이메일</td>
                         <td>abcd123@korea.com</td>
-                        <td><button>변경</button></td>
+                        <td><a href="./emailUpdate">변경</a></td>
                     </tr>
                     <tr>
                         <td>휴대전화</td>
                         <td>010 - 0000 - 0000</td>
-                        <td><button>변경</button></td>
+                        <td><a href="./phoneUpdate">변경</a></td>
                     </tr>
                 </table>
                 <br><br><br><br><br>
