@@ -12,13 +12,11 @@
     body {
         box-sizing: border-box;
         margin: auto;
-        background-color: cornsilk;
     }
     
     #wrap {
     	width: 1200px;
     	margin: 2rem auto;
-    	background-color: white;
     	text-align: center;
     	padding: 1rem;
     }
@@ -41,13 +39,13 @@
 	
 
     <div id=wrap class="row">
-		  	<div class="col-lg-2 container list-group">
+		  	<div class="col-2 container list-group">
 			  <a href="support" class="list-group-item list-group-item-action">공지사항</a>
 			  <a href="qna" class="list-group-item active list-group-item-action">고객문의</a>
 			  <a href="report" class="list-group-item list-group-item-action">신고</a>
 			</div>
     
-            <div class="col-lg-10">
+            <div class="col-10">
                 <table class="table">
 	                <thead>
 	                    <tr>

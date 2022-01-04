@@ -70,7 +70,7 @@
 	        </div>
 		</div>
 	
-		<div id="h_menu" class="container-fluid">  
+		<div id="h_menu" class="container">  
 			<ul id="nav" class="nav nav-tabs nav-justified">
 				<li class="nav-item">
 					<a class="nav-link" href="/Recipetory/recipe">레시피</a>

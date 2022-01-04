@@ -18,13 +18,11 @@
     body {
         box-sizing: border-box;
         margin: auto;
-        background-color: cornsilk;
     }
     
     #wrap {
     	width: 1200px;
     	margin: 2rem auto;
-    	background-color: white;
     	text-align: center;
     	padding: 1rem;
     }
@@ -74,7 +72,7 @@
 	                    	</a>
                     	</td>
 	                    <td>${n.createDate}</td>
-	                    <td>${n.hits}</td>
+	                    <td>${hits.hits}</td>
 	                   </tr>
 	            	</c:forEach>
 	           	</tbody>
@@ -92,7 +90,6 @@
 			        	<i class="fas fa-search"></i>
 		        	</button>
 			    </form>
-			    <button id="writeBtn" class="col-1"><a href="support/write">글쓰기</a></button>
 			</div>
                 
              <ul id="pageForm" class="pagination justify-content-center">
@@ -101,10 +98,10 @@
            		</c:if>
              	<c:forEach var="pageNo" begin="${startPage}" end="${endPage}">
              		<c:if test="${pageNo == currentPage}">
-             			<li class="page-item"><a class="page-link" href="support?pageNo=${currentPage}">${pageNo}&nbsp;</a></li>
+             			<li class="page-item"><a class="page-link" href="support?page=${currentPage}">${pageNo}&nbsp;</a></li>
              		</c:if>
              		<c:if test="${pageNo != currentPage}">
-             			<li class="page-item"><a class="page-link" href="support?pageNo=${currentPage}">${pageNo}</a></li>
+             			<li class="page-item"><a class="page-link" href="support?page=${currentPage}">${pageNo}</a></li>
              		</c:if>
              	</c:forEach>
            		<c:if test="currentPage != maxPage">

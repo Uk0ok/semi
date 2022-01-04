@@ -13,7 +13,7 @@ import java.util.List;
 import com.reci.sup.vo.NotiVo;
 
 public class NotiDao {
-	
+
 	public List<NotiVo> selectNotiList(Connection conn, int startNo, int endNo) {
 		//쿼리 날릴 준비
 		String sql = "SELECT * "
@@ -153,7 +153,7 @@ public class NotiDao {
 	//상세보기
 	public NotiVo notiView(Connection conn, int noticeNo) {
 		
-		String sql = "SELECT * FROM TB_NOTICE WHERE NOTICE_NO = ? ";
+		String sql = "SELECT * FROM TB_NOTICE WHERE NOTICE_NO = ?";
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -174,7 +174,7 @@ public class NotiDao {
 				notiView.setCreateDate(rs.getTimestamp("CREATE_DATE"));;
 				notiView.setHits(rs.getInt("HITS"));
 				notiView.setModYn(rs.getString("MOD_YN"));
-				notiView.setModDate(rs.getTimestamp("MODE_DATE"));
+				notiView.setModDate(rs.getTimestamp("MOD_DATE"));
 				notiView.setDeleteYn(rs.getString("DELETE_YN"));
 			}
 				
@@ -187,9 +187,52 @@ public class NotiDao {
 		return notiView;
 	}
 
+public int countNotiAll(Connection conn) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "SELECT COUNT(NOTICE_NO) FROM TB_NOTICE WHERE DELETE_YN = 'N'";
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		
+		return result;
+	}
 	
 	//조회수 
+public int NotiVo updatetHits(Connection connm, NotiVo n, ) {
+	int result = 0;
+	PreparedStatement pstmt = null;
+	String sql = "UPDATE TB_NOTICE SET HITS = ? WHERE NOTICE_NO = ?";
 	
+	try {
+		pstmt = conn.prepareStatement(sql.toString());
+		
+		n.setHits(n.getHits() + 1);
+		
+		pstmt.setInt(1, n.getHits());
+		pstmt.setInt(2, noticeNo);
+		
+		result = pstmt.executeUpdate();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		close(pstmt);
+	}
+	return result;
+	}
 
-	
 }
+
