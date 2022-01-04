@@ -9,12 +9,4 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-		<servlet-name>mwrite</servlet-name>
-		<servlet-class>com.reci.mag.controller.MwriteController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>mwrite</servlet-name>
-		<url-pattern>/mwrite.do</url-pattern>
-	</servlet-mapping>
 </web-app>

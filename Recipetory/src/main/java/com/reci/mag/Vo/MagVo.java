@@ -116,6 +116,10 @@ public class MagVo {
 				+ recomNum + ", scrapNum=" + scrapNum + ", commNum=" + commNum + ", modYn=" + modYn + ", delYn=" + delYn
 				+ "]";
 	}
+	public Object selectById(String postNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

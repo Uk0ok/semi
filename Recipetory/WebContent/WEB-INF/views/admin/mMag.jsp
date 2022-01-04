@@ -44,10 +44,10 @@
 				</thead>
 	           	<tbody>
 	           		<c:forEach items="${magListAll}" var="m">
-	             	<tr>
+	             	<tr>  
 	             		<th><input type="checkbox"></th>
 		                <td>${m.postNo }</td>		                    
-		                <td>${m.postName }</td>		                    
+		                <td>${m.postName }<b><!--  a href="magview.jsp?postNo=<%--=m.getPostNo() %>"><%=m.getPostName() --%></a></b>--></td>		                    
 		                <td>${m.postContent }</td>		                    
 		                <td>${m.begDate }</td>		                    
 		                <td>${m.hits }</td>		                    
@@ -64,7 +64,7 @@
 			</table>
 			
 			
-			<a href="mwrite.do"><button>게시글 작성</button></a>
+			<a href="mwrite"><button>게시글 작성</button></a>
 			
 			<ul class="pagination justify-content-center">
 				<li class="page-item"><a class="page-link" href="#"><</a></li>
