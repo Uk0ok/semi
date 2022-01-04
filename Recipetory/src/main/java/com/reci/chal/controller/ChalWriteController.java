@@ -3,6 +3,7 @@ package com.reci.chal.controller;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,9 +26,7 @@ import com.reci.chal.vo.CwriteVo;
 public class ChalWriteController extends HttpServlet{	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		System.out.println("컨트롤러 호출됨...");
-		
+
 	  //챌린지 게시물 등록
 	  req.setCharacterEncoding("UTF-8");
 	  String cpostName = req.getParameter("postName");
@@ -44,14 +43,20 @@ public class ChalWriteController extends HttpServlet{
 	  
 	  int result = new CwriteService().write(cwv);
 	  
-	  if (result > 0) {
-			//success
-			req.setAttribute("msg", "글이 정상적으로 작성되었습니다.");
-			req.getRequestDispatcher("WEB-INF/views/challenge/successPage.jsp").forward(req, resp);
-		} else {
-			//error
-			req.setAttribute("msg", "글 작성에 오류가 발생하였습니다.");
-			req.getRequestDispatcher("WEB-INF/views/challenge/errorPage.jsp").forward(req, resp);
+	  if(result > 0) {
+		//success
+		resp.setContentType("text/html; charset=UTF-8");
+		PrintWriter writer = resp.getWriter();
+		writer.println("<script>alert('글이 정상적으로 작성되었습니다.');"
+		+ "location.href='./challengeview';</script>"); 
+		writer.close();
+		}else {
+		//error
+		resp.setContentType("text/html; charset=UTF-8"); 
+		PrintWriter writer = resp.getWriter();
+		writer.println ("<script>alert('글 등록에 실패하였습니다. 다시 시도해주십시오.');"
+		+ "location.href='./challengewrite';</script>"); 
+		writer.close();
 		}
 			
 	}
