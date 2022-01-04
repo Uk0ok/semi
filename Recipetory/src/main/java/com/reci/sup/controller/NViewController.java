@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,20 +17,20 @@ public class NViewController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		String no = req.getParameter("no");
-		int noticeNo = Integer.parseInt(no);
-		System.out.println("notiNo : " + noticeNo);
-		req.setAttribute("no", no);
+	
+		//글 상세보기
+		int noticeNo = Integer.parseInt(req.getParameter("noticeNo"));
+		req.setAttribute("noticeNo", noticeNo);
 		
 		String pageNo = req.getParameter("pageNo");
 		req.setAttribute("pageNo", pageNo);
 		
+		System.out.println(noticeNo);
+		System.out.println(pageNo);
+		
 		NotiVo notiView = NotiService.notiView(noticeNo);
 		System.out.println("notiView : " + notiView);
 		req.setAttribute("notiView", notiView);
-		
-		req.getRequestDispatcher("/WEB-INF/views/support/nView.jsp").forward(req, resp);
-	}
 
+	}
 }

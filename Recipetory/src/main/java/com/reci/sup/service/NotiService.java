@@ -35,7 +35,7 @@ public class NotiService {
 	}
 
 	private int countNotiAll(Connection conn) {
-		return new MemberDao().countNotiAll(conn);
+		return new NotiDao().countNotiAll(conn);
 	}
 
 	//관리자페이지에서 공지 보이기
@@ -56,5 +56,10 @@ public class NotiService {
 				
 		return notiView; 
 	}
-	 
+
+	public static NotiVo updateHits(int noticeNo, boolean hasRead) {
+		Connection conn = getConnection();
+		return new NotiDao().updatetHits();
+	}
+
 }
