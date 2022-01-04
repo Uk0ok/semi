@@ -210,7 +210,7 @@ public class NotiDao {
 		return result;
 	}
 
-	public int updateHits(Connection conn, int noticeNo) {
+	public int updateHits(Connection conn, int noticeNo, boolean hasRead) {
 		
 		int result = 0;
 		PreparedStatement pstmt = null;
@@ -219,8 +219,13 @@ public class NotiDao {
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, noticeNo);
-			result = pstmt.executeUpdate();
+			
+			if(hasRead = false) {
+				pstmt.setInt(1, noticeNo);
+				result = pstmt.executeUpdate();
+			}else {
+				result = 0;
+			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
