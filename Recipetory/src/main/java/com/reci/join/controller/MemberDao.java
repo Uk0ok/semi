@@ -5,6 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.reci.admin.AdminDao;
 
 import oracle.sql.TIMESTAMP;
 
@@ -128,5 +132,52 @@ public class MemberDao {
 		
 		return value;
 	}
-	
+
+	public List<MemberVo> selectMemberAll(Connection conn) {
+		String query = "SELECT * FROM TB_USER WHERE USER_DELETE_YN = 'N'";
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<MemberVo> memberList = new ArrayList<MemberVo>();
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			MemberVo selectedMember = null;
+			
+			while(rs.next()) {
+				int userNo = rs.getInt("USER_NO");
+				String userId = rs.getString("USER_ID");
+				String userPwd = rs.getString("USER_PWD");
+				String userNickname = rs.getString("USER_NICKNAME");
+				String userEmail = rs.getString("USER_EMAIL");
+				String userPhone = rs.getString("USER_PHONE");
+				Timestamp userJoinDate = rs.getTimestamp("USER_JOIN_DATE");
+				String userType = rs.getString("USER_TYPE");
+				String userDeleteYn = rs.getString("USER_DELETE_YN");
+				Timestamp lastLoginDate = rs.getTimestamp("LASTLOGIN_DATE");
+
+				selectedMember = new MemberVo();
+				selectedMember.setUserNo(userNo);
+				selectedMember.setUserId(userId);
+				selectedMember.setUserPwd(userPwd);
+				selectedMember.setUserNickname(userNickname);
+				selectedMember.setUserEmail(userEmail);
+				selectedMember.setUserPhone(userPhone);
+				selectedMember.setUserJoinDate(userJoinDate);
+				selectedMember.setUserType(userType);
+				selectedMember.setUserDeleteYn(userDeleteYn);
+				selectedMember.setLastLoginDate(lastLoginDate);
+				
+				memberList.add(selectedMember);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return memberList;
+	}
 }

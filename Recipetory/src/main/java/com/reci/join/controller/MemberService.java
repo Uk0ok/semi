@@ -8,6 +8,8 @@ import java.util.List;
 
 import static com.reci.common.JDBCTemplate.*;
 
+import com.reci.admin.AdminDao;
+import com.reci.admin.AdminVo;
 import com.reci.common.JDBCTemplate;
 import com.reci.join.controller.MemberDao;
 import com.reci.join.controller.MemberVo;
@@ -90,5 +92,17 @@ public class MemberService {
 		}else {
 			return null;
 		}
+	}
+	
+	public List<MemberVo> search() {
+		Connection conn = getConnection();
+		List<MemberVo> memberList = selectmemberAll(conn);
+		close(conn);
+		
+		return memberList;
+	}
+
+	private List<MemberVo> selectmemberAll(Connection conn) {
+		return new MemberDao().selectMemberAll(conn);
 	}
 }

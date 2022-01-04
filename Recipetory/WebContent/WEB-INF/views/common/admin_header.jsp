@@ -42,7 +42,7 @@
 
     #content_wrap {
     	width: 1200px;
-    	margin: 1rem auto;
+    	margin: 2rem auto;
     	background-color: white;
     	text-align: center;
     	padding: 0 1rem;

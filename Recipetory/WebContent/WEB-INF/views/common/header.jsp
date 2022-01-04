@@ -73,22 +73,22 @@
 		<div id="h_menu" class="container-fluid">  
 			<ul id="nav" class="nav nav-tabs nav-justified">
 				<li class="nav-item">
-					<a class="nav-link" href="recipe">레시피</a>
+					<a class="nav-link" href="/reci/recipe">레시피</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="challenge">챌린지</a>
+					<a class="nav-link" href="/reci/challenge">챌린지</a>
 				</li>
 			<!--<li class="nav-item">
 	              <a class="nav-link" href="#">식단코칭</a>
 	            </li> -->
 	            <li class="nav-item">
-					<a class="nav-link" href="magazine">매거진</a>
+					<a class="nav-link" href="/reci/magazine">매거진</a>
 				</li>
 				<li class="nav-item">
-	                <a class="nav-link" href="mypage">마이페이지</a>
+	                <a class="nav-link" href="/reci/mypage">마이페이지</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="support">고객센터</a>
+					<a class="nav-link" href="/reci/support">고객센터</a>
 				</li>
 			</ul>
 		</div>
