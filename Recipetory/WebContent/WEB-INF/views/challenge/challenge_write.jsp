@@ -56,27 +56,27 @@
    
 	<div class="container">
 		<div class="row">
-			<form action="registerRecipe" method="POST">
+			<form action="challengewrite" method="POST">
 			<div class="challenge-title"><h5>제목</h5>
-				<input type="text" class="form-control" name="postName" placeholder="제목을 입력해주세요.">
+				<input type="text" class="form-control" id= "postName" name="postName" placeholder="제목을 입력해주세요.">
 			</div>
 			
 			<br>
 			
 			<div class="end-date"><h5>종료 날짜</h5>
-			<input type="date" name="challengePeriod">
+			<input type="date" id= "challengePeriod" name="challengePeriod">
 			</div>
 			
 			<br>
 			
 			<div class="file"><h5>첨부 파일</h5>
-			<input type="file" accept==".jpeg .jpg, .png"  name="thumbNail" class="challengeImg" />
+			<input type="file" accept==".jpeg .jpg, .png" id="thumbnail"  name="thumbNail" class="challengeImg" />
 			</div>
 			
 			<br>
 			
 			<div class="challenge-content"><h5>내용 입력</h5>
-			<textarea id="textnum1" name="recipeProcess1" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40" cols="10" style="height:100px;"></textarea>
+			<textarea id="textnum1" name="recipeProcess1" id="postContent" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40" cols="10" style="height:100px;"></textarea>
 			</div>
 			
 			<br>

@@ -8,19 +8,19 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.reci.chal.vo.CboardVo;
+import com.reci.chal.vo.CwriteVo;
 import com.reci.common.JDBCTemplate;
 
 public class CboardDao {
 
-	public List<CboardVo> selectCboardList(Connection conn){
+	public List<CwriteVo> selectCboardList(Connection conn){
 
-			System.out.println("DAO 호출됨...");//swy
+//			System.out.println("DAO 호출됨...");//swy
 		
 				PreparedStatement pstmt = null;
 				ResultSet rs = null;
-				List<CboardVo> CboardList = new ArrayList<CboardVo>(); 
-				String sql = "SELECT * FROM TB_BOARD_CHALLENGE";
+				List<CwriteVo> CboardList = new ArrayList<CwriteVo>(); 
+				String sql = "SELECT * FROM TB_BOARD_CHALLENGE ";
 				
 				try {
 					pstmt = conn.prepareStatement(sql);
@@ -32,32 +32,31 @@ public class CboardDao {
 						String cpostName = rs.getString("POST_NAME");
 						String cpostContent = rs.getString("POST_CONTENT");
 						Timestamp cbegDate = rs.getTimestamp("BEG_DATE");
-						Timestamp challengePeriod = rs.getTimestamp("CHALLENGE_PERIOD");
-						int partiNum = rs.getInt("PARTI_NUM");
-						int creviewNum = rs.getInt("REVIEW_NUM");
-//						int creviewNum = 923;//swy
+						String challengePeriod = rs.getString("CHALLENGE_PERIOD");
+						int partiNum =rs.getInt("PARTI_NUM");
+						int reviewNum =rs.getInt("REVIEW_NUM");
 						String cthumbnail = rs.getString("THUMBNAIL");
 						String cmodYn = rs.getString("MOD_YN");
-						Timestamp cfmodDate = rs.getTimestamp("FMOD_DATE"); 
 						String cdelYn = rs.getString("DEL_YN");
+						Timestamp cfmodDate = rs.getTimestamp("FMOD_DATE"); 
 						
 						
 						//관리하기 힘드니 하나로 뭉친다.
-						CboardVo ch = new CboardVo();
-						ch.setCpostNo(cpostNo);
-						ch.setUserNo(userNo);
-						ch.setCpostName(cpostName);
-						ch.setCpostContent(cpostContent);
-						ch.setCbegDate(cbegDate);
-						ch.setChallengePeriod(challengePeriod);
-						ch.setPartiNum(partiNum);
-						ch.setCreviewNum(creviewNum);
-						ch.setCthumbnail(cthumbnail);
-						ch.setCmodYn(cmodYn);
-						ch.setCfmodDate(cfmodDate);
-						ch.setCdelYn(cdelYn);
+						CwriteVo cwv = new CwriteVo();
+						cwv.setCpostNo(cpostNo);
+						cwv.setUserNo(userNo);
+						cwv.setCpostName(cpostName);
+						cwv.setCpostContent(cpostContent);
+						cwv.setCbegDate(cbegDate);
+						cwv.setChallengePeriod(challengePeriod);
+						cwv.setCreviewNum(reviewNum);
+						cwv.setPartiNum(partiNum);
+						cwv.setCthumbnail(cthumbnail);
+						cwv.setCmodYn(cmodYn);
+						cwv.setCdelYn(cdelYn);
+						cwv.setCfmodDate(cfmodDate);
 						
-						CboardList.add(ch);
+						CboardList.add(cwv);
 						
 					}
 					
@@ -68,7 +67,7 @@ public class CboardDao {
 					JDBCTemplate.close(rs); 
 				}
 				
-				System.out.println("dao end......");//swy
+//				System.out.println("dao end......");
 				
 				return CboardList;
 			}
