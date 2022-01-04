@@ -8,8 +8,6 @@ List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
 	
 	}
  %>
-
-
 <!DOCTYPE html>
 <html>
 <head>

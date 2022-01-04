@@ -7,13 +7,15 @@ public class CwriteVo {
 	private int cpostNo;
 	private int userNo;
 	private String cpostName;
+	private String cpostContent;
 	private Timestamp cbegDate;
 	private String challengePeriod;
-	private String cpostContent;
+	private int partiNum;
+	private int creviewNum;
 	private String cthumbnail;
 	private String cmodYn;
-	private String cdelYn;
 	private Timestamp cmodDate;
+	private String cdelYn;
 	public int getCpostNo() {
 		return cpostNo;
 	}
@@ -32,6 +34,12 @@ public class CwriteVo {
 	public void setCpostName(String cpostName) {
 		this.cpostName = cpostName;
 	}
+	public String getCpostContent() {
+		return cpostContent;
+	}
+	public void setCpostContent(String cpostContent) {
+		this.cpostContent = cpostContent;
+	}
 	public Timestamp getCbegDate() {
 		return cbegDate;
 	}
@@ -44,11 +52,17 @@ public class CwriteVo {
 	public void setChallengePeriod(String challengePeriod) {
 		this.challengePeriod = challengePeriod;
 	}
-	public String getCpostContent() {
-		return cpostContent;
+	public int getPartiNum() {
+		return partiNum;
 	}
-	public void setCpostContent(String cpostContent) {
-		this.cpostContent = cpostContent;
+	public void setPartiNum(int partiNum) {
+		this.partiNum = partiNum;
+	}
+	public int getCreviewNum() {
+		return creviewNum;
+	}
+	public void setCreviewNum(int creviewNum) {
+		this.creviewNum = creviewNum;
 	}
 	public String getCthumbnail() {
 		return cthumbnail;
@@ -62,23 +76,24 @@ public class CwriteVo {
 	public void setCmodYn(String cmodYn) {
 		this.cmodYn = cmodYn;
 	}
-	public String getCdelYn() {
-		return cdelYn;
-	}
-	public void setCdelYn(String cdelYn) {
-		this.cdelYn = cdelYn;
-	}
 	public Timestamp getCmodDate() {
 		return cmodDate;
 	}
 	public void setCmodDate(Timestamp cmodDate) {
 		this.cmodDate = cmodDate;
 	}
+	public String getCdelYn() {
+		return cdelYn;
+	}
+	public void setCdelYn(String cdelYn) {
+		this.cdelYn = cdelYn;
+	}
 	@Override
 	public String toString() {
-		return "CwriteVo [cpostNo=" + cpostNo + ", userNo=" + userNo + ", cpostName=" + cpostName + ", cbegDate="
-				+ cbegDate + ", challengePeriod=" + challengePeriod + ", cpostContent=" + cpostContent + ", cthumbnail="
-				+ cthumbnail + ", cmodYn=" + cmodYn + ", cdelYn=" + cdelYn + ", cmodDate=" + cmodDate + "]";
+		return "CwriteVo [cpostNo=" + cpostNo + ", userNo=" + userNo + ", cpostName=" + cpostName + ", cpostContent="
+				+ cpostContent + ", cbegDate=" + cbegDate + ", challengePeriod=" + challengePeriod + ", partiNum="
+				+ partiNum + ", creviewNum=" + creviewNum + ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn
+				+ ", cmodDate=" + cmodDate + ", cdelYn=" + cdelYn + "]";
 	}
 	
 }	
