@@ -186,7 +186,7 @@ public class NotiDao {
 		return notiView;
 	}
 
-public int countNotiAll(Connection conn) {
+	public int countNotiAll(Connection conn) {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -207,6 +207,26 @@ public int countNotiAll(Connection conn) {
 			close(rs);
 		}
 		
+		return result;
+	}
+
+	public int updateHits(Connection conn, int noticeNo) {
+		
+		int result = 0;
+		PreparedStatement pstmt = null;
+		
+		String sql = "UPDATE TB_NOTICE SET HITS = HITS + 1 WHERE NOTICE_NO = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, noticeNo);
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
 		return result;
 	}
 

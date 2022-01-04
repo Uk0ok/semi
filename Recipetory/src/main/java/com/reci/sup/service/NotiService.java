@@ -57,4 +57,12 @@ public class NotiService {
 		return notiView; 
 	}
 
+	public static int updateHits(int noticeNo) {
+		Connection conn = getConnection();
+		int updateHits = new NotiDao().updateHits(conn, noticeNo);
+		close(conn);
+				
+		return updateHits; 
+	}
+
 }

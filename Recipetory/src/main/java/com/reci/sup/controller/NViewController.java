@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.reci.admin.AdminService;
 import com.reci.sup.service.NotiService;
 import com.reci.sup.vo.NotiVo;
 
@@ -17,15 +18,18 @@ public class NViewController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-		//글 상세보기
+		
 		String no = req.getParameter("no");
 		int noticeNo = Integer.parseInt(no);
-		req.setAttribute("noticeNo", noticeNo);
-		
 		int pageNo = Integer.parseInt(req.getParameter("pageNo"));
+		
+		req.setAttribute("noticeNo", noticeNo);
 		req.setAttribute("pageNo", pageNo);
 	
+		//조회수 증가
+		int result = NotiService.updateHits(noticeNo);
+
+		//글 상세보기
 		NotiVo notiView = NotiService.notiView(noticeNo);
 		System.out.println("notiView : " + notiView);
 		req.setAttribute("notiView", notiView);
