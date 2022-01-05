@@ -11,17 +11,17 @@ import java.util.List;
 import static com.reci.common.JDBCTemplate.*;
 
 import com.reci.recipe.vo.recipeImgVo;
-import com.reci.recipe.vo.registerRecipeVo;
+import com.reci.recipe.vo.recipeVo;
 import com.reci.sup.vo.NotiVo;
 
 public class recipeBoradDao {
 
-	public List<registerRecipeVo> selectRBoardList(Connection conn) {
+	public List<recipeVo> selectRBoardList(Connection conn) {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 //		RBoardVo rb = null;
-		List<registerRecipeVo> RboardList = new ArrayList<registerRecipeVo>();
+		List<recipeVo> RboardList = new ArrayList<recipeVo>();
 		String sql = "SELECT * FROM TB_BOARD_RECIPE2 ORDER BY POST_NO DESC";
 
 		try {
@@ -48,7 +48,7 @@ public class recipeBoradDao {
 				String rdelYn = rs.getString("DEL_YN");
 				Timestamp rmodDate = rs.getTimestamp("FMOD_DATE");
 
-				registerRecipeVo rrv = new registerRecipeVo();
+				recipeVo rrv = new recipeVo();
 				rrv.setRpostNo(rpostNo);
 				rrv.setUserNo(userNo);
 				rrv.setRpostName(rpostName);
@@ -81,13 +81,13 @@ public class recipeBoradDao {
 		return RboardList;
 	}
 
-	public registerRecipeVo viewRecipe(Connection conn, int postNo) {
+	public recipeVo viewRecipe(Connection conn, int postNo) {
 
 		String sql = "SELECT * FROM TB_BOARD_RECIPE2 WHERE POST_NO = ?";
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		registerRecipeVo viewRecipe = null;
+		recipeVo viewRecipe = null;
 
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -95,7 +95,7 @@ public class recipeBoradDao {
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				viewRecipe = new registerRecipeVo();
+				viewRecipe = new recipeVo();
 				viewRecipe.setRpostNo(postNo);
 				viewRecipe.setUserNo(rs.getInt("USER_NO"));
 				viewRecipe.setRpostName(rs.getString("POST_NAME"));

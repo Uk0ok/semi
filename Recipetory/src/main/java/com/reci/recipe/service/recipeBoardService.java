@@ -9,18 +9,18 @@ import java.util.List;
 import com.reci.common.JDBCTemplate;
 import com.reci.recipe.dao.recipeBoradDao;
 import com.reci.recipe.vo.recipeImgVo;
-import com.reci.recipe.vo.registerRecipeVo;
+import com.reci.recipe.vo.recipeVo;
 import com.reci.sup.dao.NotiDao;
 import com.reci.sup.vo.NotiVo;
 
 public class recipeBoardService {
 	// recipe 등록하기
-	public List<registerRecipeVo> selectRBoardList() {
+	public List<recipeVo> selectRBoardList() {
 
 		// 쿼리 날릴 준비
 		Connection conn = JDBCTemplate.getConnection();
 
-		List<registerRecipeVo> RboardList = new recipeBoradDao().selectRBoardList(conn);
+		List<recipeVo> RboardList = new recipeBoradDao().selectRBoardList(conn);
 
 		JDBCTemplate.close(conn);
 
@@ -28,8 +28,8 @@ public class recipeBoardService {
 	}
 
 	// recipe 보이기
-	public static registerRecipeVo viewRecipe(int postNo) {
-		registerRecipeVo viewRecipe = null;
+	public static recipeVo viewRecipe(int postNo) {
+		recipeVo viewRecipe = null;
 		Connection conn = getConnection();
 
 		viewRecipe = new recipeBoradDao().viewRecipe(conn, postNo);
