@@ -35,21 +35,13 @@
                         <td><input type="password" name="userPwd" id="userPwd" class="userPwd"></td>
                     </tr>
                     <tr>
-                        <td><input type="button" id="btnDelete" value="탈퇴"></td>
+                        <td><input type="submit" id="btnDelete" value="탈퇴"></td>
                     </tr>
                     
                     </table>
 				</form>
 				
-				<script>
-					$(document).ready(()=>{
-						$("#btnDelete").on("click", ()=>{
-							if(confirm("탈퇴하시겠습니까?")){
-								location.replace("${pageContext.request.contextPath }/delete")
-							}
-						});
-					});
-				</script>
+
 
                 <br><br><br><br><br>
 

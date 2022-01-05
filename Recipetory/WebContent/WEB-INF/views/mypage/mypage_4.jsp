@@ -28,7 +28,7 @@
                 <table id="tb_userInfo">
                     <tr>
                         <td>아이디</td>
-                        <td>abcd123</td>
+                        <td>${loginUser.userId}</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -38,12 +38,12 @@
                     </tr>
                     <tr>
                         <td>이메일</td>
-                        <td>abcd123@korea.com</td>
+                        <td>${loginUser.userEmail}</td>
                         <td><a href="./emailUpdate">변경</a></td>
                     </tr>
                     <tr>
                         <td>휴대전화</td>
-                        <td>010 - 0000 - 0000</td>
+                        <td name="userPhone">${loginUser.userPhone}</td>
                         <td><a href="./phoneUpdate">변경</a></td>
                     </tr>
                 </table>

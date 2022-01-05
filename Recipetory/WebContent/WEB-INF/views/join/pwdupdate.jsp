@@ -26,13 +26,13 @@
             <div id="content_userInfo_m">
                 <br><br><br><br><br><br>
 
-				<form action="updateEmail" method="post">
+				<form action="updatePwd" method="post">
                 <table id="tb_userInfo">
                     <tr>
-                        <td>${loginUser.userEmail}</td>
+                        <td><input style="width: 300px;" type="password" name="userPwd1" id="userPwd1" class="userPwd1"placeholder="현재 비밀번호를 입력해 주세요."></td>
                     </tr>
                     <tr>
-                        <td><input style="width: 300px;" type="email" name="userEmail" id="userEmail" class="userEmail"placeholder="변경된 이메일을 입력해 주세요."></td>
+                        <td><input style="width: 300px;" type="password" name="userPwd" id="userPwd" class="userPwd"placeholder="변경할 비밀번호를 입력해 주세요."></td>
                     </tr>
                     <tr>
                         <td><button type="submit">변경</button></td>
