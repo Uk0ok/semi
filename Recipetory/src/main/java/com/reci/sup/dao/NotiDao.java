@@ -74,31 +74,25 @@ public class NotiDao {
 	
 	
 	public int insertNotice(Connection conn, NotiVo n) {
-		String sql = "INSERT INTO TB_NOTICE ( NOTICE_NO, ADMIN_NO, NOTICE_TITLE,"
-				+ "NOTICE_CONTENT, CREATE_DATE, HITS, MOD_YN, MOD_DATE, DELETE_YN )"
-				+ "VALUES ( SEQ_NOTICE.NEXTVAL, SEQ_ADMIN.NEXTVAL, ?, ?, SYSDATE, ?, ?, ?, ?)";
+		String sql = "INSERT INTO TB_NOTICE ( NOTICE_NO, ADMIN_NO, NOTICE_TITLE, NOTICE_CONTENT)"
+				+ "VALUES ( SEQ_NOTICE.NEXTVAL, ?, ?, ?)";
 		
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
 		try {
 			pstmt = conn.prepareStatement(sql.toString());
-			pstmt.setString(1, n.getNoticeTitle());
-			pstmt.setString(2, n.getNoticeContent());
-			pstmt.setInt(3, n.getHits());
-			pstmt.setString(4, n.getModYn());
-			pstmt.setTimestamp(5, n.getModDate());
-			pstmt.setString(6, n.getDeleteYn());
-			
+			pstmt.setInt(1, n.getAdminNo());
+			pstmt.setString(2, n.getNoticeTitle());
+			pstmt.setString(3, n.getNoticeContent());
+	
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close(pstmt);
 		}
-		
 		return result;
-		
 	}
 
 
@@ -234,33 +228,6 @@ public class NotiDao {
 			close(pstmt);
 		}
 		return result;
-	}
-
-
-	public AdminVo getAdminNo(Connection conn, String adminId) {
-		String sql = "SELECT ADMIN_NO FROM TB_ADMIN WHERE USER_ID = ?";
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, adminId);
-			
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				int noticeNo = rs.getInt("NOTICE_NO");
-				
-				AdminVo getAdminNo = new AdminVo();
-				getAdminNo.setAdminNo(noticeNo);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-			close(rs);
-		}
-		return getAdminNo;
 	}
 
 }

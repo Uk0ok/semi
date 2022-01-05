@@ -66,11 +66,30 @@ public class NotiService {
 		return updateHits; 
 	}
 
-	public static AdminVo getAdminNo(String adminId) {
-		AdminVo getAdminNo = null;
+	public int insert(NotiVo n) {
 		Connection conn = getConnection();
-		close(conn);
-		return new NotiDao().getAdminNo(conn, adminId);
+		
+		int result = 0;
+		try {
+			result = insertNotic e(conn, n);
+			fileResult = insertAttachment(conn, n);
+			
+			if(result > 0)
+				commit(conn);
+			else
+				rollback(conn);
+		} catch (SQLException e) {
+			rollback(conn);
+			e.printStackTrace();
+		} finally {
+			close(conn);
+		}
+		
+		return result;
+	}
+
+	private int insertNotice(Connection conn, NotiVo n) {
+		return new NotiDao().insertNotice(conn,n);
 	}
 
 }
