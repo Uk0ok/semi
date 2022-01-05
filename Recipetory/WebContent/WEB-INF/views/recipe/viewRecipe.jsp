@@ -1,5 +1,5 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.reci.recipe.vo.registerRecipeVo"%>
+<%@page import="com.reci.recipe.vo.recipeVo"%>
 <%@page import="com.reci.recipe.vo.recipeImgVo"%>
 <%@page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -48,6 +48,31 @@ for (recipeImgVo riv : fnlist) {
 						<dd></dd>
 					</dl>
 				</div>
+				
+				<table class="table table-striped">
+					<thead>
+					  <tr>
+						<th colspan="3">필요한 재료 리스트</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td colspan="3">${viewRecipe.ingredient1}</td>
+					  </tr>
+					  <tr>
+						<td colspan="3">${viewRecipe.ingredient2}</td>
+					  </tr>
+					  <tr>
+						<td colspan="3">${viewRecipe.ingredient3}</td>
+					  </tr>
+					  <tr>
+						<td colspan="3">${viewRecipe.ingredient4}</td>
+					  </tr>
+					  <tr>
+						<td colspan="3">${viewRecipe.ingredient5}</td>
+					  </tr>
+					</tbody>
+				</table>
 
 				<%
 				int idx = 0;
@@ -61,22 +86,6 @@ for (recipeImgVo riv : fnlist) {
 					</div>
 				</c:forEach>
 			</div>
-			<%-- <div class="cont">
-					<img src="${pageContext.request.contextPath}/img/recipeBoard/${(fnList)[1].mfileName}" width="600px">
-					<p>${viewRecipe.rpostContent2}</p>
-				</div>
-				<div class="cont">
-					<img src="${pageContext.request.contextPath}/img/recipeBoard/${(fnList)[2].mfileName}" width="600px">
-					<p>${viewRecipe.rpostContent3}</p>
-				</div>
-				<div class="cont">
-					<img src="${pageContext.request.contextPath}/img/recipeBoard/${(fnList)[3].mfileName}" width="600px">
-					<p>${viewRecipe.rpostContent4}</p>
-				</div>
-				<div class="cont">
-					<img src="${pageContext.request.contextPath}/img/recipeBoard/${(fnList)[4].mfileName}" width="600px">
-					<p>${viewRecipe.rpostContent5}</p>
-				</div> --%>
 
 			<!-- <div class="media border p-3"></div> -->
 
@@ -84,11 +93,19 @@ for (recipeImgVo riv : fnlist) {
 			<a type="button" href="javascript:history.back();"
 				class="btn btn-primary write"
 				style="background-color: darkolivegreen; border-color: darkolivegreen;">뒤로가기</a>
-			<a type="button" href="modifyRecipe" class="btn btn-primary write"
-				style="background-color: darkolivegreen; border-color: darkolivegreen;">수정하기</a>
+			<c:if test="${empty loginUser}">
+			</c:if>
+			<c:if test="${!empty loginUser}">
+				<a type="button" href="deleteRecipe" class="btn btn-primary write"
+					style="background-color: darkolivegreen; border-color: darkolivegreen;">삭제하기</a>
+				<a type="button"
+					href="${pageContext.request.contextPath}/recipe/modifyRecipe?no=${viewRecipe.rpostNo}"
+					class="btn btn-primary write"
+					style="background-color: darkolivegreen; border-color: darkolivegreen;">수정하기</a>
+			</c:if>
 		</div>
 
-	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+		<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>
 
 </html>

@@ -9,11 +9,11 @@ import java.util.List;
 import com.reci.common.JDBCTemplate;
 import com.reci.recipe.dao.registerRecipeDao;
 import com.reci.recipe.vo.recipeImgVo;
-import com.reci.recipe.vo.registerRecipeVo;
+import com.reci.recipe.vo.recipeVo;
 
 public class registerRecipeService {
 
-	public int regist(registerRecipeVo rrv) {
+	public int regist(recipeVo rrv) {
 
 		// DB Connection 가져오기
 		Connection conn = getConnection();
@@ -37,7 +37,7 @@ public class registerRecipeService {
 		return result;
 	}
 
-	public int insertRecipe(Connection conn, registerRecipeVo rrv) throws SQLException {
+	public int insertRecipe(Connection conn, recipeVo rrv) throws SQLException {
 		// dao 불러서 쿼리 실행
 		// dao한테 쿼리 실행 결과 받기
 		return new registerRecipeDao().insertRecipe(conn, rrv);
