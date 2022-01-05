@@ -30,27 +30,28 @@ public class FileDao {
 		} finally {
 			close(pstmt);
 		}
-		System.out.println("이미지이름 1: " + f.getFileName());
 		
 		return fileResult;
 	}
 
 	public FileVo nFileView(Connection conn, int noticeNo) {
 
-		String sql = "SELECT * FROM TB_NOTICE_ATTACHMENT WHERE NOTICE_NO = ?";
+		String sql = "SELECT MFILE_NAME FROM TB_ATTACHED_FILE_N WHERE NOTICE_NO = ?";
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		FileVo nfileView = null;
+		FileVo nFileView = null;
 		
 		try {
-			pstmt = conn.prepareStatement(sql.toString());
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, noticeNo);
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()) {
-				nfileView = new FileVo();
-				nfileView.
+			while (rs.next()) {
+				String mFileName = rs.getString("MFILE_NAME");
+				
+				nFileView = new FileVo();
+				nFileView.setmFileName(mFileName);
 			}
 				
 		} catch (SQLException e) {

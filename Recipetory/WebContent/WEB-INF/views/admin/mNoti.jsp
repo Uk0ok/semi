@@ -12,9 +12,6 @@
     	padding: 1rem 2rem;
     }
     
-    #content2 {
-    	text-align:left;
-    }
 </style>
 
 </head>
@@ -67,13 +64,54 @@
     			</div>
     		</div>
     		
+    		<div class="modal" id="myModal2">
+    			<div class="modal-dialog">
+    				<div class="modal-content">
+    					
+    					<!-- header -->
+    					<div class="modal-header">
+    						<h4 class="modal-title">공지사항 글 수정</h4>
+    						<button type="button" class="close" data-dismiss="modal">&times;</button>
+    					</div>
+    					
+    					<form action="mNotiMod" method="post" enctype="multipart/form-data">
+	    					<div class="modal-body">
+	    						<div class="form-group">
+	    							<label for="noticeTitle">제목 :</label>
+	    							<input type="text" name="noticeTitle" placeholder="enter title.." required>
+	    						</div>
+	    						<div class="form-group">
+	    							<span> 작성자 : ${loginUser.adminId}</span>
+	    							<input type="hidden" name="adminNo" value="${loginUser.adminNo}">
+	    						<div class="form-group">
+	    							<label for="file">첨부파일 :</label>
+	    							<input type="file" name="file">
+	    						</div>
+	    						<div class="form-group">
+	    							<label for="noticeContent">내용 :</label>
+	    							 <textarea class="form-control" rows="10" name="noticeContent"  placeholder="enter content.." required></textarea>
+	    						</div>
+	    					</div>
+	    					<div class="modal-footer">
+								<button type="submit" class="btn btn-primary">수정하기</button>    					
+	    					</div>
+    					</form>
+    				</div>
+    			</div>
+    		</div>
+    		
     	</div>
     
     	<div id="content1">
+	   		<form name="noMod" action="noMod" method = "post">
 	   		<table class="table table-sm table-hover">
 	           	<thead class="thead-light">
 					<tr>
-						<th><input type="checkbox"></th>
+						<th>
+							<button class="btn btn-light" type="submit" data-toggle="modal" data-target="#myModal2">수정</button>
+							<button class="btn btn-light" type="button" onclick="removeCheck()">삭제</button>
+						</th>
+						
 						<th>번호</th>
 						<th>제목</th>
 						<th>내용</th>
@@ -88,9 +126,9 @@
 	           	<tbody>
 	              		<c:forEach items="${notiListAll}" var="n">
 	             		<tr>
-	             			<th><input type="checkbox"></th>
+	             			<th><input name="adminNo" value="${ad.adminNo}" type="checkbox"></th>
 		                    <td>${n.noticeNo}</td>
-		                    <td><a href="#">${n.noticeTitle}</a></td>
+		                    <td>${n.noticeTitle}</td>
 		                    <td>${n.noticeContent}</td>
 		                    <td>${n.adminNo}</td>
 		                    <td>${n.hits}</td>
@@ -102,6 +140,7 @@
 	            		</c:forEach> 
 	           	</tbody>
 			</table>
+			</form>
 			
 			<ul class="pagination justify-content-center">
 				<li class="page-item"><a class="page-link" href="#"><</a></li>
@@ -112,6 +151,16 @@
 			</ul>
 		</div>
    	</div>
+   	
+   	<script>
+		function removeCheck(){
+			if(confirm("선택한 공지사항을 삭제하시겠습니까?") == true){
+				document.noDelete.submit();
+			}else {
+				return false;
+			}
+		}
+    </script>
    	
 </body>
 </html>

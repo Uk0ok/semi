@@ -43,19 +43,17 @@ public class MNotiInsertController extends HttpServlet{
 		
 		//파일 읽을 준비
 		Part part = req.getPart("file");
-		String mfileName = null;
-		String fileName = null;
-		String filePath = null;
+		FileVo f = new FileVo();
 		
 		if(part != null) {
-			fileName = part.getSubmittedFileName();
+			String fileName = part.getSubmittedFileName();
 			InputStream fis = part.getInputStream();
 			
 			//파일 저장 준비
-			mfileName = "" + UUID.randomUUID();
+			String changeName = "" + UUID.randomUUID();
 			String ext = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 			String realPath = req.getServletContext().getRealPath("/img/supBoard");
-			filePath = realPath + File.separator + mfileName + ext;
+			String filePath = realPath + File.separator + changeName + ext;
 			FileOutputStream fos = new FileOutputStream(filePath); 
 			
 			//파일기록(업로드파일 read -> write)
@@ -66,11 +64,10 @@ public class MNotiInsertController extends HttpServlet{
 			}
 			fis.close();
 			fos.close();
+			
+			f.setFileName(fileName);
+			f.setmFileName(changeName + ext);
 		}
-		
-		FileVo f = new FileVo();
-		f.setFileName(fileName);
-		f.setmFileName(mfileName);
 		
 		int uploadData = new NotiService().uploadNoti(n, f);
 		

@@ -60,9 +60,9 @@ public class NotiService {
 		return notiView; 
 	}
 
-	public static int updateHits(int noticeNo, boolean hasRead) {
+	public static int updateHits(int noticeNo) {
 		Connection conn = getConnection();
-		int updateHits = new NotiDao().updateHits(conn, noticeNo, hasRead);
+		int updateHits = new NotiDao().updateHits(conn, noticeNo);
 		close(conn);
 		
 		return updateHits; 
@@ -109,5 +109,27 @@ public class NotiService {
 				
 		return nFileView; 
 	}
+
+	public int delete(NotiVo n) {
+		
+		Connection conn = getConnection();
+		
+		int result = 0;
+		try {
+			result = deleteNoti(conn, n);
+			if(result > 0)
+				commit(conn);
+			else
+				rollback(conn);
+		} finally {
+			close(conn);
+		}
+		return result;
+	}
+
+	private int deleteNoti(Connection conn, NotiVo n) {
+		return new NotiDao().delete(conn, n);
+	}
+
 
 }
