@@ -41,21 +41,20 @@ public class MNotiInsertController extends HttpServlet{
 		n.setAdminNo(adminNo);
 		n.setNoticeContent(noticeContent);
 		
+		FileVo f = new FileVo();
+		
 		//파일 읽을 준비
 		Part part = req.getPart("file");
-		String mfileName = null;
-		String fileName = null;
-		String filePath = null;
-		
+	
 		if(part != null) {
-			fileName = part.getSubmittedFileName();
+			String fileName = part.getSubmittedFileName();
 			InputStream fis = part.getInputStream();
 			
 			//파일 저장 준비
-			mfileName = "" + UUID.randomUUID();
+			String changeName = "" + UUID.randomUUID();
 			String ext = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 			String realPath = req.getServletContext().getRealPath("/img/supBoard");
-			filePath = realPath + File.separator + mfileName + ext;
+			String filePath = realPath + File.separator + changeName + ext;
 			FileOutputStream fos = new FileOutputStream(filePath); 
 			
 			//파일기록(업로드파일 read -> write)
@@ -66,22 +65,21 @@ public class MNotiInsertController extends HttpServlet{
 			}
 			fis.close();
 			fos.close();
+		
+			f.setFileName(fileName);
+			f.setmFileName(changeName + ext);
+			
 		}
 		
-		FileVo f = new FileVo();
-		f.setFileName(fileName);
-		f.setmFileName(mfileName);
-		
 		int uploadData = new NotiService().uploadNoti(n, f);
-		
 		if(uploadData > 0){
 			//success
 			resp.setContentType("text/html; charset=UTF-8"); 
 			PrintWriter writer = resp.getWriter();
 			writer.println
-					(
+			(
 					"<script>alert('공지사항이 정상적으로 등록되었습니다.');"
-					+ "location.href='./mNoti';</script>"
+							+ "location.href='./mNoti';</script>"
 					); 
 			writer.close();
 		}else {
@@ -89,12 +87,13 @@ public class MNotiInsertController extends HttpServlet{
 			resp.setContentType("text/html; charset=UTF-8"); 
 			PrintWriter writer = resp.getWriter();
 			writer.println
-					(
+			(
 					"<script>alert('공지사항 등록에 실패하였습니다.');"
-					+ "location.href='./mNoti';</script>"
+							+ "location.href='./mNoti';</script>"
 					); 
 			writer.close();
 			
 		}
+		
 	}
 }
