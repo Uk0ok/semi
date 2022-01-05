@@ -3,6 +3,7 @@ package com.reci.chal.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 import static com.reci.common.JDBCTemplate.*;
 import com.reci.chal.vo.CwriteVo;
@@ -11,8 +12,7 @@ public class CwriteDao {
 	
 	public int insertChallenge(Connection conn, CwriteVo cwv) throws SQLException{
 		//쿼리 날리기
-		String sql = "INSERT INTO TB_POST_C VALUES(SEQ_CHA_PNO.NEXTVAL,'1',?,SYSDATE,?,?,?,'N','N',SYSDATE)";
-		
+		String sql = "INSERT INTO TB_POST_C VALUES(SEQ_CHA_PNO.NEXTVAL,'1',?,?,SYSDATE,?,'0','0',?,'N','N',SYSDATE)";		
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
@@ -30,4 +30,5 @@ public class CwriteDao {
 
 		return result;
 	}
+
 }	
