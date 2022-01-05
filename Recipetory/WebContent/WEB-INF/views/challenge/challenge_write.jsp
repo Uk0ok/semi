@@ -70,13 +70,13 @@
 			<br>
 			
 			<div class="file"><h5>첨부 파일</h5>
-			<input type="file" accept==".jpeg .jpg, .png" id="thumbnail"  name="thumbNail" class="challengeImg" />
+			<input type="file" accept==".jpeg, .jpg, .png" id="thumbNail"  name="thumbNail" class="challengeImg" />
 			</div>
 			
 			<br>
 			
 			<div class="challenge-content"><h5>내용 입력</h5>
-			<textarea id="textnum1" name="recipeProcess1" id="postContent" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40" cols="10" style="height:100px;"></textarea>
+			<textarea id="postContent" name="postContent" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40" cols="10" style="height:100px;"></textarea>
 			</div>
 			
 			<br>

@@ -1,15 +1,16 @@
 package com.reci.chal.vo;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class CwriteVo {
-	
+
 	private int cpostNo;
 	private int userNo;
 	private String cpostName;
 	private String cpostContent;
 	private Timestamp cbegDate;
-	private String challengePeriod;
+	private Date challengePeriod;
 	private int partiNum;
 	private int creviewNum;
 	private String cthumbnail;
@@ -46,10 +47,10 @@ public class CwriteVo {
 	public void setCbegDate(Timestamp cbegDate) {
 		this.cbegDate = cbegDate;
 	}
-	public String getChallengePeriod() {
+	public Date getChallengePeriod() {
 		return challengePeriod;
 	}
-	public void setChallengePeriod(String challengePeriod) {
+	public void setChallengePeriod(Date challengePeriod) {
 		this.challengePeriod = challengePeriod;
 	}
 	public int getPartiNum() {
@@ -96,4 +97,4 @@ public class CwriteVo {
 				+ ", cdelYn=" + cdelYn + ", cfmodDate=" + cfmodDate + "]";
 	}
 	
-}	
+}
