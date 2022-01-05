@@ -65,37 +65,31 @@ tr {
 			<b>게시글 보기</b>
 		</div>
 		<table>
-		<element>
-			<c:forEach items="${magview}" var="mv">
+		
 				<tr>
 					<th colspan="3" align="left">
-						<h3>${mv.postno}</h3>
+						<h3>${magView.postNo}</h3>
 					</th>
 				</tr>
 				<tr>
-					<td width="30%">글 제목 : ${mv.postName}</td>
-					<td width="30%">작성자 : ${mv.adminNo}</td>
-					<td width="30%" align="right">${mv.begDate}</td>
+					<td width="30%">글 제목 : ${magView.postName}</td>
+					<td width="30%">작성자 : ${magView.adminNo}</td>
+					<td width="30%" align="right">${magView.begDate}</td>
 				</tr>
 				<tr>
-					<td width="30%">글 제목 : ${mv.recomNum}</td>
-					<td width="30%">작성자 : ${mv.scrapNum}</td>
-					<td width="30%" align="right">${mv.commNum}</td>
+					<td width="30%">글 제목 : ${magView.recomNum}</td>
+					<td width="30%">작성자 : ${magView.scrapNum}</td>
+					<td width="30%" align="right">${magView.commNum}</td>
 				</tr>
 				<tr>
-					<td width="30%">글 제목 : ${mv.modYn}</td>
-					<td width="30%">작성자 : ${mv.fmodDate}</td>
-					<td width="30%" align="right">${mv.delYn}</td>
+					<td width="30%">글 제목 : ${magView.modYn}</td>
+					<td width="30%">작성자 : ${magView.fmodDate}</td>
+					<td width="30%" align="right">조회수 ${magView.hits}</td>
 				</tr>
 				<tr id="content" valign="top"
 					style="border-top-color: rgb(100, 100, 100); border-top-width: 1px">
-					<td colspan="3">${mv.postContent }</td>
+					<td colspan="3">${magView.postContent }</td>
 				</tr>
-				<tr>
-					<td colspan="3">조회수 ${mv.hits}</td>
-				</tr>
-			</c:forEach>
-		</element>
 
 		<!-- <c:choose>
 			<c:when test="${bbsview.id == sessionID || sessionID == 'admin' }">
@@ -113,12 +107,12 @@ tr {
 		</c:choose> -->
 		</table>
 		<div id="btnCon">
-			<a href="bbs.do">
+			<a href="#">
 				<button class="btn2">목록</button>
 			</a>
 		</div>
 		<div>
-			<a href="home.do">
+			<a href="#">
 				<button class="btn2">홈으로</button>
 			</a>
 		</div>
