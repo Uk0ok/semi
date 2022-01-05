@@ -28,23 +28,34 @@ public class MNotiInsertController extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("insert called..");
+		
 		req.setCharacterEncoding("UTF-8");
 		
 		String noticeTitle = req.getParameter("noticeTitle");
-		int adminNo = Integer.parseInt(req.getParameter("adminNo"))  ;
+		int adminNo = Integer.parseInt(req.getParameter("adminNo"));
 		String noticeContent = req.getParameter("noticeContent");
+		
+		NotiVo n = new NotiVo();
+		n.setNoticeTitle(noticeTitle);
+		n.setAdminNo(adminNo);
+		n.setNoticeContent(noticeContent);
 		
 		//파일 읽을 준비
 		Part part = req.getPart("file");
+		String mfileName = null;
+		String fileName = null;
+		String filePath = null;
+		
 		if(part != null) {
-			String fileName = part.getSubmittedFileName();
+			fileName = part.getSubmittedFileName();
 			InputStream fis = part.getInputStream();
 			
 			//파일 저장 준비
-			String mfileName = "" + UUID.randomUUID();
+			mfileName = "" + UUID.randomUUID();
 			String ext = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 			String realPath = req.getServletContext().getRealPath("/img/supBoard");
-			String filePath = realPath + File.separator + mfileName + ext;
+			filePath = realPath + File.separator + mfileName + ext;
 			FileOutputStream fos = new FileOutputStream(filePath); 
 			
 			//파일기록(업로드파일 read -> write)
@@ -56,24 +67,27 @@ public class MNotiInsertController extends HttpServlet{
 			fis.close();
 			fos.close();
 		}
+		req.setAttribute("f", filePath);
+		System.out.println(filePath);
 		
-		NotiVo n = new NotiVo();
-		n.setNoticeTitle(noticeTitle);
-		n.setAdminNo(adminNo);
-		n.setNoticeContent(noticeContent);
+		FileVo f = new FileVo();
+		f.setFileName(fileName);
+		f.setmFileName(mfileName);
 		
-		int result = new NotiService().insert(n);
+		System.out.println(fileName);
+		System.out.println(mfileName);
 		
-		System.out.println(result);
+		int uploadData = new NotiService().uploadNoti(n, f);
+		System.out.println(uploadData);
 		
-		if(result > 0) {
+		if(uploadData > 0){
 			//success
 			resp.setContentType("text/html; charset=UTF-8"); 
 			PrintWriter writer = resp.getWriter();
 			writer.println
 					(
 					"<script>alert('공지사항이 정상적으로 등록되었습니다.');"
-					+ "location.href='./mAdmin';</script>"
+					+ "location.href='./mNoti';</script>"
 					); 
 			writer.close();
 		}else {
@@ -83,11 +97,10 @@ public class MNotiInsertController extends HttpServlet{
 			writer.println
 					(
 					"<script>alert('공지사항 등록에 실패하였습니다.');"
-					+ "location.href='./mAdmin';</script>"
+					+ "location.href='./mNoti';</script>"
 					); 
 			writer.close();
 			
 		}
-	}
 	}
 }

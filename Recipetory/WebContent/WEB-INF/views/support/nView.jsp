@@ -40,6 +40,7 @@
                 </div>
                 <div class="cont">
                     <p>${notiView.noticeContent}</p>
+                    <img src="${pageContext.request.contextPath}/img/supBoard/${notiView.mfileName}">
                 </div>
             </div>
             

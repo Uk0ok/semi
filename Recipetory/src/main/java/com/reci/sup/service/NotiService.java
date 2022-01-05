@@ -10,6 +10,8 @@ import java.util.List;
 import static com.reci.common.JDBCTemplate.* ;
 
 import com.reci.admin.AdminVo;
+import com.reci.admin.FileDao;
+import com.reci.admin.FileVo;
 import com.reci.join.controller.MemberDao;
 import com.reci.sup.dao.NotiDao;
 import com.reci.sup.vo.NotiVo;
@@ -21,7 +23,7 @@ public class NotiService {
 		Connection conn = getConnection();
 		int totalBoardCount = countNotiAll(conn); //총 게시글 수
 		int pageLimit = 3; 		 //페이징 목록 최대갯수
-		int boardLimit = 5; 	 //한 페이지당 게시글 수
+		int boardLimit = 50; 	 //한 페이지당 게시글 수
 
 		int p = Integer.parseInt(currentPage);
 		int endNo = p * boardLimit;
@@ -66,26 +68,32 @@ public class NotiService {
 		return updateHits; 
 	}
 
-	public int insert(NotiVo n) {
+	public int uploadNoti(NotiVo n, FileVo f) {
 		Connection conn = getConnection();
-		
+		int uploadData = 0;
 		int result = 0;
-		try {
-			result = insertNotic e(conn, n);
-			fileResult = insertAttachment(conn, n);
-			
-			if(result > 0)
-				commit(conn);
-			else
-				rollback(conn);
-		} catch (SQLException e) {
-			rollback(conn);
-			e.printStackTrace();
-		} finally {
-			close(conn);
-		}
+		int fileResult = 0;
 		
-		return result;
+		result = insertNotice(conn, n);
+		fileResult = insertAttachmentNoti(conn, f, n);
+		
+		if(result > 0) {
+			if(fileResult > 0) {
+				commit(conn);
+				uploadData = 1;
+			}else {
+				commit(conn);
+				uploadData = 1;
+			}
+		}else {
+			rollback(conn);
+		}
+		return uploadData;
+		
+	}
+	
+	private int insertAttachmentNoti(Connection conn, FileVo f, NotiVo n) {
+		return new FileDao().insertAttachmentNoti(conn, f, n);
 	}
 
 	private int insertNotice(Connection conn, NotiVo n) {

@@ -45,23 +45,22 @@
 	    					<div class="modal-body">
 	    						<div class="form-group">
 	    							<label for="noticeTitle">제목 :</label>
-	    							<input type="text" name="noticeTitie" placeholder="enter title.." required>
+	    							<input type="text" name="noticeTitle" placeholder="enter title.." required>
 	    						</div>
 	    						<div class="form-group">
 	    							<span> 작성자 : ${loginUser.adminId}</span>
-	    							<input type="hidden" name="${loginUser.adminNo}">
+	    							<input type="hidden" name="adminNo" value="${loginUser.adminNo}">
 	    						<div class="form-group">
 	    							<label for="file">첨부파일 :</label>
 	    							<input type="file" name="file">
 	    						</div>
 	    						<div class="form-group">
 	    							<label for="noticeContent">내용 :</label>
-	    							 <textarea class="form-control" rows="10" name="noticeContent"  placeholder="enter content.."></textarea>
+	    							 <textarea class="form-control" rows="10" name="noticeContent"  placeholder="enter content.." required></textarea>
 	    						</div>
 	    					</div>
-	    					<!-- footer -->
 	    					<div class="modal-footer">
-								<button type="submit" class="btn btn-primary" data-dismiss="modal"></button>    					
+								<button type="submit" class="btn btn-primary">submit</button>    					
 	    					</div>
     					</form>
     				</div>
