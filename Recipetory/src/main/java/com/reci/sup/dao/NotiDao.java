@@ -182,7 +182,7 @@ public class NotiDao {
 		return result;
 	}
 
-	public int updateHits(Connection conn, int noticeNo, boolean hasRead) {
+	public int updateHits(Connection conn, int noticeNo) {
 		
 		int result = 0;
 		PreparedStatement pstmt = null;
@@ -192,12 +192,9 @@ public class NotiDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			
-			if(hasRead = false) {
-				pstmt.setInt(1, noticeNo);
-				result = pstmt.executeUpdate();
-			}else {
-				result = 0;
-			}
+			pstmt.setInt(1, noticeNo);
+			result = pstmt.executeUpdate();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -206,6 +203,14 @@ public class NotiDao {
 		return result;
 	}
 
+
+	/*
+	 * try { pstmt = conn.prepareStatement(sql);
+	 * 
+	 * if(hasRead = false) { pstmt.setInt(1, noticeNo); result =
+	 * pstmt.executeUpdate(); }else { result = 0; } } catch (SQLException e) {
+	 * e.printStackTrace(); } finally { close(pstmt); } return result;
+	 */
 
 	public int insertNotice(Connection conn, NotiVo n) {
 		String sql = "INSERT INTO TB_NOTICE ( NOTICE_NO, ADMIN_NO, NOTICE_TITLE, NOTICE_CONTENT)"

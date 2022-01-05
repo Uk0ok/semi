@@ -12,9 +12,6 @@
     	padding: 1rem 2rem;
     }
     
-    #content2 {
-    	text-align:left;
-    }
 </style>
 
 </head>
@@ -90,7 +87,7 @@
 	             		<tr>
 	             			<th><input type="checkbox"></th>
 		                    <td>${n.noticeNo}</td>
-		                    <td><a href="#">${n.noticeTitle}</a></td>
+		                    <td>${n.noticeTitle}</td>
 		                    <td>${n.noticeContent}</td>
 		                    <td>${n.adminNo}</td>
 		                    <td>${n.hits}</td>
