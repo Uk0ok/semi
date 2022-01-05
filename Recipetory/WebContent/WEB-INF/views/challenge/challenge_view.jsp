@@ -187,14 +187,14 @@ List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
         <div class="board_view_wrap">
             <div class="board_view">            
             <div class="board_list_body">
-                           <c:forEach items="${data}" var="ch">
+                           <%-- <c:forEach items="${data}" var="ch">
                                <div class="item">
                                     <div class="tit">제목 : ${ch.cpostName}</div>
                                     <div class="info">챌린지 종료일 : ${ch.challengePeriod}</div>
                                     <div class="photo"><img src="${pageContext.request.contextPath}${ch.cthumbnail}" width="400" height="300"></div>
                                     <div class="content">${ch.cpostContent}</div>
                                </div>
-                     		</c:forEach>
+                     		</c:forEach> --%>
                    </div>
                        
             <div class="bt_wrap">

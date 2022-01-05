@@ -218,3 +218,5 @@ INSERT INTO TB_POST_C VALUES(SEQ_CHA_PTO.NEXTVAL,3,'물 2L 마시기 챌린지',
 INSERT INTO TB_POST_C VALUES(SEQ_CHA_PTO.NEXTVAL,4,'아침먹기 챌린지','활발한 두뇌활동, 식사량 조절, 건강한 체중관리, 원할한 혈당조절을 원하신다면 아침을 먹어보아요~!',SYSDATE,SYSDATE+20,'70','10','/Recipetory/WebContent/img/challengeBoard/breakfast.jpg','N',NULL,'N');
 INSERT INTO TB_POST_C VALUES(SEQ_CHA_PTO.NEXTVAL,5,'닭가슴살 챌린지','닭가슴살은 노화 방지, 간 기능 개선, 뇌 건강, 혈관이 꺠끗해지는 등 다양한 기능이 있대요. 레시피토리의 다양한 닭가슴살 레시피로 닭가슴살 챌린지에 도전해보아요~!',SYSDATE,SYSDATE+10,'60','5','/Recipetory/WebContent/img/challengeBoard/chickenbreast.jpg','N',NULL,'N');
 COMMIT;
+
+SELECT * FROM TB_POST_C;

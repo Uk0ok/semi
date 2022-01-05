@@ -1,5 +1,6 @@
 package com.reci.chal.vo;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class CboardVo {
@@ -9,14 +10,13 @@ public class CboardVo {
 	private String cpostName;
 	private String cpostContent;
 	private Timestamp cbegDate;
-	private Timestamp challengePeriod;
+	private Date challengePeriod;
 	private int partiNum;
 	private int creviewNum;
 	private String cthumbnail;
 	private String cmodYn;
 	private Timestamp cfmodDate;
 	private String cdelYn;
-	
 	public int getCpostNo() {
 		return cpostNo;
 	}
@@ -47,10 +47,10 @@ public class CboardVo {
 	public void setCbegDate(Timestamp cbegDate) {
 		this.cbegDate = cbegDate;
 	}
-	public Timestamp getChallengePeriod() {
+	public Date getChallengePeriod() {
 		return challengePeriod;
 	}
-	public void setChallengePeriod(Timestamp challengePeriod) {
+	public void setChallengePeriod(Date challengePeriod) {
 		this.challengePeriod = challengePeriod;
 	}
 	public int getPartiNum() {
@@ -92,10 +92,11 @@ public class CboardVo {
 	@Override
 	public String toString() {
 		return "CboardVo [cpostNo=" + cpostNo + ", userNo=" + userNo + ", cpostName=" + cpostName + ", cpostContent="
-				+ cpostContent + ", cbegDate=" + cbegDate + ", challengePeriod=" + challengePeriod + ", partiNum="
-				+ partiNum + ", creviewNum=" + creviewNum + ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn
-				+ ", cfmodDate=" + cfmodDate + ", cdelYn=" + cdelYn + "]";
+				+ cpostContent + ", cbegDate=" + cbegDate + ", partiNum=" + partiNum + ", creviewNum=" + creviewNum
+				+ ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn + ", cfmodDate=" + cfmodDate + ", cdelYn="
+				+ cdelYn + "]";
 	}
+	
 	
 
 	
