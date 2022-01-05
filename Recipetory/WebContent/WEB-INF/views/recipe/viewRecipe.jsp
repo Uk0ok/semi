@@ -84,10 +84,9 @@ for (recipeImgVo riv : fnlist) {
 			<a type="button" href="javascript:history.back();"
 				class="btn btn-primary write"
 				style="background-color: darkolivegreen; border-color: darkolivegreen;">뒤로가기</a>
-			<a type="button" href="edit" class="btn btn-primary write"
+			<a type="button" href="modifyRecipe" class="btn btn-primary write"
 				style="background-color: darkolivegreen; border-color: darkolivegreen;">수정하기</a>
 		</div>
-	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>

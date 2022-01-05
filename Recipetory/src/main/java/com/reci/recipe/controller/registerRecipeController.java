@@ -4,9 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -20,15 +17,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import com.reci.common.JDBCTemplate;
-import com.reci.recipe.service.RwritingService;
+import com.reci.recipe.service.registerRecipeService;
 import com.reci.recipe.vo.recipeImgVo;
 import com.reci.recipe.vo.registerRecipeVo;
 
 @MultipartConfig(maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 
 @WebServlet("/registerRecipe")
-public class RwritingPage extends HttpServlet {
+public class registerRecipeController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 레시피 등록
@@ -60,7 +56,7 @@ public class RwritingPage extends HttpServlet {
 		rrv.setRpostContent5(postContent5);
 		rrv.setRthumbnail(rthumbnail);
 
-		int result = new RwritingService().regist(rrv);
+		int result = new registerRecipeService().regist(rrv);
 
 		if (result > 0) {
 			// success
@@ -120,7 +116,7 @@ public class RwritingPage extends HttpServlet {
 
 		}
 
-		int resultImg = new RwritingService().registerRecipeImg(rImgList);
+		int resultImg = new registerRecipeService().registerRecipeImg(rImgList);
 
 		System.out.println("resultImg : " + resultImg);
 
