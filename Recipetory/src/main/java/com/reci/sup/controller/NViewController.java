@@ -69,8 +69,7 @@ public class NViewController extends HttpServlet {
 		System.out.println("notiView : " + notiView);
 		req.setAttribute("notiView", notiView);
 		
-		FileVo nFileView = NotiService.nFileView(noticeNo);
-		req.setAttribute("nFileView", nFileView);
+		FileVo fileView = NotiService.nFileView(noticeNo);
 		
 		req.getRequestDispatcher("/WEB-INF/views/support/nView.jsp").forward(req, resp);
 
