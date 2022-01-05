@@ -12,14 +12,14 @@ public class CwriteDao {
 	
 	public int insertChallenge(Connection conn, CwriteVo cwv) throws SQLException{
 		//쿼리 날리기
-		String sql = "INSERT INTO TB_POST_C VALUES(SEQ_CHA_PNO.NEXTVAL,'1',?,?,SYSDATE,?,'0','0',?,'N','N',SYSDATE)";		
+		String sql = "INSERT INTO TB_POST_C VALUES(SEQ_CHA_PTO.NEXTVAL,'1',?,?,SYSDATE,?,'0','0',?,'N','N',SYSDATE)";		
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, cwv.getCpostName());
-			pstmt.setString(2, cwv.getChallengePeriod());
+			pstmt.setDate(2, cwv.getChallengePeriod());
 			pstmt.setString(3, cwv.getCthumbnail());
 			pstmt.setString(4, cwv.getCpostContent());
 			

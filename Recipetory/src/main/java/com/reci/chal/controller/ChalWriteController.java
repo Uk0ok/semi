@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,13 +28,19 @@ import com.reci.chal.vo.CwriteVo;
 public class ChalWriteController extends HttpServlet{	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		System.out.println(222222222);
 
 	  //챌린지 게시물 등록
 	  req.setCharacterEncoding("UTF-8");
 	  String cpostName = req.getParameter("postName");
 	  String challengePeriod = req.getParameter("challengePeriod");
+	  System.out.println("sss ::: " + challengePeriod);
 	  String cthumbnail = req.getParameter("thumbnail");
 	  String cpostContent = req.getParameter("postContent");
+	  
+	  String oldstring = "challengePeriod";
+	  Date date = new SimpleDateFormat("MM-dd").parse(oldstring);
 	  
 	  
 	  CwriteVo cwv = new CwriteVo();

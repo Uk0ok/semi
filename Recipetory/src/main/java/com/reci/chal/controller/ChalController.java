@@ -19,7 +19,7 @@ public class ChalController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		System.out.println("컨트롤러 호출됨...");//swy
+		//System.out.println("컨트롤러 호출됨...");//swy
 		
 		List<CwriteVo> CboardList = new CboardService().selectCboardList();
 

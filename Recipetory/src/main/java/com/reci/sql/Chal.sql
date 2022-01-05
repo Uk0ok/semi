@@ -10,7 +10,7 @@ CREATE TABLE TB_BOARD_CHALLENGE (
 	POST_NAME	VARCHAR2(30)		NOT NULL,
 	POST_CONTENT	VARCHAR2(4000)		NOT NULL,
 	BEG_DATE	TIMESTAMP	DEFAULT SYSDATE	NOT NULL,
-	CHALLENGE_PERIOD	TIMESTAMP,
+	CHALLENGE_PERIOD	DATE,
 	PARTI_NUM	NUMBER	DEFAULT '0'	NOT NULL,
 	REVIEW_NUM	NUMBER	DEFAULT '0'	NOT NULL,
 	THUMBNAIL	VARCHAR2(100),
@@ -22,7 +22,7 @@ CREATE TABLE TB_BOARD_CHALLENGE (
 );
 
 DROP SEQUENCE SEQ_CHA_PNO;
-CREATE SEQUENCE SEQ_CHA_PNO;
+CREATE SEQUENCE SEQ_CHA_PNO NOCYCLE NOCACHE;
 
 DROP TABLE TB_BOARD_CHALLENGE;
 CREATE TABLE TB_BOARD_CHALLENGE2(
@@ -40,7 +40,7 @@ CREATE TABLE TB_BOARD_CHALLENGE2(
 );
 
 DROP SEQUENCE SEQ_CHA_PNO;
-CREATE SEQUENCE SEQ_CHA_PNO;
+CREATE SEQUENCE SEQ_CHA_PNO NOCYCLE NOCACHE;
 
 --챌린지 댓글
 DROP TABLE TB_COMMENT_C;
@@ -92,7 +92,7 @@ CREATE TABLE TB_ATTACHED_FILE_C (
 );
 
 DROP SEQUENCE SEQ_CHA_FNO;
-CREATE SEQUENCE SEQ_CHA_FNO;
+CREATE SEQUENCE SEQ_CHA_FNO NOCYCLE NOCACHE;
 
 --챌린지 리뷰
 DROP TABLE TB_REVIEW_C;
@@ -185,4 +185,36 @@ INSERT INTO TB_BOARD_CHALLENGE VALUES(SEQ_CHA_PNO.NEXTVAL,004,'아침먹기 챌�
 INSERT INTO TB_BOARD_CHALLENGE VALUES(SEQ_CHA_PNO.NEXTVAL,005,'닭가슴살 챌린지','닭가슴살은 노화 방지, 간 기능 개선, 뇌 건강, 혈관이 꺠끗해지는 등 다양한 기능이 있대요. 레시피토리의 다양한 닭가슴살 레시피로 닭가슴살 챌린지에 도전해보아요~!',SYSDATE,SYSDATE+10,'60','5','/Recipetory/WebContent/img/challengeBoard/chickenbreast.jpg','N',NULL,'N');
 commit;
 
+INSERT INTO TB_BOARD_CHALLENGE VALUES(SEQ_CHA_PTO.NEXTVAL,1,'일주일 집밥 챌린지','일주일간 집밥 해먹기~ 집에서 밥먹기 아니구여 직접 해먹어야됩니다~ 배달ㄴㄴ',SYSDATE,SYSDATE+30,'100','50','/Recipetory/WebContent/img/challengeBoard/jipbab.jpg','N',NULL,'N');
+INSERT INTO TB_BOARD_CHALLENGE VALUES(SEQ_CHA_PTO.NEXTVAL,2,'밀가루 끊기 챌린지','밀가루를 끊으면 피부개선, 다이어트, 소화불량 등에 효과가 있대요~',SYSDATE,SYSDATE+40,'90','30','/Recipetory/WebContent/img/challengeBoard/flour.jpg','N',NULL,'N');
+INSERT INTO TB_BOARD_CHALLENGE VALUES(SEQ_CHA_PTO.NEXTVAL,3,'물 2L 마시기 챌린지','세계보건기구 WHO에서는 하루 약 2L 정도의 물을 섭위할 것을 권장하고 있습니다.',SYSDATE,SYSDATE+50,'80','20','/Recipetory/WebContent/img/challengeBoard/water.jpg','N',NULL,'N');
+INSERT INTO TB_BOARD_CHALLENGE VALUES(SEQ_CHA_PTO.NEXTVAL,4,'아침먹기 챌린지','활발한 두뇌활동, 식사량 조절, 건강한 체중관리, 원할한 혈당조절을 원하신다면 아침을 먹어보아요~!',SYSDATE,SYSDATE+20,'70','10','/Recipetory/WebContent/img/challengeBoard/breakfast.jpg','N',NULL,'N');
+INSERT INTO TB_BOARD_CHALLENGE VALUES(SEQ_CHA_PTO.NEXTVAL,5,'닭가슴살 챌린지','닭가슴살은 노화 방지, 간 기능 개선, 뇌 건강, 혈관이 꺠끗해지는 등 다양한 기능이 있대요. 레시피토리의 다양한 닭가슴살 레시피로 닭가슴살 챌린지에 도전해보아요~!',SYSDATE,SYSDATE+10,'60','5','/Recipetory/WebContent/img/challengeBoard/chickenbreast.jpg','N',NULL,'N');
 
+
+DROP TABLE TB_POST_C;
+CREATE TABLE TB_POST_C (
+	POST_NO	NUMBER		NOT NULL,
+	USER_NO	NUMBER		NOT NULL,
+	POST_NAME	VARCHAR2(30)		NOT NULL,
+	POST_CONTENT	VARCHAR2(4000)		NOT NULL,
+	BEG_DATE	TIMESTAMP	DEFAULT SYSDATE	NOT NULL,
+	CHALLENGE_PERIOD	DATE,
+	PARTI_NUM	NUMBER	DEFAULT '0'	NOT NULL,
+	REVIEW_NUM	NUMBER	DEFAULT '0'	NOT NULL,
+	THUMBNAIL	VARCHAR2(100),
+	MOD_YN	CHAR(1)	DEFAULT 'N' CHECK(MOD_YN IN('Y', 'N')),
+	FMOD_DATE	TIMESTAMP   DEFAULT SYSDATE,
+	DEL_YN	CHAR(1)	DEFAULT 'N' CHECK(DEL_YN IN('Y', 'N')),
+    CONSTRAINT PK_TB_POST_C PRIMARY KEY(POST_NO),
+    CONSTRAINT FK_TB_POST_C FOREIGN KEY(USER_NO) REFERENCES TB_USER(USER_NO)
+);
+DROP SEQUENCE SEQ_CHA_PTO;
+CREATE SEQUENCE SEQ_CHA_PTO;
+
+INSERT INTO TB_POST_C VALUES(SEQ_CHA_PTO.NEXTVAL,1,'일주일 집밥 챌린지','일주일간 집밥 해먹기~ 집에서 밥먹기 아니구여 직접 해먹어야됩니다~ 배달ㄴㄴ',SYSDATE,SYSDATE+30,'100','50','/Recipetory/WebContent/img/challengeBoard/jipbab.jpg','N',NULL,'N');
+INSERT INTO TB_POST_C VALUES(SEQ_CHA_PTO.NEXTVAL,2,'밀가루 끊기 챌린지','밀가루를 끊으면 피부개선, 다이어트, 소화불량 등에 효과가 있대요~',SYSDATE,SYSDATE+40,'90','30','/Recipetory/WebContent/img/challengeBoard/flour.jpg','N',NULL,'N');
+INSERT INTO TB_POST_C VALUES(SEQ_CHA_PTO.NEXTVAL,3,'물 2L 마시기 챌린지','세계보건기구 WHO에서는 하루 약 2L 정도의 물을 섭위할 것을 권장하고 있습니다.',SYSDATE,SYSDATE+50,'80','20','/Recipetory/WebContent/img/challengeBoard/water.jpg','N',NULL,'N');
+INSERT INTO TB_POST_C VALUES(SEQ_CHA_PTO.NEXTVAL,4,'아침먹기 챌린지','활발한 두뇌활동, 식사량 조절, 건강한 체중관리, 원할한 혈당조절을 원하신다면 아침을 먹어보아요~!',SYSDATE,SYSDATE+20,'70','10','/Recipetory/WebContent/img/challengeBoard/breakfast.jpg','N',NULL,'N');
+INSERT INTO TB_POST_C VALUES(SEQ_CHA_PTO.NEXTVAL,5,'닭가슴살 챌린지','닭가슴살은 노화 방지, 간 기능 개선, 뇌 건강, 혈관이 꺠끗해지는 등 다양한 기능이 있대요. 레시피토리의 다양한 닭가슴살 레시피로 닭가슴살 챌린지에 도전해보아요~!',SYSDATE,SYSDATE+10,'60','5','/Recipetory/WebContent/img/challengeBoard/chickenbreast.jpg','N',NULL,'N');
+COMMIT;

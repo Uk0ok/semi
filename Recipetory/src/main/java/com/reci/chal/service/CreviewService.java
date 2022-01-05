@@ -12,6 +12,7 @@ import com.reci.chal.dao.CreviewDao;
 import com.reci.chal.vo.CreviewVo;
 
 public class CreviewService {
+	
 	public int review(CreviewVo crv) {
 
 		//DB Connection 가져오기
@@ -35,10 +36,10 @@ public class CreviewService {
 		// 결과 반환해주기
 		return result;
 	}
-	public int insertChallenge(Connection conn, CreviewVo cwv)throws SQLException{
+	public int reviewwrite(Connection conn, CreviewVo crv)throws SQLException{
 		// dao 불러서 쿼리 실행
 		// dao한테 쿼리 실행 결과 받기
-		return new CreviewDao().reviewwrite(conn,cwv);
+		return new CreviewDao().reviewwrite(conn,crv);
 	}
 }
 
