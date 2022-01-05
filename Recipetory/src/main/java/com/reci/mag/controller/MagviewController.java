@@ -11,34 +11,28 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.reci.mag.Vo.MagVo;
 import com.reci.mag.dao.MagHDao;
+import com.reci.mag.service.MagviewService;
 
 @WebServlet("/magView")
 public class MagviewController extends HttpServlet{
 
-	private static final long serialVersionUID = 1L;
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		process(req, resp);
-		System.out.println("ddd");
+		
+		//화면에서 값 가져오기
+		String mag = req.getParameter("mag");
+		int postNo = Integer.parseInt(mag);
+		int pageNo = Integer.parseInt(req.getParameter("pageNo"));
+		
+		req.setAttribute("postNo", postNo);
+		req.setAttribute("pageNo", pageNo);
+		
+		//글 상세보기
+		MagVo magView =  MagviewService.magView(postNo);
+		System.out.println("magView : " + magView);
+		req.setAttribute("magView", magView);
+		
+		req.getRequestDispatcher("/WEB-INF/views/magazine/magView.jsp").forward(req, resp);
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		process(req, resp);
-		System.out.println("post");
-	}
-	
-	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int postNo = Integer.parseInt(req.getParameter("postNo"));
-//		MagHDao magVDao = MagHDao.getInstance();
-		MagVo magVo = new MagVo();
-//		MagHDao.hitUpdate(magVo);
-//		magVo = MagHDao.selectById(postNo);
-		
-		req.setAttribute("magview", magVo);
-		
-		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/magazine/magView.jsp");
-		rd.forward(req, resp);
-	}
 }

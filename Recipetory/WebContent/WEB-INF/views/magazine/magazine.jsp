@@ -1,6 +1,11 @@
+<%@page import="com.reci.mag.Vo.MagVo"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<% 
+	List<MagVo> dataList = (List<MagVo>)request.getAttribute("data"); 
+//attribute는 오브젝트인데, 현재 타입이 NotiVo이기 때문에 (NotiVo)로 캐스팅
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,7 +112,9 @@
 							<th><strong style="color: white;">주요 메거진 뉴스</strong></th>
 						</tr>
 					</thead>
+					
 					<tbody>
+					<c:forEach items="${data}" var="m">
 						<tr>
 							<td><a href="mag_content2" style="text-decoration: none; color: black; ">더 나은 행복을 위한 3가지 레시피</a></td>
 						</tr>
@@ -118,7 +125,7 @@
 							<td><a href="mag_content2" style="text-decoration: none; color: black; ">더 나은 행복을 위한 3가지 레시피</a></td>
 						</tr>
 						<tr>
-							<td><a href="mag_content2" style="text-decoration: none; color: black; ">더 나은 행복을 위한 3가지 레시피</a></td>
+							<td> <a href="${pageContext.request.contextPath}/magazine/magView?no=${m.postNo}&pageNo=${currentPage}">${m.postName}</a> </td>
 						</tr>
 						<tr>
 							<td>기사 제목 링크</td>
@@ -132,6 +139,7 @@
 						<tr>
 							<td>기사 제목 링크</td>
 						</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</div>
@@ -179,6 +187,26 @@
 					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
 			</div>
+			
+			
+			<ul id="pageForm" class="pagination justify-content-center">
+           		<c:if test="${currentPage != 1}">
+           			<li class="page-item"><a class="page-link" href='magazine?page=${currnetPage-1}'><</a></li>
+           		</c:if>
+             	<c:forEach var="pageNo" begin="${startPage}" end="${endPage}">
+             		<c:if test="${pageNo == currentPage}">
+             			<li class="page-item"><a class="page-link" href="magazine?page=${currentPage}">${pageNo}&nbsp;</a></li>
+             		</c:if>
+             		<c:if test="${pageNo != currentPage}">
+             			<li class="page-item"><a class="page-link" href="magazine?page=${currentPage}">${pageNo}</a></li>
+             		</c:if>
+             	</c:forEach>
+           		<c:if test="currentPage != maxPage">
+           			<li class="page-item"><a class="page-link" href="magazine?page=${currnetPage+1}">></a></li>
+           		</c:if>
+       		</ul>
+       		
+       		
 		</div>
 		<br>
     </div>

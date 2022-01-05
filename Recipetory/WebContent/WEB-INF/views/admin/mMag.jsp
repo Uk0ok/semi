@@ -24,6 +24,7 @@
 	
 	<div id="content_wrap">
     	<div id="content1">
+    	<form action="MboardRemove" name="MboardRemove" method="post">
 	   		<table class="table table-sm table-hover">
 	           	<thead class="thead-light">
 					<tr>
@@ -45,7 +46,7 @@
 	           	<tbody>
 	           		<c:forEach items="${magListAll}" var="m">
 	             	<tr>  
-	             		<th><input type="checkbox"></th>
+	             		<th><input name="postNo" value="${m.postNo}" type="checkbox" required></th>
 		                <td>${m.postNo }</td>		                    
 		                <td>${m.postName }<b><!--  a href="magview.jsp?postNo=<%--=m.getPostNo() %>"><%=m.getPostName() --%></a></b>--></td>		                    
 		                <td>${m.postContent }</td>		                    
@@ -62,9 +63,12 @@
 	               </c:forEach>
 	           	</tbody>
 			</table>
+			<button type="button" onclick="removeCheck()">게시글 삭제</button>
+			</form>
 			
 			
 			<a href="mwrite"><button>게시글 작성</button></a>
+			
 			
 			<ul class="pagination justify-content-center">
 				<li class="page-item"><a class="page-link" href="#"><</a></li>
@@ -75,6 +79,16 @@
 			</ul>
 		</div>
    	</div>
+   	
+   	<script>
+		function removeCheck(){
+			if(confirm("*경고* 선택한 게시글을 삭제하시겠습니까?") == true){
+				document.MboardRemove.submit();
+			}else {
+				return false;
+			}
+		}
+    </script>
    	
 </body>
 </html>
