@@ -168,7 +168,7 @@ public class MemberDao {
 	public int deleteMember(Connection conn, MemberVo m) throws SQLException {
 		// 쿼리 날리기
 
-		String sql = "UPDATE TB_USER SET USER_DELETE_YN = 'Y' WHERE USER_PWD = ? AND USER_NO = ?";
+		String sql = "UPDATE TB_USER SET USER_DELETE_YN = 'Y' WHERE USER_PWD = ? AND USER_ID = ?";
 
 		PreparedStatement pstmt = null;
 		int result = 0;
@@ -177,7 +177,7 @@ public class MemberDao {
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, m.getUserPwd());
-			pstmt.setInt(2, m.getUserNo()); // 세션에있는 유저넘버를 가져온다?
+			pstmt.setString(2, m.getUserId()); // 세션에있는 유저아이디를 가져온다?
 
 			result = pstmt.executeUpdate();
 		} finally {
@@ -237,7 +237,7 @@ public class MemberDao {
 
 	public int updateEmail(Connection conn, MemberVo m) throws SQLException {
 
-		String sql = "UPDATE TB_USER SET USER_EMAIL = ? WHERE USER_NO = ?";
+		String sql = "UPDATE TB_USER SET USER_EMAIL = ? WHERE USER_ID = ?";
 
 		PreparedStatement pstmt = null;
 		int result = 0;
@@ -246,7 +246,7 @@ public class MemberDao {
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, m.getUserEmail());
-			pstmt.setInt(2, m.getUserNo()); // 세션에 있는 거
+			pstmt.setString(2, m.getUserId());
 
 			result = pstmt.executeUpdate();
 		} finally {
@@ -258,7 +258,7 @@ public class MemberDao {
 
 	public int updatePhone(Connection conn, MemberVo m) throws SQLException {
 
-		String sql = "UPDATE TB_USER SET USER_PHONE = ? WHERE USER_NO = ?";
+		String sql = "UPDATE TB_USER SET USER_PHONE = ? WHERE USER_ID = ?";
 
 		PreparedStatement pstmt = null;
 		int result = 0;
@@ -267,7 +267,7 @@ public class MemberDao {
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, m.getUserPhone());
-			pstmt.setInt(2, m.getUserNo()); // 세션에 있는 거
+			pstmt.setString(2, m.getUserId());
 
 			result = pstmt.executeUpdate();
 		} finally {
@@ -279,7 +279,7 @@ public class MemberDao {
 
 	public int updatePwd(Connection conn, MemberVo m) throws SQLException {
 
-		String sql = "UPDATE TB_USER SET USER_PWD = ? WHERE USER_NO = ?";
+		String sql = "UPDATE TB_USER SET USER_PWD = ? WHERE USER_ID = ?";
 
 		PreparedStatement pstmt = null;
 		int result = 0;
@@ -288,7 +288,70 @@ public class MemberDao {
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, m.getUserPwd());
-			pstmt.setInt(2, m.getUserNo()); // 세션에 있는 거
+			pstmt.setString(2, m.getUserId());
+
+			result = pstmt.executeUpdate();
+		} finally {
+			close(pstmt);
+		}
+
+		return result;
+	}
+	
+//	public MemberVo updatePwd2(Connection conn, MemberVo m) {
+//
+//		String query = "UPDATE TB_USER SET USER_PWD = ?";
+//		
+//
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		MemberVo updatePwd2 = null;
+//
+//		try {
+//			pstmt = conn.prepareStatement(query);
+//			pstmt.setString(1, m.getUserPwd());
+//			pstmt.setString(2, m.getUserPwd());
+//
+//			rs = pstmt.executeQuery();
+//
+//			if (rs.next()) {
+//				int userNo = rs.getInt("USER_NO");
+//				String userId = rs.getString("USER_ID");
+//				String userPwd = rs.getString("USER_PWD");
+//				String userNickname = rs.getString("USER_NICKNAME");
+//				String userEmail = rs.getString("USER_EMAIL");
+//				String userPhone = rs.getString("USER_PHONE");
+//				Timestamp userJoinDate = rs.getTimestamp("USER_JOIN_DATE");
+//				String userType = rs.getString("USER_TYPE");
+//				String userDeleteYn = rs.getString("USER_DELETE_YN");
+//				Timestamp LastLoginDate = rs.getTimestamp("LASTLOGIN_DATE");
+//
+//				updatePwd2 = new MemberVo();
+//				updatePwd2.setUserPwd(userPwd);
+//
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(rs);
+//			close(pstmt);
+//		}
+//
+//		return updatePwd2;
+//	}
+	
+	public int updateNickname(Connection conn, MemberVo m) throws SQLException {
+
+		String sql = "UPDATE TB_USER SET USER_NICKNAME = ? WHERE USER_ID = ?";
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, m.getUserNickname());
+			pstmt.setString(2, m.getUserId());
 
 			result = pstmt.executeUpdate();
 		} finally {
@@ -298,4 +361,5 @@ public class MemberDao {
 		return result;
 	}
 
+	
 }

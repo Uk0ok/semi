@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>마이페이지</title>
@@ -15,6 +15,7 @@
 <body>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 
+                <form action="nicknameUpdate" method="post">
     <div id="wrap_m">
         <section id="section_m">
             <div id="category_m">
@@ -26,9 +27,9 @@
             <div id="content_profile_m">
                 <br><img id="profile_m" src="./img/mypageBoard/cake.jpg" alt="">
                 <br><br><button>사진 수정</button>
-                
-                <br><br><p id="nickname_m">${loginUser.userNickname}</p>
-                <button type="button" onclick="location.href='./nicknameUpdate' ">닉네임 수정</button>
+                <br><br><p id="nickname_m"><input style="width: 300px;" type="text" name="userNickname" id="userNickname" class="userNickname" placeholder="변경할 닉네임 입력">
+                        <input type="hidden" name="userId" id="userId" class="userId" value="${loginUser.userId}"></p>
+                <button type="submit">닉네임 수정</button>
             </div>
             <div id="content_challenge_m">
                 <br>
@@ -93,6 +94,7 @@
             </div>
         </section>
     </div>
+            </form>
 <div style="margin-top:100px"></div>
 <%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>

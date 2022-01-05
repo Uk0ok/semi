@@ -53,6 +53,10 @@ public class MemberService {
 		return new MemberDao().updatePhone(conn, m);
 	}
 	
+	public int updateNickname(Connection conn, MemberVo m) throws SQLException {
+		return new MemberDao().updateNickname(conn, m);
+	}
+	
 	public int updatePwd(Connection conn, MemberVo m) throws SQLException {
 		return new MemberDao().updatePwd(conn, m);
 	}
@@ -191,6 +195,27 @@ public class MemberService {
 		return result;
 	}
 	
+	public int updateNickname(MemberVo m) {
+
+		Connection conn = getConnection();
+		
+		int result = 0;
+		try {
+			result = updateNickname(conn, m);
+			if(result > 0)
+				commit(conn);
+			else
+				rollback(conn);
+		} catch (SQLException e) {
+			rollback(conn);
+			e.printStackTrace();
+		} finally {
+			close(conn);
+		}
+		
+		return result;
+	}
+	
 	public int updatePwd(MemberVo m) {
 
 		Connection conn = getConnection();
@@ -211,4 +236,23 @@ public class MemberService {
 		
 		return result;
 	}
+	
+//	public MemberVo updatePwd2(MemberVo m) {
+//
+//		Connection conn = getConnection();
+//
+//		MemberVo updatePwd2 = updatePwd2(conn, m);
+//
+//		close(conn);
+//
+//		if (updatePwd2.getUserPwd().equals(m.getUserPwd())) {
+//			return updatePwd2;
+//		} else {
+//			return null;
+//		}
+//	}
+	
+//	public MemberVo updatePwd2(Connection conn, MemberVo m) {
+//		return new MemberDao().selectMember(conn, m);
+//	}
 }
