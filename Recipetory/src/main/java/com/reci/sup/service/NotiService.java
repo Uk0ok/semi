@@ -9,6 +9,7 @@ import java.util.List;
 
 import static com.reci.common.JDBCTemplate.* ;
 
+import com.reci.admin.AdminVo;
 import com.reci.join.controller.MemberDao;
 import com.reci.sup.dao.NotiDao;
 import com.reci.sup.vo.NotiVo;
@@ -57,9 +58,19 @@ public class NotiService {
 		return notiView; 
 	}
 
-	public static NotiVo updateHits(int noticeNo, boolean hasRead) {
+	public static int updateHits(int noticeNo, boolean hasRead) {
 		Connection conn = getConnection();
-		return new NotiDao().updatetHits();
+		int updateHits = new NotiDao().updateHits(conn, noticeNo, hasRead);
+		close(conn);
+		
+		return updateHits; 
+	}
+
+	public static AdminVo getAdminNo(String adminId) {
+		AdminVo getAdminNo = null;
+		Connection conn = getConnection();
+		close(conn);
+		return new NotiDao().getAdminNo(conn, adminId);
 	}
 
 }

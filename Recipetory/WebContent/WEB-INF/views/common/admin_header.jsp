@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file = "/WEB-INF/views/common/w3s.jsp" %>
+<%@page import="com.reci.admin.AdminVo"%>
+
+<%
+	AdminVo loginUser = (AdminVo)request.getAttribute("loginUser");
+%>
 
 <!DOCTYPE html>
 <html>
@@ -72,13 +77,13 @@
 		
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="mUser">회원관리</a>
+					<a class="nav-link" href="./mUser">회원관리</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="mAdmin">관리자관리</a>
+					<a class="nav-link" href="./mAdmin">관리자관리</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="mReport">신고관리</a>
+					<a class="nav-link" href="./mReport">신고관리</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">게시글관리</a>

@@ -31,7 +31,7 @@ public class LoginController extends HttpServlet {
 		
 		AdminVo loginUser = new AdminService().login(ad);
 		
-		//System.out.println(loginUser);
+		System.out.println(loginUser);
 		
 		if(loginUser != null) {
 			//success

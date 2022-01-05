@@ -72,7 +72,7 @@
 	                    	</a>
                     	</td>
 	                    <td>${n.createDate}</td>
-	                    <td>${hits.hits}</td>
+	                    <td>${n.hits}</td>
 	                   </tr>
 	            	</c:forEach>
 	           	</tbody>

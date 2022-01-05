@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.reci.admin.AdminVo;
 import com.reci.sup.vo.NotiVo;
 
 public class NotiDao {
@@ -167,7 +168,6 @@ public class NotiDao {
 			if(rs.next()) {
 				notiView= new NotiVo();
 				notiView.setNoticeNo(noticeNo);
-				notiView.setNoticeNo(rs.getInt("NOTICE_NO"));
 				notiView.setAdminNo(rs.getInt("ADMIN_NO"));
 				notiView.setNoticeTitle(rs.getString("NOTICE_TITLE"));
 				notiView.setNoticeContent(rs.getString("NOTICE_CONTENT"));
@@ -187,7 +187,7 @@ public class NotiDao {
 		return notiView;
 	}
 
-public int countNotiAll(Connection conn) {
+	public int countNotiAll(Connection conn) {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -210,28 +210,57 @@ public int countNotiAll(Connection conn) {
 		
 		return result;
 	}
-	
-	//조회수 
-public int NotiVo updatetHits(Connection connm, NotiVo n, ) {
-	int result = 0;
-	PreparedStatement pstmt = null;
-	String sql = "UPDATE TB_NOTICE SET HITS = ? WHERE NOTICE_NO = ?";
-	
-	try {
-		pstmt = conn.prepareStatement(sql.toString());
+
+	public int updateHits(Connection conn, int noticeNo, boolean hasRead) {
 		
-		n.setHits(n.getHits() + 1);
+		int result = 0;
+		PreparedStatement pstmt = null;
 		
-		pstmt.setInt(1, n.getHits());
-		pstmt.setInt(2, noticeNo);
+		String sql = "UPDATE TB_NOTICE SET HITS = HITS + 1 WHERE NOTICE_NO = ?";
 		
-		result = pstmt.executeUpdate();
-	} catch (SQLException e) {
-		e.printStackTrace();
-	} finally {
-		close(pstmt);
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			if(hasRead = false) {
+				pstmt.setInt(1, noticeNo);
+				result = pstmt.executeUpdate();
+			}else {
+				result = 0;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
 	}
-	return result;
+
+
+	public AdminVo getAdminNo(Connection conn, String adminId) {
+		String sql = "SELECT ADMIN_NO FROM TB_ADMIN WHERE USER_ID = ?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, adminId);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int noticeNo = rs.getInt("NOTICE_NO");
+				
+				AdminVo getAdminNo = new AdminVo();
+				getAdminNo.setAdminNo(noticeNo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return getAdminNo;
 	}
 
 }
