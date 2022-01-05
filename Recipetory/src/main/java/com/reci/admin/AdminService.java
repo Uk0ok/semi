@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.reci.sup.vo.NotiVo;
+
 import static com.reci.common.JDBCTemplate.*; //static 으로 바꿔서 클래스명 생략해서 쓸 수 있게
 
 public class AdminService {

@@ -28,11 +28,11 @@ public class NotiController extends HttpServlet {
 		String currentPage= req.getParameter("currentPage");
 		if(currentPage == null) currentPage = "1";
 		
-		int maxPage = 5;
+		int maxPage = 4;
 		
-		int startPage = Integer.parseInt(currentPage) - 2 ;
+		int startPage = Integer.parseInt(currentPage) - 3 ;
 		if(startPage <= 0) startPage = 1;
-		int endPage = startPage + 2;
+		int endPage = startPage + 3;
 		
 		req.setAttribute("maxPage", maxPage);
 		req.setAttribute("currentPage", currentPage);

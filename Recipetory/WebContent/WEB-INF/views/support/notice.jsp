@@ -96,13 +96,15 @@
            		<c:if test="${currentPage != 1}">
            			<li class="page-item"><a class="page-link" href='support?page=${currnetPage-1}'><</a></li>
            		</c:if>
+           		
              	<c:forEach var="pageNo" begin="${startPage}" end="${endPage}">
              		<c:if test="${pageNo == currentPage}">
              			<li class="page-item"><a class="page-link" href="support?page=${currentPage}">${pageNo}&nbsp;</a></li>
              		</c:if>
              		<c:if test="${pageNo != currentPage}">
-             			<li class="page-item"><a class="page-link" href="support?page=${currentPage}">${pageNo}</a></li>
+             			<li class="page-item"><a class="page-link" href="support?page=${currentPage+1}">${pageNo}</a></li>
              		</c:if>
+             		
              	</c:forEach>
            		<c:if test="currentPage != maxPage">
            			<li class="page-item"><a class="page-link" href="support?page=${currnetPage+1}">></a></li>
