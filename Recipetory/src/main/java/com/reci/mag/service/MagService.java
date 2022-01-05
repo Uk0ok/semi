@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.reci.mag.Vo.MagVo;
+import com.reci.mag.dao.MagDDao;
 import com.reci.mag.dao.MagDao;
 import com.reci.mag.dao.MagWDao;
 
@@ -55,7 +56,11 @@ public class MagService {
 		return new MagWDao().insertMag(conn, mw);
 	}
 	
-	
+	public static int deleteArticle(int postNo) {
+		int articleNum = 0;
+		articleNum = MagDDao.deleteArticle(postNo);
+		return articleNum;
+	}
 	
 	
 	

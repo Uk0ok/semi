@@ -31,10 +31,10 @@ public class MagviewController extends HttpServlet{
 	
 	private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int postNo = Integer.parseInt(req.getParameter("postNo"));
-		MagHDao magVDao = MagHDao.getInstance();
+//		MagHDao magVDao = MagHDao.getInstance();
 		MagVo magVo = new MagVo();
-		MagHDao.hitUpdate(magVo);
-		magVo = MagHDao.selectById(postNo);
+//		MagHDao.hitUpdate(magVo);
+//		magVo = MagHDao.selectById(postNo);
 		
 		req.setAttribute("magview", magVo);
 		
