@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>이메일 수정</title>
+    <title>비밀번호 수정</title>
     <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/mypage.css">
 </head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -26,13 +26,12 @@
             <div id="content_userInfo_m">
                 <br><br><br><br><br><br>
 
-				<form action="updatePwd" method="post">
+				<form action="pwdUpdate" method="post">
                 <table id="tb_userInfo">
+         
                     <tr>
-                        <td><input style="width: 300px;" type="password" name="userPwd1" id="userPwd1" class="userPwd1"placeholder="현재 비밀번호를 입력해 주세요."></td>
-                    </tr>
-                    <tr>
-                        <td><input style="width: 300px;" type="password" name="userPwd" id="userPwd" class="userPwd"placeholder="변경할 비밀번호를 입력해 주세요."></td>
+                        <td><input style="width: 300px;" type="password" name="userPwd" id="userPwd" class="userPwd"placeholder="변경할 비밀번호를 입력해 주세요.">
+                        <input type="hidden" name="userId" id="userId" class="userId" value="${loginUser.userId}"></td>
                     </tr>
                     <tr>
                         <td><button type="submit">변경</button></td>

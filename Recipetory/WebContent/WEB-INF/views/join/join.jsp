@@ -66,8 +66,7 @@ div {
         </tr>
         <tr>
             <td>비밀번호</td>
-            <td><input type="password" name="userPwd1" id="userPwd1" size="30" maxlength="50"
-                placeholder="영문, 숫자, 특수문자 포함 8자 이상" required></td>
+            <td><input type="password" name="userPwd1" id="userPwd1" size="30" maxlength="50" required></td>
         </tr>
         <tr>
             <td>비밀번호 확인</td>
@@ -89,10 +88,10 @@ div {
     </table>
         <br><br>
 
-            <div id="check"><pre style="text-align: left;">내용</pre></div>
+            <div id="check"><pre style="text-align: left;"></pre></div>
             <label><input type="checkbox" required>개인정보 수집 및 이용 동의 (필수)</label>
             <br><br><br>
-            <div id="check"><pre style="text-align: left;">내용</pre></div>
+            <div id="check"><pre style="text-align: left;"></pre></div>
             <label><input type="checkbox" required>레시피토리 이용약관 동의 (필수)</label>
             <br><br><br><br><br><br>
             <button id="submit" type="submit" onclick="return validate();">회원가입</button>
@@ -125,11 +124,11 @@ div {
             
             // 비밀번호
             // 영문, 숫자, 특수문자 포함하여 8자 이상
-            if(!(/^([0-9].*[!,@,#,^,&,*,(,)])|([!,@,#,^,&,*,(,)].*[0-9])|([A-Za-z]){8,}$/.test(userPwd1))) {
-                alert('비밀번호를 다시 입력해 주세요.');
-                
-                return false;
-            }
+//            if(!(/^([0-9].*[!,@,#,^,&,*,(,)])|([!,@,#,^,&,*,(,)].*[0-9])|([A-Za-z]){8,}$/.test(userPwd1))) {
+//                alert('비밀번호를 다시 입력해 주세요.');
+//                
+//                return false;
+//            }
 
             // 비밀번호 확인 검사
             if(userPwd1 !== userPwd2) {
@@ -147,11 +146,11 @@ div {
                 return false;
             }
 
-            if(!(/^[0-9]{2,11}$/.test(phone))) {
-                alert('전화번호를 다시 입력해 주세요.');
-                
-                return false;
-            }
+//            if(!(/^[0-9]{2,13}$/.test(phone))) {
+//                alert('전화번호를 다시 입력해 주세요.');
+//                
+//                return false;
+//            }
         }
     </script>
 </body>

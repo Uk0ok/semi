@@ -31,19 +31,21 @@
                 <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
                 <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
                 <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
+                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
+                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <!-- <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
+                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
+                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
+                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
+                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
                 <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label><br><br>
                 <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
                 <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
                 <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
                 <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
                 <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
-                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label><br><br>
-                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
-                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
-                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
-                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
-                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label>
-                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label><br><br>
+                <label style="margin:10px"><input style="position:absolute" id="img_cb" type="checkbox"><img id="img_scrap" src="./img/mypageBoard/salad.jpg" alt=""><br>스크랩</label><br><br> -->
                 
                 <a href="">1</a>
                 <br>

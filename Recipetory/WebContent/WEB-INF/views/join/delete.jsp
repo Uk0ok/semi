@@ -32,7 +32,8 @@
                         <td>탈퇴하려면 비밀번호를 입력해 주세요.</td>
                     </tr>
                     <tr>
-                        <td><input type="password" name="userPwd" id="userPwd" class="userPwd"></td>
+                        <td><input type="password" name="userPwd" id="userPwd" class="userPwd">
+                        <input type="hidden" name="userId" id="userId" class="userId" value="${loginUser.userId}"></td>
                     </tr>
                     <tr>
                         <td><input type="submit" id="btnDelete" value="탈퇴"></td>
