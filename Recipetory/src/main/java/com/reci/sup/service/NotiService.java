@@ -100,4 +100,14 @@ public class NotiService {
 		return new NotiDao().insertNotice(conn,n);
 	}
 
+	public static FileVo nFileView(int noticeNo) {
+		FileVo nFileView = null;
+		Connection conn = getConnection();
+		
+		nFileView = new FileDao().nFileView(conn, noticeNo);
+		close(conn);
+				
+		return nFileView; 
+	}
+
 }

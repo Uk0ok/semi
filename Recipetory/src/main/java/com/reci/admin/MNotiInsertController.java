@@ -67,18 +67,12 @@ public class MNotiInsertController extends HttpServlet{
 			fis.close();
 			fos.close();
 		}
-		req.setAttribute("f", filePath);
-		System.out.println(filePath);
 		
 		FileVo f = new FileVo();
 		f.setFileName(fileName);
 		f.setmFileName(mfileName);
 		
-		System.out.println(fileName);
-		System.out.println(mfileName);
-		
 		int uploadData = new NotiService().uploadNoti(n, f);
-		System.out.println(uploadData);
 		
 		if(uploadData > 0){
 			//success

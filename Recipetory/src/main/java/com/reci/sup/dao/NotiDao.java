@@ -228,8 +228,7 @@ public class NotiDao {
 		}
 		return result;
 	}
-	
-	
+
 
 }
 
