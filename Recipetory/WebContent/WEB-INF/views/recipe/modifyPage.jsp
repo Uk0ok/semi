@@ -6,7 +6,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>레시피 게시물 작성 페이지</title>
+		<title>레시피 게시물 수정 페이지</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -66,6 +66,7 @@
 
 		.write {
 			position: relative;
+		
 			left: 1050px;
 		}
 	</style>
@@ -78,12 +79,12 @@
 					<div class="board_list">
 						<div class="board_list_head">
 							<span>
-								<h4 style="text-align: center;">레시피 등록하기</h4>
+								<h4 style="text-align: center;">레시피 수정하기</h4>
 							</span>
 
 						</div>
 						<br>
-						<form action="registerRecipe" method="POST" enctype="multipart/form-data">
+						<form action="modifyRecipe" method="POST">
 							<div class="writing-title">
 								<h5>제목</h5>
 								<input type="text" class="form-control" name="recipeName" placeholder="제목을 입력해주세요.">
@@ -231,4 +232,4 @@
 			<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 	</body>
 
-	</html>
+	</html>ml>

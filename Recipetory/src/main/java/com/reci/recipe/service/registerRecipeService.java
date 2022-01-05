@@ -7,11 +7,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.reci.common.JDBCTemplate;
-import com.reci.recipe.dao.RwritingDao;
+import com.reci.recipe.dao.registerRecipeDao;
 import com.reci.recipe.vo.recipeImgVo;
 import com.reci.recipe.vo.registerRecipeVo;
 
-public class RwritingService {
+public class registerRecipeService {
 
 	public int regist(registerRecipeVo rrv) {
 
@@ -40,7 +40,7 @@ public class RwritingService {
 	public int insertRecipe(Connection conn, registerRecipeVo rrv) throws SQLException {
 		// dao 불러서 쿼리 실행
 		// dao한테 쿼리 실행 결과 받기
-		return new RwritingDao().insertRecipe(conn, rrv);
+		return new registerRecipeDao().insertRecipe(conn, rrv);
 	}
 
 	public int registerRecipeImg(List<recipeImgVo> rImgList) {
@@ -65,7 +65,7 @@ public class RwritingService {
 	}
 
 	private int insertRecipeImg(Connection conn, List<recipeImgVo> rImgList) {
-		return new RwritingDao().registerRecipeImg(conn, rImgList);
+		return new registerRecipeDao().registerRecipeImg(conn, rImgList);
 	}
 
 }

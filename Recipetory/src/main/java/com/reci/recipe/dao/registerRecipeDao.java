@@ -11,7 +11,7 @@ import static com.reci.common.JDBCTemplate.*;
 import com.reci.recipe.vo.recipeImgVo;
 import com.reci.recipe.vo.registerRecipeVo;
 
-public class RwritingDao {
+public class registerRecipeDao {
 
 	public int insertRecipe(Connection conn, registerRecipeVo rrv) throws SQLException {
 		// 쿼리 날리기
@@ -34,7 +34,7 @@ public class RwritingDao {
 			pstmt.setString(11, rrv.getRpostContent5());
 			pstmt.setString(12, rrv.getRthumbnail());
 
-			result = pstmt.executeUpdate();
+			result = pstmt.executeUpdate();	
 		} finally {
 			close(pstmt);
 		}
@@ -61,6 +61,7 @@ public class RwritingDao {
 			close(pstmt);
 			}
 			}
+		System.out.println(rImgList.size());
 		System.out.println("이미지이름 1: " + rImgList.get(0).getMfileName());
 		System.out.println("이미지이름 2: " + rImgList.get(1).getMfileName());
 		System.out.println("이미지이름 3: " + rImgList.get(2).getMfileName());

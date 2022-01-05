@@ -2,7 +2,7 @@ package com.reci.recipe.vo;
 
 import java.sql.Timestamp;
 
-public class RBoardVo {
+public class recipeBoardVo {
 
 	private int rpostNo;
 	private int userNo;

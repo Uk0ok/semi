@@ -14,7 +14,7 @@ import com.reci.recipe.vo.recipeImgVo;
 import com.reci.recipe.vo.registerRecipeVo;
 import com.reci.sup.vo.NotiVo;
 
-public class RBoardDao {
+public class recipeBoradDao {
 
 	public List<registerRecipeVo> selectRBoardList(Connection conn) {
 
@@ -87,7 +87,7 @@ public class RBoardDao {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		registerRecipeVo viewReicpe = null;
+		registerRecipeVo viewRecipe = null;
 
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -95,25 +95,25 @@ public class RBoardDao {
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				viewReicpe = new registerRecipeVo();
-				viewReicpe.setRpostNo(postNo);
-				viewReicpe.setUserNo(rs.getInt("USER_NO"));
-				viewReicpe.setRpostName(rs.getString("POST_NAME"));
-				viewReicpe.setRbegDate(rs.getTimestamp("BEG_DATE"));
-				viewReicpe.setIngredient1(rs.getString("INGREDIENT1"));
-				viewReicpe.setIngredient2(rs.getString("INGREDIENT2"));
-				viewReicpe.setIngredient3(rs.getString("INGREDIENT3"));
-				viewReicpe.setIngredient4(rs.getString("INGREDIENT4"));
-				viewReicpe.setIngredient5(rs.getString("INGREDIENT5"));
-				viewReicpe.setRpostContent1(rs.getString("POST_CONTENT1"));
-				viewReicpe.setRpostContent2(rs.getString("POST_CONTENT2"));
-				viewReicpe.setRpostContent3(rs.getString("POST_CONTENT3"));
-				viewReicpe.setRpostContent4(rs.getString("POST_CONTENT4"));
-				viewReicpe.setRpostContent5(rs.getString("POST_CONTENT5"));
-				viewReicpe.setRthumbnail(rs.getString("THUMBNAIL"));
-				viewReicpe.setRmodYn(rs.getString("MOD_YN"));
-				viewReicpe.setRdelYn(rs.getString("DEL_YN"));
-				viewReicpe.setRmodDate(rs.getTimestamp("FMOD_DATE"));
+				viewRecipe = new registerRecipeVo();
+				viewRecipe.setRpostNo(postNo);
+				viewRecipe.setUserNo(rs.getInt("USER_NO"));
+				viewRecipe.setRpostName(rs.getString("POST_NAME"));
+				viewRecipe.setRbegDate(rs.getTimestamp("BEG_DATE"));
+				viewRecipe.setIngredient1(rs.getString("INGREDIENT1"));
+				viewRecipe.setIngredient2(rs.getString("INGREDIENT2"));
+				viewRecipe.setIngredient3(rs.getString("INGREDIENT3"));
+				viewRecipe.setIngredient4(rs.getString("INGREDIENT4"));
+				viewRecipe.setIngredient5(rs.getString("INGREDIENT5"));
+				viewRecipe.setRpostContent1(rs.getString("POST_CONTENT1"));
+				viewRecipe.setRpostContent2(rs.getString("POST_CONTENT2"));
+				viewRecipe.setRpostContent3(rs.getString("POST_CONTENT3"));
+				viewRecipe.setRpostContent4(rs.getString("POST_CONTENT4"));
+				viewRecipe.setRpostContent5(rs.getString("POST_CONTENT5"));
+				viewRecipe.setRthumbnail(rs.getString("THUMBNAIL"));
+				viewRecipe.setRmodYn(rs.getString("MOD_YN"));
+				viewRecipe.setRdelYn(rs.getString("DEL_YN"));
+				viewRecipe.setRmodDate(rs.getTimestamp("FMOD_DATE"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -121,7 +121,7 @@ public class RBoardDao {
 			close(rs);
 			close(pstmt);
 		}
-		return viewReicpe;
+		return viewRecipe;
 	}
 
 	public List<recipeImgVo> viewImg(Connection conn, int postNo) {

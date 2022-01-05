@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.reci.recipe.dao.RBoardDao;
-import com.reci.recipe.service.RBoardService;
+import com.reci.recipe.dao.recipeBoradDao;
+import com.reci.recipe.service.recipeBoardService;
 import com.reci.recipe.vo.recipeImgVo;
 import com.reci.recipe.vo.registerRecipeVo;
 
@@ -29,7 +29,7 @@ public class viewRecipeController extends HttpServlet {
 		String pageNo = req.getParameter("pageNo");
 		req.setAttribute("pageNo", pageNo);
 
-		registerRecipeVo viewRecipe = RBoardService.viewRecipe(postNo);
+		registerRecipeVo viewRecipe = recipeBoardService.viewRecipe(postNo);
 		System.out.println("viewRecipe : " + viewRecipe);
 		req.setAttribute("viewRecipe", viewRecipe);
 
@@ -48,7 +48,7 @@ public class viewRecipeController extends HttpServlet {
 		rpostContentlist.add(temp);
 		req.setAttribute("rpostContentlist", rpostContentlist);
 
-		List<recipeImgVo> fnList = RBoardService.viewImg(postNo);
+		List<recipeImgVo> fnList = recipeBoardService.viewImg(postNo);
 		req.setAttribute("imgdata", fnList);
 		for (recipeImgVo x : fnList) {
 			System.out.println("==================");
