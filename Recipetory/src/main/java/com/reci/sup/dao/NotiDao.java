@@ -234,6 +234,21 @@ public class NotiDao {
 		return result;
 	}
 
+	public int delete(Connection conn, NotiVo n) {
+		String sql = "UPDATE TB_NOTICE SET MOD_DATE = SYSDATE, MOD_YN = 'Y' WHERE NOTICE_NO = ?";
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, n.getAdminNo());
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return -1;
+	}
 
 }
 
