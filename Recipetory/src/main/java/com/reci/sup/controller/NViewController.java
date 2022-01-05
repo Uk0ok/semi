@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.reci.admin.AdminService;
+import com.reci.admin.FileVo;
 import com.reci.sup.service.NotiService;
 import com.reci.sup.vo.NotiVo;
 
@@ -67,6 +68,8 @@ public class NViewController extends HttpServlet {
 		NotiVo notiView = NotiService.notiView(noticeNo);
 		System.out.println("notiView : " + notiView);
 		req.setAttribute("notiView", notiView);
+		
+		FileVo fileView = NotiService.nFileView(noticeNo);
 		
 		req.getRequestDispatcher("/WEB-INF/views/support/nView.jsp").forward(req, resp);
 

@@ -4,6 +4,7 @@ import static com.reci.common.JDBCTemplate.close;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.reci.sup.vo.NotiVo;
@@ -33,4 +34,34 @@ public class FileDao {
 		
 		return fileResult;
 	}
+
+	public FileVo nFileView(Connection conn, int noticeNo) {
+
+		String sql = "SELECT * FROM TB_NOTICE_ATTACHMENT WHERE NOTICE_NO = ?";
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		FileVo nfileView = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setInt(1, noticeNo);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				nfileView = new FileVo();
+				nfileView.
+			}
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return nFileView;
+		
+	}
 }
+
+	
