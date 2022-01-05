@@ -32,10 +32,9 @@ public class recipeImgVo {
 	@Override
 	public String toString() {
 		return "recipeImgVo [fileNo=" + fileNo + ", postNo=" + postNo + ", userNo=" + userNo + ", mfileName="
-				+ mfileName + ", getFileNo()=" + getFileNo() + ", getPostNo()=" + getPostNo() + ", getUserNo()="
-				+ getUserNo() + ", getMfileName()=" + getMfileName() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
+				+ mfileName + "]";
 	}
+	
 
 
 }

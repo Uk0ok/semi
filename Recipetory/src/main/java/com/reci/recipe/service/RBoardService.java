@@ -16,35 +16,35 @@ import com.reci.sup.vo.NotiVo;
 public class RBoardService {
 	// recipe 등록하기
 	public List<registerRecipeVo> selectRBoardList() {
-		
+
 		// 쿼리 날릴 준비
 		Connection conn = JDBCTemplate.getConnection();
-		
+
 		List<registerRecipeVo> RboardList = new RBoardDao().selectRBoardList(conn);
 
 		JDBCTemplate.close(conn);
-		
+
 		return RboardList;
 	}
-	
+
 	// recipe 보이기
-	public static registerRecipeVo viewRecipe(int rpostNo) { 
+	public static registerRecipeVo viewRecipe(int postNo) {
 		registerRecipeVo viewRecipe = null;
 		Connection conn = getConnection();
-		
-		viewRecipe = new RBoardDao().viewRecipe(conn, rpostNo);
+
+		viewRecipe = new RBoardDao().viewRecipe(conn, postNo);
 		close(conn);
-				
-		return viewRecipe; 
+
+		return viewRecipe;
 	}
-	
+
 	public static List<recipeImgVo> viewImg(int postNo) {
 		List<recipeImgVo> fnLsit = null;
 		Connection conn = getConnection();
-		
-		fnLsit = new RBoardDao().viewImg(conn, postNo);		
+
+		fnLsit = new RBoardDao().viewImg(conn, postNo);
 		close(conn);
-		
+
 		return fnLsit;
 	}
 }

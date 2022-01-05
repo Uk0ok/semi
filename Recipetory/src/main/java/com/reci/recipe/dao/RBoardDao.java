@@ -81,7 +81,7 @@ public class RBoardDao {
 		return RboardList;
 	}
 
-	public registerRecipeVo viewRecipe(Connection conn, int rpostNo) {
+	public registerRecipeVo viewRecipe(Connection conn, int postNo) {
 
 		String sql = "SELECT * FROM TB_BOARD_RECIPE2 WHERE POST_NO = ?";
 
@@ -91,12 +91,12 @@ public class RBoardDao {
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, rpostNo);
+			pstmt.setInt(1, postNo);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
 				viewReicpe = new registerRecipeVo();
-				viewReicpe.setRpostNo(rpostNo);
+				viewReicpe.setRpostNo(postNo);
 				viewReicpe.setUserNo(rs.getInt("USER_NO"));
 				viewReicpe.setRpostName(rs.getString("POST_NAME"));
 				viewReicpe.setRbegDate(rs.getTimestamp("BEG_DATE"));
@@ -126,27 +126,26 @@ public class RBoardDao {
 
 	public List<recipeImgVo> viewImg(Connection conn, int postNo) {
 
-		String sql = "SELECT MFILE_NAME FROM TB_ATTACHED_FILE_R WHERE POST_NO = 36";
+		String sql = "SELECT MFILE_NAME FROM TB_ATTACHED_FILE_R WHERE POST_NO = ?";
 
 		List<recipeImgVo> fnList = new ArrayList<recipeImgVo>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-//			pstmt.setInt(1, postNo);
+			pstmt.setInt(1, postNo);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
 				String fileName = rs.getString("MFILE_NAME");
-				
+
 				recipeImgVo vi = new recipeImgVo();
 				vi.setMfileName(fileName);
 
 				fnList.add(vi);
 			}
-			for(recipeImgVo x : fnList) {
+			for (recipeImgVo x : fnList) {
 				System.out.println("==================");
 				System.out.println("test ::: " + x);
 			}
@@ -157,7 +156,7 @@ public class RBoardDao {
 			close(rs);
 
 		}
-	
+
 		return fnList;
 	}
 }

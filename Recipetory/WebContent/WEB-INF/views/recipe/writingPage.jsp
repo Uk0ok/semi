@@ -66,7 +66,7 @@
 
 		.write {
 			position: relative;
-			left: 930px;
+			left: 1050px;
 		}
 	</style>
 
@@ -118,7 +118,7 @@
 						<textarea id="textnum1" name="recipeProcess1" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt1">(0 / 4000)</div>
-						IMG1 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
+						IMG1 > <input type="file" accept=".jpeg .jpg, .png .jfif" name="file" class="recipeImg"><br>
 						<br>
 					</div>
 					<div class="writing-area2">
@@ -126,7 +126,7 @@
 						<textarea id="textnum2" name="recipeProcess2" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt2">(0 / 4000)</div>
-						IMG2 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
+						IMG2 > <input type="file" accept=".jpeg .jpg, .png .jfif" name="file" class="recipeImg"><br>
 						<br>
 					</div>
 					<div class="writing-area3">
@@ -134,7 +134,7 @@
 						<textarea id="textnum3" name="recipeProcess3" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt3">(0 / 4000)</div>
-						IMG3 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
+						IMG3 > <input type="file" accept=".jpeg .jpg, .png .jfif" name="file" class="recipeImg"><br>
 						<br>
 					</div>
 					<div class="writing-area4">
@@ -142,7 +142,7 @@
 						<textarea id="textnum4" name="recipeProcess4" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt4">(0 / 4000)</div>
-						IMG4 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
+						IMG4 > <input type="file" accept=".jpeg .jpg, .png .jfif" name="file" class="recipeImg"><br>
 						<br>
 					</div>
 					<div class="writing-area5">
@@ -150,7 +150,7 @@
 						<textarea id="textnum5" name="recipeProcess5" class="form-control textarea_uk" placeholder="내용을 입력해주세요." rows="40"
 							cols="10" style="height: 100px;"></textarea>
 						<div id="test_cnt5">(0 / 4000)</div>
-						IMG5 > <input type="file" accept=".jpeg .jpg, .png" name="file" class="recipeImg"><br>
+						IMG5 > <input type="file" accept=".jpeg .jpg, .png .jfif" name="file" class="recipeImg"><br>
 						<br>
 					</div>
 					<div>

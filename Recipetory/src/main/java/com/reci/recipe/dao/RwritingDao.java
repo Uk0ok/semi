@@ -47,7 +47,7 @@ public class RwritingDao {
 		
 		String sql = "INSERT INTO TB_ATTACHED_FILE_R VALUES(SEQ_REC_FNO.NEXTVAL, "
 				+ "(SELECT POST_NO FROM (SELECT ROWNUM AS RNUM, p.* FROM TB_BOARD_RECIPE2 p ORDER BY P.POST_NO DESC) "
-				+ "WHERE ROWNUM = 1), 2, ?)";
+				+ "WHERE ROWNUM = 1), 1, ?)";
 		PreparedStatement pstmt = null;
 		int result = 0;
 		for(int i = 0; i < rImgList.size(); i++) {
