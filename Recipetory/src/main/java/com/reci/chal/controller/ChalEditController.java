@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/challengereview")
-public class ChalReviewController extends HttpServlet{
+@WebServlet("/writeedit")
+public class ChalEditController extends HttpServlet{
 @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	req.getRequestDispatcher("/WEB-INF/views/challenge/challenge_review.jsp").forward(req, resp);
+	req.getRequestDispatcher("/WEB-INF/views/challenge/challenge_write_edit.jsp").forward(req, resp);
 }
 }
