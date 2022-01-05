@@ -116,70 +116,75 @@ public class MemberDao {
 		return result;
 	}
 
-	public MemberVo updateMember(Connection conn, MemberVo m) {
+//	public MemberVo updateMember(Connection conn, MemberVo m) {
+//
+//		String query = "UPDATE TB_USER SET USER_EMAIL = ? WHERE USER_ID = ?";
+//
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		MemberVo selectedMember = null;
+//
+//		try {
+//			pstmt = conn.prepareStatement(query);
+//			pstmt.setString(1, m.getUserEmail());
+//
+//			rs = pstmt.executeQuery();
+//
+//			if (rs.next()) {
+//				int userNo = rs.getInt("USER_NO");
+//				String userId = rs.getString("USER_ID");
+//				String userPwd = rs.getString("USER_PWD");
+//				String userNickname = rs.getString("USER_NICKNAME");
+//				String userEmail = rs.getString("USER_EMAIL");
+//				String userPhone = rs.getString("USER_PHONE");
+//				Timestamp userJoinDate = rs.getTimestamp("USER_JOIN_DATE");
+//				String userType = rs.getString("USER_TYPE");
+//				String userDeleteYn = rs.getString("USER_DELETE_YN");
+//				Timestamp LastLoginDate = rs.getTimestamp("LASTLOGIN_DATE");
+//
+//				selectedMember = new MemberVo();
+////				selectedMember.setUserNo(userNo);
+//				selectedMember.setUserId(userId);
+////				selectedMember.setUserPwd(userPwd);
+////				selectedMember.setUserNickname(userNickname);
+//				selectedMember.setUserEmail(userEmail);
+////				selectedMember.setUserPhone(userPhone);
+////				 selectedMember.setUserJoinDate(userJoinDate);
+////				 selectedMember.setUserType(userType);
+////				 selectedMember.setUserDeleteYn(userDeleteYn);
+////				 selectedMember.setLastLoginDate(LastLoginDate);
+//
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(rs);
+//			close(pstmt);
+//		}
+//
+//		return selectedMember;
+//	}
 
-		String query = "UPDATE TB_USER SET USER_EMAIL = ? WHERE USER_ID = 현재로그인되어있는유저아이디";
+	public int deleteMember(Connection conn, MemberVo m) throws SQLException {
+		// 쿼리 날리기
+
+		String sql = "UPDATE TB_USER SET USER_DELETE_YN = 'Y' WHERE USER_PWD = ? AND USER_NO = ?";
 
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		MemberVo selectedMember = null;
-
-		try {
-			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1, m.getUserEmail());
-
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				int userNo = rs.getInt("USER_NO");
-				String userId = rs.getString("USER_ID");
-				String userPwd = rs.getString("USER_PWD");
-				String userNickname = rs.getString("USER_NICKNAME");
-				String userEmail = rs.getString("USER_EMAIL");
-				String userPhone = rs.getString("USER_PHONE");
-				Timestamp userJoinDate = rs.getTimestamp("USER_JOIN_DATE");
-				String userType = rs.getString("USER_TYPE");
-				String userDeleteYn = rs.getString("USER_DELETE_YN");
-				Timestamp LastLoginDate = rs.getTimestamp("LASTLOGIN_DATE");
-
-				selectedMember = new MemberVo();
-//				selectedMember.setUserNo(userNo);
-				selectedMember.setUserId(userId);
-//				selectedMember.setUserPwd(userPwd);
-//				selectedMember.setUserNickname(userNickname);
-				selectedMember.setUserEmail(userEmail);
-//				selectedMember.setUserPhone(userPhone);
-//				 selectedMember.setUserJoinDate(userJoinDate);
-//				 selectedMember.setUserType(userType);
-//				 selectedMember.setUserDeleteYn(userDeleteYn);
-//				 selectedMember.setLastLoginDate(LastLoginDate);
-
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-
-		return selectedMember;
-	}
-
-	public int deleteMember(Connection conn, MemberVo m) {
-
-		int value = 0;
-		PreparedStatement pstmt = null;
-		String sql = "UPDATE TB_USER SET USER_DELETE_YN = 'Y' WHERE USER_PWD = ?;";
+		int result = 0;
 
 		try {
 			pstmt = conn.prepareStatement(sql);
+
 			pstmt.setString(1, m.getUserPwd());
-			value = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
+			pstmt.setInt(2, m.getUserNo()); // 세션에있는 유저넘버를 가져온다?
+
+			result = pstmt.executeUpdate();
+		} finally {
+			close(pstmt);
 		}
 
-		return value;
+		return result;
 	}
 
 	public List<MemberVo> selectMemberAll(Connection conn) {
@@ -229,5 +234,68 @@ public class MemberDao {
 
 		return memberList;
 	}
-	
+
+	public int updateEmail(Connection conn, MemberVo m) throws SQLException {
+
+		String sql = "UPDATE TB_USER SET USER_EMAIL = ? WHERE USER_NO = ?";
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, m.getUserEmail());
+			pstmt.setInt(2, m.getUserNo()); // 세션에 있는 거
+
+			result = pstmt.executeUpdate();
+		} finally {
+			close(pstmt);
+		}
+
+		return result;
+	}
+
+	public int updatePhone(Connection conn, MemberVo m) throws SQLException {
+
+		String sql = "UPDATE TB_USER SET USER_PHONE = ? WHERE USER_NO = ?";
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, m.getUserPhone());
+			pstmt.setInt(2, m.getUserNo()); // 세션에 있는 거
+
+			result = pstmt.executeUpdate();
+		} finally {
+			close(pstmt);
+		}
+
+		return result;
+	}
+
+	public int updatePwd(Connection conn, MemberVo m) throws SQLException {
+
+		String sql = "UPDATE TB_USER SET USER_PWD = ? WHERE USER_NO = ?";
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, m.getUserPwd());
+			pstmt.setInt(2, m.getUserNo()); // 세션에 있는 거
+
+			result = pstmt.executeUpdate();
+		} finally {
+			close(pstmt);
+		}
+
+		return result;
+	}
+
 }

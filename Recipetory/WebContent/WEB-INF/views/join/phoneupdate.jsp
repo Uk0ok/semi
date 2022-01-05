@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>이메일 수정</title>
+    <title>휴대전화 수정</title>
     <link rel="stylesheet"  href="${pageContext.request.contextPath}/css/mypage.css">
 </head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -26,13 +26,13 @@
             <div id="content_userInfo_m">
                 <br><br><br><br><br><br>
 
-				<form action="updateEmail" method="post">
+				<form action="updatePhone" method="post">
                 <table id="tb_userInfo">
                     <tr>
-                        <td>${loginUser.userEmail}</td>
+                        <td>${loginUser.userPhone}</td>
                     </tr>
                     <tr>
-                        <td><input style="width: 300px;" type="email" name="userEmail" id="userEmail" class="userEmail"placeholder="변경된 이메일을 입력해 주세요."></td>
+                        <td><input style="width: 300px;" type="tel" name="userPhone" id="userPhone" class="userPhone" placeholder="변경된 휴대전화 번호를 입력해 주세요."></td>
                     </tr>
                     <tr>
                         <td><button type="submit">변경</button></td>
