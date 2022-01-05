@@ -84,7 +84,7 @@
             .writing {
                 position: relative;
                 top: -130px;
-                left: 1450px;
+                left: 1600px;
             }
 
             /* paging */
@@ -243,7 +243,7 @@
                     <a href="#" class="bt next">></a>
                     <a href="#" class="bt last">>></a>
                 </div>
-                ><a  type="button" href="registerRecipe" class="btn-primary btn writing" style="background-color: darkolivegreen; border-color: darkolivegreen;">글쓰기</a>
+                <a type="button" href="registerRecipe" class="btn-primary btn writing" style="background-color: darkolivegreen; border-color: darkolivegreen;">글쓰기</a>
                 </div>
                 </div>
 
