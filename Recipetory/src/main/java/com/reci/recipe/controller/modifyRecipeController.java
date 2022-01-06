@@ -18,9 +18,9 @@ public class modifyRecipeController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //		req.setCharacterEncoding("UTF-8");
-		String no = req.getParameter("no");
-		int postNo = Integer.parseInt(no);
-		System.out.println("postNo : " + postNo);
+//		String no = req.getParameter("no");
+//		int postNo = Integer.parseInt(no);
+//		System.out.println("postNo : " + postNo);
 //		int postNo = Integer.parseInt(req.getParameter("rpostNo")); 
 		String postName = req.getParameter("recipeName");
 		String ingredient1 = req.getParameter("ingredient1");
@@ -36,7 +36,7 @@ public class modifyRecipeController extends HttpServlet {
 		String rthumbnail = req.getParameter("thumbnailName");
 		
 		recipeVo mrv = new recipeVo();
-		mrv.setRpostNo(postNo);
+//		mrv.setRpostNo(postNo);
 		mrv.setRpostName(postName);
 		mrv.setIngredient1(ingredient1);
 		mrv.setIngredient2(ingredient2);

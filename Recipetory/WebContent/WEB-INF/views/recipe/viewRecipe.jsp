@@ -96,8 +96,8 @@ for (recipeImgVo riv : fnlist) {
 			<c:if test="${empty loginUser}">
 			</c:if>
 			<c:if test="${!empty loginUser}">
-				<a type="button" href="deleteRecipe" class="btn btn-primary write"
-					style="background-color: darkolivegreen; border-color: darkolivegreen;">삭제하기</a>
+				<<a type="button" href="deleteRecipe" class="btn btn-primary write"
+					style="background-color: darkolivegreen; border-color: darkolivegreen;">삭제하기</a>>
 				<a type="button"
 					href="${pageContext.request.contextPath}/recipe/modifyRecipe?no=${viewRecipe.rpostNo}"
 					class="btn btn-primary write"
