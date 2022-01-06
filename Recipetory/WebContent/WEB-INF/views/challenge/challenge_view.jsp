@@ -11,19 +11,7 @@ List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
 <meta charset="UTF-8">
 <title>챌린지</title>
     <style>
-	* {
-    margin: 0;
-    padding: 0;
-    }
-
-    ul, li {
-        list-style: none;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
+	
 
 	.board_wrap {
     padding: 50px;
