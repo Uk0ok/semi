@@ -203,15 +203,6 @@ public class NotiDao {
 		return result;
 	}
 
-
-	/*
-	 * try { pstmt = conn.prepareStatement(sql);
-	 * 
-	 * if(hasRead = false) { pstmt.setInt(1, noticeNo); result =
-	 * pstmt.executeUpdate(); }else { result = 0; } } catch (SQLException e) {
-	 * e.printStackTrace(); } finally { close(pstmt); } return result;
-	 */
-
 	public int insertNotice(Connection conn, NotiVo n) {
 		String sql = "INSERT INTO TB_NOTICE ( NOTICE_NO, ADMIN_NO, NOTICE_TITLE, NOTICE_CONTENT)"
 				+ "VALUES ( SEQ_NOTICE.NEXTVAL, ?, ?, ?)";
@@ -240,7 +231,7 @@ public class NotiDao {
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, n.getAdminNo());
+			pstmt.setInt(1, n.getNoticeNo());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -248,6 +239,28 @@ public class NotiDao {
 			close(pstmt);
 		}
 		return -1;
+	}
+
+	public int modifyNotice(Connection conn, NotiVo n) {
+		String sql = "UPDATE TB_NOTICE SET NOTICE_TITLE = ?, NOTICE_CONTENT = ?"
+				+ " WHERE NOTICE_NO = ?";
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setString(1, n.getNoticeTitle());
+			pstmt.setString(2, n.getNoticeContent());
+			pstmt.setInt(3, n.getNoticeNo());
+	
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
 	}
 
 }

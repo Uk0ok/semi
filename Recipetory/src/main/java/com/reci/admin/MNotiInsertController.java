@@ -28,7 +28,6 @@ public class MNotiInsertController extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("insert called..");
 		
 		req.setCharacterEncoding("UTF-8");
 		

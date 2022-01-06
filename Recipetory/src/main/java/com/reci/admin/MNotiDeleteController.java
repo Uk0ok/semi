@@ -17,14 +17,16 @@ public class MNotiDeleteController extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int adminNo = Integer.parseInt(req.getParameter("adminNo")) ;
+		System.out.println("delete controller");
+		
+		int noticeNo = Integer.parseInt(req.getParameter("noticeNo")) ;
 		
 		NotiVo n = new NotiVo();
-		n.setAdminNo(adminNo);
+		n.setNoticeNo(noticeNo);
 	
 		int result = new NotiService().delete(n);
 		
-		System.out.println(adminNo);
+		System.out.println(noticeNo);
 		System.out.println(result);
 		
 		if(result > 0) {
