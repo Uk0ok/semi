@@ -19,14 +19,9 @@
     }
     
      .container {
-       min-width: 1200px;
-       margin: 1rem auto;
+       min-width: 1200px 100%;
     }
     
-      dl {
-       height: 400px;
-       background-color: white;
-    }
 
 </style>
 </head>
@@ -35,22 +30,9 @@
 	<%@ include file="common/header.jsp"%>
 	
     <div class="container">
-        <dl> 
-        	<dt>
-        		<h1>TOP10</h1>
-       		</dt>
-       		<dd></dd>
-        </dl>
-        <dl> 
-        	<dt>
-        		<h1>새로운레시피</h1>
-       		</dt>
-        </dl>
-        <dl> 
-        	<dt>
-        		<h1>오늘의쉐프</h1>
-        	</dt>
-        </dl>
+       
+        	<img src="./img/home/24044795.jpg" style="width: 100%; height: 100%;">
+       
     </div>
 
 	<%@ include file="common/footer.jsp"%>
