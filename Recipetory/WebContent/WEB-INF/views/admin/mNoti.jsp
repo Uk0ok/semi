@@ -65,15 +65,14 @@
    		</div>
     	
     	<div id="content1">
-	   		<form action="noMod" method="post" enctype="multipart/form-data">
+	   		<form  action= "noDelete" name="noDelete" method="post" enctype="multipart/form-data">
 	   		<table class="table table-sm table-hover">
 	           	<thead class="thead-light">
 					<tr>
 						<th>
-							<button class="btn btn-light" type="button" data-toggle="modal" data-target="#myModal2">수정</button>
-							<button class="btn btn-light" type="button" onclick="removeCheck()">삭제</button>
+							<!-- <button class="btn btn-light" type="submit" data-toggle="modal" data-target="#myModal2">수정</button> -->
+							<button class="btn btn-light" type="button" name="noDelete" onclick="removeCheck()">삭제</button>
 						</th>
-						
 						<th>번호</th>
 						<th>제목</th>
 						<th>내용</th>
@@ -86,7 +85,7 @@
 					</tr>
 				</thead>
 	           	<tbody>
-	              		<c:forEach items="${notiListAll}" var="n">
+              		<c:forEach items="${notiListAll}" var="n">
 	             		<tr>
 	             			<th><input name="noticeNo" value="${n.noticeNo}" type="checkbox"></th>
 		                    <td>${n.noticeNo}</td>
@@ -99,11 +98,10 @@
 		                    <td>${n.modDate}</td>
 		                    <td>${n.deleteYn}</td>
 	                    </tr>
-	            		</c:forEach> 
+            		</c:forEach> 
 	           	</tbody>
 			</table>
-			
-		
+			</form>
 			<div class="modal" id="myModal2">
     			<div class="modal-dialog">
     				<div class="modal-content">
@@ -137,8 +135,8 @@
    					</div>
 				</div>
 			</div>	
-			</form>
-		</div>
+			</div>
+		
 			
    		<ul class="pagination justify-content-center">
 			<li class="page-item"><a class="page-link" href="#"><</a></li>
@@ -148,10 +146,10 @@
 			<li class="page-item"><a class="page-link" href="#">></a></li>
 		</ul>
 	</div> 
-    		
-   	<script>
+    
+   <script>
 		function removeCheck(){
-			if(confirm("선택한 공지사항을 삭제하시겠습니까?") == true){
+			if(confirm("선택한 관리자를 삭제하시겠습니까?") == true){
 				document.noDelete.submit();
 			}else {
 				return false;
