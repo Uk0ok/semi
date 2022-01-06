@@ -48,7 +48,7 @@
 	             	<tr>  
 	             		<th><input name="postNo" value="${m.postNo}" type="checkbox" required></th>
 		                <td>${m.postNo }</td>		                    
-		                <td>${m.postName }<b><!--  a href="magview.jsp?postNo=<%--=m.getPostNo() %>"><%=m.getPostName() --%></a></b>--></td>		                    
+		                <td>${m.postName }</td>		                    
 		                <td>${m.postContent }</td>		                    
 		                <td>${m.begDate }</td>		                    
 		                <td>${m.hits }</td>		                    
@@ -63,13 +63,10 @@
 	               </c:forEach>
 	           	</tbody>
 			</table>
-			<button type="button" onclick="removeCheck()">게시글 삭제</button>
+			<p align="right"><button type="button" onclick="removeCheck()" style="text-align: left; ">게시글 삭제</button></p>
 			</form>
-			
-			
-			<a href="mwrite"><button>게시글 작성</button></a>
-			
-			
+			 <p align="center"> <a href="mwrite"><button>게시글 작성</button></a>
+			 
 			<ul class="pagination justify-content-center">
 				<li class="page-item"><a class="page-link" href="#"><</a></li>
 				<li class="page-item"><a class="page-link" href="#">1</a></li>

@@ -20,8 +20,8 @@
 	text-align: center;
 	background-color: rgb(100, 100, 100);
 	width: 800px;
-	height: 20px;
-	padding: 12px 0;
+	height: 40px;
+	padding: 8px 0;
 	color: white;
 }
 
@@ -60,34 +60,28 @@ tr {
 </style>
 </head>
 <body>
+
+	<%@ include file="/WEB-INF/views/common/header.jsp"%>
+	
 	<div class="controller">
 		<div id="magTitle">
-			<b>게시글 보기</b>
+			<b>메거진 게시글</b>
 		</div>
 		<table>
 		
+				
 				<tr>
-					<th colspan="3" align="left">
-						<h3>${magView.postNo}</h3>
-					</th>
+					<td width="30%">글 번호 : ${magView.postNo}.</td>
+					<td width="30%"> <b>제목 : ${magView.postName}</b></td>
+					<td width="30%" align="right"> 작성일 : ${magView.begDate}</td>
 				</tr>
 				<tr>
-					<td width="30%">글 제목 : ${magView.postName}</td>
-					<td width="30%">작성자 : ${magView.adminNo}</td>
-					<td width="30%" align="right">${magView.begDate}</td>
-				</tr>
-				<tr>
-					<td width="30%">글 제목 : ${magView.recomNum}</td>
-					<td width="30%">작성자 : ${magView.scrapNum}</td>
-					<td width="30%" align="right">${magView.commNum}</td>
-				</tr>
-				<tr>
-					<td width="30%">글 제목 : ${magView.modYn}</td>
-					<td width="30%">작성자 : ${magView.fmodDate}</td>
-					<td width="30%" align="right">조회수 ${magView.hits}</td>
+					<td width="30%">조회 수 : ${magView.hits}</td>
+					<td width="30%">추천 수 : ${magView.scrapNum}</td>
+					<td width="30%" align="right">스크랩 수 : ${magView.commNum}</td>
 				</tr>
 				<tr id="content" valign="top"
-					style="border-top-color: rgb(100, 100, 100); border-top-width: 1px">
+					style="border-top-color: rgb(100, 100, 100); border-top-width: 1px; border: 1px solid black">
 					<td colspan="3">${magView.postContent }</td>
 				</tr>
 
@@ -107,15 +101,16 @@ tr {
 		</c:choose> -->
 		</table>
 		<div id="btnCon">
-			<a href="#">
+			<a href="javascript:window.history.back();">
 				<button class="btn2">목록</button>
 			</a>
 		</div>
 		<div>
-			<a href="#">
+			<a href="/Recipetory/home">
 				<button class="btn2">홈으로</button>
 			</a>
 		</div>
 	</div>
+	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>
 </html>

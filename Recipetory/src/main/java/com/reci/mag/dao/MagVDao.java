@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 import com.reci.mag.Vo.MagVo;
 import com.reci.sup.vo.NotiVo;
@@ -27,18 +28,18 @@ public class MagVDao {
 			
 			if(rs.next()) {
 				magView= new MagVo();
-				magView.setPostNo(rs.getInt("postNo"));
-				magView.setPostName(rs.getString("postName"));
-				magView.setPostContent(rs.getString("postContent"));
-				magView.setBegDate(rs.getTimestamp("begDate"));
-				magView.setHits(rs.getInt("hits"));
-				magView.setRecomNum(rs.getInt("recomNum"));
-				magView.setScrapNum(rs.getInt("scrapNum"));
-				magView.setCommNum(rs.getInt("commNum"));
-				magView.setModYn(rs.getString("modYn"));
-				magView.setFmodDate(rs.getTimestamp("fmodDate"));
-				magView.setDelYn(rs.getString("delYn"));
-				magView.setAdminNo(rs.getInt("adminNo"));
+				magView.setPostNo(postNo);
+				magView.setPostName(rs.getString("POST_NAME"));
+				magView.setPostContent(rs.getString("POST_CONTENT"));
+				magView.setBegDate(rs.getTimestamp("BEG_DATE"));
+				magView.setHits(rs.getInt("HITS"));
+				magView.setRecomNum(rs.getInt("RECOM_NUM"));
+				magView.setScrapNum(rs.getInt("SCRAP_NUM"));
+				magView.setCommNum(rs.getInt("COMM_NUM"));
+				magView.setModYn(rs.getString("MOD_YN"));
+				magView.setFmodDate(rs.getTimestamp("FMOD_DATE"));
+				magView.setDelYn(rs.getString("DEL_YN"));
+				magView.setAdminNo(rs.getInt("ADMIN_NO"));
 				}
 		} catch (SQLException e) {
 			e.printStackTrace();
