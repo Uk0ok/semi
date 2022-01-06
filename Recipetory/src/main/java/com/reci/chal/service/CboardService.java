@@ -85,14 +85,4 @@ public class CboardService {
 		return new CboardDao().insertchallenge(conn,c);
 	}
 
-	public static CfileVo nFileView(int postNo) {
-		CfileVo cFileView = null;
-		Connection conn = getConnection();
-		
-		cFileView = new CfileDao().cFileView(conn, postNo);
-		close(conn);
-				
-		return cFileView; 
-	}
-
 }

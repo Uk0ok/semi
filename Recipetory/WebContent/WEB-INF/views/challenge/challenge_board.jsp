@@ -41,7 +41,7 @@
         padding: 10px;
         border: 1px solid #000;
         border-radius: 2px;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
 	.bt_wrap a.bt_write {
@@ -74,7 +74,7 @@
 		            		<tr>
 		                    <td>${c.cpostNo}</td>
 		                    <td>
-		                    	<a href="${pageContext.request.contextPath}/challenge/cView?ch=${c.cpostNo}&pageNo=${currentPage}">
+		                    	<a href="./challengeview">
 		                    		${c.cpostName}
 		                    	</a>
 	                    	</td>
