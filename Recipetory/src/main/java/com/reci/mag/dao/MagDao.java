@@ -95,7 +95,8 @@ public class MagDao {
 					+ "("
 					+ "SELECT ROWNUM AS RNUM, m.* FROM TB_BOARD_MAGAZINE m WHERE DEL_YN = 'N'"
 					+ ")"
-					+ "WHERE ROWNUM BETWEEN ? AND ?";
+					+ "WHERE ROWNUM BETWEEN ? AND ?"
+					+ "ORDER BY RNUM DESC";
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			List<MagVo> magList = new ArrayList<MagVo>(); //리스트안에 제네릭이용해서 MagVo만 들어오게

@@ -21,49 +21,50 @@ import com.reci.mag.service.MagC_Service;
 
 @WebServlet("/mag_content1")
 public class Mag_content1_Controller extends HttpServlet{
-
-	private static final long serialVersionUID = 1L;
-	
-	public Mag_content1_Controller() {
-	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int no = Integer.parseInt(req.getParameter("no"));
+		req.getRequestDispatcher("/WEB-INF/views/magazine/mag_content1.jsp").forward(req, resp);
+		
+	}
+}
 		
 		
-		//쿠키에 조회한 이력이 있는 지 확인
-		Cookie[] cookies = req.getCookies();
-		String boardHistory = "";
-		boolean hasRead = false;
+//		int no = Integer.parseInt(req.getParameter("no"));
 		
-		if(cookies != null) {
-			String name = null;
-			String value = null;
-			
-			for(Cookie cookie : cookies) {
-				name = cookie.getName();
-				value = cookie.getValue();
-				
-				if("boardHistoy".equals(name)) {
-					boardHistory = value;
-					if(value.contains("|" + no + "|")) {
-						//읽은 게시글
-						hasRead = true;
-						
-						break;
-					}
-				}
-			}
-		}
 		
-		// 읽지 않은 게시글이면 cookie에 기록
-		if(!hasRead) {
-			Cookie cookie = new Cookie("boardHistory", boardHistory + "|" + no + "|");
-			
-			cookie.setMaxAge(7*24*60*60);//생명주기 일단 일주일
-			resp.addCookie(cookie);
-		}
+//		//쿠키에 조회한 이력이 있는 지 확인
+//		Cookie[] cookies = req.getCookies();
+//		String boardHistory = "";
+//		boolean hasRead = false;
+//		
+//		if(cookies != null) {
+//			String name = null;
+//			String value = null;
+//			
+//			for(Cookie cookie : cookies) {
+//				name = cookie.getName();
+//				value = cookie.getValue();
+//				
+//				if("boardHistoy".equals(name)) {
+//					boardHistory = value;
+//					if(value.contains("|" + no + "|")) {
+//						//읽은 게시글
+//						hasRead = true;
+//						
+//						break;
+//					}
+//				}
+//			}
+//		}
+//		
+//		// 읽지 않은 게시글이면 cookie에 기록
+//		if(!hasRead) {
+//			Cookie cookie = new Cookie("boardHistory", boardHistory + "|" + no + "|");
+//			
+//			cookie.setMaxAge(7*24*60*60);//생명주기 일단 일주일
+//			resp.addCookie(cookie);
+//		}
 		
 		
 		
@@ -82,6 +83,4 @@ public class Mag_content1_Controller extends HttpServlet{
 		//data라는 키값을 이용해서 mag를 가져올수가 있다. //list로 만들어서 넘겨준다.
 //		req.getRequestDispatcher("/WEB-INF/views/magazine/mag_content1.jsp").forward(req, resp);
 		
-	}
 	
-}

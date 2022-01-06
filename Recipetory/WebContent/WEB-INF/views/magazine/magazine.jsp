@@ -4,7 +4,7 @@
     pageEncoding="UTF-8"%>
 <% 
 	List<MagVo> dataList = (List<MagVo>)request.getAttribute("data"); 
-//attribute는 오브젝트인데, 현재 타입이 NotiVo이기 때문에 (NotiVo)로 캐스팅
+//attribute는 오브젝트인데, 현재 타입이 MagVo이기 때문에 (MagVo)로 캐스팅
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,62 +90,69 @@
 	font-size: 0.7em;
 	overflow: hidden;
 }
+.hidden{
+	height: 50px; 
+	overflow: hidden;
+}
 
 </style>
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
 	
 	<p align="middle" style="margin-top: 20px;">
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/SJ1ZxX2hN00?start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/lrV31KGGf8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/2Xv6cIhtyno?start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</p>
     <div class="title_wrap">
 		<div class="title">
 			<div class="m_title1">
-				<div id="m_title_1"><a href="mag_content1"><img src="./img/magBoard/magazine_milk.jpg" style="width: 100%; height: 100%;"></a></div>
-				<div id="m_title_2">우유자조금관리위원회, 연말 홈파티용 우유활용 레시피 추천</div>
+				<div id="m_title_1"><a href="mag_content1"><img src="./img/magBoard/Mcontent1.jpg" style="width: 100%; height: 100%;"></a></div>
+				<div id="m_title_2">강원도농업기술원, 이달의 식재료 레시피 북 발간</div>
 			</div>
 			<div class="m_title2">
-				<table class="table table-hover">
-					<thead style="background-color: rgb(175, 187, 175);">
-						<tr>
-							<th><strong style="color: white;">주요 메거진 뉴스</strong></th>
-						</tr>
-					</thead>
-					
-					<tbody>
-					<c:forEach items="${data}" var="m">
-						<tr>
-							<td><a href="mag_content2" style="text-decoration: none; color: black; ">더 나은 행복을 위한 3가지 레시피</a></td>
-						</tr>
-						<tr>
-							<td><a href="mag_content2" style="text-decoration: none; color: black; ">더 나은 행복을 위한 3가지 레시피</a></td>
-						</tr>
-						<tr>
-							<td><a href="mag_content2" style="text-decoration: none; color: black; ">더 나은 행복을 위한 3가지 레시피</a></td>
-						</tr>
-						<tr>
-							<td> <a href="${pageContext.request.contextPath}/magazine/magView?no=${m.postNo}&pageNo=${currentPage}">${m.postName}</a> </td>
-						</tr>
-						<tr>
-							<td>기사 제목 링크</td>
-						</tr>
-						<tr>
-							<td>기사 제목 링크</td>
-						</tr>
-						<tr>
-							<td>기사 제목 링크</td>
-						</tr>
-						<tr>
-							<td>기사 제목 링크</td>
-						</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+						<table class="table">
+		        <thead>
+		        	<tr>
+		        		<th style="background-color: black; color:white;">최신 메거진 뉴스</th>
+		         	</tr>
+        		</thead>
+	           	<tbody>
+	            	<c:forEach items="${data}" var="m">
+	            		<tr>
+	                    <td>
+	                    	<a href="${pageContext.request.contextPath}/magazine/magView?no=${m.postNo}&pageNo=${currentPage}" style="color:black">${m.postName}</a>
+                    	</td>
+	                   </tr>
+	            	</c:forEach>
+	           	</tbody>
+           	</table>
 			</div>
 		</div>
 		<div class="content_wrap">
-			<div class="row">
+		<table class="table">
+		        <thead>
+		        	<tr>
+		        		<th style="background-color: black; color:white;">메거진 목록</th>
+		         	</tr>
+        		</thead>
+	           	<tbody>
+	            	<c:forEach items="${data}" var="m">
+	            		<tr class="hidden">
+	            		<td class="hidden">
+	            			<a class="hidden" href="${pageContext.request.contextPath}/magazine/magView?no=${m.postNo}&pageNo=${currentPage}" style="color:black">${m.begDate}</a>
+	            		</td>
+	                    <td>
+	                    	<a href="${pageContext.request.contextPath}/magazine/magView?no=${m.postNo}&pageNo=${currentPage}" style="color:black"> <b> ${m.postName}</b></a>
+                    	</td>
+                    	<!--  <td>
+                    		<a href="${pageContext.request.contextPath}/magazine/magView?no=${m.postNo}&pageNo=${currentPage}" style="color:black">${m.postContent}</a>
+                    	</td>-->
+	                   </tr>
+	            	</c:forEach>
+	           	</tbody>
+           	</table>
+			
+			<!--<div class="row">
 				<div class="col">
 					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
 					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
@@ -186,10 +193,24 @@
 					<div><a href="mag_content3"><img src="./img/magBoard/magazine_umuck7.jpg" style="width: 100%; height: 100%;"></a></div>
 					<div id="col_1" style="overflow: hidden;"> <a href="mag_content3" style="text-decoration: none; color: black; "><b>[오늘 뭐먹지?]  요리 초보도 ok! 초간단 밑반찬, 어묵볶음 레시피</b></a></div>
 				</div>
-			</div>
+			</div> -->
 			
 			
-			<ul id="pageForm" class="pagination justify-content-center">
+			
+       		
+       		
+		</div>
+		<br>
+		
+		<!--<c:forEach var="m" begin="1" end="5"> 
+			<div class="page=area">
+				<c:if test="${m le maxPage }">
+					<a href="magazine?currentPage=${i}">${i}</a>
+				</c:if>
+			</div>
+		</c:forEach>-->
+		
+		  <ul id="pageForm" class="pagination justify-content-center">
            		<c:if test="${currentPage != 1}">
            			<li class="page-item"><a class="page-link" href='magazine?page=${currnetPage-1}'><</a></li>
            		</c:if>
@@ -205,10 +226,6 @@
            			<li class="page-item"><a class="page-link" href="magazine?page=${currnetPage+1}">></a></li>
            		</c:if>
        		</ul>
-       		
-       		
-		</div>
-		<br>
     </div>
     <br>
     
