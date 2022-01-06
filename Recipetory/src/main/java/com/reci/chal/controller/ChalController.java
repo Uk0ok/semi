@@ -20,7 +20,7 @@ import com.reci.chal.service.CboardService;
 import com.reci.chal.vo.CboardVo;
 
 
-@WebServlet("/chal")
+@WebServlet("/challenge")
 public class ChalController extends HttpServlet{
 	
 	@Override

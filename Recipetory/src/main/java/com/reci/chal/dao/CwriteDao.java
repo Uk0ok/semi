@@ -8,7 +8,6 @@ import java.util.List;
 import static com.reci.common.JDBCTemplate.*;
 
 import com.reci.chal.vo.CboardVo;
-import com.reci.chal.vo.CwriteVo;
 
 public class CwriteDao {
 	

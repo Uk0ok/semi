@@ -92,14 +92,9 @@ public class CboardVo {
 	@Override
 	public String toString() {
 		return "CboardVo [cpostNo=" + cpostNo + ", userNo=" + userNo + ", cpostName=" + cpostName + ", cpostContent="
-				+ cpostContent + ", cbegDate=" + cbegDate + ", partiNum=" + partiNum + ", creviewNum=" + creviewNum
-				+ ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn + ", cfmodDate=" + cfmodDate + ", cdelYn="
-				+ cdelYn + "]";
+				+ cpostContent + ", cbegDate=" + cbegDate + ", challengePeriod=" + challengePeriod + ", partiNum="
+				+ partiNum + ", creviewNum=" + creviewNum + ", cthumbnail=" + cthumbnail + ", cmodYn=" + cmodYn
+				+ ", cfmodDate=" + cfmodDate + ", cdelYn=" + cdelYn + "]";
 	}
-	
-	
-
-	
-	
 	
 }
