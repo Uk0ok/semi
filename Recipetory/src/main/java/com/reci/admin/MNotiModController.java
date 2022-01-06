@@ -1,31 +1,74 @@
 package com.reci.admin;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import com.reci.sup.service.NotiService;
 import com.reci.sup.vo.NotiVo;
 
-@WebServlet
+@WebServlet("/noMod")
 public class MNotiModController extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		int adminNo = Integer.parseInt(req.getParameter("adminNo")) ;
+		req.setCharacterEncoding("UTF-8");
+		
+		String noticeTitle = req.getParameter("noticeTitle");
+		int noticeNo = Integer.parseInt(req.getParameter("NoticeNo"));
+		String noticeContent = req.getParameter("noticeContent");
+		
+		System.out.println(noticeTitle);
+		System.out.println(noticeNo);
+		System.out.println(noticeContent);
 		
 		NotiVo n = new NotiVo();
-		n.setAdminNo(adminNo);
-	
-		int result = new NotiService().mod(n);
+		n.setNoticeTitle(noticeTitle);
+		n.setNoticeNo(noticeNo);
+		n.setNoticeContent(noticeContent);
 		
-		if(result > 0) {
+		//파일 읽을 준비
+		Part part = req.getPart("file");
+		FileVo f = new FileVo();
+		
+		if(part != null) {
+			String fileName = part.getSubmittedFileName();
+			InputStream fis = part.getInputStream();
+			
+			//파일 저장 준비
+			String changeName = "" + UUID.randomUUID();
+			String ext = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+			String realPath = req.getServletContext().getRealPath("/img/supBoard");
+			String filePath = realPath + File.separator + changeName + ext;
+			FileOutputStream fos = new FileOutputStream(filePath); 
+			
+			//파일기록(업로드파일 read -> write)
+			byte[] buf = new byte[1024]	;
+			int size = 0;
+			while((size = fis.read(buf)) != -1) {
+				fos.write(buf, 0, size);
+			}
+			fis.close();
+			fos.close();
+			
+			f.setFileName(fileName);
+			f.setmFileName(changeName + ext);
+		}
+		
+		int uploadData = new NotiService().uploadNoti(n, f);
+		
+		if(uploadData > 0) {
 			//success
 			resp.setContentType("text/html; charset=UTF-8"); 
 			PrintWriter writer = resp.getWriter();

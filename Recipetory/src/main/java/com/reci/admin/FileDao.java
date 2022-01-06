@@ -63,6 +63,28 @@ public class FileDao {
 		return nFileView;
 		
 	}
+	
+	public int modifyAttachmentNoti(Connection conn, FileVo f, NotiVo n) {
+		String sql = "UPDATE INTO TB_ATTACHED_FILE_N SET (FILE_NO, MFILE_NO) = (?, ?)";
+		
+		PreparedStatement pstmt = null;
+		int fileResult = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, f.getFileName());
+			pstmt.setString(2, f.getmFileName());
+	
+			fileResult = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return fileResult;
+	}
+	
 }
 
 	
