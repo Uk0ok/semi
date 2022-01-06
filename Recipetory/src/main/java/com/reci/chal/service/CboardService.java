@@ -43,13 +43,6 @@ public class CboardService {
 	}
 	
 	// 게시물 보이기
-	public List<CboardVo> CboardListAll(){
-		Connection conn = getConnection();
-		List<CboardVo> CboardListAll = new CboardDao().CboardListAll(conn);
-		close(conn);
-		
-		return CboardListAll;
-	}
 	public static CboardVo CboardView(int postNo) { 
 		CboardVo CboardView = null;
 		Connection conn = getConnection();

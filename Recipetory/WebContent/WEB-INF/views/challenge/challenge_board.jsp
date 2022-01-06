@@ -72,13 +72,13 @@
 		           	<tbody>
 		            	<c:forEach items="${data}" var="c">
 		            		<tr>
-		                    <td>${c.postNo}</td>
+		                    <td>${c.cpostNo}</td>
 		                    <td>
-		                    	<a href="${pageContext.request.contextPath}/challenge/cView?ch=${c.postNo}&pageNo=${currentPage}">
-		                    		${c.postName}
+		                    	<a href="${pageContext.request.contextPath}/challenge/cView?ch=${c.cpostNo}&pageNo=${currentPage}">
+		                    		${c.cpostName}
 		                    	</a>
 	                    	</td>
-		                    <td>${c.partinum}</td>
+		                    <td>${c.partiNum}</td>
 		                    <td>${c.challengePeriod}</td>
 		                   </tr>
 		            	</c:forEach>
