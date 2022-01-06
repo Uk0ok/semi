@@ -121,13 +121,16 @@ public class NotiService {
 				commit(conn);
 			else
 				rollback(conn);
+		} catch (SQLException e){
+			rollback(conn);
+			e.printStackTrace();
 		} finally {
 			close(conn);
 		}
 		return result;
 	}
 
-	private int deleteNoti(Connection conn, NotiVo n) {
+	private static int deleteNoti(Connection conn, NotiVo n) throws SQLException{
 		return new NotiDao().delete(conn, n);
 	}
 
