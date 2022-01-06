@@ -39,7 +39,6 @@ public class NotiController extends HttpServlet {
 		req.setAttribute("startPage", startPage);
 		req.setAttribute("endPage", endPage);
 		
-		
 		List<NotiVo> notiList = new NotiService().selectNotiList(currentPage); 
 		//마이메소드에 리스트값 입력 (마지막순서)
 		//메소드는 service로 분리

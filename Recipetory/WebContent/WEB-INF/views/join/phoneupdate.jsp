@@ -26,13 +26,14 @@
             <div id="content_userInfo_m">
                 <br><br><br><br><br><br>
 
-				<form action="updatePhone" method="post">
+				<form action="phoneUpdate" method="post">
                 <table id="tb_userInfo">
                     <tr>
                         <td>${loginUser.userPhone}</td>
                     </tr>
                     <tr>
-                        <td><input style="width: 300px;" type="tel" name="userPhone" id="userPhone" class="userPhone" placeholder="변경된 휴대전화 번호를 입력해 주세요."></td>
+                        <td><input style="width: 300px;" type="tel" name="userPhone" id="userPhone" class="userPhone" placeholder="변경된 휴대전화 번호를 입력해 주세요.">
+                        <input type="hidden" name="userId" id="userId" class="userId" value="${loginUser.userId}"></td>
                     </tr>
                     <tr>
                         <td><button type="submit">변경</button></td>

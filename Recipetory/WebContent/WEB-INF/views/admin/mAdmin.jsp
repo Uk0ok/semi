@@ -51,7 +51,7 @@
 		</div>
    		
    		<div id="content1">
-   			<form name="adDelete" action="adDelete" method = "post">
+   			<form action="adDelete" name="adDelete" method="post">
 	   		<table class="table table-sm table-hover">
 	           	<thead class="thead-light">
 					<tr>

@@ -25,9 +25,11 @@ public class DeleteController extends HttpServlet{
 		req.setCharacterEncoding("UTF-8");
 
 		String userPwd = req.getParameter("userPwd");
+		String userId = req.getParameter("userId");
 
 		MemberVo m = new MemberVo();
 		m.setUserPwd(userPwd);
+		m.setUserId(userId);
 
 		int result = new MemberService().delete(m);
 		

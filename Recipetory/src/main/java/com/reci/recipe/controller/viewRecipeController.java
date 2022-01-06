@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.reci.recipe.dao.recipeBoradDao;
 import com.reci.recipe.service.recipeBoardService;
 import com.reci.recipe.vo.recipeImgVo;
-import com.reci.recipe.vo.registerRecipeVo;
+import com.reci.recipe.vo.recipeVo;
 
 @WebServlet("/recipe/viewRecipe")
 public class viewRecipeController extends HttpServlet {
@@ -29,7 +29,7 @@ public class viewRecipeController extends HttpServlet {
 		String pageNo = req.getParameter("pageNo");
 		req.setAttribute("pageNo", pageNo);
 
-		registerRecipeVo viewRecipe = recipeBoardService.viewRecipe(postNo);
+		recipeVo viewRecipe = recipeBoardService.viewRecipe(postNo);
 		System.out.println("viewRecipe : " + viewRecipe);
 		req.setAttribute("viewRecipe", viewRecipe);
 

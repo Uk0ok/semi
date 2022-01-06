@@ -11,19 +11,7 @@ List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
 <meta charset="UTF-8">
 <title>챌린지</title>
     <style>
-	* {
-    margin: 0;
-    padding: 0;
-    }
-
-    ul, li {
-        list-style: none;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
+	
 
 	.board_wrap {
     padding: 50px;
@@ -187,18 +175,17 @@ List<CboardVo> cdatalist = (List<CboardVo>)request.getAttribute("data");
         <div class="board_view_wrap">
             <div class="board_view">            
             <div class="board_list_body">
-                           <c:forEach items="${data}" var="ch">
+                            
                                <div class="item">
-                                    <div class="tit">제목 : ${ch.cpostName}</div>
-                                    <div class="info">챌린지 종료일 : ${ch.challengePeriod}</div>
-                                    <div class="photo"><img src="${pageContext.request.contextPath}${ch.cthumbnail}" width="400" height="300"></div>
-                                    <div class="content">${ch.cpostContent}</div>
+                                    <div class="tit">제목 : 일주일 집밥 챌린지</div>
+                                    <div class="info">챌린지 종료일 : 2022-02-15</div>
+                                    <div class="photo"><img src="/./Recipetory/WebContent/img/challengeBoard/jipbab.jpg" width="400" height="300"></div>
+                                    <div class="content">일주일간 집밥 해먹기~ 집에서 밥먹기 아니구여 직접 해먹어야됩니다~ 배달ㄴㄴ</div>
                                </div>
-                     		</c:forEach>
+                     		
                    </div>
                        
             <div class="bt_wrap">
-            	<a href="./challengereview" class="bt_review">리뷰보기</a>
             	<a href="#" class="bt_parti">참여하기</a>
                 <a href="./challenge" class="bt_list">목록으로</a>
             </div>

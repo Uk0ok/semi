@@ -9,13 +9,13 @@ import java.util.List;
 import static com.reci.common.JDBCTemplate.*;
 
 import com.reci.recipe.vo.recipeImgVo;
-import com.reci.recipe.vo.registerRecipeVo;
+import com.reci.recipe.vo.recipeVo;
 
 public class registerRecipeDao {
 
-	public int insertRecipe(Connection conn, registerRecipeVo rrv) throws SQLException {
+	public int insertRecipe(Connection conn, recipeVo rrv) throws SQLException {
 		// 쿼리 날리기
-		String sql = "INSERT INTO TB_BOARD_RECIPE2 VALUES(SEQ_REC_RNO.NEXTVAL, '1', ?, SYSDATE, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, 'N', 'N', SYSDATE)";
+		String sql = "INSERT INTO TB_BOARD_RECIPE2 VALUES(SEQ_REC_RNO.NEXTVAL, '1', ?, SYSDATE, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, 'N', 'N', DEFAULT)";
 		PreparedStatement pstmt = null;
 		int result = 0;
 

@@ -26,13 +26,14 @@
             <div id="content_userInfo_m">
                 <br><br><br><br><br><br>
 
-				<form action="updateEmail" method="post">
+				<form action="emailUpdate" method="post">
                 <table id="tb_userInfo">
                     <tr>
                         <td>${loginUser.userEmail}</td>
                     </tr>
                     <tr>
-                        <td><input style="width: 300px;" type="email" name="userEmail" id="userEmail" class="userEmail"placeholder="변경된 이메일을 입력해 주세요."></td>
+                        <td><input style="width: 300px;" type="email" name="userEmail" id="userEmail" class="userEmail"placeholder="변경된 이메일을 입력해 주세요.">
+                        <input type="hidden" name="userId" id="userId" class="userId" value="${loginUser.userId}"></td>
                     </tr>
                     <tr>
                         <td><button type="submit">변경</button></td>

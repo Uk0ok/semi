@@ -82,15 +82,13 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./mAdmin">관리자관리</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./mReport">신고관리</a>
-				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">게시글관리</a>
 					<div  class="dropdown-menu">
 						<a class="dropdown-item" href="./mNoti">공지사항</a>
 						<a class="dropdown-item" href="./mQna">고객문의</a>
 						<a class="dropdown-item" href="./mMag">매거진</a>
+						<a class="dropdown-item" href="./mReport">신고접수</a>
 					</div>
 				</li>
 			</ul>

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -19,7 +20,7 @@ import javax.servlet.http.Part;
 
 import com.reci.recipe.service.registerRecipeService;
 import com.reci.recipe.vo.recipeImgVo;
-import com.reci.recipe.vo.registerRecipeVo;
+import com.reci.recipe.vo.recipeVo;
 
 @MultipartConfig(maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 
@@ -42,7 +43,7 @@ public class registerRecipeController extends HttpServlet {
 		String postContent5 = req.getParameter("recipeProcess5");
 		String rthumbnail = req.getParameter("thumbnailName");
 
-		registerRecipeVo rrv = new registerRecipeVo();
+		recipeVo rrv = new recipeVo();
 		rrv.setRpostName(postName);
 		rrv.setIngredient1(ingredient1);
 		rrv.setIngredient2(ingredient2);
@@ -58,14 +59,27 @@ public class registerRecipeController extends HttpServlet {
 
 		int result = new registerRecipeService().regist(rrv);
 
-		if (result > 0) {
-			// success
-			req.setAttribute("msg", "글이 정상적으로 작성되었습니다.");
-			req.getRequestDispatcher("WEB-INF/views/recipe/successPage.jsp").forward(req, resp);
-		} else {
-			// error
-			req.setAttribute("msg", "글 작성에 오류가 발생하였습니다.");
-			req.getRequestDispatcher("WEB-INF/views/recipe/errorPage.jsp").forward(req, resp);
+		if(result > 0) {
+			//success
+			resp.setContentType("text/html; charset=UTF-8"); 
+			PrintWriter writer = resp.getWriter();
+			writer.println
+					(
+					"<script>alert('글이 작성되었습니다..');"
+					+ "location.href='./recipe';</script>"
+					); 
+			writer.close();
+		}else {
+			//error
+			resp.setContentType("text/html; charset=UTF-8"); 
+			PrintWriter writer = resp.getWriter();
+			writer.println
+					(
+					"<script>alert('글 작성을 실패하였습니다.');"
+					+ "location.href='./recipe';</script>"
+					); 
+			writer.close();
+			
 		}
 
 		// 다중 파일 업로드

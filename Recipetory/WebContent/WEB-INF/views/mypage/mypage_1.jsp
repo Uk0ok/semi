@@ -24,11 +24,11 @@
                 <a href="./mypage4">회원 정보 수정</a><br><br>
             </div>
             <div id="content_profile_m">
-                <br><img id="profile_m" src="./img/mypageBoard/cat.jpg" alt="">
+                <br><img id="profile_m" src="./img/mypageBoard/cake.jpg" alt="">
                 <br><br><button>사진 수정</button>
                 
-                <br><br><p id="nickname_m">닉네임</p>
-                <button>닉네임 수정</button>
+                <br><br><p id="nickname_m">${loginUser.userNickname}</p>
+                <button type="button" onclick="location.href='./nicknameUpdate' ">닉네임 수정</button>
             </div>
             <div id="content_challenge_m">
                 <br>
@@ -40,53 +40,53 @@
                         <th>달성률</th>
                     </tr>
                     <tr>
-                        <td>21.12.22 ~ 22.01.22</td>
-                        <td>챌린지 제목</td>
+                        <td>21.12.25 ~ 22.12.25</td>
+                        <td>챌린지 제목 1</td>
                         <td>0%</td>
                     </tr>
                     <tr>
-                        <td>21.00.00 ~ 22.00.00</td>
-                        <td>챌린지 제목</td>
+                        <td>21.12.25 ~ 22.12.25</td>
+                        <td>챌린지 제목 2</td>
                         <td>0%</td>
                     </tr>
                     <tr>
-                        <td>21.00.00 ~ 22.00.00</td>
-                        <td>챌린지 제목</td>
+                        <td>21.12.25 ~ 22.12.25</td>
+                        <td>챌린지 제목 3</td>
                         <td>0%</td>
                     </tr>
                     <tr>
-                        <td>21.00.00 ~ 22.00.00</td>
-                        <td>챌린지 제목</td>
+                        <td>21.12.25 ~ 22.12.25</td>
+                        <td>챌린지 제목 4</td>
                         <td>0%</td>
                     </tr>
                     <tr>
-                        <td>21.00.00 ~ 22.00.00</td>
-                        <td>챌린지 제목</td>
+                        <td>21.12.25 ~ 22.12.25</td>
+                        <td>챌린지 제목 5</td>
                         <td>0%</td>
                     </tr>
                     <tr>
-                        <td>21.00.00 ~ 22.00.00</td>
-                        <td>챌린지 제목</td>
+                        <td>21.12.25 ~ 22.12.25</td>
+                        <td>챌린지 제목 6</td>
                         <td>0%</td>
                     </tr>
                     <tr>
-                        <td>21.00.00 ~ 22.00.00</td>
-                        <td>챌린지 제목</td>
+                        <td>21.12.25 ~ 22.12.25</td>
+                        <td>챌린지 제목 7</td>
                         <td>0%</td>
                     </tr>
                     <tr>
-                        <td>21.00.00 ~ 22.00.00</td>
-                        <td>챌린지 제목</td>
+                        <td>21.12.25 ~ 22.12.25</td>
+                        <td>챌린지 제목 8</td>
                         <td>0%</td>
                     </tr>
                     <tr>
-                        <td>21.00.00 ~ 22.00.00</td>
-                        <td>챌린지 제목</td>
+                        <td>21.12.25 ~ 22.12.25</td>
+                        <td>챌린지 제목 9</td>
                         <td>0%</td>
                     </tr>
                     <tr>
-                        <td>21.00.00 ~ 22.00.00</td>
-                        <td>챌린지 제목</td>
+                        <td>21.12.25 ~ 22.12.25</td>
+                        <td>챌린지 제목 10</td>
                         <td>0%</td>
                     </tr>
                 </table>

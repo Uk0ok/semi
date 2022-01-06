@@ -22,9 +22,11 @@ public class EmailUpdateController extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 
 		String userEmail = req.getParameter("userEmail");
+		String userId = req.getParameter("userId");
 
 		MemberVo m = new MemberVo();
 		m.setUserEmail(userEmail);
+		m.setUserId(userId);
 
 		int result = new MemberService().updateEmail(m);
 		
@@ -37,10 +39,10 @@ public class EmailUpdateController extends HttpServlet {
 			writer.println
 					(
 					"<script>alert('이메일 변경이 완료되었습니다.');"
-					+ "location.href='./mypage4';</script>"
+					+ "location.href='./mypage';</script>"
 					); 
 			writer.close();
-			req.getRequestDispatcher("/WEB-INF/views/join/mypage4.jsp").forward(req, resp);
+			req.getRequestDispatcher("/WEB-INF/views/join/mypage.jsp").forward(req, resp);
 		}else {
 			//error
 			resp.setContentType("text/html; charset=UTF-8"); 

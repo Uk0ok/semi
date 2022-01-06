@@ -36,43 +36,43 @@
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>1</td>
-                        <td>2021.12.22</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>제목 1</td>
                         <td>0</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>2</td>
-                        <td>2021.12.00</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>제목 2</td>
                         <td>0</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>3</td>
-                        <td>2021.12.00</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>제목 3</td>
                         <td>0</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>4</td>
-                        <td>2021.12.00</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>제목 4</td>
                         <td>0</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>5</td>
-                        <td>2021.12.00</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>제목 5</td>
                         <td>0</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>6</td>
-                        <td>2021.12.00</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>제목 6</td>
                         <td>0</td>
                     </tr>
                 </table>
@@ -93,44 +93,44 @@
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>1</td>
-                        <td>2021.12.22</td>
-                        <td>내용</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>내용 1</td>
+                        <td>제목 1</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>2</td>
-                        <td>2021.12.00</td>
-                        <td>내용</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>내용 2</td>
+                        <td>제목 2</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>3</td>
-                        <td>2021.12.00</td>
-                        <td>내용</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>내용 3</td>
+                        <td>제목 3</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>4</td>
-                        <td>2021.12.00</td>
-                        <td>내용</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>내용 4</td>
+                        <td>제목 4</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>5</td>
-                        <td>2021.12.00</td>
-                        <td>내용</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>내용 5</td>
+                        <td>제목 5</td>
                     </tr>
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>6</td>
-                        <td>2021.12.00</td>
-                        <td>내용</td>
-                        <td>제목</td>
+                        <td>2021.12.25</td>
+                        <td>내용 6</td>
+                        <td>제목 6</td>
                     </tr>
                 </table>
                 <br>
