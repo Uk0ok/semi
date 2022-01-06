@@ -51,6 +51,7 @@
 		</div>
    		
    		<div id="content1">
+   			<form action="adDelete" name="adDelete" method="post">
 	   		<table class="table table-sm table-hover">
 	           	<thead class="thead-light">
 					<tr>
@@ -79,6 +80,7 @@
            			</c:forEach> 
            		</tbody>
 			</table>
+			</form>
 		
 			<ul class="pagination justify-content-center">
 				<li class="page-item"><a class="page-link" href="#"><</a></li>
